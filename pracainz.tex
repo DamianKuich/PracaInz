@@ -1,0 +1,237 @@
+% ======================================================== %
+% Przeczytaj plik amuthesis-doc.pdf, aby poznać opcje      %
+% klasy `amuthesis`                                        %
+% ======================================================== %
+\documentclass[oneside,polski,logo]{amuthesis}
+
+% Zdefiniuj kodowanie pliku źródłowego (domyślnie utf8)
+\usepackage[utf8]{inputenc}
+
+% ======================================================== %
+% Dane autora i pracy                                      %
+% ======================================================== %
+
+% --- Autor pracy
+\author{Jan Kowalski}
+% --- Numer albumu
+\album{123456}
+% --- Tytuł pracy (w języku polskim i angielskim)
+\titlePL{Moja praca}
+\titleEN{My thesis}
+% --- Typ pracy (inżynierska, licencjacka, magisterska)
+\type{inżynierska}
+% --- Wydział (wykaz skrótów):
+% --- --- WA    --- Wydział Anglistyki
+% --- --- WB    --- Wydział Biologii
+% --- --- WCh   --- Wydział Chemii
+% --- --- WFPiK --- Wydział Filologii Polskiej i Klasycznej
+% --- --- WF    --- Wydział Fizyki
+% --- --- WH    --- Wydział Historyczny
+% --- --- WMiI  --- Wydział Matematyki i Informatyki
+% --- --- WNGiG --- Wydział Nauk Geograficznych i Geologicznych
+% --- --- WNPiD --- Wydział Nauk Politycznych i Dziennikarstwa
+% --- --- WNS   --- Wydział Nauk Społecznych
+% --- --- WN    --- Wydział Neofilologii
+% --- --- WPAK  --- Wydział Pedagogiczno-Artystyczny w Kaliszu
+% --- --- WPiA  --- Wydział Prawa i Administracji
+% --- --- WSE   --- Wydział Studiów Edukacyjnych
+% --- --- WT    --- Wydział Teologiczny
+% --- --- IKE   --- Instytut Kultury Europejskiej w Gnieźnie
+\faculty{WMiI}
+% --- Kierunek (w mianowniku)
+\field{informatyka}
+% --- Specjalność (w formie mianownikowej)
+% --- (ustaw puste, jeśli bez specjalności)
+\specialty{finansowa i aktuarialna}
+% --- Promotor (w dopełniaczu)
+\supervisor{prof. UAM dr. hab. Jana Nowaka}
+% --- Data złożenia pracy (Miasto, miesiąc rok)
+\date{Poznań, wrzesień 2017}
+
+% --- Płeć autora (M/K)
+\stsex{M}
+% --- Zgoda na udostępnienie pracy w czytelni (TAK/NIE)
+\stread{TAK}
+% --- Zgoda na udostępnienie pracy w zakresie ochrony (TAK/NIE)
+\stprotect{TAK}
+% --- Data podpisania oświadczenia (Miasto, data)
+\stdate{Poznań, \today{} r.}
+
+% ======================================================== %
+% Dodatkowe pakiety wykorzystywane w pracy                 %
+% ======================================================== %
+
+\usepackage{lipsum}
+
+% ======================================================== %
+% Zasadnicza część dokumentu                               %
+% ======================================================== %
+
+\begin{document}
+
+% Strona tytułowa
+\maketitle
+% Oświadczenie
+\makestatement
+
+% Blok abstraktu w języku polskim
+\begin{streszczenie}
+\lipsum[1]
+
+\paragraph{Słowa kluczowe:} klasa
+\end{streszczenie}
+
+% Opcjonalny blok dedykacji
+\begin{dedykacja}
+Tu możesz umieścić swoją dedykację.
+\end{dedykacja}
+
+% Spis treści
+\tableofcontents
+
+% ======================================================== %
+% Właściwa część pracy                                     %
+% ======================================================== %
+
+\chapter{Wprowadzenie}
+
+\section{Opis Projektu}
+
+“Gen-Mat” jest to nowy serwis webowy do generowania i publikacji sprawdzianów z matematyki na poziomie szkół ponadpodstawowych. Głównym jego zadaniem jest pomóc grupie docelowej (nauczycielom matematyki) oszczędzić cenny czas, poprzez uproszczenie procesu tworzenia sprawdzianu. Nauczyciel zostanie odciążony z wymyślania i pisania zadań do sprawdzianu. Do jego dyspozycji przeznaczone są zadania zawarte w naszej bazie danych. Czynność, którą nauczyciel musi wykonać to wyszukanie poszczególnych zadań oraz przeniesienie ich na sprawdzian.
+
+Atutem naszego generatora jest możliwość podzielenia sprawdzianu na grupy, dzięki czemu ograniczone zostanie oszukiwanie podczas pisania sprawdzianu.
+
+Kolejną wygodną opcją jest pominięcie wyboru zadań i zdanie się na automatyczny wybór generatora. Jeżeli nauczycielowi nie spodobają się zadania wybrane przez serwis, może je w kazdej chwili zamienić na inne.
+
+Na bieżący moment baza danych składać będzię się wyłącznie z zadań zaczerpniętych z arkuszy Centralnej Komisji Egzaminacyjnej, ponieważ wymyślanie zadań przez założycieli serwisu wiązałoby się z bardzo dużym nakładem pracy oraz ryzykiem niskiej jakości zadań pod względem metytorycznym jak i edukacyjnym. 
+
+Aby wyeliminować ryzyko niewystarczającej ilości zadań, wprowadzona została możliwość dodawania zadań bezpośrednio przez nauczycieli, aby każdy z nich mógł stworzyć swój idealny sprawdzian. W trosce o prywatność naszych użytkowników, każdy z nich będzie miał możliwość decyzji czy chce podzielić się z innymi nauczycielami stworzynym przez siebie zadaniem. Zadania dodane do bazy danych będą również weryfikowane przez osobę do tego przeznaczoną, aby nie zawierały treści, które mogą być nieodpowiednie w jakikolwiek sposób.
+
+Zespół podzielony na dwie grupy dwuosobowe. Jedna z nich odpowiedzialna jest za Frontend, a druga za Backend. Zespół obrał metodyke pracy Scrum. Zadania są przypisywane przez Scrum Mastera na podstawie umiejętności danego członka zespołu. Następnie, co jakiś czas sprawdzany jest postęp danego zadania na podstawie tzw. “Task Review”. Ostatnim punktem  jest testowanie, czy zostało wykonane w sposób poprawny oraz czy nie pojawiły się jakiekolwiek błędy.
+
+
+\section{Podział prac}
+
+\begin{itemize}
+\item Damian Kuich
+\begin{itemize}
+\item Implementacja aplikacji serwerowej API
+\item Zarządzanie dokumentacją
+\item Pomoc przy tworzeniu bazy danych na potrzeby aplikacji API
+\item Reprezentatywna rola przed klientem
+\item Projektowanie architektury aplikacji serwerowej
+\item Komunikacja na linii zespół - klient(nauczyciele matematyki dla szkół ponadpodstawowych, jak i podstawowych). Komunikacja odbywała się mailowo, bądź przy pomocy portali społecznościowych(np. facebook).
+\end{itemize}
+\item Mikołaj Kowalczyk
+\begin{itemize}
+\item Implementacja aplikacji serwerowej API
+\item Zarządzanie dokumentacją
+\item Stworzenia bazy danych na potrzeby aplikacji API
+\item Projektowanie architektury aplikacji serwerowej
+\end{itemize}
+\item Łukasz Kubiak
+\begin{itemize}
+\item Implementacja aplikacji webowej
+\item Obsługa API i formularzy.
+\item Zarządzanie dokumentacją
+\item Projektowanie architektury aplikacji webowej
+\end{itemize}
+\item Mateusz Michalski
+\begin{itemize}
+\item Projektowanie interface’u użytkownika
+\item Zarządzanie dokumentacją
+\item Projektowanie architektury aplikacji webowej
+\end{itemize}
+\end{itemize}
+
+
+\section{Podział Pracy Inżynierskiej}
+
+Kolejne rozdziały pracy dyplomowej opisują zagadnienia, z którymi zespół zapoznał
+się podczas tworzenia projektu inżynierskiego.
+
+\begin{itemize}
+\item \textbf{Rozdział 1:} "Zasady tworzenia i historia REST API"
+
+
+Autor: Damian Kuich
+
+Rozdział zawierał będzie m.in.:
+
+
+\begin{itemize}
+\item Historia REST API
+\item Python, a REST API
+\item Założenia architektury REST 
+\item Różnice pomiędzy API, a REST API
+\item Zasady
+\item Obługiwanie błędów
+\item REST API w projekcie "Gen-Mat"
+\end{itemize}
+
+\item \textbf{Rozdział 2:} "Projektowanie i implementacja bazy danych na przykładzie platformy do generowania i publikacji sprawdzianów z matematyki"
+
+
+Autor: Mikołaj Kowalczyk
+
+
+Rozdział zawierał będzie m.in.:
+
+
+\begin{itemize}
+\item Porównanie wybranych systemów bazodanowych
+\item Opis używanego systemu PostgreSQL
+\item Opis modeli zawartych w bazie danych
+\item Wyjaśnienie relacji między tabelami dlaczego relacje są przydatne bazie danych
+\item Konsekwencje usuwania danych powiązanych z różnymi tabelami
+\item Opis czynności związanych z zabezpieczeniem spójności danych
+\end{itemize}
+\item \textbf{Rozdział 3:} "Tworzenie projektu graficznego i osadzenie go w serwisie przy pomocy Material-UI"
+
+
+Autor: Łukasz Kubiak
+
+
+\begin{itemize}
+\item Co to jest język HTML
+\item Kaskadowe Arkusze Stylów
+\item Definiowanie właściwości CSS w JSON
+\item Tworzenie klas w makeStyles
+\end{itemize}
+\item \textbf{Rozdział 4:} "React jako narzędzie do tworzenia interfejsu użytkownika"
+
+Rozdział zawierał będzie m.in.:
+
+Autor: Mateusz Michalski
+
+\begin{itemize}
+\item Czym jest React
+\item Podstawowe pojęcia Reacta
+\item Zaawansowane pojęcia Reacta
+\item Budowanie interfejsu przy pomocy komponentów
+\item Przydatne biblioteki
+\item JSX
+\item Podsumowanie
+\end{itemize}
+\end{itemize}
+
+
+\section{Opis Technologii}
+Serwis “Gen-Mat” korzysta z szerokiego zakresu technologii. Produkt oparty jest w szczególności na dwóch językach: Pythonie w wersji 3 i JavaScritp'cie w wersji. Głównym czynnikiem, który kierował nami przy wyborze technologii było doświadczenie członków zespołu przy projektowaniu systemów opartych na danych językach programowania. Również ważnym aspektem była dla nas prostota przy implementacji naszych założeń projektowych i funkcjonalności.. Podstawą naszego projektu jest, też serwer oparty na serwisie Heroku. Umożliwia nam on szybkie i łatwe wdrażanie serwisu na etap produkcyjny, zachowując przy tym wysoką jakość świadczonych usług hostingowych. Projekt nasz jako aplikacja webowa, podzielony został na dwie główne części. Część backend’ową oraz część frontend’ową.  
+
+Backend odpowiedzialny jest za to czego użytkownik korzystający z naszego serwisu nie widzi. To są takie czynności, jak np. naprawa i utrzymywanie bazy danych, obsługa użytkowników, obsługa tokenów, spajanie zadań do utworzenia sprawdzianów etc. . Wykorzystuje on Pythonowy framework Django, który umożliwia nam w łatwy i prosty sposób stworzenie wysokiej jakości produktu. W pierwszej iteracji produktu podstawową bazą danych była MariaDB, jednakże wraz z rozwojem została ona zmieniona. Aktualnie serwis nasz korzysta z baz danych udostępnionych na Heroku, które operują na silniku PostgreSQL.   
+
+Frontend za to odpowiedzialny jest za część wizualną projektu. Obsługuję on np. wszystkie zapytania wysyłane przez użytkowników, przetwarzanie danych wysyłanych z bazy danych i wyświetlanie ich, komunikację z bazą danych za pomocą API, łączenie się z serwerem za pomocą HTTP, obsługa sesji uzytkownika etc . Ta część naszego projektu opiera się na frameworku React, Który bazuje na języku JavaScript. Projekt nasz korzysta, też z frameworka Django REST do tworzenia RESTful API.
+
+
+\section{Wdrożenie Serwisu}
+
+Opracowywany system informatyczny przeszedł kolejne kroki wdrożeniowe:
+\begin{itemize}
+\item Przygotowanie dokumentacji systemu, dokumentacji dla użytkownika
+\item Przygotowanie i skonfigurowanie niezbędnych środowisk, infrastruktury technicznej
+\item Przetestowanie systemu przez grupę testową potencjalnych użytkowników
+\item Przygotowanie systemu do wprowadzenia go na serwer zewnętrzny
+\item Udostępnienie systemu użytkownikom, użytkownicy mogą się dostać na serwis wchodząc w link, pod którym znajduje się nasz serwis. System został całościowo wdrożony przy pomocy platformy chmurowej Heroku.
+\end{itemize}
+\end{document}

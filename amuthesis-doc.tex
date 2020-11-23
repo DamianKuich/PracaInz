@@ -1,0 +1,326 @@
+\documentclass[oneside]{amuthesis}
+
+\usepackage[utf8]{inputenc}
+
+\author{Bartłomiej Przybylski}
+\album{123456}
+\titlePL{Krótki podręcznik użytkownika klasy \texttt{amuthesis}}
+\titleEN{A short user manual for \texttt{amuthesis} class}
+\type{magisterska}
+\faculty{WMiI}
+\field{matematyka}
+\specialty{}
+\supervisor{prof. UAM dr. hab. Jana Nowaka}
+\date{Poznań, wrzesień 2017}
+
+\usepackage{lipsum}
+
+\begin{document}
+\maketitle
+
+\begin{streszczenie}
+Klasa \texttt{amuthesis} została stworzona z myślą o studentach ostatnich lat studiów licencjackich, inżynierskich i magisterskich na Wydziale Matematyki i~Informatyki Uniwersytetu im. Adama Mickiewicza w Poznaniu, choć równie dobrze może być wykorzystywana na innych uczelniach. Dobrym zwyczajem jest bowiem składać prace dyplomowe z wykorzystaniem systemu \LaTeX{} i~bynajmniej nie dotyczy to wyłącznie prac z matematyki i informatyki. Niestety, samodzielnie przygotowanie wszystkich elementów składowych pracy dyplomowej wymaga nie tylko zaawansowanej znajomości systemu \LaTeX{} oraz zasad rządzących składem tekstu, ale przede wszystkim czasu. Klasa \texttt{amuthesis} dostarcza więc wszystko to, co jest potrzebne do stworzenia pięknej pracy dyplomowej w~języku polskim lub w~języku angielskim.
+\end{streszczenie}
+
+\begin{dedykacja}
+Klasę \texttt{amuthesis} dedykuję wszystkim tym, dla których wygląd ma równie istotne znaczenie co wnętrze.
+\end{dedykacja}
+
+\tableofcontents
+
+\chapter{Klasa \texttt{amuthesis}}
+
+Główny plik klasy \texttt{amuthesis}, nazwany \texttt{amuthesis.cls}, zawiera definicje poleceń i otoczeń przydatnych w czasie tworzenia pracy dyplomowej. Opiera się przy tym na standardowych klasach: \texttt{book} dla prac w języku angielskim oraz \texttt{mwbk} dla prac w języku polskim. Klasa \texttt{amuthesis} współpracuje z najpopularniejszymi silnikami \LaTeX{}a:
+\begin{itemize}
+  \item \texttt{pdflatex},
+  \item \texttt{xelatex},
+  \item \texttt{lualatex}.
+\end{itemize}
+
+\section{Opcje}
+
+Klasa \texttt{amuthesis} wspiera parametry opcjonalne, których przekazanie powoduje dostosowanie finalnego dokumentu do bieżacych potrzeb. Tabela~\ref{table:amuthesis-opcje} zawiera ich uproszczony opis.
+
+\begin{table}[p]
+  \caption{Opcje klasy \texttt{amuthesis}}
+  \label{table:amuthesis-opcje}
+  \centering
+  \begin{tabular}{ccp{9cm}}
+    \toprule
+    Opcja & Domyślnie & Opis\\
+    \midrule
+    \texttt{polski} & Tak & Do pracy zostanie dołączony pakiet \texttt{polski}, a sam dokument zostanie oparty na klasie \texttt{mwbk}. W szczególności oznacza to, że wszystkie stosowane nazwy będą polskojęzyczne (np. ,,Rozdział''), a skład tekstu odbędzie się zgodnie z~polskimi normami.\\
+    \midrule
+    \texttt{english} & & Praca zostanie oparta na klasie \texttt{book}. Wszystkie stosowane nazwy będą anglojęzyczne (np. ,,Chapter''), a~skład tekstu odbędzie się zgodnie z~anglosaskimi normami.\\
+    \midrule
+    \texttt{logo} & & Nazwa uczelni na początku strony tytułowej zostanie zastąpiona logiem uczelni (plik \texttt{uam-logo.pdf}).\\
+    \midrule
+    \texttt{indent} & & Pierwszy akapit w ramach paragrafu zostanie wcięty. Jeśli do klasy nie zostanie przekazana opcja \texttt{indent}, to pierwsze akapity nie będą wcinane, niezależnie od języka, w którym składany jest dokument.\\
+    \midrule
+    \texttt{lineno} & & Wynikowy dokument zostanie wzbogacony o numerację wierszy.\\
+    \midrule
+    \texttt{oneside} & & Wygenerowany dokument będzie przygotowany do druku jednostronnego lub publikacji elektronicznej.\\
+    \midrule
+    \texttt{twoside} & Tak & Wygenerowany dokument będzie przygotowany do druku dwustronnego. Poszczególne części składowe pracy (np. rozdziały) będą się rozpoczynać zawsze od nieparzystej strony.\\
+    \midrule
+    \texttt{leftblank} & & Jeśli do klasy przekazano dodatkowo opcję \texttt{twoside}, to na pustej stronie przed kolejną częścią składową pracy (o ile taka występuje) zostanie umieszczony tekst ,,Ta strona jest pusta.'' (,,This page intentionally left blank.''). Tekst ten można zmienić korzystając z~polecenia \verb`\leftblank`.\\
+    \midrule
+    \texttt{swapthm} & & W stosowanych otoczeniach numerowanych, ich nazwa i numer zostaną zamienione miejscami (numer zostanie umieszczony przed nazwą).\\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\section{Otoczenia}
+
+Klasa \texttt{amuthesis} dostarcza szereg standardowych otoczeń, które mogą być wykorzystywane w tworzonym dokumencie. Tabela~\ref{table:amuthesis-otoczenia} zawiera ich pełną listę. Każde z~takich otoczeń występuje pod jednym z dwóch oznaczeń, ale stosowana w~dokumencie nazwa zależy wyłącznie od języka dokumentu. Elementy oddzielone w tabeli poziomą linią współdzielą numerację w ramach rozdziałów.
+
+\begin{table}
+  \caption{Otoczenia zdefiniowane w klasie \texttt{amuthesis}}
+  \label{table:amuthesis-otoczenia}
+  \centering
+  \begin{tabular}{lll}
+    \toprule
+    Oznaczenia & Nazwa (pl) & Nazwa (en)\\
+    \midrule
+    \texttt{twierdzenie} / \texttt{theorem} & Twierdzenie & Theorem\\
+    \texttt{dowod} / \texttt{proof} & Dowód & Proof\\
+    \texttt{lemat} / \texttt{lemma} & Lemat & Lemma\\
+    \texttt{hipoteza} / \texttt{statement} & Hipoteza & Statement\\
+    \texttt{stwierdzenie} / \texttt{proposition} & Stwierdzenie & Proposition\\
+    \texttt{wniosek} / \texttt{corollary} & Wniosek & Corollary\\
+    \texttt{spostrzezenie} / \texttt{remark} & Spostrzeżenie & Remark\\
+    \texttt{obserwacja} / \texttt{note} & Obserwacja & Note\\
+    \midrule
+    \texttt{definicja} / \texttt{definition} & Definicja & Definition\\
+    \midrule
+    \texttt{przyklad} / \texttt{example} & Przykład & Example\\
+    \midrule
+    \texttt{zadanie} / \texttt{task} & Zadanie & Task\\
+    \texttt{cwiczenie} / \texttt{exercise} & Ćwiczenie & Exercise\\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\section{Dodatkowe pakiety}
+
+Jeśli dokument jest oparty na klasie \texttt{amuthesis}, to można w nim korzystać z~następujących pakietów bez dodatkowych działań:
+
+\begin{verbatim}
+fontspec  geometry  hyperref  xcolor    amsmath   amssymb
+amsthm    graphicx  microtype booktabs  array     fancyhdr
+tabularx  longtable makecell  verbatim  listings
+\end{verbatim}
+
+\chapter{Podstawowe elementy dokumentu}
+
+Plik \texttt{thesis.tex} zawiera opis pustego dokumentu tworzonego w oparciu o klasę \texttt{amuthesis}. Możesz go uzupełnić treścią według własnego uznania. Poniżej zaprezentowano kilka przykładowych fragmentów kodu.
+
+\section{Tekst ciągły}
+
+\begin{verbatim}
+Klasa \texttt{amuthesis} została stworzona z myślą
+o~\textbf{studentach} ostatnich lat studiów
+\emph{licencjackich}, \emph{inżynierskich}
+i~\emph{magisterskich} na Wydziale Matematyki i~Informatyki
+Uniwersytetu im.~Adama Mickiewicza w Poznaniu (\dots)
+\end{verbatim}
+
+\noindent Klasa \texttt{amuthesis} została stworzona z myślą
+o~\textbf{studentach} ostatnich lat studiów
+\emph{licencjackich}, \emph{inżynierskich} i
+\emph{magisterskich} na Wydziale Matematyki i~Informatyki
+Uniwersytetu im. Adama Mickiewicza w Poznaniu (\dots)
+
+\section{Listy}
+
+\begin{verbatim}
+\begin{enumerate}
+  \item Podpunkt A
+  \begin{itemize}
+    \item Podpunkt A1
+    \item Podpunkt A2
+  \end{itemize}
+  \item Podpunkt B
+  \item Podpunkt C
+\end{enumerate}
+\end{verbatim}
+
+\begin{enumerate}
+  \item Podpunkt A
+  \begin{itemize}
+    \item Podpunkt A1
+    \item Podpunkt A2
+  \end{itemize}
+  \item Podpunkt B
+  \item Podpunkt C
+\end{enumerate}
+
+\section{Obrazy i odnośniki do nich}
+
+\begin{verbatim}
+\begin{figure}
+  \centering
+  \includegraphics[width=6cm]{uam-logo.pdf}
+  \caption{Przykładowy obraz}
+  \label{obraz-przyklad}
+\end{figure}
+\end{verbatim}
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=6cm]{uam-logo.pdf}
+  \caption{Przykładowy obraz}
+  \label{obraz-przyklad}
+\end{figure}
+
+\begin{verbatim}
+Logo Uniwersytetu im.~Adama Mickiewicza w Poznaniu zostało
+umieszczone na rysunku~\ref{obraz-przyklad}, który znajduje się
+na stronie~\pageref{obraz-przyklad}.
+\end{verbatim}
+
+\noindent Logo Uniwersytetu im.~Adama Mickiewicza w Poznaniu zostało
+umieszczone na rysunku~\ref{obraz-przyklad}, który znajduje się
+na stronie~\pageref{obraz-przyklad}.
+
+\section{Tabele i odnośniki do nich}
+
+\begin{verbatim}
+\begin{table}
+  \caption{Przykładowa tabela}
+  \label{tabela-przyklad}
+  \centering
+  \begin{tabular}{lrr}
+    \toprule
+    Produkt & Cena netto & Stawka VAT\\
+    \midrule
+    Książka & 30,00 & 5\%\\
+    Napoje & 10,00 & 8\%\\
+    Jedzenie & 12,00 & 12\%\\
+    \bottomrule
+  \end{tabular}
+\end{table}
+\end{verbatim}
+
+\begin{table}[h]
+  \caption{Przykładowa tabela}
+  \label{tabela-przyklad}
+  \centering
+  \begin{tabular}{lrr}
+    \toprule
+    Produkt & Cena netto & Stawka VAT\\
+    \midrule
+    Książka & 30,00 & 5\%\\
+    Napoje & 10,00 & 8\%\\
+    Jedzenie & 12,00 & 12\%\\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\begin{verbatim}
+Dane o cenach produktów zostały zebrane w tabeli
+\ref{tabela-przyklad}, którą możesz zobaczyć na stronie
+\pageref{tabela-przyklad}.
+\end{verbatim}
+
+\noindent Dane o cenach produktów zostały zebrane w tabeli
+\ref{tabela-przyklad}, którą możesz zobaczyć na stronie
+\pageref{tabela-przyklad}.
+
+\section{Przypisy dolne}
+
+\begin{verbatim}
+Przypis dolny\footnote{To jest przypis dolny.} umieszczany
+jest na dole tej strony, na której wywołane zostało
+polecenie \texttt{footnote}.
+\end{verbatim}
+
+\noindent Przypis dolny\footnote{To jest przypis dolny.} umieszczany
+jest na dole tej strony, na której wywołane zostało
+polecenie \texttt{footnote}.
+
+\section{Wzory matematyczne}
+
+Wzory matematyczne mogą być umieszczane albo jako część tekstu, albo jako osobny element. Chociaż poniższe przykłady proponują przechodzenie do trybu matematycznego za pomocą sekwencji \verb|$| i \verb|$$|, to równie dobrze można użyć do tego celu poleceń \verb|\(| (i \verb|\)|) oraz \verb|\[| (i \verb|\]|), odpowiednio.
+
+\subsection{Wzory wstawione}
+
+\begin{verbatim}
+Zgodnie z twierdzeniem Pitagorasa, suma kwadratów długości
+przyprostokątnych trójkąta prostokątnego równa jest kwadratowi
+długości jego przeciwprostokątnej. Możemy więc napisać, że
+$a^2 + b^2 = c^2,$ jeśli $a$, $b$ i $c$ opisują
+te wartości, kolejno.
+\end{verbatim}
+
+\noindent Zgodnie z twierdzeniem Pitagorasa, suma kwadratów długości
+przyprostokątnych trójkąta prostokątnego równa jest kwadratowi
+długości jego przeciwprostokątnej. Możemy więc napisać, że
+$a^2 + b^2 = c^2,$ jeśli $a$, $b$ i $c$ opisują
+te wartości, kolejno.
+
+\subsection{Wzory wystawione}
+
+\begin{verbatim}
+Zgodnie z twierdzeniem Pitagorasa, suma kwadratów długości
+przyprostokątnych trójkąta prostokątnego równa jest kwadratowi
+długości jego przeciwprostokątnej. Możemy więc napisać, że
+$$a^2 + b^2 = c^2,$$ jeśli $a$, $b$ i $c$ opisują
+te wartości, kolejno.
+\end{verbatim}
+
+\noindent Zgodnie z twierdzeniem Pitagorasa, suma kwadratów długości
+przyprostokątnych trójkąta prostokątnego równa jest kwadratowi
+długości jego przeciwprostokątnej. Możemy więc napisać, że
+$$a^2 + b^2 = c^2,$$ jeśli $a$, $b$ i $c$ opisują
+te wartości, kolejno.
+
+\section{Otoczenia}
+
+\begin{verbatim}
+\begin{twierdzenie}
+Jeśli $a$ i $b$ reprezentują długości przyprostokątnych
+trójkąta prostokątnego, a $c$ długość jego przeciwprostokątnej,
+to $a^2 + b^2 = c^2.$
+\end{twierdzenie}
+\end{verbatim}
+
+\begin{twierdzenie}
+Jeśli $a$ i $b$ reprezentują długości przyprostokątnych
+trójkąta prostokątnego, a $c$ długość jego przeciwprostokątnej,
+to $a^2 + b^2 = c^2.$
+\end{twierdzenie}
+
+\section{Wyciągi z kodów źródłowych}
+
+Wyciągi kodów źródłowych można umieszczać w dokumencie z wykorzystaniem otoczenia \texttt{lstlisting}. Klasa \texttt{amuthesis} wprowadza własny styl formatowania wyciągów. Można go jednak zmodyfikować korzystając z opcji pakietu \texttt{listings}.
+
+\begin{verbatim}
+\begin{lstlisting}[
+  language={C},
+  caption={Fragment pliku \texttt{cat.c}}
+]
+int main(){
+    char buf[128];
+    int n;
+    while ((n = read(0, buf, 128)) > 0)
+        write(1, buf, n);
+    return 0;
+}
+\end{lstlisting}
+\end{verbatim}
+
+\begin{lstlisting}[
+  language={C},
+  caption={Fragment pliku \texttt{cat.c}}
+]
+int main(){
+    char buf[128];
+    int n;
+    while ((n = read(0, buf, 128)) > 0)
+        write(1, buf, n);
+    return 0;
+}
+\end{lstlisting}
+
+\end{document}
