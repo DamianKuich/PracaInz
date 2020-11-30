@@ -156,18 +156,7 @@ się podczas tworzenia projektu inżynierskiego.
 
 Autor: Damian Kuich
 
-Rozdział zawierał będzie m.in.:
-
-
-\begin{itemize}
-\item Historia REST API
-\item Python, a REST API
-\item Założenia architektury REST 
-\item Różnice pomiędzy API, a REST API
-\item Zasady
-\item Obługiwanie błędów
-\item REST API w projekcie "Gen-Mat"
-\end{itemize}
+W rozdziale jako wstęp planuje rozpisać historie API. Główne pytania na które chce odpowiedzieć to kiedy, kto i po co. Porównam także różne rodzaje API, powoli uszczegółowiając to WebAPI. Mając już solidne podstawy zacznę wymieniać założenia architektury RESTful API i co dzieli API od bycia RESTful. Zawrę też w mym rozdziale główne zasady tworzenia i utrzymywania REST API. Od modelu dojrzałości Richardsona, kończąc na filtrowaniu, sortowaniu i stronnicowaniu. Pod koniec rozdziału porównam tworzenie RESTful API w paru językach programowania, podam jak obsługiwać błędy i osadzę całą pracę w ramach naszego projektu.  
 
 \item \textbf{Rozdział 2:} "Projektowanie i implementacja bazy danych na przykładzie platformy do generowania i publikacji sprawdzianów z matematyki"
 
@@ -175,47 +164,23 @@ Rozdział zawierał będzie m.in.:
 Autor: Mikołaj Kowalczyk
 
 
-Rozdział zawierał będzie m.in.:
+Rozdział zawierał będzie m.in. porównanie systemów bazodanowych MySQL, MS SQL Server, Oracle, PostgreSQL. Zawarte będą tam wady i zalety każdego systemu. Zostanie szczególnie opisany używany przez nas system PostgreSQL. Wymienione zostaną najważniejsze modele tabel oraz każdy z nich będzie szerzej opisany. W rozdziale zawarte będą wyjaśnienia relacji między tabelami oraz dlaczego są one przydatne w bazie danych. Jakie mogą być konsekwencje związane z usunięciem danych powiązanych z różnymi tabelami oraz co robić, aby owych konsekwencji uniknąć. 
 
-
-\begin{itemize}
-\item Porównanie wybranych systemów bazodanowych
-\item Opis używanego systemu PostgreSQL
-\item Opis modeli zawartych w bazie danych
-\item Wyjaśnienie relacji między tabelami dlaczego relacje są przydatne bazie danych
-\item Konsekwencje usuwania danych powiązanych z różnymi tabelami
-\item Opis czynności związanych z zabezpieczeniem spójności danych
-\end{itemize}
 \item \textbf{Rozdział 3:} "Tworzenie projektu graficznego i osadzenie go w serwisie przy pomocy Material-UI"
 
 
 Autor: Łukasz Kubiak
 
-
-\begin{itemize}
-\item Co to jest język HTML
-\item Kaskadowe Arkusze Stylów
-\item Definiowanie właściwości CSS w JSON
-\item Tworzenie klas w makeStyles
-\end{itemize}
+Rozdział „Projektowanie w Material-UI” zawiera opis podstawowych komponentów. Zostanie opisane stylowanie komponentów za pomocą makeStyles. Będą przykłady użycia Material-UI w naszym projekcie. Znajdzie się też porównanie Material-UI z boostrapem i SASS.
 \item \textbf{Rozdział 4:} "React jako narzędzie do tworzenia interfejsu użytkownika"
-
-Rozdział zawierał będzie m.in.:
 
 Autor: Mateusz Michalski
 
-\begin{itemize}
-\item Czym jest React
-\item Podstawowe pojęcia Reacta
-\item Zaawansowane pojęcia Reacta
-\item Budowanie interfejsu przy pomocy komponentów
-\item Przydatne biblioteki
-\item JSX
-\item Podsumowanie
-\end{itemize}
-\end{itemize}
+Rodział "React jako narzędzie do tworzenia interfejsu użytkownika" służy opisaniu javascriptowej biblioteki React.
+Opisze jej podstawowe oraz zaawansowane pojęcia. Rozdział będzie zawierał informacje na temat budowanie interfejsu użytkownika przy pomocy komponentów.
+Opisane zostaną także informacje o dodatkowych bibliotekach przydatnych do komunikacji z użytkownikiem.
 
-
+\end{itemize}
 \section{Opis Technologii}
 Serwis “Gen-Mat” korzysta z szerokiego zakresu technologii. Produkt oparty jest w szczególności na dwóch językach: Pythonie w wersji 3 i JavaScritp'cie w wersji. Głównym czynnikiem, który kierował nami przy wyborze technologii było doświadczenie członków zespołu przy projektowaniu systemów opartych na danych językach programowania. Również ważnym aspektem była dla nas prostota przy implementacji naszych założeń projektowych i funkcjonalności.. Podstawą naszego projektu jest, też serwer oparty na serwisie Heroku. Umożliwia nam on szybkie i łatwe wdrażanie serwisu na etap produkcyjny, zachowując przy tym wysoką jakość świadczonych usług hostingowych. Projekt nasz jako aplikacja webowa, podzielony został na dwie główne części. Część backend’ową oraz część frontend’ową.  
 
