@@ -105,9 +105,9 @@ Kolejną wygodną opcją jest pominięcie wyboru zadań i zdanie się na automat
 
 Na bieżący moment baza danych składać będzię się wyłącznie z zadań zaczerpniętych z arkuszy Centralnej Komisji Egzaminacyjnej, ponieważ wymyślanie zadań przez założycieli serwisu wiązałoby się z bardzo dużym nakładem pracy oraz ryzykiem niskiej jakości zadań pod względem metytorycznym jak i edukacyjnym. 
 
-Aby wyeliminować ryzyko niewystarczającej ilości zadań, wprowadzona została możliwość dodawania zadań bezpośrednio przez nauczycieli, aby każdy z nich mógł stworzyć swój idealny sprawdzian. W trosce o prywatność naszych użytkowników, każdy z nich będzie miał możliwość decyzji czy chce podzielić się z innymi nauczycielami stworzynym przez siebie zadaniem. Zadania dodane do bazy danych będą również weryfikowane przez osobę do tego przeznaczoną, aby nie zawierały treści, które mogą być nieodpowiednie w jakikolwiek sposób.
+Aby wyeliminować ryzyko niewystarczającej ilości zadań, wprowadzona została możliwość dodawania zadań bezpośrednio przez nauczycieli, aby każdy z nich mógł stworzyć swój idealny sprawdzian. W trosce o prywatność naszych użytkowników, każdy z nich będzie miał możliwość decydowania czy chce podzielić się z innymi nauczycielami stworzonym przez siebie zadaniem. Zadania dodane do bazy danych będą również weryfikowane przez osobę do tego przeznaczoną, aby nie zawierały treści, które mogą być nieodpowiednie w jakikolwiek sposób.
 
-Zespół podzielony na dwie grupy dwuosobowe. Jedna z nich odpowiedzialna jest za Frontend, a druga za Backend. Zespół obrał metodyke pracy Scrum. Zadania są przypisywane przez Scrum Mastera na podstawie umiejętności danego członka zespołu. Następnie, co jakiś czas sprawdzany jest postęp danego zadania na podstawie tzw. “Task Review”. Ostatnim punktem  jest testowanie, czy zostało wykonane w sposób poprawny oraz czy nie pojawiły się jakiekolwiek błędy.
+Zespół podzielony na dwie grupy dwuosobowe. Jedna z nich odpowiedzialna jest za Frontend, a druga za Backend. Zespół obrał metodyke pracy Scrum. Zadania są przypisywane przez Scrum Mastera na podstawie umiejętności danego członka zespołu. Następnie, co jakiś czas sprawdzany jest postęp danego zadania na podstawie tzw. “Task Review”. Ostatnim punktem jest testowanie, czy zostało wykonane w sposób poprawny oraz czy nie pojawiły się jakiekolwiek błędy.
 
 
 \section{Podział prac}
@@ -151,34 +151,32 @@ Kolejne rozdziały pracy dyplomowej opisują zagadnienia, z którymi zespół za
 się podczas tworzenia projektu inżynierskiego.
 
 \begin{itemize}
-\item \textbf{Rozdział 1:} "Zasady tworzenia i historia REST API"
+\item \textbf{Rozdział 1:} "Implementacja REST API z wykorzystaniem frameworka Django REST"
 
 
 Autor: Damian Kuich
 
-W rozdziale jako wstęp planuje rozpisać historie API. Główne pytania na które chce odpowiedzieć to kiedy, kto i po co. Porównam także różne rodzaje API, powoli uszczegółowiając to WebAPI. Mając już solidne podstawy zacznę wymieniać założenia architektury RESTful API i co dzieli API od bycia RESTful. Zawrę też w mym rozdziale główne zasady tworzenia i utrzymywania REST API. Od modelu dojrzałości Richardsona, kończąc na filtrowaniu, sortowaniu i stronnicowaniu. Pod koniec rozdziału porównam tworzenie RESTful API w paru językach programowania, podam jak obsługiwać błędy i osadzę całą pracę w ramach naszego projektu.  
+Rozdział rozpocznie się od przedstwienia różnych podejść do tworzenia API, ze szczególniem naciskiem na REST API. W rozdziale opisane też zostaną główne zasady tworzenia i utrzymywania REST API z wykorzystaniem frameworka Django REST, od modelu dojrzałości Richardsona, kończąc na filtrowaniu, sortowaniu i stronnicowaniu. Omówiona zostanie także obsługa błędów. 
 
-\item \textbf{Rozdział 2:} "Projektowanie i implementacja bazy danych na przykładzie platformy do generowania i publikacji sprawdzianów z matematyki"
+\item \textbf{Rozdział 2:} "Integracja projektu opartego o Django z bazą danych PostgreSQL"
 
 
 Autor: Mikołaj Kowalczyk
 
 
-Rozdział zawierał będzie m.in. porównanie systemów bazodanowych MySQL, MS SQL Server, Oracle, PostgreSQL. Zawarte będą tam wady i zalety każdego systemu. Zostanie szczególnie opisany używany przez nas system PostgreSQL. Wymienione zostaną najważniejsze modele tabel oraz każdy z nich będzie szerzej opisany. W rozdziale zawarte będą wyjaśnienia relacji między tabelami oraz dlaczego są one przydatne w bazie danych. Jakie mogą być konsekwencje związane z usunięciem danych powiązanych z różnymi tabelami oraz co robić, aby owych konsekwencji uniknąć. 
+Rozdział będzie zawierał porównanie systemów bazodanowych MySQL, MS SQL Server, Oracle oraz PostgreSQL. Opisane zostaną wady i zalety każdego systemu, ze szczególnym uwzględnieniem używanego przez nas systemu PostgreSQL. Opisany zostanie sposób modelowania danych przechowywanych w bazie danych po stronie frameworka Django. W rozdziale zawarte będą wyjaśnienia relacji między tabelami powstałymi w ramach projektu oraz wpływ tych relacji na wydajność systemu. Omówione zostaną także zagadnienia zachowania integralności i spójności danych. 
 
 \item \textbf{Rozdział 3:} "Tworzenie projektu graficznego i osadzenie go w serwisie przy pomocy Material-UI"
 
 
 Autor: Łukasz Kubiak
 
-Rozdział „Projektowanie w Material-UI” zawiera opis podstawowych komponentów. Zostanie opisane stylowanie komponentów za pomocą makeStyles. Będą przykłady użycia Material-UI w naszym projekcie. Znajdzie się też porównanie Material-UI z boostrapem i SASS.
+Rozdział będzie zawierał opis podstawowych komponentów biblioteki Material-UI, ze szczególnym uwzględnieniem formularzy w projekcie Gen-Mat. Zostanie opisane stylowanie komponentów za pomocą makeStyles. W rozdziale znajdzie się też porównanie Material-UI z boostrapem i SASS. 
 \item \textbf{Rozdział 4:} "React jako narzędzie do tworzenia interfejsu użytkownika"
 
 Autor: Mateusz Michalski
 
-Rodział "React jako narzędzie do tworzenia interfejsu użytkownika" służy opisaniu javascriptowej biblioteki React.
-Opisze jej podstawowe oraz zaawansowane pojęcia. Rozdział będzie zawierał informacje na temat budowanie interfejsu użytkownika przy pomocy komponentów.
-Opisane zostaną także informacje o dodatkowych bibliotekach przydatnych do komunikacji z użytkownikiem.
+W tym rozdziale opisana zostanie javascriptowa biblioteka React. Opisane zostaną w szczególności mechanizmy hooków, komponentów i ich właściwości, JSX, stanów, obsługi zdarzeń, renderowania warunkowego. Opisane zostaną mechanizmy komunikacji z API. Opisane zostaną także mechanizmy komunikacji z użytkownikiem. 
 
 \end{itemize}
 \section{Opis Technologii}
