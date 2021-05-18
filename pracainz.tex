@@ -2,10 +2,59 @@
 % Przeczytaj plik amuthesis-doc.pdf, aby poznać opcje      %
 % klasy `amuthesis`                                        %
 % ======================================================== %
-\documentclass[oneside,polski,logo]{amuthesis}
+\documentclass[oneside,polski,logo,indent]{amuthesis}
 
 % Zdefiniuj kodowanie pliku źródłowego (domyślnie utf8)
 \usepackage[utf8]{inputenc}
+\DeclareUnicodeCharacter{200B}{{\hskip 0pt}}
+\usepackage{authblk}
+\usepackage{float}
+\usepackage{enumerate}
+\usepackage{hyperref}
+\usepackage{multirow}
+\usepackage{adjustbox}
+\usepackage{xcolor}
+\usepackage{listings}
+\usepackage{enumitem}
+
+%quotes for python code%
+\let\oldquote\quote
+\let\endoldquote\endquote
+\renewenvironment{quote}[2][]
+  {\if\relax\detokenize{#1}\relax
+     \def\quoteauthor{#2}%
+   \else
+     \def\quoteauthor{#2~---~#1}%
+   \fi
+   \oldquote}
+  {\par\nobreak\smallskip\hfill(\quoteauthor)%
+   \endoldquote\addvspace{\bigskipamount}}
+
+\lstdefinestyle{DOS}
+{
+    backgroundcolor=\color{black},
+    basicstyle=\footnotesize\color{white}\ttfamily
+    fontsize{14}{15}\selectfont\ttfamily
+    extendedchars=true,
+    inputencoding=utf8,
+    language=Python, 
+    language=SQL,
+    xleftmargin=5pt,
+    xrightmargin=5pt
+}
+
+\lstdefinestyle{DOS}
+{
+    backgroundcolor=\color{black},
+    basicstyle=\footnotesize\color{white}\ttfamily
+    fontsize{14}{15}\selectfont\ttfamily
+    extendedchars=true,
+    inputencoding=utf8,
+    language=Python, 
+    language=SQL,
+    xleftmargin=5pt,
+    xrightmargin=5pt
+}
 
 % ======================================================== %
 % Dane autora i pracy                                      %
@@ -66,7 +115,6 @@
 % ======================================================== %
 % Zasadnicza część dokumentu                               %
 % ======================================================== %
-
 \begin{document}
 
 % Strona tytułowa
@@ -221,4 +269,1777 @@ Opracowywany system informatyczny przeszedł kolejne kroki wdrożeniowe:
 \item Przygotowanie systemu do wprowadzenia go na serwer zewnętrzny
 \item Udostępnienie systemu użytkownikom, użytkownicy mogą się dostać na serwis wchodząc w link, pod którym znajduje się nasz serwis. System został całościowo wdrożony przy pomocy platformy chmurowej Heroku.
 \end{itemize}
+
+\chapter{Implementacja REST API z wykorzystaniem frameworka Django REST}
+
+\section{Wstęp}
+Wstęp ma wprowadzić czytelnika w podstawowe definicje. Głównym zadaniem tego podroździału jest postawienie w pewnym sensie fundamentów do dalszego zrozumienia pracy. 
+
+\begin{center}
+\subsection{HTTP}
+\end{center}
+
+"\textbf{HTTP}(ang. \emph{Hypertext Transfer Protocol}) jest protokołem przesyłania dokumentów hipertekstowych. Jest to podstawowy protokół sieci \textbf{WWW}(ang. \emph{World Wide Web}), za pomocą którego przesyła się żądania udostępnienia dokumentów WWW i informacje o kliknięciu odnośnika oraz informacje z formularzy. Zadaniem stron WWW jest publikowanie informacji – natomiast protokół HTTP właśnie to umożliwia.
+
+\begin{center}
+\subsection{HTTP Request}
+\end{center}
+\textbf{Żądanie}(ang. \emph{Request}) w formie HTTP powinno posiadać cztery elementy:
+\begin{enumerate}
+\item \textbf{Metode HTTP}(ang. \emph{Request method}) - służy do określenia metody, którą chcemy wykorzystać na danym zasobie.
+\item \textbf{Nagłówek}(ang. \emph{Header}) - może skłądać się kilku części i ma za zadanie przechowywać dodatkowe infromacje o żądaniu.
+\item \textbf{Ścieżkę do zasobu}(ang. \emph{Resource path}) - URI, czyli ścieżka dostepu do zasobu.
+\item \textbf{Ciało}(ang. \emph{Body}) - Składuje się tu dodatkowe informacje, które później wykorzystywane są do edycji albo tworzenia zasobów po stronie serwera. Może być puste.
+\end{enumerate}
+
+
+\begin{lstlisting}[
+language={HTML},
+caption={Przykładowe żądanie HTTP}
+]
+POST news.com/articles
+Accept: application/json
+Body:
+{
+"article":{
+"title": "Some title",
+"author": "Damian Kuich",
+"text": "Something happened again",
+"date": "25/02/2019",
+  }
+}
+\end{lstlisting}
+
+\begin{center}
+\subsection{Metody HTTP}
+\end{center}
+Metoda HTTP jest częścią zapytania HTTP odpowiedzialną za określenie akcji, która ma zostać podjęta w wyniku zapytania HTTP. Istnieje siedem aktualnie najczęściej wykorzystywanych metod:
+
+\begin{enumerate}
+\item \textbf{GET} - Odczytuje reprezentację zasobu i powinno wyłącznie zwracać dane.
+\item \textbf{POST} - Wykorzystywane w celu przesyłania danych do wskazanego zasobu.
+\item \textbf{PUT} - Aktualizuje całą reprezentację zasobu z wykorzystaniem przesłanych danych.
+\item \textbf{PATCH} - Aktualizuje część reprezentacji zasobu z wykorzystaniem przesłanych danych.
+\item \textbf{DELETE} - Usuwa wskazany zasób lub kolekcje zasobów.
+\item \textbf{HEAD} - Pełni identyczną rolę jak GET, jednak w tym przypadku odpowiedź nie zawiera ciała, lecz nagłówki.
+\item \textbf{OPTIONS} - Zwraca infromację o możliwych opcjach dostępnych na danym zasobie.
+\end{enumerate}
+
+\begin{center}
+\subsection{Czym w zasadzie jest API ?}
+\end{center}
+\textbf{API}(ang. \emph{Application Programming Interface}) możemy najprościej przyrównać do rozmowy dwóch osób. Kiedy chcemy się dowiedzieć czegoś od drugiej osoby to wysyłamy do niej \textbf{prośbę}(ang. \emph{Request}) o infromacje w jakimś formacie np. może być to format będący zdaniem pytającym, a ona zwraca nam \textbf{odpowiedź}(ang. \emph{Response}) zawierającą pewne dane np. w formacie zdania twierdzącego. W skrócie API systematyzuje sposób rozmowy pomiędzy dwoma stronami. Istnieje wiele rodzajów API ale w tej pracy skupimy się na Web API, czyli API dla serwisów internetowych. 
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=14cm]{api.png}
+\caption{Przykład działania API\newline
+Źródło: https://techrevv.com/what-is-api-and-its-types/}
+\label{Cache}
+\end{figure}
+
+\begin{center}
+\subsection{Co to jest URI ?}
+\end{center}
+\textbf{URI}(ang. \emph{Uniform Resource Identifier}) jest to ciąg znaków identyfikujący jakiś zasób, który, na chwilą obecną dla uproszczenia, będziemy utożsamiać z jakąś informacją. Istnieje pięć głównym charakterystyk URI:
+\begin{enumerate}
+\item Ciąg znaków powinien być \textbf{zwięzły}, czyli nie może składać się ze spacji, tabulatorów i innych niepotrzebnych znaków.\newline
+\item Nasza infromacja może być \textbf{materialna}, czyli odwoływać się do elementu świata rzeczywistego np. budynku, osoby, ale także \textbf{abstrakcyjna}, czyli odwoływać się do np. usługi czy dokumentu sieci Web.\newline
+\item Identyfikator URI jest na stałe przypisany do danego zasobu. Powinien być \textbf{stabilny}, czyli nie zmieniać sie i nie znikać.\newline
+\item Użytkownik może \textbf{odwołać się} do identyfikatora URI i otrzymać treściwą infromację zwrotną.\newline
+\item Identyfikatory dokumentów sieci Web muszą być \textbf{jednoznaczne}, czyli nie powinny być mylone z identyfikatorami innych zasobów.\newline
+\end{enumerate}
+URI składa się z dwóch kompnentów. Pierwszym z nich jest \textbf{URL}(ang. \emph{Uniform Resource Locator}), który odnosi się do podzestawu URI. Oprócz identyfikacji zasobów, zapewnia on środki do ulokowania zasobu i opisuje podstawowy mechanizm dostępu (np. jego "położenie" w sieci). \textbf{URN}(ang. \emph{Uniform Resource Name}) to podzbiór identyfikatorów URI, które zawierają nazwę w danej przestrzeni, ale nie zawierają lokalizacji. Dokumentacja mówi nam też, że każdy lokator może być też identyfikatorem, czyli \textbf{każdy URL może być URI, ale istnieją URI, które nie są URL}.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=14cm]{uri.jpg}
+\caption{Przykład URI, URL i URN\newline
+Źródło: https://prateekvjoshi.com/2014/02/22/url-vs-uri-vs-urn/}
+\label{Cache}
+\end{figure}
+
+\begin{center}
+\subsection{Endpoints}
+\end{center}
+Mówiąc najprościej, \textbf{punkt końcowy}(ang. \emph{Endpoint}) to jeden koniec kanału komunikacyjnego. Gdy interfejs API współdziała z innym systemem, punkty tej komunikacji są traktowane jako punkty końcowe. W przypadku interfejsów API punkt końcowy może zawierać adres URL serwera lub usługi. Każdy punkt końcowy to lokalizacja, z której interfejsy API mogą uzyskać dostęp do zasobów potrzebnych do wykonywania swoich funkcji. Gdy interfejs API żąda informacji z aplikacji internetowej lub serwera, otrzymuje odpowiedź. Miejsce, do którego interfejsy API wysyłają żądania i gdzie znajdują się zasoby, nazywane są punktami końcowymi.
+
+\begin{lstlisting}[
+language={Python},
+caption={Przykładowe Endpointy}
+]
+https://somewebsite.org/name/{nameId} #Can be whole URL link
+/name/{nameId} #but don't have to
+\end{lstlisting}
+
+\section{REST oraz REST API}
+\begin{enumerate}
+\item{Historia REST i REST API}\newline
+
+W latach dziewięćdziesiątych nie istniały jeszcze żadne ustandaryzowane metody tworzenia API oraz ich używania. Najczęściej używanym protokołem był \textbf{SOAP}(ang. \emph{Simple Object Access Protocol}), który mimo posiadania w swej definicji słowa "\emph{Simple}" , był strasznie skomplikowany do tworzenia, przetwarzania i debugowania. Wymagał on ręcznego napisania pliku XML z wywołaniem \textbf{RPC}(ang. \emph{Remote Procedure Call}) w body. Po napisaniu trzeba było sprecyzować endpoint, przesłać metodą POST definicje w \textbf{kopercie}(ang. \emph{SOAP envelope}) co znajduje się w wiadomości, dla kogo jest przeznaczona i czy wiadomość jest obowiązkowa lub opcjonalna do danego endpointa.
+\begin{figure}[H]
+\centering
+\includegraphics[width=14cm]{SOAP.png}
+\caption{Przykładowe żądanie SOAP API\newline
+Źródło: https://blog.readme.com/the-history-of-rest-apis/}
+\label{SOAP API}
+\end{figure}
+Wszystko zmieniło się w 2000 roku, kiedy to grupka deweloperów pod kierownictwem \textbf{Roya Feldinga} postawiła sobie za cel utworzenie standardu, by każde dwa serwery mogły porozumiewać się pomiędzy sobą w prosty sposób. W tym samym roku ów lider wydał rozprawę doktorską pt. “\emph{Architectural Styles and the Design of Network-based Software}”, która to była zbiorem zasad nowej architektury nazwanej REST. Nowy standard opierał się na siedmiu głównych filarach:\newline 
+\begin{itemize}
+\item \textbf{Wydajność} - interakcje pomiędzy komponentami powinny być natychmiastowe.\newline
+\item \textbf{Skalowalność}  - umożliwiająca obsługę dużej ilości komponentów.\newline
+\item \textbf{Prostota} - ujednolicenie interfejsu.\newline
+\item \textbf{Modyfikowalność}  - możliwość komponentów do zmian w celu sprostania zmieniającym się potrzebom.\newline
+\item \textbf{Widoczność}  - przejrzysta komunikacja między komponentami.\newline
+\item \textbf{Przenośność} - możliwość przenoszenia kodu wraz z danymi.\newline
+\item \textbf{Niezawodność}  - odporność na awarie na poziomie systemu.\newline
+\end{itemize}
+
+\textbf{REST}, czyli \emph{The Representational State Transfe}r jest niczym innym jak architekturą dla systemów webowych, który prawie zawsze bazuje na protokole HTTP. Jest to zbiór pewnych dobrych praktyk, które mają działać jako drogowskaz przy tworzeniu skalowalnych aplikacji. \textbf{REST API} jest natomiast interfejsem definiującym w jaki sposób użytkownik może skomunikować się z systemem, uzyskać dostęp do zasobów oraz w jakim formacie je otrzymuje, którego to kształt jest zdefiniowany przez architekturę REST. 
+
+\section{Zasady REST}
+
+Systemy oparte na architekturze REST nazywamy RESTful, jeżeli spełniają pewne wymagania. Systemy RESTful charakteryzują się tym, że są stateless i mają mocno podkreśloną granicę pomiędzy Klientem, a Serwerem. Roy Fielding podał sześć głównych cech, które powinny zawierać systemy oparte o architekturę REST:\newline  
+
+\begin{enumerate}
+\item \textbf{Uniform Interface} - Serwer powinien udostępniać jednolite API, które będzie klarowne dla wszystkich systemów komunikujących się z nim. Dane powinny być w tym samym formacie i zawierać taki sam zakres. Interfejs powinien spełniać wymogi dla wielu urządzeń i aplikacji. Zasoby w systemie powinny mieć jeden Uniform Resource Identifier, który pozwalałby na wymianę danych i powinny być łatwo dostępne przez np. HTTP request GET.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=14cm]{restarch.jpg}
+\caption{Przykład REST API opartej na architekturze REST}
+\label{REST API}
+\end{figure}
+
+Zasada ta zawiera jeszcze cztery reguły, który pomagają nam uprościć architekturę: 
+\begin{enumerate}
+\item \textbf{Resource identification in requests} - Sposób reprezentacji zasobu może być różny i odłączny od samego zasobu np. serwer nie wysyła danych prosto odczytanych z bazy tylko w formacie JSON albo XML.\newline  
+
+\item \textbf{Resource manipulation through representations}  - Po otrzymaniu reprezentacji zasobów wraz z jego metadanymi od serwera, klient (jeśli ma do tego uprawnienia) może modyfikować oraz usuwać zasoby.\newline  
+
+\item \textbf{Self-descriptive messages} - Odpowiedź serwera powinna zawierać wystarczającą ilość informacji, aby serwer mógł ją obsłużyć np. poprzez wartość "media type" (inaczej "MIME type").\newline  
+
+\item \textbf{Hypermedia as the engine of application state} (HATEOAS) - HATEOAS jest ograniczeniem architektury aplikacji REST, która sprawia, że architektura stylu RESTful jest inna od większości innych architektur. Termin "hypermedia" odnosi się do wszelkich treści zawierających łącza do innych form mediów, takich jak obrazy, filmy i teksty. Styl architektoniczny REST pozwala nam używać linków hipermedialnych w treści odpowiedzi. Pozwala klientowi dynamicznie przechodzić do odpowiednich zasobów korzystając z łącz hipermedialnych. Poruszanie się po łączach hipermedialnych jest koncepcyjnie takie samo, jak przeglądanie stron internetowych przez użytkownika, klikając odpowiednie hiperłącza, aby osiągnąć ostateczny cel. Najlepiej zobrazować to na przykładzie Graph API od Facebooka np. korzystając z przykładowej odpowiedzi z ichniejszej dokumentacji. Niektóre wartości zostały skrócone dla przejrzystości: 
+
+\begin{lstlisting}[
+caption={Odpowiedź od Graph API}
+]
+{
+  "feed": {
+    "data": [
+      {
+        "created_time": "2017-12-12T01:24:21+0000",
+        "message": "This picture of my grandson with ...",
+        "id": "820882001277849_1809387339093972"
+      },
+      {
+        "created_time": "2017-12-11T23:40:17+0000",
+        "message": ":)",
+        "id": "820882001277849_1809316002434439"
+      },
+      {
+        "created_time": "2017-12-11T23:31:38+0000",
+        "message": "Thought you might enjoy this...",
+        "id": "820882001277849_1809310929101613"
+      }
+    ],
+    "paging": {
+      "cursors": {
+        "before": "Q2c4U1pXNTBYM0YxWlhKNVgzTjBiM0...",
+        "after": "Q2c4U1pXNTBYM0YxWlhKNVgzTjBiM0..."
+      },
+      "next": "https://graph.facebook.com/820882001277849/feed?access_token=valid_token_goes_here"
+    }
+  },
+  "id": "820882001277849"
+ }
+}
+\end{lstlisting}
+
+W sekcji paging, pod kluczem next widnieje link, który poprowadzi nas do kolejnych wyników.\newline 
+\end{enumerate}
+
+\item \textbf{Client-Serwer}
+
+Powinna być widoczna granica pomiędzy klientem, a serwerem. Oznacza to, że klient i serwer mogą rozwijać się bez ingerencji pomiędzy sobą. Podział, pomaga w realizacji ww. Uniform Interface, a także zwiększa możliwości skalowania i rozszerzalność, a obsługa błędów jest znacznie łatwiejsza. Jeżeli na przykład dokonamy jakiejś zmiany w aplikacji pisanej dla systemu iOS (to będzie nasz klient), to zmiana ta nie powinna w żaden sposób wpływać na aplikacje serwerową (strukturę bazy danych itp.). Tak samo powinno to działać w drugą stronę. 
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=14cm]{rest.jpeg}
+\caption{REST w prosty sposób pomaga deweloperom w planowaniu interakcji pomiędzy niezależnymi systemami}
+\label{REST}
+\end{figure}
+
+\item \textbf{Stateless} - Według tego założenia wszystkie interakcje pomiędzy klientem, a serwerem powinny bezstanowe. Oznacza to, iż serwer nie zapisuje żadnych stanów aplikacji klienta, a jedynie przetwarza informacje wysyłane przez niego. Każde żądanie powinno być przetwarzane jako nowe i zawierać komplet informacji. Jeżeli klient musi być stanowy, jak np. przy logowaniu, to każde żądanie powinno zawierać informacje by wykonać je wykonać wraz z danymi do autoryzacji i uwierzytelniania.\newline 
+
+\item \textbf{Cacheable} - odpowiedź, którą użytkownik otrzyma z REST API musi jasno definiować, czy ma ona być cacheable czy non-cacheable. Ma to znaczenie przy danych, które bardzo szybko stają się nieaktualne oraz przy danych, które aktualizują się relatywnie rzadko – nie ma sensu na przykład cache’ować współrzędnych geograficznych pędzącego samolotu, natomiast już jego kolor czy nazwę już tak.\newline
+
+\item \textbf{Layered System} - REST pozwala na odseparowanie warstw. Możemy wdrożyć nasze API na serwer A, przechowywać dane na serwerze B i przetwarzać żądania na serwerze C. Klient nie wie o zewnętrznych usługach i serwisach, z których korzysta serwer. Pozwala to na rozbicie serwisu na wiele mikroserwisów, które można łatwo aktualizować. Dzięki temu zachowujemy transparentność i separację logiki od warstwy WWW. Niestety takie rozwiązanie ma pewne problemy, ponieważ może wprowadzać opóźnienia przez potrzebę komunikacji pomiędzy różnymi częściami naszej aplikacji.\newline
+
+\item \textbf{Code-On-Demand} - Jest to zasada, która jest opcjonalna, ponieważ prawie zawsze będziemy wysyłać dane w statycznej formie, jak np. XML albo JSON. Nasz serwis może wysyłać gotowe fragmenty kodu np. skrypty JavaScript do ich przetworzenia. 
+
+\section{Podstawowy element REST API, czyli zasoby}
+
+\begin{quote}{Roy Fielding}
+The key abstraction of information in REST is a resource. Any information that can be named can be a resource: a document or image, a temporal service (e.g. “today’s weather in Los Angeles”), a collection of other resources, a non-virtual object (e.g., a person), and so on. In other words, any concept that might be the target of an author’s hypertext reference must fit within the definition of a resource. A resource is a conceptual mapping to a set of entities, not the entity that corresponds to the mapping at any particular point in time.
+\end{quote}
+
+\begin{center}
+\subsection{Czym jest zasób?}
+\end{center}
+
+\textbf{Zasób}(ang. \emph{Resource}) jest elemenetarną częścią REST API. Podczas interakcji z API właśnie je wykorzystujemy. Czym jest więc zasób ? Pytanie to nie jest tak łatwe do odpowiedzienia, ponieważ zasób jest to pojęcie abstrakcyjne. Dowolna informacja, która może posiadać nazwę, może być zasobem. Dlatego też przyjęto kilka podstawowych kryteriów by można było nazwać daną informację zasobem:\newline
+
+\begin{enumerate}
+\item Musi być rzeczownikiem.
+\item Musi być unikatowa, czyli definiować konkretną rzecz i być jak najbardziej sprecyzowana. Np. budynek nie jest zasobem, ponieważ jest zbyt ogólny, lecz biblioteka już nim jest. 
+\item Musi być możliwa do przedstawienia w formie danych.
+\item Music posiadać przynajmniej jeden adres URI, pod którym jest dostępny. URI jednocześnie jest nazwą, jak i zdresem zasobu.\newline
+\end{enumerate}
+
+\begin{center}
+\subsection{Nazewnictwo}
+\end{center}
+
+Odpowiednie nazewnicto i struktura infromacji pozwala na zwiększenie użyteczności oraz elastyczności, ułatwiając rozbudowę i modyfikację aplikacji. Niestety sposób nazywania zasobów jest kwestią bardzo dyskusyjną i nie istnieje jedna zasada jak powinniśmy poprawnie nazywać zasoby. Jednakże istnieją wskazówki w jaki sposób możemy je nazywać:\newline
+
+\begin{enumerate}
+\item \textbf{Obiekty vs. Akcje} - Zasoby powinny być tak zaprojektowane by były odłączne od akcji. Dzięki temu możemy wykonywać wiele akcji na pojedyńczym zasobie. Przytoczę taki przykład:\newline
+\begin{lstlisting}[
+language={Python},
+caption={Przykład pierwszy}
+]
+GET /users # Gets list of all users
+POST /users # Adds new user
+DELETE /users # Deletes all users
+\end{lstlisting}
+
+\begin{lstlisting}[
+language={Python},
+caption={Przykład drugi}
+]
+GET /getUsers # Gets list of all users
+POST /addUsers # Adds new user
+DELETE /users/delete # Deletes all users
+\end{lstlisting}
+
+Jak widać przykład pierwszy posiada jeden zasób users na którym wykonujemy różne akcje z wykorzystanie metod HTTP, czyli mamy jeden zasób na którym wykonujemy wiele akcji. Natomiast przykład drugi posiada trzy różne adresy, które są połączone z akcją wykonywaną w naszej aplikacji. Jednoznacznie widać, że założenia z przykładu drugiego mocno odbiegają od naszych założeń REST, ponieważ powiązanie API z naszą aplikacją unimożliwa rozwijanie się aplikacji, jak i API niezależnie od siebie.\newline
+
+\item \textbf{Rzeczowniki vs. Czasowniki} - jednym ze sposobów weryfikacji, czy zasób jest odłączony od akcji, jest użycie samego rzeczownika w nazwie. Jeśli w adresie URI zasobu znajduje się czasownik, np. /getUsers lub /addUsers, to możemy podejrzewać że ten zasób jest bardzo mocno powiązany z konkretną akcją.\newline
+
+\item \textbf{Liczba pojedyncza vs. Liczba mnoga} - starajmy się używać liczby mnogiej przy nazewnictwie zasobów, np. /users zamiast /user. Zwiększa to czytelność naszego API, jednakże ta zasada jest bardzo dyskusyjna. Obiektywnie nasze API powinno być zbudowane konsekwentnie i spójnie. 
+\end{enumerate}
+
+\begin{center}
+\section{Model dojrzałości Richardsona}
+\end{center}
+
+Jako że REST jest tylko zbiorem wytycznych i dobrych rad dla tworzenia API to deweloperzy mają bardzo dużą elastyczność do definiowania jak bardzo REST będzie ich API. Zakładając sytuację, że napisałeś sobie prostą aplikację RESTful API, to skąd możesz mieć pewność że jest ona w stylu REST ? Ktoś może Ci powiedzieć, że skoro wykorzystujesz protokół HTTP i używasz formatu danych JSON, to twój serwis jest RESTful. \textbf{Model dojrzałości Richardsona}(ang. \emph{Richardson Maturity Model}) pozwala ocenić w jakim stopniu twoja aplikacja jest RESTful. Model definiuje 4 poziomy(0-3) i zakłada, że \textbf{każde API należy do jednego z czterech poziomów dojrzałości}.
+
+\begin{enumerate}
+\item \textbf{Poziom 0} - Na poziomie zerowym modelu dojrzałości znajdują się aplikacje, które nie spełniają założeń architektury REST. Protokół HTTP wykorzystywany jest tylko jako warstwa transportowa. Używane są tylko metody GET i POST oraz status zwracany zawsze jest 200 OK. Nie ma unikalnych adresów dla zasobów. Do tego poziomu zaliczamy np. protokoły SOAP i RPC.
+
+\begin{lstlisting}[
+language={Python},
+caption={Przykładowe API dla poziomu 0}
+]
+POST /api/findSomething
+POST /api/updateSomething
+\end{lstlisting}
+
+\begin{lstlisting}[
+language={Python},
+caption={Dodawanie np. rzeczy}
+]
+POST /api/addSomething HTTP/1.1
+{ "item_name":"Chair" }
+\end{lstlisting}
+
+\begin{lstlisting}[
+language={Python},
+caption={Odpowiedzi}
+]
+200 OK
+{ "item_id":50 }
+ # or
+200 OK
+{ "error":"Wrong data input." }
+\end{lstlisting}
+
+\item \textbf{Poziom 1} - Na pierwszym poziomie modelu dojrzałości wykorzystywane jest wiele identyfikatorów URI, jednakże nadal wykorzystuje podstawowe metody HTTP, jak np. GET, czy POST. Na tym poziomie mamy już zdefiniowane zasoby, które powinny posiadać indywidualny identyfikator URI. Zasób nie powinien być dostępny pod wieloma adresami, tzn. musi mieć unikalny adres.
+
+\begin{lstlisting}[
+language={Python},
+caption={Przykładowe API dla poziomu 1}
+]
+POST /api/something/id/get
+POST /api/something/create
+\end{lstlisting}
+
+\item \textbf{Poziom 2} - Drugi poziom modelu dojrzałości rozszerza nasze podstawowe metody HTTP o dodatkowe, jak np. PUT, PATCH i DELETE. Będziemy także używać dodanych metod zgodnie z ich przeznaczeniem.
+
+\begin{lstlisting}[
+language={Python},
+caption={Przykładowe API dla poziomu 2}
+]
+POST /api/something
+GET /api/something/item_id
+PUT /api/something/item_id
+PATCH /api/something/item_id
+DELETE /api/something/item_id
+\end{lstlisting}
+
+Drugi poziom wprowadza też roszerzenie dla naszych statusów odpowiedzi. Będziemy teraz wykorzystywać statusy zależnie od sposobu realizacji zapytania.
+\begin{enumerate}
+\item 1XX – Kody informacyjne
+\item 2XX – Kody powodzenia
+\item 3XX – Kody przekierowania
+\item 4XX – Kody błędu aplikacji klienta
+\item 5XX – Kody błędu serwera
+\end{enumerate}
+
+\begin{lstlisting}[
+language={Python},
+caption={Dodawanie np. rzeczy}
+]
+POST /api/addSomething HTTP/1.1
+{ "item_name":"Chair" }
+\end{lstlisting}
+
+\begin{lstlisting}[
+language={Python},
+caption={Odpowiedzi}
+]
+201 Created
+{ "item_id":50 }
+ # or
+409 Conflict
+{ "error":"Wrong data input." }
+\end{lstlisting}
+
+\item \textbf{Poziom 3} - Trzeci poziom (najwyższy) RMM wymaga implementacji HATEOAS. W wielu firmach trzeci poziom modelu nie jest realizowany, ze względu na dodatkową złożoność API. Firmy godzą się, z tym że ich API znajduje się na 2 poziomie, tym samy nie jest to RESTful API. HATEOAS kieruje interakcją dla klienta. Klient API nie zna wszystkich punktów końcowych API, dla których może wykonać żądanie.
+
+Przeanalizujmy następujący przykład. Z dokumentacji API wiemy, pod jakim adresem URI możemy uzyskać osobę o danym identyfikatorze. Wykonujemy żądanie GET, w wyniku którego otrzymujemy strukturę z danymi identyfikującymi osobę. Stosując HATEOAS dla pola identyfikującego adres osoby, zamiast id adresu otrzymamy adres URI do dodatkowych informacji dla powyższego zasobu. Przechodząc pod wybrany adres URI osoby, uzyskamy szczegółowe dane, gdzie np. zamiast identyfikatora adresu osoby otrzymamy link do zasobu reprezentującego adres. Wykorzystując HATEOAS dostarczamy klientowi linki do poruszania się po API. Zastosowanie HATEOAS minimalizuje nam dokumentacje API. Usługa zaimplementowana na poziomie trzecim jest uważana za RESTful API.
+
+\begin{lstlisting}[
+language={Python},
+caption={Przykład pobierania osoby o identyfikatorze 36:}
+]
+GET /api/persons/36 HTTP/1.1
+\end{lstlisting}
+
+\begin{lstlisting}[
+language={Python},
+caption={Przykładowa odpowiedź:}
+]
+HTTP/1.1 200 OK
+{ "id":36, "name":"Damian Kuich", "age":23,
+  "link":{"address":"/api/addresses/43"} }
+\end{lstlisting} 
+
+\end{enumerate}
+
+\section{Django}
+\textbf{Django} jest open-source frameworkiem webowym opartym na języku Python, który umożliwia w bardzo prosty sposób tworzenie skalowalnych i szybkich serwisów. Powstał pod koniec 2003 roku jako ewolucyjne rozwinięcie aplikacji internetowych, tworzonych przez grupę programistów związanych z Lawrence Journal-World. Operuje on na modelu architektonicznym \textbf{MTV}(ang. \emph{Model-Template-Views}). 
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=14cm]{mtv.png}
+\caption{Architektura MTV\newline
+Źródło: https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Introduction}
+\label{MTV}
+\end{figure}
+
+\begin{center}
+\subsection{URLs}
+\end{center}
+Chociaż możliwe jest przetwarzanie żądań z każdego adresu URL za pośrednictwem jednej funkcji, znacznie łatwiej jest napisać oddzielny widok(ang. \emph{View}) do obsługi wielu zasobów. URLs służy do przekierowywania żądań HTTP do odpowiedniego widoku na podstawie adresu URL. Narzędzie odwzorowujące adresy URL może również dopasować określone wzorce ciągów lub cyfr, które pojawiają się w adresie URL, i przekazać je dalej jako dane.
+
+
+\begin{center}
+\subsection{Views}
+\end{center}
+View służy do przetwarzania żądań i odpowiedzi HTTP. Ekstraktuje dane potrzebne do wykonania żądań z pomocą modeli(ang. Models), jak i formatują odpowiedzi do szablonów(ang. Templates).
+
+
+\begin{center}
+\subsection{Models}
+\end{center}
+Modele do obiekty, które kształtują strukturę danych aplikacji. Umozliwiają one wykonywanie operacji na danych takich ja usuwanie, dodawanie, czy modyfikowanie.
+
+
+\begin{center}
+\subsection{Templates}
+\end{center}
+Szablony to pliki tekstowe definiujące strukturę lub układ pliku (na przykład strony HTML), z symbolami zastępczymi używanymi do reprezentowania rzeczywistej zawartości. Widok może dynamicznie tworzyć stronę HTML przy użyciu szablonu HTML, wypełniając ją danymi z modelu. Szablon może służyć do definiowania struktury dowolnego typu pliku nie tylko HTML.
+
+\section{Django REST Framework}
+\textbf{Django REST Framework} jest open-source frameworkiem napisanym w języku Python. Pozwala on na implementacje architektury REST do naszego API, co umożliwia nam utworzenie RESTful API. Opiszmy więc, jak została zaimplementowana architektura REST do tego frameworka, przechodząc przez jej główne założenia z rodziału 2.3:
+
+\begin{center}
+\subsection{Unifrom Interface}
+\end{center}
+Unifrom Interface mówił o ujednoliceniu API i danych, by były one klarowne dla innych serwisów. Powinno to oznaczać, że system powinien posiadać jeden główny URI dzięki, któremy bysmy mogli korzystać z metod HTTP. Django REST Framework pomaga w budowaniu interfejsu API REST poprzez tworzenie punktów końcowych za pomocą widoków ogólnych. Te ogólne widoki pomagają stworzyć pełny punkt końcowy CRUD (create, read...) w modelu Django przy niewielkim wysiłku. Utworzony punkt końcowy jest zgodny z interfejsem API Rest struktury adresu URL dla zasobu. 
+
+
+\begin{center}
+\subsection{HATEOAS}
+\end{center}
+To, czego nie zapewnia framework REST, to domyślnie odczytywalne formatów, takich jak HAL, Collection + JSON, JSON API lub mikroformaty HTML. Nie ma też możliwości automatycznego tworzenia w pełni HATEOAS interfejsów API. Takie postępowanie wiązałoby się z dokonywaniem mieszanych w odczuciu wyborów dotyczących API, które naprawdę powinny pozostać poza zakresem frameworka.
+
+
+\begin{center}
+\subsection{Client-Server}
+\end{center}
+Już sama esencja, tego, że Django REST Framework pozwala ci tworzyć backend serwera, który nie jest częścią interfejsu użytkownika aplikacji, jest istotą architektury klient-serwer. Każda aplikacja, którą tworzysz za pomocą Django Rest Framework posiada backend API , które jest zupełnie oddzielne od API klienta.
+
+
+\begin{center}
+\subsection{Stateless}
+\end{center}
+Django REST Framework dzięki interfejsowi WSGI/ASGI nie musi zapisywać żadnych informacji ani polegać na nich. Zobrazuje mniejwięcej zasadę działania:
+
+
+\begin{lstlisting}[
+language={Python},
+caption={Przykład kodu stateless, gdzie nie zapisujemy żadnych danych:}]
+while True:
+  request = io.listen_for_request()
+  response = handle_request(request)
+  return response
+\end{lstlisting}
+
+\begin{center}
+\subsection{Cacheable}
+\end{center}
+Django REST Framework ma wbudowane narzędzia do Cachowania.
+
+
+\begin{center}
+\subsection{Layered System}
+\end{center}
+Django zapewnia wiele interesujących połączeń między warstwami, a użycie Django dla wszystkich warstw pozwala wykorzystać te połączenia. Na przykład użycie Django ORM oznacza, że otrzymujesz świetną aplikację administracyjną. Możesz wybrać inny ORM ale nie dostaniesz razem z nim aplikacji administratora. Django, też nie utrudnia rozbicia naszego serwisu na wiele pomniejszych mikroserwisów. 
+
+
+\begin{center}
+\subsection{Code-On-Demand}
+\end{center}
+Django umozliwia na roszerzenie funkcjonalności szablonów do wysyłania np. formularzy jako endpoint.
+
+\section{Podsumowanie}
+W pracy przedstawiłem podstawowe zagadnienia związane z API. Omówiłem, także główne cechy i zasady REST. Zwróciłem też uwagę na to, co tworzy nasze API RESTful. Wspomniałem, też o ewolucji API dzieki modelowi dojrzałości Richardsona. Na końcu mojej pracy znowu przedstawiłem główne założenia architektury REST, jednakże tym razem do stwierdzenia czy Django REST Framework naprawdę pozwala na tworzenie prawdziwego RESTful API. Po przeanalizowaniu implementacji główny paradygmatów REST w Django REST Framework, czy nawet w samym Django mogę wywnioskować, że umożliwia on tworzenie API zgodnie z REST.
+
+\section{Bibliografia}
+\begin{enumerate}[leftmargin=5pt,rightmargin=5pt]
+\item Dokumentacja Frameworka Django REST. https://www.django-rest-framework.org.
+
+\item Mark, M. REST API Design Rulebook. O'Reilly, 2011. 
+
+\item REST API Tutorial, https://restfulapi.net. 
+
+\item WIKIPEDIA.ORG. API. https://en.wikipedia.org/wiki/API. 
+
+\item Krzysztof. RESTful API – Richardson Maturity Model. https://devkr.pl (2018) 
+
+\item Dokumentacja Frameworka Django. https://docs.djangoproject.com/en/3.2/
+
+\item WIKIPEDIA.ORG. Representational state transfer. https://en.wikipedia.org/wiki/Representational-state-transfer
+
+\item Rinu Gour. Working Structure of Django MTV Architecture. https://towardsdatascience.com/working-structure-of-django-mtv-architecture-a741c8c64082 (2019)
+
+\item Grzegorz Kwaśniewski. REST API od podstaw. https://www.devmobile.pl/rest-api-od-podstaw/ (2018)
+
+\item T. Berners-Lee. Uniform Resource Identifier (URI): Generic Syntax. https://www.ietf.org/rfc/rfc3986.txt (2005)
+
+\item Dominik Szczpaniak. Wstep do REST API. https://devszczepaniak.pl/wstep-do-rest-api/ (2018)
+
+\item Smartbear. API Endpoints - What Are They? Why Do They Matter? https://smartbear.com/learn/performance-monitoring/api-endpoints/
+
+\item Read Me. The History of REST APIs. https://blog.readme.com/the-history-of-rest-apis/ (2016)
+
+\item bd90. Dlaczego Twoje API nie jest RESTful. https://bd90.pl/dlaczego-twoje-api-nie-jest-restful/ (2018)
+
+\item Geordy James. Creating a simple REST API in PHP. https://cutt.ly/6bMyxTy (2017)
+
+\item Hooman Staff. What is API – And it’s Types. https://techrevv.com/what-is-api-and-its-types/ (2021)
+
+\item SoapUI Documentation. What Is A REST API?. https://www.soapui.org/learn/api/what-is-a-rest-api/
+
+\item Patryk Sładek. REST API – model dojrzałości Richardsona. https://jakzostacprogramista.net/2020/11/25/rest-api-model-dojrzalosci-richardsona/ (2020)
+\end{enumerate}
+
+\chapter{Integracja projektu opartego o Django z bazą danych PostgreSQL}
+Baza danych to zbiór informacji, danych, zazwyczaj przechowywanych w formie elektronicznej w systemie komputerowych.  
+
+Dane umieszczone są w wierszach i kolumnach wielu tabel, dzięki czemu przetwarzanie ich oraz tworzenie zapytań ich dotyczących odbywa się w zorganizowany i sprawny sposób. W dzisiejszych czasach większość baz danych wykorzystuje język SQL (Structured Query Language, strukturalny język zapytań) do tworzenia zapytań i zapisywania danych.  
+
+Język SQL to język programowania używany do tworzenia zapytań dotyczących danych. Jest wykorzystywany przez niemal wszystkie relacyjne bazy danych. Został on opracowany w latach 70. przez firmę IBM. Przy tworzeniu języka brała udział firma Oracle, czego efektem było wprowadzenie standardu SQL ANSI i powstanie wielu rozszerzeń języka SQL.  
+
+Istnieje wiele typów baz danych. Oto kilka z nich:  
+\begin{itemize}
+\item Relacyjne bazy danych
+\item Obiektowe bazy danych
+\item Rozproszone bazy danych
+\item Hurtownie danych
+\item Bazy danych NoSQL
+\item Grafowe bazy danych
+\item Bazy danych OLTP
+\item Bazy danych open source
+\item Chmurowe bazy danych
+\item Wielomodelowa baza danych
+\item Bazy danych dokumentowe/JSON
+\item Samoczynne bazy danych
+\end{itemize}
+
+Bazy danych obsługiwane są przez DBMS czyli system zarządzania bazami danych. Stanowi on swego rodzaju pomost między danymi a programami wykorzystującymi dane lub użytkownikami końcowymi. Dzięki niemu można pobierać, aktualizować informacje oraz konfigurować sposób, w jaki są one zorganizowane. System pozwala również na wykonywanie zadań administracyjnych, takich jak tworzenie oraz przywracanie kopii zapasowych.
+
+
+W mojej pracy krótko przedstawię cztery systemy zarządzania bazami danych: 
+\begin{itemize}
+\item MySQL 
+\item MS SQL Server 
+\item Oracle 
+\item PostgreSQL 
+\end{itemize}
+\section{MySQL}
+MySQL to darmowy i otwarty system zarządzania relacyjnymi bazami danych (RDBMS). Prace nad nim rozpoczęły się w 1995r. Jego właścicielem jest Oracle, który oferuje płatne wersje premium MySQL z dodatkowymi usługami, zastrzeżonymi wtyczkami, rozszerzeniami i wsparciem dla użytkowników. Jest to lekka baza danych, która może być instalowana i używana przez programistów na serwerach aplikacji produkcyjnych z dużymi aplikacjami wielowarstwowymi, a także na komputerze stacjonarnym. Można go zainstalować na wszystkich platformach, takich jak Windows, Linux i Mac. Jest bezpieczny i nie jest podatny na żadne luki w zabezpieczeniach. 
+
+MySQL oferuje obsługę następujących języków: 
+\begin{itemize}
+\item C/C++ 
+\item Delphi
+\item Java 
+\item Lisp 
+\item Node.js 
+\item Perl 
+\item PHP 
+\item R
+\end{itemize}
+
+MySQL oferuje obsługę w chmurze, instalacje lokalne oraz jest kompatybilny z następującymi systemami operacyjnymi i formatami: 
+\begin{itemize}
+\item Windows 
+\item MacOS 
+\item Linux (Ubuntu, Debian, Generic, SUSE Linux Enterprise Server, Red Hat Enterprises, Oracle) 
+\item Oracle Solaris 
+\item Fedora 
+\item FreeBSD 
+\end{itemize}
+
+\begin{table}[h!]
+\caption{Wady i zalety MySQL}
+\label{tabela-MySQL}
+\centering
+\begin{adjustbox}{width=1\textwidth}
+\small
+\begin{tabular}{|l|r|}
+\toprule
+Zalety & Wady\\
+\midrule
+Ochrona danych & Złożona logika biznesowa\\
+Skalowalność na żądanie & Kilka problemów ze stabilnością\\
+Całodobowa dostępność & Transakcje nie są obsługiwane zbyt wydajnie\\
+Kompleksowe wsparcie transakcyjne & Funkcjonalność zależna od dodatków\\
+Pełna kontrola przepływu pracy & Wcześniejsza wiedza jest koniecznością\\
+Elastyczność open source &\\
+Szerokie zastosowanie i łatwe w użyciu &\\
+Szybki, przenośny i bezpieczny &\\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+\end{table}
+\section{MS SQL Server}
+MS SQL Server to relacyjny system zarządzania bazami danych (RDBM) wydany w 1989 roku, opracowany i obsługiwany przez firmę Microsoft. Używa wariantu Structured Query Language (SQL) o nazwie T-SQL (dla Transact-SQL). Zwykle zawiera silnik relacyjnej bazy danych, który przechowuje dane w tabelach, kolumnach i wierszach, Integration Services (SSIS), który jest narzędziem do przenoszenia danych do importowania, eksportowania i przekształcania danych, Reporting Services (SSRS), który służy do tworzenia raporty i udostępniają raporty użytkownikom końcowym, a także Analysis Services (SSAS), czyli wielowymiarowa baza danych służąca do wykonywania zapytań o dane z głównego silnika bazy danych. 
+
+MS SQL Server oferuje obsługę języków programowania takich jak: 
+\begin{itemize}
+\item C\#
+\item C++ 
+\item Delphi 
+\item Go 
+\item Java 
+\item JavaScript 
+\item PHP 
+\item Python 
+\item R 
+\item Ruby 
+\item Visual Basic 
+\end{itemize}
+MS SQL Server jest dostępny na systemach \texttt{Microsoft Windows} oraz Linux.
+
+\begin{table}[h!]
+\caption{Wady i zalety MS SQL Server}
+\label{tabela-MS SQL Server}
+\centering
+\begin{adjustbox}{width=1\textwidth}
+\small
+\begin{tabular}{|l|r|}
+\toprule
+Zalety & Wady\\
+\midrule
+Dostępna wersja darmowa systemu & Drogie wydanie dla przedsiębiorstw\\
+Wysokie bezpieczeństwo danych & Ograniczona kompatybilność\\
+Łatwość konfiguracji & Kilka problemów ze stabilnością\\
+Łatwość konfiguracji & \\
+Wsparcie odzyskiwania danych & \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+\end{table}
+\section{Oracle}
+Oracle to system zarządzania relacyjnymi bazami danych wydane w 1980 roku z podstawowymi funkcjami SQL, który sam się steruje, zabezpiecza, samo naprawia i eliminuje podatne na błędy ręczne zarządzanie bazą danych. Umożliwia bezpieczne przechowywanie i szybkie pobieranie danych. Oracle to pierwsze narzędzie bazodanowe opracowane do celów biznesowych do zarządzania danymi za pomocą języka zapytań. 
+
+Oracle oferuje obsługę języków programowania takich jak: 
+\begin{itemize}
+\item C 
+\item C\# 
+\item C++ 
+\item Delphi 
+\item Haskell 
+\item Java 
+\item JavaScript 
+\item C 
+\item Perl 
+\item PHP 
+\item Python 
+\item R 
+\item Ruby 
+\item Visual Basic 
+\end{itemize}
+
+Oracle jest dostępny dla następujących systemów operacyjnych: 
+\begin{itemize}
+\item Windows 
+\item Mac OS X 
+\item Linux 
+\item UNIX 
+\item z/OS 
+\end{itemize}
+\begin{table}[h!]
+\caption{Wady i zalety MySQL}
+\label{tabela-Oracle}
+\centering
+\begin{adjustbox}{width=1\textwidth}
+\small
+\begin{tabular}{|l|r|}
+\toprule
+Zalety & Wady\\
+\midrule
+Wszechstronność & Trudny do nauczenia i obsługi\\
+Kompatybilność ze składnią SQL i PL & Wysoki koszt obsługi\\
+Poprawiona wydajność & Składniki zapytań poza standardem ANSI \\
+Grupowanie transakcji & Intensywne wykorzystanie sprzętu\\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+\end{table}
+\section{PostgreSQL}
+PostgreSQL to darmowy i otwarty system zarządzania obiektowo-relacyjnymi bazami danych (ORDBMS). Jest dostępny od 1988 roku i obecnie zarządzany jest przez społeczność programistów, która pomaga nam ułatwić i przyspieszyć naszą pracę.
+Jako ORDBMS, a nie RDBMS, PostgreSQL zapewnia zarówno obiektową, jak i relacyjną funkcjonalność bazy danych. PostgreSQL był pierwszym systemem DBMS, który zaimplementował funkcje kontroli współbieżności wielu wersji (MVCC) oraz oferuje wiele zaawansowanych opcji. Jest obecnie uważany za najbardziej zaawansowany silnik bazy danych. Obsługuje tekst, obrazy, dźwięki i wideo oraz zawiera interfejsy programistyczne dla wielu języków. PostgreSQL może być rozszerzany przez użytkownika na wiele sposobów. Na przykład można stworzyć nowe typy danych, funkcje, operatory lub funkcje indeksowania. 
+
+
+PostgreSQL oferuje obsługę nieco szerszej gamy języków: 
+\begin{itemize}
+\item C/C++ 
+\item Delphi 
+\item Erlang 
+\item Go 
+\item Java 
+\item JavaScript 
+\item Lisp 
+\item .Net 
+\item Python 
+\item R 
+\item Tcl 
+\end{itemize}
+
+PostgreSQL jest dostępny dla następujących systemów operacyjnych: 
+\begin{itemize}
+\item MacOS 
+\item Solaris 
+\item Windows 
+\item BSD (FreeBSD, OpenBSD) 
+\item Linux  
+\item CentOS 
+\item Fedora 
+\item Scientific 
+\item Oracle 
+\item Debian 
+\item Ubuntu Linux i pochodne 
+\end{itemize}
+
+\begin{table}[h!]
+\caption{Wady i zalety PostgreSQL}
+\label{tabela-PostgreSQL}
+\centering
+\begin{adjustbox}{width=1\textwidth}
+\small
+\begin{tabular}{|l|r|}
+\toprule
+Zalety & Wady\\
+\midrule
+Wysoce skalowalny & Stosunkowo niska prędkość czytania\\ 
+Posiada wiele interfejsów & Optymalna konfiguracja może być kłopotliwa\\ 
+Obsługuje JSON &  \\ 
+Szerokie możliwości rozbudowy &  \\ 
+Przetwarzanie złożonych typów danych &  \\ 
+Elastyczne wyszukiwanie pełno tekstowe  &  \\ 
+Wieloplatformowy &  \\ 
+zdolny do obsługi danych w TB &  \\ 
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+\end{table}
+  
+
+W naszym projekcie wybrany został PostgreSQL, ponieważ jest to potężny, w 100\% darmowy obiektowo-relacyjny system baz danych, z ponad 30-letnim aktywnym rozwojem. Jednym w głównych powodów było również to, że był to produkt oferowany poprzez używaną przez nas platformę chmurową Heroku. 
+\section{Łączenie z bazą danych PostgreSQL}
+Aby zacząć integrację Django z PostgreSQL musimy połączyć się z już istniejącą bazą danych lub stworzyć nową. 
+Domyślnie Django jest skonfigurowane do używania SQLite jako swojego zaplecza, dlatego musimy lekko zmienić zawartość pliku settings.py tak, aby można było używać Postgresa. 
+
+Poniżej znajduję się kod potrzebny do połączenia się bazą danych oferowaną przez Heroku. 
+\begin{lstlisting}[
+language={Python},
+caption={Fragment pliku \texttt{settings.py}}
+]
+DATABASES = {,  
+	'default': { 
+	'ENGINE': 'django.db.backends.postgresql', 
+	'NAME': '', 
+	'USER': '', 
+	'PASSWORD': '', 
+	'HOST': 'ec2-54-160-18-230.compute-1.amazonaws.com', 
+	'PORT': '5432', 
+	} 
+} 
+\end{lstlisting}
+\section{Modele}
+
+Na początku nasza baza posiada podstawowe modele danych takie jak \textbf{Users} oraz \textbf{Groups}. Aby zawierała inne dane, musimy zdefiniować je w naszym frameworku w pliku models.py.
+Najważniejszą częścią modelu są zdefiniowane pola bazy danych, będące instancja klasy Field. Są to na przykład:
+\begin{itemize}
+\item CharField - pole tekstowe
+\item TextField - pole przeznaczone dla dłuższych teksów
+\item ForeignKey - pole z kluczem obcym innego modelu
+\item IntegerField - pole zawierające wartość liczbową
+\item BooleanField - pole przyjmujące dwie wartości False/True (fałsz - prawda)
+\item DateTimeField - pole zawierające szczegóły na temat daty i czasu
+\end{itemize}
+Pola modeli przeznaczone dla PostgreSQL (django.contrib.postgres.fields):
+\begin{itemize}
+	\item ArrayField - pole do przechowywania list danych
+	\item HStoreField - pole do przechowywania par klucz:wartość. W Pythonie typ danych reprezentowany jako dict
+	\item JSONField - pole do przechowywania danych zakodowanych w formacie JSON
+	\item IntegerRangeField - pole przechowuje zakres liczb całkowitych
+	\item BigIntegerRangeField - pole przechowuje zakres dużych liczb całkowitych
+	\item DecimalRangeField - pole przechowuje zakres wartości zmiennoprzecinkowych
+	\item DateTimeRangeField - pole przechowuje szereg sygnatur czasowych
+	\item DateRangeField - pole przechowuje zakres dat
+\end{itemize}
+
+Każde pole określone jest poprzez specyficzne argumenty. Przykładowo pole \textbf{CharField} wymaga podania argumentu \textbf{max\_length}, który określa maksymalną ilość znaków. Każde pole posiada również zestaw argumentów dostępnych dla każdego z nich np.:
+\begin{itemize}
+\item null (True/False) - wybierając \textbf{True} Django będzie przechowywać puste wartości odpowiadające \textbf{NULL} w przypadku bazy danych. Domyślny wybór tego atrubutu to \textbf{False}.
+\item blank (True/False) - wybór \textbf{True} oznacza, że pole może być puste, natomiast \textbf{True} skutkuje tym, że podane pole będzie wymagane podczas wprowadzania danych.
+\item default - domyślna wartość pola.
+\item unique (True/False) - wybór \textbf{True} oznacza, że pole musi być unikalne dla całej tabeli.
+\item choices
+\end{itemize}
+
+\begin{lstlisting}[
+language={Python},
+caption={Fragment pliku \texttt{models.py}}
+]
+class Section(models.Model):
+    section_name = models.CharField(max_length=500,unique=True)
+
+    def __str__(self):
+        return self.nasza_nazwa()
+
+    def nasza_nazwa(self):
+        return self.section_name
+
+class Skill(models.Model):
+    skill_name = models.CharField(max_length=500,unique=True)
+    section = models.ForeignKey(Section, on_delete=models.CASCADE)
+    def __str__(self):
+        return self.nasza_nazwa()
+
+    def nasza_nazwa(self):
+        return self.skill_name
+
+class Task(models.Model):
+    RODZAJE = {
+        (1, 'Otwarte'),
+        (2, 'Zamkniete'),
+    }
+    POZIOM = {
+        (1, 'Podstawowy'),
+        (2, 'Rozszerzony'),
+    }
+    text = models.CharField(max_length=600,unique=True)
+    wronganswers =ArrayField(models.CharField(max_length=200), blank=True)
+    correctans =ArrayField(models.CharField(max_length=200), blank=True)
+    type = models.IntegerField(choices=RODZAJE)
+    author = models.ForeignKey(CustomUser, 
+				on_delete=models.SET_DEFAULT, 
+				default=1)
+    level = models.IntegerField(choices=POZIOM)
+    private = models.BooleanField(default=False)
+    points = models.IntegerField(default=0)
+    skill = models.ManyToManyField(Skill)
+
+    def __str__(self):
+        return self.nasza_nazwa()
+
+    def nasza_nazwa(self):
+        return self.text
+\end{lstlisting}
+
+Powyższy przykład obrazuje definicje modeli Skill, Section oraz Task, które odpowiadają zadaniu oraz działom wraz z umiejętnościami w Generatorze Sprawdzianów. Na końcu każdego modelu dodana została jego reprezentacja, przez co w zakładce admin widoczna będzie nazwa obiektu, co w znacznym stopniu ułatwi jego identyfikację.  
+\section{Migracje}
+Po zdefiniowaniu modelu, wymagane jest wykonanie migracji. Migracje to sposób Django na propagowanie zmian wprowadzanych w modelach takich jak dodawanie pola, edytowanie, usuwanie modelu itp. do schematu bazy danych. Są zaprojektowane w taki sposób, aby były w większości automatyczne, jednak wymagane jest ich tworzenie w taki sposób, aby uniknąć powstania błędów. \textbf{Makemigrations} jest odpowiedzialne za pakowanie zmian w modelu do indywidualnych plików migracyjnych, z kolei \textbf{migrate} jest odpowiedzialny za stosowanie ich w bazie danych.
+Niektóre bazy danych są bardziej wydajne niż inne, biorąc pod uwagę migrację schematów. PostgreSQL cechuje się wysoką wydajnością pod względem obsługi schematów, natomiast MySQL nie obsługuje transakcji zmiany schematu. Jeżeli dana migracja się nie powiedzie, zmuszeni jesteśmy ręcznie cofnąć zmiany, a następnie spróbować ponownie. 
+
+Aby zbudować tabele w bazie danych, wykonujemy migrację i uruchamiany ją poniższymi poleceniami: 
+
+\begin{lstlisting}[style=DOS]
+>python manage.py makemigrations
+>python manage.py migrate
+\end{lstlisting}
+Po zrobieniu migracji, Django wprowadzi do bazy danych następujące polecenie.
+\begin{lstlisting}[
+language={SQL},
+caption={SQL dla modelu Task, Skill oraz Section}
+]
+CREATE TABLE "section" (
+	"id" serial NOT NULL PRIMARY KEY, 
+	"section_name" varchar(500) NOT NULL UNIQUE
+);
+CREATE TABLE "skill" (
+	"id" serial NOT NULL PRIMARY KEY, 
+	"skill_name" varchar(500) NOT NULL UNIQUE, 
+	"section_id" integer NOT NULL
+);
+CREATE TABLE "task" (
+	"id" serial NOT NULL PRIMARY KEY, 
+	"text" varchar(600) NOT NULL UNIQUE, 
+	"wronganswers" varchar(200)[] NOT NULL, 
+	"correctans" varchar(200)[] NOT NULL,
+	"type" integer NOT NULL, 
+	"level" integer NOT NULL, 
+	"private" boolean NOT NULL, 
+	"points" integer NOT NULL, 
+	"author_id" integer NOT NULL
+);
+CREATE TABLE "task_skill" (
+	"id" serial NOT NULL PRIMARY KEY, 
+	"task_id" integer NOT NULL, 
+	"skill_id" integer NOT NULL
+);
+
+CREATE INDEX "section_section_name_75a1892d_like" 
+  ON "section" ("section_name" varchar_pattern_ops);
+ALTER TABLE "skill" 
+ ADD CONSTRAINT "skill_section_id_f4743696_fk_authentic" 
+ FOREIGN KEY ("section_id") 
+  REFERENCES "section" ("id")
+  DEFERRABLE INITIALLY DEFERRED;
+CREATE INDEX "skill_skill_name_7cd3fbdc_like" 
+ ON "skill" ("skill_name" varchar_pattern_ops);
+CREATE INDEX "skill_section_id_f4743696" 
+ ON "skill" ("section_id");
+ALTER TABLE "task" 
+ ADD CONSTRAINT "task_author_id_bb563768_fk_authentic" 
+ FOREIGN KEY ("author_id") 
+  REFERENCES "customuser" ("id") 
+  DEFERRABLE INITIALLY DEFERRED;
+CREATE INDEX "task_text_a5a62aaa_like" 
+ ON "task" ("text" varchar_pattern_ops);
+CREATE INDEX "task_author_id_bb563768" 
+ ON "task" ("author_id");
+ALTER TABLE "task_skill" 
+ ADD CONSTRAINT "task_skill_task_id_skill_id_feac78a2_uniq" 
+ UNIQUE ("task_id", "skill_id");
+ALTER TABLE "task_skill" 
+ ADD CONSTRAINT "task__task_id_92c0a546_fk_authentic" 
+ FOREIGN KEY ("task_id")
+  REFERENCES "task" ("id") 
+  DEFERRABLE INITIALLY DEFERRED;
+ALTER TABLE "task_skill" 
+ ADD CONSTRAINT "task__skill_id_0501a9b8_fk_authentic" 
+ FOREIGN KEY ("skill_id")
+  REFERENCES "skill" ("id") 
+  DEFERRABLE INITIALLY DEFERRED;
+\end{lstlisting}
+
+Porównując wycinek z poleceniem zauważyć można, że w pliku models.py atrybut id będący kluczem głównym tabeli nie został przez nas zdefiniowany. Framework Django własnoręcznie dodaje go, jeżeli taki nie został zdefiniowany w modelu. Jest to pewne ułatwienie dla osób słabo zaznajomionych z językiem SQL.
+
+\section{Relacje}
+Relacjami nazywamy skojarzenia między dwoma typami jednostek. W relacyjnej bazie danych działają one między dwiema tabelami, przy czym jedna tabela posiada klucz obcy klucza podstawowego drugiej tabeli. Dzięki relacjom możemy dzielić i przechowywać dane w różnych tabelach. W Django możliwe jest użycie trzech najpopularniejszych typów relacji w bazie danych:
+\begin{itemize}
+\item One-to-one (jeden do jednego)
+\item Many-to-one (wiele do jednego)
+\item Many-to-many (wiele do wielu)
+
+\end{itemize}
+\subsection{Relacje One-to-one}
+W relacji one-to-one tylko jeden rekord tabeli A (najczęściej klucz podstawowy) może być powiązany z innym rekordem tabeli B mającym taką samą wartość. Przykładem może być uczeń, który posiada tylko jedną szafkę w szkole.
+W Django należy użyć typu \textbf{OneToOneField}, aby zdefiniować relację jeden do jednego.
+\begin{lstlisting}[
+language={Python},
+caption={One-to-one Uczeń-Szafka }
+]
+class Szafka(models.Model):
+    adres = models.CharField(max_length=50)
+
+    def __str__(self):
+        return self.adres
+
+class Uczen(models.Model):
+    imie = models.CharField(max_length=25)
+    szafka = models.OneToOneField(
+        Szafka,
+        on_delete=models.CASCADE,
+        primary_key=True,
+    )
+
+    def __str__(self):
+        return self.imie
+\end{lstlisting}
+\subsection{Relacje Many-to-one}
+
+Relacja many-to-one jest najczęściej używanym typem połączenia i odpowiada sytuacji, gdy pojedynczemu rekordowi z tabeli A jest przyporządkowany jeden lub wiele rekordów z tabeli B, natomiast pojedynczemu rekordowi z tabeli B jest przyporządkowany dokładnie jeden rekord z tabeli A.
+Aby zdefiniować relację jeden do wielu w Django, należy użyć \textbf{ForeignKey}. Przykładem mogą być modele Section (dział) oraz Skill (umiejętność) projektu.
+\begin{lstlisting}[
+language={Python},
+caption={Many-to-one Section-Skill}
+]
+class Section(models.Model):
+    section_name = models.CharField(max_length=500,unique=True)
+
+    def __str__(self):
+        return self.nasza_nazwa()
+
+    def nasza_nazwa(self):
+        return self.section_name
+
+class Skill(models.Model):
+    skill_name = models.CharField(max_length=500,unique=True)
+    section = models.ForeignKey(Section, on_delete=models.CASCADE)
+    def __str__(self):
+        return self.nasza_nazwa()
+
+    def nasza_nazwa(self):
+        return self.skill_name
+\end{lstlisting}
+W modelu Skill zawarty jest klucz obcy modelu Section, co pozwala na przypisanie kilku umiejętności do jednego działu, lecz jedna umiejętność nie może być połączona z kilkoma działami.
+\subsection{Relacje Many-to-many}
+Relacja many-to-many występuje w sytuacji, gdy rekordowi tabeli A przyporządkowany jest jeden lub wiele rekordów tabeli B. Sytuacja ta ma miejsce również z drugiej strony. Jednemu rekordowi tabeli A przyporządkowujemy jeden lub więcej rekordów tabeli B.
+Aby zdefiniować relację wiele do wielu w Django, należy użyć \textbf{ManyToManyField}. Za przykład można obrać model Task (zadanie) oraz Skill (umiejętność).
+\begin{lstlisting}[
+language={Python},
+caption={Many-to-many Task-Skill}
+]
+class Skill(models.Model):
+    skill_name = models.CharField(max_length=500,unique=True)
+    section = models.ForeignKey(Section, on_delete=models.CASCADE)
+	# ...
+
+class Task(models.Model):
+	# ...
+    skill = models.ManyToManyField(Skill)
+	# ...
+\end{lstlisting}
+
+Sposób, w jaki obiekty ze sobą wiązane za pomocą relacji many-to-many, różni się wystarczająco od radzenia sobie z kluczem obcym, ponieważ wymagane jest zapisanie umiejętności w bazie danych, zanim przypisana zostanie do zadania i odwrotnie. Dzieje się tak, ponieważ ManyToManyField tworzy pośrednią tabelę złączeń, która wiąże model źródłowy (w tym przypadku Task, który zawiera ManyToManyField) z modelem docelowym (Skill). Aby stworzyć połączenie między zadaniem a umiejętnością, oba muszą zostać dodane do tego niewidocznego modelu. Dokumentacja Django informuje, że:
+\begin{quote}
+"...there is still an implicit through model class you can use to directly access the table created to hold the association. It has three fields to link the models.
+
+If the source and target models differ, the following fields are generated:
+
+\textbf{id}: the primary key of the relation.
+
+\textbf{<containing\_model>\_id}: the \textbf{id} of the model that declares the \textbf{ManyToManyField}.
+
+\textbf{<other\_model>\_id}: the \textbf{id} of the model that the \textbf{ManyToManyField} points to."
+\end{quote}
+Niewidoczny model pośredni stworzony przez Django wymaga pary kluczy. Jest to klucz podstawowy modelu źródłowego oraz klucz modelu docelowego, dlatego oba obiekty muszą istnieć, zanim będą mogły zostać powiązane.
+
+W przypadku naszego projektu stworzona została tabela o nazwie \textbf{task\_skill} zawierającą trzy kolumny: \textbf{id}, \textbf{task\_id} oraz \textbf{skill\_id}.
+\subsection{Integralność danych}
+Wszystkie relacje tworzą zależności między połączonymi modelami, więc ważne jest, aby określić co dzieje się z drugą stroną, gdy pierwsza zostanie usunięta.
+W tym celu została stworzona opcja \textbf{on\_delete}, której zadaniem jest określać co należy zrobić z rekordami, których druga strona została usunięta. Opcja ta jest dostępna dla wszystkich trzech relacji i może przyjmować następujące wartości:
+\begin{itemize}
+\item on\_delete=models.CASCADE - Automatycznie usuwa powiązane rekordy, które były powiązane z daną instancją (np. Jeżeli użytkownik naszego serwisu zdecyduję się na usunięcie konta, wszystkie jego zapisane sprawdziany również zostaną usunięte.)
+\item on\_delete=models.PROTECT - Zapobiega usunięciu powiązanej instancji.
+\item on\_delete=models.SET\_NULL - Przypisuje NULL do powiązanych rekordów, gdy powiązana instancja jest usuwana. Należy pamiętać aby użyć opcji null=True w polu.
+\item on\_delete=models.SET\_DEFAULT - Przypisuje wartość domyślną do powiązanych rekordów, gdy powiązana instancja jest usuwana. (np. Jeżeli użytkownik naszego serwisu zdecyduję się na usunięcie konta, wszystkie utworzone przez niego zostaną przypisane do jednego z kont administratora aby uniknąć ich utraty.)
+\item on\_delete=models.SET - Przypisuje wartość ustawioną przez wywołanie do powiązanych rekordów, gdy powiązana instancja zostanie usunięta.
+\item on\_delete=models.DO\_NOTHING - Żadne działanie nie jest podejmowane po usunięciu powiązanych rekordów. Zwykle jest to zła praktyka dotycząca relacyjnych baz danych, ponieważ powstają osierocone rekordy bez wartości.
+\end{itemize}
+\section{ORM w Django}
+Po utworzeniu modeli danych Django automatycznie udostępnia interfejs QuerySet, który umożliwia tworzenie, pobieranie, aktualizowanie i usuwanie obiektów. Są to polecenia, dzięki którym możliwe jest pobieranie informacji z bazy danych oraz otrzymywanie ich w postaci obiektów. Polecenia te możemy wykonywać za pomocą konsoli Django po wpisaniu następującej komendy:
+\begin{lstlisting}[style=DOS]
+>python manage.py shell
+\end{lstlisting}
+Kolejnym wymogiem jest zaimportowanie modeli, na których chcemy pracować.
+\begin{lstlisting}[style=DOS]
+>>>from projekt.models import Task, CustomUser, Skill
+\end{lstlisting}
+W tym momencie mamy możliwość tworzenia, otrzymywania oraz filtrowania obiektów.
+\subsection{Tworzenie obiektu}
+\begin{lstlisting}[style=DOS]
+>>>user = CustomUser.objects.get(id = 1)
+>>>skill = Skill.objects.get(id = 1)
+>>>task = Task.objects.create(text = 'zadanie przyklad',
+	wronganswers = [20,12,32], correctans = [21],type = 2,
+	author = user,level = 1, private = False, points = 2)
+>>>task.skill.add(skil)
+
+\end{lstlisting}
+W powyższym przykładzie należy początkowo pobrać z bazy obiekt użytkownika oraz wybraną umiejętność. Następnym krokiem jest utworzenie obiektu Task używając metody create oraz wprowadzając odpowiednie dane. Na końcu należy przypisać umiejętność do pola skill, ponieważ użyta została relacja many-to-many. Poniżej znajduję się SQL wykonany przez Django.
+\begin{lstlisting}[style=DOS]
+SELECT "customuser"."id",
+       "customuser"."password",
+	  ...
+  FROM "customuser"
+ WHERE "customuser"."id" = 1
+
+SELECT "skill"."id",
+       "skill"."skill_name",
+       "skill"."section_id"
+  FROM "skill"
+ WHERE "skill"."id" = 1
+
+INSERT INTO "task" ("text", "wronganswers",
+		"correctans", "type", "author_id",
+		"level", "private", "points")
+VALUES ('zadanie przyklad', ARRAY['20','12','32']::varchar(200)[],
+	ARRAY['21']::varchar(200)[], 2, 1, 1, false, 2) 
+	RETURNING "task"."id"
+\end{lstlisting}
+\subsection{Pobieranie obiektu}
+Pobieranie danych z bazy może być wykonane na wiele sposobów. Oto kilka metod:
+\begin{itemize}
+\item all() - zwraca wszystkie rekordy danego modelu
+\item get() - zwraca tylko jeden rekord spełniający warunek w get()
+\item filter() - zwraca rekordy spełniające warunek w filter()
+\item reverse() - obiekty zwracane będą w odwrotnej kolejności
+\item distinct() - zwraca tylko unikalne obiekty bez duplikatów
+\item inne
+\end{itemize}
+Pobieranie obiektów z bazy danych czasem może trwać długo, dlatego istotne jest to, aby wykonywane skrypty działały w sposób optymalny. 
+
+Ważną informacją jest to, że zapytania wykonują się dopiero w momencie odniesienia do danych. Istotne jest również to, że jeśli ponownie wykonamy to samo zapytanie, czas jego wykonania będzie krótszy niż poprzednio, ponieważ zostanie ono zapisane w cache.
+\begin{lstlisting}[style=DOS]
+>>>tasks = Task.objects.all()
+>>>list(tasks)
+>>>tasks[0]
+\end{lstlisting}
+W powyższym przykładzie zapytanie zostało wykonane dopiero w drugiej linii. Element listy tasks[0] został zapamiętany, więc zapytanie nie zostało ponownie wywołane.
+
+Zdarza się, że podczas pozyskiwania danych z bazy zostają pobrane całe obiekty, mimo że jest to niepotrzebne, ponieważ wykorzystywane jest jedynie kilka parametrów. Takie działanie może znacząco wpłynąć na czas wykonania, dlatego skorzystać można z \textbf{values} (wynik w formie słownika), lub \textbf{values\_list} (wynik w formie listy)
+\begin{lstlisting}[style=DOS]
+>>> Task.objects.all()
+SELECT "task"."id",
+       "task"."text",
+       "task"."wronganswers",
+       "task"."correctans",
+       "task"."type",
+       "task"."author_id",
+       "task"."level",
+       "task"."private",
+       "task"."points"
+  FROM "task"
+
+>>> Task.objects.values("text")
+SELECT "task"."text"
+  FROM "task"
+\end{lstlisting}
+Jeżeli przechodzimy po liście obiektów tylko raz, można wykorzystać do tego iterator, który podczas iteracji odwoływać się będzie do kolejnych elementów. W ten sposób unikniemy niepotrzebnego ładowania całego querysetu. Poniższy przykład ukazuje o wiele szybsze działanie polecenia przy użyciu iteratora.
+\begin{lstlisting}[style=DOS]
+>>> for task in Task.objects.all():
+...     text = task.text
+SELECT "task"."id",
+	...
+  FROM "task"
+Execution time: 0.011384s [Database: default]
+>>> for task in Task.objects.all().iterator():
+...     text = task.text
+DECLARE "_django_curs_140417171636352_sync_8" NO SCROLL
+CURSOR WITH HOLD
+   FOR SELECT "task"."id",
+		...
+  FROM "task"
+Execution time: 0.002761s [Database: default]
+\end{lstlisting}
+
+Funkcja \textbf{select\_related} to taka, która podczas wykonywania zapytania podąża za relacjami klucza obcego, pobierając odpowiednie dane obiektu powiązanego relacją.
+Funkcja ta w przeciwności do wykonywania wielu zapytań, pozwala na stworzenie jednego, złożonego, w którym użycie klucza obcego nie będzie skutkowało wykonaniem kolejnego zapytania. Przykładem będzie sytuacja, w której dla dziesięciu zadań posiadających umiejętność o id równym 6, chcemy wypisać ich autorów.
+\begin{lstlisting}[style=DOS]
+>>> id_of_authors = []
+>>> e = Task.objects.filter(skill=6)[:10]
+>>> exec("for task in e: text = print(task.author.id)")
+SELECT "task"."id",
+	...
+  FROM "task"
+ INNER JOIN "task_skill"
+    ON ("task"."id" = "task_skill"."task_id")
+ WHERE "task_skill"."skill_id" = 6
+ LIMIT 10
+Execution time: 0.001817s [Database: default]
+SELECT "customuser"."id",
+	...
+ WHERE "customuser"."id" = 2
+ LIMIT 21
+Execution time: 0.001256s [Database: default]
+Execution time: 0.001192s [Database: default]
+Execution time: 0.001339s [Database: default]
+Execution time: 0.001212s [Database: default]
+Execution time: 0.001298s [Database: default]
+Execution time: 0.001349s [Database: default]
+Execution time: 0.001313s [Database: default]
+Execution time: 0.001406s [Database: default]
+Execution time: 0.001275s [Database: default]
+Execution time: 0.001305s [Database: default]
+>>> print(id_of_authors)
+[2, 4, 4, 3, 4, 2, 1, 3, 4, 3]
+\end{lstlisting}
+Powyższy kod bez użycia \textbf{select\_related()} wykona aż 11 zapytań do bazy. Jedno zwracające zadania, a każde kolejne o autora w pętli. Łączny czas wykonywanie wynosi 0.012945s. Poniżej znajduje się kod wykorzystujący \textbf{select\_related()}, który dokona tylko jednego zapytania, a czas wynosić będzie 0.002796s.
+\begin{lstlisting}[style=DOS]
+>>> id_of_authors = []
+>>> e = Task.objects.select_related('author').filter(skill=6)[:10]
+>>> exec("for task in e: text = print(task.author.id)")
+SELECT "task"."id",
+	...
+       "customuser"."id",
+	...
+  FROM "task"
+ INNER JOIN "task_skill"
+    ON ("task"."id" = "task_skill"."task_id")
+ INNER JOIN "customuser"
+    ON ("task"."author_id" =
+Execution time: 0.002796s [Database: default]
+>>> print(id_of_authors)
+[2, 4, 4, 3, 4, 2, 1, 3, 4, 3]
+\end{lstlisting}
+\subsection{Aktualizacja obiektu}
+Metoda \textbf{update()} wykonuje zapytanie aktualizujące SQL dla określonych pól i zwraca liczbę dopasowanych wierszy. Na przykład, aby zmienić typ wszystkich zadań o punktacji równej 3 potrzebne jest polecenie:
+\begin{lstlisting}[style=DOS]
+>>> Task.objects.filter(points = 4).update(type = 1)
+UPDATE "authentication_task"
+   SET "type" = 1
+ WHERE "authentication_task"."points" = 4
+Execution time: 0.170321s [Database: default]
+592
+\end{lstlisting}
+\subsection{Usuwanie obiektu}
+Metoda \textbf{delete()} wykonuje zapytanie SQL usuwające dla wszystkich wierszy w QuerySet.
+\begin{lstlisting}[style=DOS]
+>>> Task.objects.filter(points = 1).delete()
+\end{lstlisting}
+\section{Wyzwalacze Django-PostgreSQL}
+Wyzwalacze mogą rozwiązywać wiele różnych problemów na poziomie bazy danych lepiej niż na poziomie aplikacji Django. Dzięki wyzwalaczom można np.:
+\begin{itemize}
+\item ochrona przez usuwaniem oraz zmienianiem wierszy lub kolumn
+\item śledzenie zmian w modelach lub kolumnach
+\item synchronizacja pól z innymi polami.
+\end{itemize}
+Aby używać wyzwalaczy bazy PostgreSQL w Django z pomocą przychodzi dodatek \textbf{django-pgtrigger}.
+\begin{lstlisting}[style=DOS]
+>pip install django-pgtrigger
+\end{lstlisting}
+Wykonując powyższe polecenie oraz dodając \textbf{pgtrigger} do INSTALLED\_APPS można rozpocząć współpracę z django-pgtrigger.
+\subsection{Ochrona przed usunięciem modelu}
+Definicja pgtrigger.Protect wywołuje ochronę przed wykonaniem wybranej operacji.
+\begin{lstlisting}[
+language={Python},
+xleftmargin=5pt,
+xrightmargin=5pt,
+caption={Fragment pliku \texttt{models.py}}
+]
+import pgtrigger
+@pgtrigger.register(
+	pgtrigger.Protect(name="delete_protect",
+			operation=pgtrigger.Delete)
+)
+class Section(models.Model):
+   ...
+\end{lstlisting}
+\begin{lstlisting}[style=DOS]
+>>> sec = Section.objects.get(id=3)
+>>> sec.delete()
+django.db.utils.InternalError: pgtrigger: 
+ Cannot delete rows from section table
+CONTEXT:  
+ PL/pgSQL function pgtrigger_protect_deletes_f1129() line 14 at RAISE
+\end{lstlisting}
+Chcąc usunąć dział o id równym 3 otrzymujemy błąd informujący o tym, że operacja ta nie jest możliwa. Takie działanie zapewnia nas o tym, że działy lub umiejętności nie zostaną usunięte.
+\subsection{Możliwość wyłącznie tworzenie lub odczytu}
+Wyzwalacz \textbf{pgtrigger.Protect}oferuję nie tylko ochronę przed usunięciem modelu. Kolejną przydatną opcją jest ochrona przez aktualizowaniem danych modelu.
+\begin{lstlisting}[
+language={Python},
+xleftmargin=5pt,
+xrightmargin=5pt,
+caption={Fragment pliku \texttt{models.py}}
+]
+@pgtrigger.register(
+    pgtrigger.Protect(name="delete_update_protect",
+	operation=(pgtrigger.Update | pgtrigger.Delete)
+))
+class Task(models.Model):
+   ...
+\end{lstlisting}
+Powyższy kod ukazuję ochronę modelu, dającą możliwość jedynie tworzenia nowego zadania w bazie. Próba zmiany jego wartości lub usunięcia skutkować będzie błędem. Możliwa jest również ochrona poszczególnego pola modelu np.:
+Jeżeli chcemy, aby użytkownik nie mógł zmieniać typu lub poziomy zadania, należy użyć:
+
+\begin{lstlisting}[
+language={Python},
+xleftmargin=5pt,
+xrightmargin=5pt,
+caption={Fragment pliku \texttt{models.py}}
+]
+@pgtrigger.register(
+    pgtrigger.Protect(
+        operation=pgtrigger.Update,
+        name = 'type_level_protect'
+        condition=(
+         pgtrigger.Q(old__type__df=pgtrigger.F('new__type')) |
+         pgtrigger.Q(old__level__df=pgtrigger.F('new__level'))
+)))
+class Task(models.Model):
+   ...
+\end{lstlisting}
+\subsection{Miękkie usuwanie}
+Zdarza się, że użytkownik usunie utworzony przez siebie sprawdzian, lecz po pewnym czasie chce go odzyskac. Można użyć wtedy \textbf{pgtrigger.SoftDelete}, który zapobiegnie całkowitemu usunięciu obiektu, poprzez zmianę wartości pola obiektu.
+\begin{lstlisting}[
+language={Python},
+xleftmargin=5pt,
+xrightmargin=5pt,
+caption={Fragment pliku \texttt{models.py}}
+]
+@pgtrigger.register(
+    pgtrigger.SoftDelete(name = 'soft_del',
+	field='is_active', value=False)
+)
+class Test(models.Model):
+    is_active = models.BooleanField(default=True)
+    ... 
+\end{lstlisting}
+Gdy użytkownik usunie sprawdzian, pole \textbf{is\_active} zmieni swoją wartość na \textbf{False} i nie będzie juz wyświetlane na jego liście. Jeśli jednak będzie on chciał owy sprawdzian odzyskać, musi zrobić to z listy usuniętych sprawdzianów lub przez inne przeznaczone do tego rozwiązanie.
+\subsection{Śledzenie zmian}
+Jeżeli potrzebna jest możliwość śledzenia zmian w modelach użyteczne może okazac się \textbf{django-pghistory}, które zapewnia automatyczne i konfigurowalne śledzenie historii dla modeli Django przy użyciu wyzwalaczy. Aby używać django-pghistory potrzebne również będzie zainstalowanie aplikacji \textbf{django-pgconnection} oraz odpowiednie skonfigurowanie pliku settings.py. Po instalacji należy wykonać migrację.
+\begin{lstlisting}[
+language={Python},
+xleftmargin=5pt,
+xrightmargin=5pt,
+caption={Fragment pliku \texttt{settings.py}}
+]
+DATABASES = pgconnection.configure({
+    'default': {
+	...
+    }
+})
+\end{lstlisting}
+Przykładem użycia django-pghistory może być potrzeba zbierania informacji na temat utworzenia nowych zadań matematycznych.
+\begin{lstlisting}[
+language={Python},
+xleftmargin=5pt,
+xrightmargin=5pt,
+caption={Fragment pliku \texttt{settings.py}}
+]
+@pghistory.track(
+    pghistory.AfterInsert('create'),
+)
+class Task(models.Model):
+	...
+\end{lstlisting}
+Powyższy kod pozwala na zapisywanie informacji dotyczących tworzonych zadań przez użytkowników. W tym celu Django stworzył nową tabele taskevent, gdzie zapisywane są wszelkie dane.
+Istnieje wiele innych zastosowań django-pghistory. Aby poznać wszystkie z nich, warto zapoznać się z dokumentacją.
+\section{Podsumowanie}
+W tym rozdziale zawarte zostały informacje na temat współpracy frameworka Django z bazą danych PostgreSQL. Treści te pokazują w jaki sposób poprawnie łączyć się z bazą, tworzyć modele oraz wykorzystywać relację na przykładzie projektu Generatora Sprawdzianów. Opisane zostało również jak w optymalny sposób odpytywać bazę danych oraz wykorzystywać przydatne pakiety mające na celu pomoc we współpracy z PostgreSQL.
+\section{Bibliografia}
+\begin{enumerate}[leftmargin=5pt,rightmargin=5pt]
+\item \url{https://docs.djangoproject.com/en/3.1/} - Oficjalna strona framework’a Django
+\item \url{https://dev.mysql.com/doc/} - Dokumentacja MySQL
+\item \url{https://www.postgresql.org/docs/} - Dokumentacja PostgreSQL
+\item \url{https://docs.microsoft.com/en-us/sql/sql-server/} - Dokumentacja Microsoft SQL Server
+\item \url{https://docs.oracle.com/en/database/} - Dokumentacja Oracle Database
+\item \url{https://django-pghistory.readthedocs.io/en/latest/index.html} - Dokumentacja django-pghistory
+\item \url{https://django-pgtrigger.readthedocs.io/en/latest/toc.html} - Dokumentacja django-pgtrigger
+\item \url{https://django-pgconnection.readthedocs.io/en/latest/} - Dokumentacja django-pgconnection
+\item \href{https://towardsdatascience.com/data-engineering-with-python-django-and-postgresql-99409492769}{https://...data-engineering-with-python-django-and-postgresql...} - Sammy Lee, Data Engineering with Python, Django, and PostgreSQL – 28.02.2019
+\end{enumerate}
+
+\chapter {React jako narzędzie do tworzenia interfejsu użytkownika}
+
+\section{Czym jest React?}
+{
+React jest javascriptową biblioteką typu open source \footnote{open source - rodzaj oprogramowania oparty na licencji przyznającej użytkownikom prawo do badania, zmiany i rozpowszechniania oprogramowania \hyperlink{[6]}{[6]}} używaną do tworzenia interfesjów użytkownika aplikacji internetowych. Oryginalnym autorem jest programista firmy Facebook - Jordan Walke. Pierwszy, bardzo wczesny prototyp Reacta - FaxJS powstał już w 2011 roku, został wykorzystany do zaimplementowania funkcji "Szukaj" na platformie Facebook. Niedługo później, aby móc łatwiej obsługiwać Facebook Ads Jordan rozwinął prototyp i stworzył React. Po nabyciu przez Facebook Instagrama w 2012 roku, Instagram wyrażał chęć wdrożenia nowej technologii na swoją platformę, co powodowało nacisk na odłączenie Reacta od Facebooka i przejście na licencję open-source. W 2013 roku biblioteka przeszła na licencję open source \hyperlink{[2]}{[2]}. 
+\newline
+
+Od tamtego momentu React cały czas prężnie się rozwija, pozostaje jednym z najpopularniejszych narzędzi do tworzenia interfejsów graficznych, używany nie tylko przez ogromne firmy takie jak Uber, Netflix, Airbnb, Amazon, Twitter oraz wiele innych \hyperlink{[3]}{[3]}, ale również przez zwykłych użytkowników. Popularność Reacta nie przestaje rosnąć, w styczniu 2021 roku biblioteka została pobrana ponad 10 milionów razy \hyperlink{[4]}{[4]} , zdecydowanie wyróżniając się na tle podobnych narzędzi przeznaczonych do tworzenia interfesjów użytkownika.
+
+\begin{figure}
+\centering
+\includegraphics[width=14cm]{statystyki react vue angular.png}
+\caption{npm trends, statystyki dotyczące ilości pobrań popularnych narzędzi do tworzenia interfejsów}
+\label{statystyki react vue angular.png}
+\end{figure}
+
+}
+
+\section{Dlaczego warto korzystać z Reacta?}{
+React posiada wiele zalet, które sprawiły, że został użyty w tym projekcie. Relatywnie niska bariera wejścia, dzięki której nauka powinna być w miarę prosta dla osób mających wcześniejszą styczność z programowaniem. Łatwość testowania oraz debugowania - w tym celu bardzo przydatne jest narzędzie React Developer Tools\hyperlink{[5]}{[5]}, które możemy używać z poziomu przeglądarki internetowej. React Developer Tools jest dostępne w postaci rozszerzenia, po którego zainstalowaniu ujrzymy dwie zakładki, zakładkę Components oraz zakładkę Profiler, w zakładce Components możemy obserwować hierarchię wszystkich komponentów naszej aplikacji, możemy obserwować stan dowolnego komponentu oraz to jak zmienia się on w czasie. Druga zakładka Profiler pozwala nam sprawdzić wydajność naszej aplikacji. Domyślnie React pokazuje programiście wiele użytecznych, dobrze opisanych komentarzy oraz ostrzeżeń usprawniających pracę, są one dostępne, kiedy aplikacja znajduje się w fazie developerskiej. Wszystko to sprawia, że aplikacja w fazie developerskiej działa wolniej. Przejście do fazy produkcyjnej usuwa większość komentarzy, ostrzeżen oraz możliwość sprawdzania każdego komponentu i dowolnej informacji o nim przy pomocy React Developer Tools, ale za to znacząco przyspiesza jej wydajność.
+Właśnie z tych powodów tryb developerski stosujemy w czasie budowania aplikacji, a tryb produkcyjny używamy tam, gdzie mają korzystać z niego docelowi użytkownicy.
+
+
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=13cm]{react dev example.jpg}
+\caption{React Developer Tools - obraz poglądowy
+\newline
+Źródło: \url{https://lh3.googleusercontent.com/XWuZGqIrIsaoKHUqqQ2rs_GhS5JaH1p5pPBIUpj22mjNRNdR3Ana8FKz4B7JwsA6HIFVXGuU7pa4ELiW6iUNhs0Iyg=w640-h400-e365-rj-sc0x00ffffff}
+}
+\label{react dev example.jpg}
+\end{figure}
+
+React posiada obszerną, bardzo dobrze napisaną dokumentację wraz z samouczkiem \hyperlink{[1]}{[1]} dostępną w wielu językach, między innymi w języku Polskim.
+Kolejnym z plusów jest budowa komponentów, interfejs zbudowany w Reactcie jest stworzony z mniejszych komponentów, które łączą w sobie wygląd wraz z logiką odpowiedzialną za ich zachowanie, co pomaga w zorganizowaniu pracy, dodatkową pomocą jest JSX - rozszerzenie składni pozwalająca na używanie znaczników HTML razem z językiem Javascript.
+Ogromna popularność Reacta przekłada się również na mnogość dostępnych samouczków i innych materiałów pozwalających lepiej zrozumieć tę bibliotekę. Dodatkowo w poszukiwaniu odpowiedzi na nurtujące nas pytania możemy zajrzeć do społeczności programistów React takie jak dev.to \hyperlink{[7]}{7]}, hashnode \hyperlink{[8]}{[8]}, lub najpopularniejszy z nich pod względem obserwujących użytkowników (aktualnie jest ich ponad ćwierć miliona) - Reddit \hyperlink{[9]}{[9]}.
+
+}
+
+
+
+\section{Npm}{
+
+Npm (pierwotnie skrót od Node Package Manager) jest to manager pakietów języka Javascript. Pierwsze wydanie npm miało miejsce już w 2010 roku\hyperlink{[15]}{[15]}.
+Npm jest domyślnym managerem pakietów środowiska Node.js, npm jest instalowane razem z Node.js. Najważniejszym aspektem npm jest ogromna baza pakietów, bibliotek o 
+niezwykle szerokim wachlarzu zastosowań. Interesujące nas rozszerzenie możemy zainstalować przy pomocy komendy
+\newline
+npm install nazwapakietu
+\newline
+Kiedy nad projektem pracuje wiele osób, ilość używanych bibliotek może rozrastać się dużo szybciej wraz z szukaniem nowych rozwiązań do pojawiających się problemów.
+Potrzeba wpisywania nazwy każdego pakietu oraz instalowania go osobno mogłaby być męcząca, dlatego npm śledzi wszystkie używane pakiety w danym projekcie w jsonowym pliku
+packages, aby zainstalować wszystkie pakiety zarejestrowane przez plik packages należy użyć komendy
+\newline
+npm update
+\newline
+
+
+
+
+
+}
+
+
+
+\section{Pojęcia Reacta}
+
+
+
+
+\subsection{JSX}
+
+{
+JSX czyli Javascript XML jest rozszerzeniem składni języka Javascript, które pozwala na używanie znaczników HTML razem z językiem Javascript. Jest to niezwykle przydatne narzędzie, które ułatwia nam na operowanie danymi przetwarzanymi w kodzie Javascriptowym oraz ułatwia ich wyświetlanie przy pomocy znaczników HTML. JSX możemy wykorzystać w wielu celach.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=13cm]{JSX example h3.png}
+\caption{Fragment pliku MaterialUiUserExams.js
+}
+\label{react dev example.jpg}
+\end{figure}
+
+Jednym ze sposobów użycia jest łatwa możliwość otrzymania wartości zmiennej używanej w kodzie javascriptowym. W powyższym przykładzie wykorzystujemy to, aby otrzymać nazwę każdego działu, który następnie wyświetlamy użytkownikowi.
+JSX jest w stanie obsłużyć dowolne, prawidłowe wyrażenie w języku Javascript, które zostało zamknięte wewnątrz nawiasów klamrowych. Dzięki czemu możemy nie tylko uzyskać wartości zmiennych, ale również je modyfikować oraz wywoływać funkcje javascriptowe, jeśli tego potrzebujemy.
+
+
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=13cm]{JSX example map.png}
+\caption{Wywołanie funkcji map wewnątrz <List>
+}
+\label{react dev example.jpg}
+\end{figure}
+
+Po kompilacji wyrażenia JSX stają się wywołaniami funkcji w języku Javascript, oznacza to, że możliwe jest używanie wyrażeń w JSX wewnątrz instrukcji warunkowych, pętli, przypisywać je do zmiennych, używać jako argumentów oraz zwracać z funkcji.
+Oczywiście oznacza to, że jeśli ktoś nie chce korzystać z JSX, może tego nie robić. Możliwe jest stworzenie wszystkich komponentów w czystym Javascripcie, natomiast JSX jest narzędziem bardzo wygodnym, mocno usprawniającym pracę z Reactem, dlatego jest zdecydowanie zalecanym rozwiązaniem.
+
+}
+
+\subsection{Komponenty}
+{
+Interfejs w Reactcie składa się z komponentów. Komponenty są jak javascriptowe funkcje, które przyjmują pewne wartości na wejściu, a następnie zwracają elementy reactowe, które opisują, co ma pojawić się na ekranie.
+Wyróżniamy dwa typy komponentów - komponenty klasowe oraz komponenty funkcyjne.
+\begin{figure}[H]
+\centering
+\includegraphics[width=13cm]{Komponent klasowy.png}
+\caption{Przykład komponentu klasowego
+}
+\label{komponent klasowy}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=13cm]{komponent funkcyjny.png}
+\caption{Przykład komponentu funkcyjnego
+}
+\label{komponent funkcyjny}
+\end{figure}
+Jedną z zasad obowiązujących podczas budowy komponentów, zarówno funkcyjnych jak i klasowych pozostaje nienaruszalność właściwości(ang. props) przekazywanych podczas deklaracji funkcji, dane, które mają zmieniać się dynamiczne powinny być przechowywane w stanach.
+Obecnie podstawową różnicą pozostaje składnia, w przeszłości komponenty funkcyjne nie posiadały stanów ani metod pozwalających na uruchamianie kodu w odpowiednich momentach, z tych powodów komponentów funkcyjnych używano tylko do budowy komponentów, które nie musiały być dynamiczne. Zmieniło się to wraz z wprowadzeniem Hooków.
+Warto również wiedzieć, że komponenty mogą odwoływać się do innych komponentów, co promuje pisanie ich z myślą o możliwości wielokrotnego wykorzystania. Możemy to wykorzystać na przykład tworząc komponent ekranu ładowania, następnie możemy go użyć w innych komponentach, renderując go wtedy, gdy użytkownik będzie oczekiwał na odpowiedź od serwera.
+
+
+
+}
+
+\subsection{Stan i cykl życia}{
+
+Stan zawiera dane związane z danym komponentem, które mogą ulegać zmianie. Stan powinien być javascriptowym obiektem, aby go zmodyfikować należy wywołać metodę setState. Dodatkowo komponenty posiadają metody cyklu życia, które są odpowiedzialne za uruchamianie kodu w odpowiednich momentach.
+\newline
+Cykl życia komponentu możemy podzielić na 3 etapy:
+\newline- Montowanie(ang. Mounting), czyli pierwsze stworzenie instancji komponentu i włożenie go do drzewa DOM
+\newline- Aktualizacja, czyli zmiany we właściwościach lub stanie komponentu
+\newline- Odmontowanie(ang. Unmounting), czyli usunięcie komponentu z drzewa DOM
+\begin{figure}[H]
+\centering
+\includegraphics[width=13cm]{diagram metod cyklu życia.png}
+\caption{Diagram metod cyklu życia
+\newline
+Źródło: \url{https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/}
+}
+\label{metody cyklu zycia}
+\end{figure}
+Każdy cykl wywołuje inny zestaw metod, najważniejszymi metodami wywoływanymi w czasie montowania są constructor - odpowiedzialny za inicjalizacje stanu lokalnego oraz związanie(ang. bind) metody obsługi zdarzeń, render oraz componentDidMount - ta metoda jest odpowiednim miejscem do wysłania zapytania, jeśli potrzebujemy pobrać dane z zewnątrz.
+W czasie aktualizacji wywołana zostaje analogiczna metoda - componentDidUpdate, a w czasie Odmontowania wywołana zostaje metoda componentWillUnmount - powinniśmy z niej korzystać głównie w celach posprzątania np. wyzerowanie liczników.
+\newline
+\newline
+Stan może przyjąć dowolną wartość, true, false, null, może być liczbą, stringiem lub tablicą.
+\begin{figure}[H]
+\centering
+\includegraphics[width=13cm]{class comp i stan.png}
+\caption{Diagram metod cyklu życia
+Klasowy komponent posiadający stany
+}
+\label{metody cyklu zycia}
+\end{figure}
+
+}
+
+
+\subsection{Renderowanie warunkowe}
+
+Renderowanie warunkowe umożliwia wyświetlanie elementów na podstawie stanu twojej aplikacji. Oznacza to, że jesteśmy w stanie uzależnić interfejs(to, co widzi użytkownik) od wartości zwracanej przez zastosowaną przez nas instrukcje warunkową.
+Do renderowania warunkowego możemy użyć klasycznej instrukcji if,
+\begin{figure}[H]
+\centering
+\includegraphics[width=13cm]{renderowanie z ifem.png}
+\caption{Renderowanie warunkowe przy pomocy instrukcji if,
+}
+
+\end{figure}
+
+operatora warunkowego, często stosowanego jako krótsza wersja instrukcji if
+\begin{figure}[H]
+\centering
+\includegraphics[width=13cm]{Render operator warunkowy.png}
+\caption{Renderowanie warunkowe przy pomocy operatora warunkowego
+}
+
+\end{figure}
+
+\pagebreak
+jak i przy pomocy operatora logicznego \&\&.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=13cm]{render &&.png}
+\caption{Renderowanie warunkowe przy pomocy operatora logicznego \&\&
+}
+
+\end{figure}
+
+
+\subsection{Hooki}
+Hooki zostały wprowadzone w wersji 16.8, pozwalają używać stanów oraz innych funkcjonalności Reacta w komponentach funkcyjnych.
+\newline
+Jak podają developerzy, głownymi powodami, dla których wprowadzili hooki były:
+\newline -Współdzielenie logiki związanej ze stanem pomiędzy komponentami jest trudne
+\newline -Wraz ze wzrostem złożoności komponentów stają się one zbyt trudne do zrozumienia
+\newline -Klasy są mylące zarówno dla ludzi jak i maszyn
+\newline
+Jeśli chcemy skorzystać ze stanu w komponencie funkcyjnym należy użyć hooka stanu.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=13cm]{hook stanu.png}
+\caption{Wywołanie hooka stanu
+}
+
+\end{figure}	
+
+Powyższy przykład pokazuje jak użyć hooka stanu, gdzie editView jest nazwą stanu, a email jest jego wartością początkową. W przypadku potrzeby zaktualizowania wartości należy 
+wywołać funkcję setEditView.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=13cm]{zmiana stanu hook.png}
+\caption{Przykładowe wywołanie funkcji setEditView
+}
+
+\end{figure}	
+
+Jeśli chcemy dokonać operacji w określonym cyklu życia komponentu należy użyć hooka useEffect. Możemy o nim myśleć jak o połączeniu metod componentDidMount, componentDidUpdate oraz componentWillUnmount w jedną.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=13cm]{use effect przyklad.png}
+\caption{Przykładowe użycie hooka use efect
+}
+
+\end{figure}	
+
+\subsection{Obsługa zdarzeń}
+{
+Kolejnym pojęciem często używanym w budowaniu interfejsów są zdarzenia. Zdarzenia określają zajście pewnej czynności, którą nasz interfejs jest w stanie wyłapać i następnie obsłużyć.
+Przykładowymi zdarzeniami mogą być onClick - w przypadku kliknięcia myszką, onChange - w przypadku modyfikacji elementu lub onSubmit - w przypadku przesłania formularza.
+W odróżnieniu od np. HTMLa w Reactcie zdarzenia zapisujemy tzw. camelCasem. \footnote{camelCase jest konwencją, w której w nazwach kolejne wyrazy zapisujemy łącznie, a każdy kolejny(nie licząc pierwszego) rozpoczynamy wielką literą}
+Instrukcje obsługi zdarzenia są przekazywane jako funkcje.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=13cm]{onclick remove exam.png}
+\caption{Przykładowe obsłużenie zdarzenia onClick
+}
+
+\end{figure}	
+
+}
+
+Innym sposobem na przekazanie instrukcji obsługi zdarzenia jest napisanie funkcji obsługi, następnie jej związanie(ang. bind) i wywołanie jej przy pomocy this.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=13cm]{zbindowanie.png}
+\caption{Związanie
+}
+
+\end{figure}	
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=13cm]{hidesection wywo.png}
+\caption{Obsługa zdarzenia przy pomocy zbindowanej metody
+}
+
+\end{figure}	
+
+
+
+\section{Tworzenie formularzy oraz wymiana danych z serwerem}
+\bigbreak
+Jedną z podstawowych rzeczy, które musi zrobić prawie każdy interfejs w dzisiejszych aplikacjach internetowych jest obsługa formularzy oraz wymiana danych między serwerem, aplikacją oraz użytkownikiem. Interfejs projektu Gen-mat w tym celu używa głównie 3 bibliotek:
+\newline
+-Axios
+\newline
+-Formik
+\newline
+-Yup
+
+\subsection{Axios}
+Axios\hyperlink{[10]}{[10]} jest Klientem HTTP dla node.js oraz przeglądarki opartym na javascriptowym obiekcie Promise, który służy do obsługi operacji asynchronicznych.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=13cm]{promises.png}
+\caption{Jak działa Promise?
+\newline
+Źródło: \url{https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/promises.png}
+}
+\label{react dev example.jpg}
+\end{figure}
+
+Dzięki Axios możemy tworzyć HTTP(ang. Hypertext Transfer Protocol) requesty- żądania, które są podstawową formą komunikacji z serwerem. HTTP opisuje formę żądania klienta oraz formę odpowiedzi na to żądanie ze strony serwera. Do najważniejszych metod httprequestów, na których się skupimy, należą:
+\newline
+- GET - metoda wysyłająca żądanie otrzymania danych, powinna być ograniczona jedynie do pobierania danych, nie powinna ich przesyłać
+\newline
+- PUT - metoda używana w celu przesłania danych między klientem oraz serwerem w celu aktualizacji wybranego zasobu
+\newline
+- POST - metoda używana w celu przesłania danych między klientem oraz serwerem
+\newline
+- DELETE - żądanie usunięcia danych
+\newline
+Axios pozwala na tworzenie instancji z własną konfiguracją, która będzie stosowana domyślnie przy każdym wysłaniu żądania przy pomocy
+tej instancji.
+
+
+Gen-mat używa dwóch instancji Axios.
+\begin{figure}[H]
+\centering
+\includegraphics[width=13cm]{axios instancje.png}
+\caption{Instancje Axios
+}
+
+\end{figure}
+
+Gdzie baseURL oznacza adres URL, timeout służy do określania maksymalnego czasu(w milisekundach) jaki żądanie ma na wykonanie, zanim zostanie anulowane, dodatkowo na podstawie zawartości nagłówka serwer jest w stanie odróżnić czy zapytanie zostało wysłane przez użytkownika zalogowanego czy przez użytkownika niezalogowanego. Aby wysłać żądanie należy  odwołać się do instancji, określić rodzaj żądania, podać dokładną ścieżkę oraz, w zależności od tego, co mamy do przekazania serwerowi, przesłać dane.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=13cm]{instance get.png}
+\caption{Przykład wywołania GET Request w jednej z instancji
+}
+
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=13cm]{axios post.png}
+\caption{Przykład wywołania POST Request w jednej z instancji
+}
+
+\end{figure}
+
+
+\subsection{Yup}
+Yup jest narzędziem przydatnym przy parsowaniu oraz walidacji\hyperlink{[13]}{[13]}. Yup pozwala na tworzenie schematów, do których następnie
+można przyrównać interesujący nas element. Yup pozwala nam porównywać zarówno wartości zmiennych, jak i ich typy.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=13cm]{yup przyklad.png}
+\caption{Yup - przykład użycia
+}
+
+\end{figure}
+
+
+\subsection{Formik}
+Formik jest biblioteką usprawniającą tworzenie formularzy w Reactcie. Pomaga z przekazywaniem wartości ze stanów oraz do stanów, walidacją oraz wyłapywaniem błędów oraz przesyłaniem formularzy.
+Jak podaje sam autor, powodem, dla którego stworzył Formik jest chęć unstandaryzowania komponentów wejścia oraz sposobu przepływu danych wewnątrz formularzy\hyperlink{[12]}{[12]}.
+\newline
+Formik daje nam dostęp do przemyślanych pól oraz metod pomocniczych przydatnych przy tworzeniu formularzy. Na początku możemy przekazać
+początkowe wartości w initialValues, podstawowymi metodami pomocniczymi są:
+\newline
+- handleSubmit - procedura obsługi wysyłania
+\newline
+- handleChange - procedura obsługi zmian
+\newline
+- values - w tej metodzie przechowywane sa aktualne wartości obecne w formularzu.
+\newline
+Dodatkowo Formik pomaga w walidacji pól na poziomie formularza dzięki validationSchema, która w połączeniu z Yupem sprawia, że walidacja z poziomu formularza staje się
+bardzo prosta. Wystarczy stworzyć schemat przy pomocy Yupa a następnie jako validationSchema użyć obiektu stworzonego w Yup.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=13cm]{Formik deklaracja.png}
+\caption{Formik deklaracja
+}
+
+\end{figure}
+
+Oprócz wcześniej wspomnianych właściwościach jako podstawowe Formik zapewnia:
+\newline
+- dirty - zwracające true, gdy międze wartościami values a początkowymi wartościami przekazanymi w initialValues nie zachodzi głęboka równość.
+\newline
+- handleBlur - procedura obsługi zdarzenia onBlur - używanego, gdy chcemy monitorować, czy konkretna dana wejściowa została dotknięta.
+\newline
+- isSubmitting - sprawdza stan przesyłania formularza, zwraca true, gdy formularz jest aktualnie przesyłany, w innym wypadku zwraca false
+\newline
+- setFieldError - pozwala ustawić osobno wiadomość w razie błędu wybranego pola
+\newline
+
+
+
+
+
+\section{React Router}
+Modułem odpowiedzialnym za routing - nawigację pomiędzy ścieżkami jest React Router\hyperlink{[14]}{[14]}. Moduł ten odpowiada za
+możliwość przechodzenia pomiędzy rożnymi widokami obecnymi w projekcie, jak i wyświetlanie prawidłowego widoku pod danym adresem URL.
+Kolejnym zastosowaniem jest zabezpieczenie ścieżki przed niepożądanym użytkownikiem oraz możlwiość przekierowania użytkownika pod wybrany adres.
+Dodatkowo React Router pozwala na wyłuskanie opcjonalnego parametru w adresie URL.
+\newline
+\newline
+Jednym z najważniejszych komponentów w React Router jest Route, jego podstawową funkcją jest wyświetlanie właściwej części interfejsu pod podanym adresem URL.
+Kolejnym przydatnym komponentem jest Switch, sprawia, że renderuje się pierwszy Route, który odpowiada podanemu adresowi, zapobiega to niechcianym renderom widoków, które przypadkiem mogą również pasować do podanej ścieżki. Komponent Redirect nadpisuje obecny adres i nawiguje pod nowy adres.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=13cm]{route switch.png}
+\caption{ścieżki dostępne w projekcie Gen-mat
+}
+
+\end{figure}
+
+React Router posiada kilka przydatnych hooków, useHistory, useLocation, useParams, useRouteMatch. Hook useHistory daje nam dostęp do pakietu history, który oferuje kolejne usprawnienia 
+nawigacyjne oferując właściwości i metody takie jak:
+\newline - location- obiekt reprezentujący obecny adres
+\newline - push- przepycha nowy adres na ostatnie miejsce na stosie historii
+\newline - goBack- funkcja wracająca na poprzedni adres
+\newline
+Rozważmy następującą sytuację - użytkownik zapomniał hasła, korzysta z funkcji "reset hasła", na adres e-mail otrzymuje link, którego ostatnią częścią
+jest losowo wygenerowany ciąg znaków - token, nasza aplikacja musi być w stanie wydobyć ten token oraz sprawdzić czy jest poprawny, jest to możliwe dzięki użyciu useParams.
+\begin{figure}[H]
+\centering
+\includegraphics[width=13cm]{useparams.png}
+\caption{wywołanie useParams
+}
+
+\end{figure}
+
+
+
+
+\pagebreak
+
+\section{Podsumowanie}
+React jest potężnym narzędziem do tworzenia interfejsów. Jego ogromna popularność przekłada się na gigantyczną ilość materiałów pomagających jego przyswojenie, co w połączeniu z relatywnie niską barierą wejścia składa się na atrakcyjny wybór dla osób bez większego doświadczenia w tworzeniu interfejsów.
+Dodatkowym atutem jest kompatybilność z szeroką ilością narzędzi ułatwiających pracę oraz dających więcej możliwości. Fakt, że React jest stale rozwijany oraz używany przez ogromne firmy
+sugeruje, że nie zostanie porzucony w najbliższej przyszłości, co również może skłaniać do wybrania właśnie tej biblioteki.
+
+\section{Bibliografia}
+
+
+\hypertarget{[1]}{[1] React - Dokumentacja \url{https://reactjs.org/}}
+\newline
+\hypertarget{[2]}{[2] Risingstack \url{https://blog.risingstack.com/the-history-of-react-js-on-a-timeline}}
+\newline
+\hypertarget{[3]}{[3] Stackshare \url{https://stackshare.io/react}}
+\newline
+\hypertarget{[4]}{[4] npm trends \url{https://www.npmtrends.com/react-vs-vue-vs-@angular/core-vs-ember-source}}
+\newline
+\hypertarget{[5]}{[5] React Developer Tools \url{https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en}}
+\newline
+\hypertarget{[6]}{[6] Wikipedia \url{https://pl.wikipedia.org/wiki/Otwarte_oprogramowanie}}
+\newline
+\hypertarget{[7]}{[7] Dev.to \url{https://dev.to/t/react}}
+\newline
+\hypertarget{[8]}{[8] Hashnode \url{https://hashnode.com/n/reactjs}}
+\newline
+\hypertarget{[9]}{[9] Reddit \url{https://www.reddit.com/r/reactjs/}}
+\newline
+\hypertarget{[10]}{[10] Axios - Dokumentacja \url{https://axios-http.com/docs/intro}}
+\newline
+\hypertarget{[11]}{[11] MDN Web Docs \url{https://developer.mozilla.org/en-US/docs/Web/JavaScript}}
+\newline
+\hypertarget{[12]}{[12] Formik - Dokumentacja \url{https://formik.org/docs/overview}}
+\newline
+\hypertarget{[13]}{[13] Yup - Dokumentacja \url{https://github.com/jquense/yup}}
+\newline
+\hypertarget{[14]}{[14] React Router - Dokumentacja \url{https://reactrouter.com/web/example/basic}}
+\newline
+\hypertarget{[15]}{[15] Wikipedia \url{https://en.wikipedia.org/wiki/Npm_(software)}}
+\newline
+\hypertarget{[16]}{[16] npm docs \url{https://docs.npmjs.com/about-npm}}
+\newline
+
+\end{enumerate}
+\end{enumerate}
 \end{document}
