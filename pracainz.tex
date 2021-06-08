@@ -7,7 +7,7 @@
 % Zdefiniuj kodowanie pliku źródłowego (domyślnie utf8)
 \usepackage[utf8]{inputenc}
 \DeclareUnicodeCharacter{200B}{{\hskip 0pt}}
-\usepackage{authblk}
+%\usepackage{authblk}
 \usepackage{float}
 \usepackage{enumerate}
 \usepackage{hyperref}
@@ -16,6 +16,14 @@
 \usepackage{xcolor}
 \usepackage{listings}
 \usepackage{enumitem}
+
+%\usepackage[utf8]{inputenc}
+%\DeclareUnicodeCharacter{200B}{{\hskip 0pt}}
+%\usepackage{multirow}
+%\usepackage{adjustbox}
+%\usepackage{xcolor}
+%\usepackage{listings}
+%\usepackage{enumitem}
 
 %quotes for python code%
 \let\oldquote\quote
@@ -220,14 +228,11 @@ Autor: Damian Kuich
 Autor: Mikołaj Kowalczyk
 \begin{itemize}
 \item Krótki opis co to jest baza danych
-\item Charakterystyka MySQL
-\item Charakterystyka MS SQL Server
-\item Charakterystyka Oracle 
-\item Charakterystyka PostgreSQL
+\item Charakterystyka, MySQL, MS SQL Server, Oracle, PostgreSQL
 \item Zestawienie wad oraz zalet każdego z wyżej wymienionych systemów.
 \item Opis modelowania bazy danych, tworzenia jej przez Django oraz sposób w jaki się z nią łączy.
 \item Wylistowanie oraz opis najważniejszych modeli danych w naszej bazie.
-\item Opisanie relacji miedzy tabelami (krótki opis każdej z relacji) oraz wyjaśnienie dlaczego są one nam potrzebne.
+\item Opisanie relacji miedzy tabelami.
 \item Opis czynności związanych z dostępem do danych za pomocą Django.
 \item Opis czynności mających na celu zachowanie integralności oraz spójności danych.
 \end{itemize}
@@ -802,37 +807,20 @@ W mojej pracy krótko przedstawię cztery systemy zarządzania bazami danych:
 \item PostgreSQL 
 \end{itemize}
 \section{MySQL}
-MySQL to darmowy i otwarty system zarządzania relacyjnymi bazami danych (RDBMS). Prace nad nim rozpoczęły się w 1995r. Jego właścicielem jest Oracle, który oferuje płatne wersje premium MySQL z dodatkowymi usługami, zastrzeżonymi wtyczkami, rozszerzeniami i wsparciem dla użytkowników. Jest to lekka baza danych, która może być instalowana i używana przez programistów na serwerach aplikacji produkcyjnych z dużymi aplikacjami wielowarstwowymi, a także na komputerze stacjonarnym. Można go zainstalować na wszystkich platformach, takich jak Windows, Linux i Mac. Jest bezpieczny i nie jest podatny na żadne luki w zabezpieczeniach. 
+MySQL to darmowy i otwarty system zarządzania relacyjnymi bazami danych (RDBMS). Jego właścicielem jest Oracle, który oferuje płatne wersje premium MySQL z dodatkowymi usługami. Jest to lekka baza danych, która może być instalowana i używana przez programistów na serwerach aplikacji produkcyjnych z dużymi aplikacjami wielowarstwowymi, a także na komputerze stacjonarnym. Jest bezpieczny i nie jest podatny na żadne luki w zabezpieczeniach. 
 
-MySQL oferuje obsługę następujących języków: 
-\begin{itemize}
-\item C/C++ 
-\item Delphi
-\item Java 
-\item Lisp 
-\item Node.js 
-\item Perl 
-\item PHP 
-\item R
-\end{itemize}
+\indent MySQL oferuje obsługę następujących języków: C/C++, Delphi, Java, Lisp, Node.js, Perl, PHP, R.
 
-MySQL oferuje obsługę w chmurze, instalacje lokalne oraz jest kompatybilny z następującymi systemami operacyjnymi i formatami: 
-\begin{itemize}
-\item Windows 
-\item MacOS 
-\item Linux (Ubuntu, Debian, Generic, SUSE Linux Enterprise Server, Red Hat Enterprises, Oracle) 
-\item Oracle Solaris 
-\item Fedora 
-\item FreeBSD 
-\end{itemize}
 
-\begin{table}[h!]
+MySQL oferuje obsługę w chmurze, instalacje lokalne oraz jest kompatybilny z następującymi systemami operacyjnymi i formatami: Windows, MacOS, Linux (Ubuntu, Debian, Generic, SUSE Linux Enterprise Server, Red Hat Enterprises, Oracle), Oracle Solaris, Fedora, FreeBSD.
+
+\begin{table}[H]
 \caption{Wady i zalety MySQL}
 \label{tabela-MySQL}
 \centering
 \begin{adjustbox}{width=1\textwidth}
 \small
-\begin{tabular}{|l|r|}
+\begin{tabular}{lr}
 \toprule
 Zalety & Wady\\
 \midrule
@@ -849,31 +837,18 @@ Szybki, przenośny i bezpieczny &\\
 \end{adjustbox}
 \end{table}
 \section{MS SQL Server}
-MS SQL Server to relacyjny system zarządzania bazami danych (RDBM) wydany w 1989 roku, opracowany i obsługiwany przez firmę Microsoft. Używa wariantu Structured Query Language (SQL) o nazwie T-SQL (dla Transact-SQL). Zwykle zawiera silnik relacyjnej bazy danych, który przechowuje dane w tabelach, kolumnach i wierszach, Integration Services (SSIS), który jest narzędziem do przenoszenia danych do importowania, eksportowania i przekształcania danych, Reporting Services (SSRS), który służy do tworzenia raporty i udostępniają raporty użytkownikom końcowym, a także Analysis Services (SSAS), czyli wielowymiarowa baza danych służąca do wykonywania zapytań o dane z głównego silnika bazy danych. 
+MS SQL Server to relacyjny system zarządzania bazami danych (RDBM) opracowany i obsługiwany przez firmę Microsoft. Używa wariantu Structured Query Language (SQL) o nazwie T-SQL (dla Transact-SQL). Zwykle zawiera silnik relacyjnej bazy danych, który przechowuje dane w tabelach, kolumnach i wierszach, Integration Services (SSIS), który jest narzędziem do przenoszenia danych do importowania, eksportowania i przekształcania danych, Reporting Services (SSRS), który służy do tworzenia raporty i udostępniają raporty użytkownikom końcowym, a także Analysis Services (SSAS), czyli wielowymiarowa baza danych służąca do wykonywania zapytań o dane z głównego silnika bazy danych. 
 
-MS SQL Server oferuje obsługę języków programowania takich jak: 
-\begin{itemize}
-\item C\#
-\item C++ 
-\item Delphi 
-\item Go 
-\item Java 
-\item JavaScript 
-\item PHP 
-\item Python 
-\item R 
-\item Ruby 
-\item Visual Basic 
-\end{itemize}
+MS SQL Server oferuje obsługę języków programowania takich jak: C\#, C++, Delphi, Go, Java, JavaScript, PHP, Python, R, Ruby , Visual Basic.
 MS SQL Server jest dostępny na systemach \texttt{Microsoft Windows} oraz Linux.
 
-\begin{table}[h!]
+\begin{table}[H]
 \caption{Wady i zalety MS SQL Server}
 \label{tabela-MS SQL Server}
 \centering
 \begin{adjustbox}{width=1\textwidth}
 \small
-\begin{tabular}{|l|r|}
+\begin{tabular}{lr}
 \toprule
 Zalety & Wady\\
 \midrule
@@ -887,41 +862,18 @@ Wsparcie odzyskiwania danych & \\
 \end{adjustbox}
 \end{table}
 \section{Oracle}
-Oracle to system zarządzania relacyjnymi bazami danych wydane w 1980 roku z podstawowymi funkcjami SQL, który sam się steruje, zabezpiecza, samo naprawia i eliminuje podatne na błędy ręczne zarządzanie bazą danych. Umożliwia bezpieczne przechowywanie i szybkie pobieranie danych. Oracle to pierwsze narzędzie bazodanowe opracowane do celów biznesowych do zarządzania danymi za pomocą języka zapytań. 
+Oracle to system zarządzania relacyjnymi bazami danych wydany w 1980 roku z podstawowymi funkcjami SQL, który sam się steruje, zabezpiecza, samo naprawia i eliminuje podatne na błędy ręczne zarządzanie bazą danych. Umożliwia bezpieczne przechowywanie i szybkie pobieranie danych. Oracle to pierwsze narzędzie bazodanowe opracowane do celów biznesowych do zarządzania danymi za pomocą języka zapytań. 
 
-Oracle oferuje obsługę języków programowania takich jak: 
-\begin{itemize}
-\item C 
-\item C\# 
-\item C++ 
-\item Delphi 
-\item Haskell 
-\item Java 
-\item JavaScript 
-\item C 
-\item Perl 
-\item PHP 
-\item Python 
-\item R 
-\item Ruby 
-\item Visual Basic 
-\end{itemize}
+Oracle oferuje obsługę języków programowania takich jak: C, C\#, C++, Delphi, Haskell, Java, JavaScript, C, Perl, PHP, Python, R, Ruby, Visual Basic.
 
-Oracle jest dostępny dla następujących systemów operacyjnych: 
-\begin{itemize}
-\item Windows 
-\item Mac OS X 
-\item Linux 
-\item UNIX 
-\item z/OS 
-\end{itemize}
-\begin{table}[h!]
+Oracle jest dostępny dla następujących systemów operacyjnych: Windows, Mac OS X, Linux, UNIX, z/OS.
+\begin{table}[H]
 \caption{Wady i zalety MySQL}
 \label{tabela-Oracle}
 \centering
 \begin{adjustbox}{width=1\textwidth}
 \small
-\begin{tabular}{|l|r|}
+\begin{tabular}{lr}
 \toprule
 Zalety & Wady\\
 \midrule
@@ -934,47 +886,21 @@ Grupowanie transakcji & Intensywne wykorzystanie sprzętu\\
 \end{adjustbox}
 \end{table}
 \section{PostgreSQL}
-PostgreSQL to darmowy i otwarty system zarządzania obiektowo-relacyjnymi bazami danych (ORDBMS). Jest dostępny od 1988 roku i obecnie zarządzany jest przez społeczność programistów, która pomaga nam ułatwić i przyspieszyć naszą pracę.
-Jako ORDBMS, a nie RDBMS, PostgreSQL zapewnia zarówno obiektową, jak i relacyjną funkcjonalność bazy danych. PostgreSQL był pierwszym systemem DBMS, który zaimplementował funkcje kontroli współbieżności wielu wersji (MVCC) oraz oferuje wiele zaawansowanych opcji. Jest obecnie uważany za najbardziej zaawansowany silnik bazy danych. Obsługuje tekst, obrazy, dźwięki i wideo oraz zawiera interfejsy programistyczne dla wielu języków. PostgreSQL może być rozszerzany przez użytkownika na wiele sposobów. Na przykład można stworzyć nowe typy danych, funkcje, operatory lub funkcje indeksowania. 
+PostgreSQL to darmowy i otwarty system zarządzania obiektowo-relacyjnymi bazami danych (ORDBMS). Obecnie zarządzany jest przez społeczność programistów, która pomaga ułatwić i przyspieszyć  pracę wszystkich użytkowników.
+PostgreSQL zapewnia zarówno obiektową, jak i relacyjną funkcjonalność bazy danych. Był pierwszym systemem DBMS, który zaimplementował funkcje kontroli współbieżności wielu wersji (MVCC). Jest obecnie uważany za najbardziej zaawansowany silnik bazy danych. Obsługuje tekst, obrazy, dźwięki i wideo oraz zawiera interfejsy programistyczne dla wielu języków. PostgreSQL może być rozszerzany przez użytkownika na wiele sposobów.
 
 
-PostgreSQL oferuje obsługę nieco szerszej gamy języków: 
-\begin{itemize}
-\item C/C++ 
-\item Delphi 
-\item Erlang 
-\item Go 
-\item Java 
-\item JavaScript 
-\item Lisp 
-\item .Net 
-\item Python 
-\item R 
-\item Tcl 
-\end{itemize}
+PostgreSQL oferuje obsługę nieco szerszej gamy języków: C/C++, Delphi, Erlang, Go, Java, JavaScript, Lisp, .Net, Python, R, Tcl.
 
-PostgreSQL jest dostępny dla następujących systemów operacyjnych: 
-\begin{itemize}
-\item MacOS 
-\item Solaris 
-\item Windows 
-\item BSD (FreeBSD, OpenBSD) 
-\item Linux  
-\item CentOS 
-\item Fedora 
-\item Scientific 
-\item Oracle 
-\item Debian 
-\item Ubuntu Linux i pochodne 
-\end{itemize}
+PostgreSQL jest dostępny dla następujących systemów operacyjnych: MacOS, Solaris, Windows, BSD (FreeBSD, OpenBSD), Linux, CentOS, Fedora, Scientific, Oracle, Debian, Ubuntu Linux i pochodne.
 
-\begin{table}[h!]
+\begin{table}[H]
 \caption{Wady i zalety PostgreSQL}
 \label{tabela-PostgreSQL}
 \centering
 \begin{adjustbox}{width=1\textwidth}
 \small
-\begin{tabular}{|l|r|}
+\begin{tabular}{lr}
 \toprule
 Zalety & Wady\\
 \midrule
@@ -994,8 +920,8 @@ zdolny do obsługi danych w TB &  \\
 
 W naszym projekcie wybrany został PostgreSQL, ponieważ jest to potężny, w 100\% darmowy obiektowo-relacyjny system baz danych, z ponad 30-letnim aktywnym rozwojem. Jednym w głównych powodów było również to, że był to produkt oferowany poprzez używaną przez nas platformę chmurową Heroku. 
 \section{Łączenie z bazą danych PostgreSQL}
-Aby zacząć integrację Django z PostgreSQL musimy połączyć się z już istniejącą bazą danych lub stworzyć nową. 
-Domyślnie Django jest skonfigurowane do używania SQLite jako swojego zaplecza, dlatego musimy lekko zmienić zawartość pliku settings.py tak, aby można było używać Postgresa. 
+Integracja Django z PostgreSQL rozpoczyna się od stworzenia nowej bazy lub połączenia z istniejącą już bazą danych.
+Domyślnie Django jest skonfigurowane do używania SQLite jako swojego zaplecza, dlatego wymagana jest lekka zmiana zawartość pliku settings.py tak, aby używacie Postgresa było możliwe. 
 
 Poniżej znajduję się kod potrzebny do połączenia się bazą danych oferowaną przez Heroku. 
 \begin{lstlisting}[
@@ -1015,16 +941,9 @@ DATABASES = {,
 \end{lstlisting}
 \section{Modele}
 
-Na początku nasza baza posiada podstawowe modele danych takie jak \textbf{Users} oraz \textbf{Groups}. Aby zawierała inne dane, musimy zdefiniować je w naszym frameworku w pliku models.py.
-Najważniejszą częścią modelu są zdefiniowane pola bazy danych, będące instancja klasy Field. Są to na przykład:
-\begin{itemize}
-\item CharField - pole tekstowe
-\item TextField - pole przeznaczone dla dłuższych teksów
-\item ForeignKey - pole z kluczem obcym innego modelu
-\item IntegerField - pole zawierające wartość liczbową
-\item BooleanField - pole przyjmujące dwie wartości False/True (fałsz - prawda)
-\item DateTimeField - pole zawierające szczegóły na temat daty i czasu
-\end{itemize}
+Na początku baza posiada podstawowe modele danych takie jak \textbf{Users} oraz \textbf{Groups}. Aby zawierała inne dane, potrzebne jest zdefiniowanie ich w naszym frameworku w pliku models.py.
+Najważniejszą częścią modelu są zdefiniowane pola bazy danych, będące instancja klasy Field. Są to na przykład: CharField ,TextField, ForeignKey, IntegerField, BooleanField, DateTimeField.
+
 Pola modeli przeznaczone dla PostgreSQL (django.contrib.postgres.fields):
 \begin{itemize}
 	\item ArrayField - pole do przechowywania list danych
@@ -1037,14 +956,7 @@ Pola modeli przeznaczone dla PostgreSQL (django.contrib.postgres.fields):
 	\item DateRangeField - pole przechowuje zakres dat
 \end{itemize}
 
-Każde pole określone jest poprzez specyficzne argumenty. Przykładowo pole \textbf{CharField} wymaga podania argumentu \textbf{max\_length}, który określa maksymalną ilość znaków. Każde pole posiada również zestaw argumentów dostępnych dla każdego z nich np.:
-\begin{itemize}
-\item null (True/False) - wybierając \textbf{True} Django będzie przechowywać puste wartości odpowiadające \textbf{NULL} w przypadku bazy danych. Domyślny wybór tego atrubutu to \textbf{False}.
-\item blank (True/False) - wybór \textbf{True} oznacza, że pole może być puste, natomiast \textbf{True} skutkuje tym, że podane pole będzie wymagane podczas wprowadzania danych.
-\item default - domyślna wartość pola.
-\item unique (True/False) - wybór \textbf{True} oznacza, że pole musi być unikalne dla całej tabeli.
-\item choices
-\end{itemize}
+Każde pole określone jest poprzez specyficzne argumenty. Przykładowo pole \textbf{CharField} wymaga podania argumentu \textbf{max\_length}, który określa maksymalną ilość znaków. Każde pole posiada również zestaw argumentów dostępnych dla każdego z nich np.: null (True/False), blank (True/False), default, unique (True/False).
 
 \begin{lstlisting}[
 language={Python},
@@ -1062,10 +974,7 @@ class Section(models.Model):
 class Skill(models.Model):
     skill_name = models.CharField(max_length=500,unique=True)
     section = models.ForeignKey(Section, on_delete=models.CASCADE)
-    def __str__(self):
-        return self.nasza_nazwa()
-
-    def nasza_nazwa(self):
+	  # ...
         return self.skill_name
 
 class Task(models.Model):
@@ -1078,21 +987,13 @@ class Task(models.Model):
         (2, 'Rozszerzony'),
     }
     text = models.CharField(max_length=600,unique=True)
-    wronganswers =ArrayField(models.CharField(max_length=200), blank=True)
-    correctans =ArrayField(models.CharField(max_length=200), blank=True)
+    wronganswers =ArrayField(models.CharField(
+				max_length=200), blank=True)
+    correctans =ArrayField(models.CharField(
+				max_length=200), blank=True)
     type = models.IntegerField(choices=RODZAJE)
-    author = models.ForeignKey(CustomUser, 
-				on_delete=models.SET_DEFAULT, 
-				default=1)
-    level = models.IntegerField(choices=POZIOM)
-    private = models.BooleanField(default=False)
-    points = models.IntegerField(default=0)
-    skill = models.ManyToManyField(Skill)
 
-    def __str__(self):
-        return self.nasza_nazwa()
-
-    def nasza_nazwa(self):
+	  # ...
         return self.text
 \end{lstlisting}
 
@@ -1107,10 +1008,11 @@ Aby zbudować tabele w bazie danych, wykonujemy migrację i uruchamiany ją poni
 >python manage.py makemigrations
 >python manage.py migrate
 \end{lstlisting}
-Po zrobieniu migracji, Django wprowadzi do bazy danych następujące polecenie.
+Po wykonaniu migracji, Django wprowadzi do bazy danych następujące polecenie.
 \begin{lstlisting}[
 language={SQL},
-caption={SQL dla modelu Task, Skill oraz Section}
+caption={SQL dla modelu Task, Skill oraz Section},
+label={sql}
 ]
 CREATE TABLE "section" (
 	"id" serial NOT NULL PRIMARY KEY, 
@@ -1137,83 +1039,62 @@ CREATE TABLE "task_skill" (
 	"task_id" integer NOT NULL, 
 	"skill_id" integer NOT NULL
 );
-
-CREATE INDEX "section_section_name_75a1892d_like" 
-  ON "section" ("section_name" varchar_pattern_ops);
-ALTER TABLE "skill" 
- ADD CONSTRAINT "skill_section_id_f4743696_fk_authentic" 
- FOREIGN KEY ("section_id") 
-  REFERENCES "section" ("id")
-  DEFERRABLE INITIALLY DEFERRED;
-CREATE INDEX "skill_skill_name_7cd3fbdc_like" 
- ON "skill" ("skill_name" varchar_pattern_ops);
-CREATE INDEX "skill_section_id_f4743696" 
- ON "skill" ("section_id");
-ALTER TABLE "task" 
- ADD CONSTRAINT "task_author_id_bb563768_fk_authentic" 
- FOREIGN KEY ("author_id") 
-  REFERENCES "customuser" ("id") 
-  DEFERRABLE INITIALLY DEFERRED;
-CREATE INDEX "task_text_a5a62aaa_like" 
- ON "task" ("text" varchar_pattern_ops);
-CREATE INDEX "task_author_id_bb563768" 
- ON "task" ("author_id");
-ALTER TABLE "task_skill" 
- ADD CONSTRAINT "task_skill_task_id_skill_id_feac78a2_uniq" 
- UNIQUE ("task_id", "skill_id");
-ALTER TABLE "task_skill" 
- ADD CONSTRAINT "task__task_id_92c0a546_fk_authentic" 
- FOREIGN KEY ("task_id")
-  REFERENCES "task" ("id") 
-  DEFERRABLE INITIALLY DEFERRED;
-ALTER TABLE "task_skill" 
- ADD CONSTRAINT "task__skill_id_0501a9b8_fk_authentic" 
- FOREIGN KEY ("skill_id")
-  REFERENCES "skill" ("id") 
-  DEFERRABLE INITIALLY DEFERRED;
+	# ...
 \end{lstlisting}
 
-Porównując wycinek z poleceniem zauważyć można, że w pliku models.py atrybut id będący kluczem głównym tabeli nie został przez nas zdefiniowany. Framework Django własnoręcznie dodaje go, jeżeli taki nie został zdefiniowany w modelu. Jest to pewne ułatwienie dla osób słabo zaznajomionych z językiem SQL.
+Porównując wycinek~\ref{sql} z powyższym poleceniem zauważyć można, że w pliku models.py atrybut \textbf{id} będący kluczem głównym tabeli nie został zdefiniowany. W takim przypadku framework Django własnoręcznie wykonał jego określenie.
 
 \section{Relacje}
-Relacjami nazywamy skojarzenia między dwoma typami jednostek. W relacyjnej bazie danych działają one między dwiema tabelami, przy czym jedna tabela posiada klucz obcy klucza podstawowego drugiej tabeli. Dzięki relacjom możemy dzielić i przechowywać dane w różnych tabelach. W Django możliwe jest użycie trzech najpopularniejszych typów relacji w bazie danych:
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=12cm, height=8cm]{gl-relacje.png}
+  \caption{}
+  \label{relacje}
+\end{figure}
+
+\noindent Powyższy rysunek~\ref{relacje} obrazuje głowne tabele znajdujące się w bazie danych naszego projektu. Każda tabela połączona jest z jedną, lub wieloma tabelami za pomocą relacji.
+
+Relacjami nazywamy skojarzenia między dwoma typami jednostek. W relacyjnej bazie danych działają one między dwiema tabelami, przy czym jedna tabela posiada klucz obcy klucza podstawowego drugiej tabeli. Dzięki relacjom możemy dzielić i przechowywać dane w różnych tabelach.
+
+W Django możliwe jest użycie trzech najpopularniejszych typów relacji w bazie danych:
 \begin{itemize}
-\item One-to-one (jeden do jednego)
-\item Many-to-one (wiele do jednego)
-\item Many-to-many (wiele do wielu)
+\item Jeden do jednego ang. One-to-one
+\item Jeden do wielu ang. One-to-many
+\item Wiele do wielu ang. Many-to-many
 
 \end{itemize}
-\subsection{Relacje One-to-one}
-W relacji one-to-one tylko jeden rekord tabeli A (najczęściej klucz podstawowy) może być powiązany z innym rekordem tabeli B mającym taką samą wartość. Przykładem może być uczeń, który posiada tylko jedną szafkę w szkole.
+\subsection{Relacje Jeden do jednego}
+W relacji jeden do jednego tylko jeden rekord tabeli A (najczęściej klucz podstawowy) może być powiązany z innym rekordem tabeli B mającym taką samą wartość. Przykładem może być uczeń, który posiada tylko jedną szafkę w szkole.
 W Django należy użyć typu \textbf{OneToOneField}, aby zdefiniować relację jeden do jednego.
 \begin{lstlisting}[
 language={Python},
-caption={One-to-one Uczeń-Szafka }
+caption={Jeden do jednego Student-School locker}
 ]
-class Szafka(models.Model):
-    adres = models.CharField(max_length=50)
+class School_locker(models.Model):
+    address = models.CharField(max_length=50)
 
     def __str__(self):
-        return self.adres
+        return self.address
 
-class Uczen(models.Model):
-    imie = models.CharField(max_length=25)
-    szafka = models.OneToOneField(
-        Szafka,
+class Student(models.Model):
+    name = models.CharField(max_length=25)
+    locker = models.OneToOneField(
+        School_locker,
         on_delete=models.CASCADE,
         primary_key=True,
     )
 
     def __str__(self):
-        return self.imie
+        return self.name
 \end{lstlisting}
-\subsection{Relacje Many-to-one}
+\subsection{Relacje Jeden do wielu}
 
-Relacja many-to-one jest najczęściej używanym typem połączenia i odpowiada sytuacji, gdy pojedynczemu rekordowi z tabeli A jest przyporządkowany jeden lub wiele rekordów z tabeli B, natomiast pojedynczemu rekordowi z tabeli B jest przyporządkowany dokładnie jeden rekord z tabeli A.
-Aby zdefiniować relację jeden do wielu w Django, należy użyć \textbf{ForeignKey}. Przykładem mogą być modele Section (dział) oraz Skill (umiejętność) projektu.
+Relacja jeden do wielu jest najczęściej używanym typem połączenia i odpowiada sytuacji, gdy pojedynczemu rekordowi z tabeli A jest przyporządkowany jeden lub wiele rekordów z tabeli B, natomiast pojedynczemu rekordowi z tabeli B jest przyporządkowany dokładnie jeden rekord z tabeli A.
+Aby zdefiniować relację jeden do wielu w Django, należy użyć \textbf{ForeignKey}. Przykładem mogą być modele Section (dział) oraz Skill (umiejętność) zawarte w projekcie.
 \begin{lstlisting}[
 language={Python},
-caption={Many-to-one Section-Skill}
+caption={Jeden do wielu Section-Skill}
 ]
 class Section(models.Model):
     section_name = models.CharField(max_length=500,unique=True)
@@ -1233,13 +1114,21 @@ class Skill(models.Model):
     def nasza_nazwa(self):
         return self.skill_name
 \end{lstlisting}
-W modelu Skill zawarty jest klucz obcy modelu Section, co pozwala na przypisanie kilku umiejętności do jednego działu, lecz jedna umiejętność nie może być połączona z kilkoma działami.
-\subsection{Relacje Many-to-many}
-Relacja many-to-many występuje w sytuacji, gdy rekordowi tabeli A przyporządkowany jest jeden lub wiele rekordów tabeli B. Sytuacja ta ma miejsce również z drugiej strony. Jednemu rekordowi tabeli A przyporządkowujemy jeden lub więcej rekordów tabeli B.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=6cm]{skillsec.png}
+  \caption{Wiele do jednego Section-Skill}
+  \label{obraz-przyklad}
+\end{figure}
+
+W modelu Skill zawarty jest klucz obcy modelu Section, co pozwala na przypisanie kilku umiejętności do jednego działu.
+\subsection{Relacje Wiele do wielu}
+Relacja wiele do wielu występuje w sytuacji, gdy rekordowi tabeli A przyporządkowany jest jeden lub wiele rekordów tabeli B. Sytuacja ta ma miejsce również z drugiej strony.
 Aby zdefiniować relację wiele do wielu w Django, należy użyć \textbf{ManyToManyField}. Za przykład można obrać model Task (zadanie) oraz Skill (umiejętność).
 \begin{lstlisting}[
 language={Python},
-caption={Many-to-many Task-Skill}
+caption={Wiele do wielu Task-Skill}
 ]
 class Skill(models.Model):
     skill_name = models.CharField(max_length=500,unique=True)
@@ -1252,7 +1141,7 @@ class Task(models.Model):
 	# ...
 \end{lstlisting}
 
-Sposób, w jaki obiekty ze sobą wiązane za pomocą relacji many-to-many, różni się wystarczająco od radzenia sobie z kluczem obcym, ponieważ wymagane jest zapisanie umiejętności w bazie danych, zanim przypisana zostanie do zadania i odwrotnie. Dzieje się tak, ponieważ ManyToManyField tworzy pośrednią tabelę złączeń, która wiąże model źródłowy (w tym przypadku Task, który zawiera ManyToManyField) z modelem docelowym (Skill). Aby stworzyć połączenie między zadaniem a umiejętnością, oba muszą zostać dodane do tego niewidocznego modelu. Dokumentacja Django informuje, że:
+Sposób, w jaki obiekty ze sobą wiązane za pomocą relacji wiele do wielu, różni się wystarczająco od radzenia sobie z kluczem obcym, ponieważ wymagane jest zapisanie umiejętności w bazie danych, zanim przypisana zostanie do zadania i odwrotnie. Dzieje się tak, ponieważ ManyToManyField tworzy \textbf{pośrednią tabelę złączeń}, która wiąże model źródłowy z modelem docelowym. Aby stworzyć połączenie między modelami, oba muszą zostać dodane do tego niewidocznego modelu. Dokumentacja Django informuje, że:
 \begin{quote}
 "...there is still an implicit through model class you can use to directly access the table created to hold the association. It has three fields to link the models.
 
@@ -1266,20 +1155,27 @@ If the source and target models differ, the following fields are generated:
 \end{quote}
 Niewidoczny model pośredni stworzony przez Django wymaga pary kluczy. Jest to klucz podstawowy modelu źródłowego oraz klucz modelu docelowego, dlatego oba obiekty muszą istnieć, zanim będą mogły zostać powiązane.
 
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=8cm, height=8cm]{task_skill.png}
+  \caption{Wiele do wielu Task-Skill}
+  \label{obraz-przyklad}
+\end{figure}
+
 W przypadku naszego projektu stworzona została tabela o nazwie \textbf{task\_skill} zawierającą trzy kolumny: \textbf{id}, \textbf{task\_id} oraz \textbf{skill\_id}.
 \subsection{Integralność danych}
 Wszystkie relacje tworzą zależności między połączonymi modelami, więc ważne jest, aby określić co dzieje się z drugą stroną, gdy pierwsza zostanie usunięta.
 W tym celu została stworzona opcja \textbf{on\_delete}, której zadaniem jest określać co należy zrobić z rekordami, których druga strona została usunięta. Opcja ta jest dostępna dla wszystkich trzech relacji i może przyjmować następujące wartości:
 \begin{itemize}
-\item on\_delete=models.CASCADE - Automatycznie usuwa powiązane rekordy, które były powiązane z daną instancją (np. Jeżeli użytkownik naszego serwisu zdecyduję się na usunięcie konta, wszystkie jego zapisane sprawdziany również zostaną usunięte.)
+\item on\_delete=models.CASCADE - Automatycznie usuwa powiązane rekordy, które były powiązane z daną instancją.
 \item on\_delete=models.PROTECT - Zapobiega usunięciu powiązanej instancji.
 \item on\_delete=models.SET\_NULL - Przypisuje NULL do powiązanych rekordów, gdy powiązana instancja jest usuwana. Należy pamiętać aby użyć opcji null=True w polu.
-\item on\_delete=models.SET\_DEFAULT - Przypisuje wartość domyślną do powiązanych rekordów, gdy powiązana instancja jest usuwana. (np. Jeżeli użytkownik naszego serwisu zdecyduję się na usunięcie konta, wszystkie utworzone przez niego zostaną przypisane do jednego z kont administratora aby uniknąć ich utraty.)
+\item on\_delete=models.SET\_DEFAULT - Przypisuje wartość domyślną do powiązanych rekordów, gdy powiązana instancja jest usuwana.
 \item on\_delete=models.SET - Przypisuje wartość ustawioną przez wywołanie do powiązanych rekordów, gdy powiązana instancja zostanie usunięta.
 \item on\_delete=models.DO\_NOTHING - Żadne działanie nie jest podejmowane po usunięciu powiązanych rekordów. Zwykle jest to zła praktyka dotycząca relacyjnych baz danych, ponieważ powstają osierocone rekordy bez wartości.
 \end{itemize}
 \section{ORM w Django}
-Po utworzeniu modeli danych Django automatycznie udostępnia interfejs QuerySet, który umożliwia tworzenie, pobieranie, aktualizowanie i usuwanie obiektów. Są to polecenia, dzięki którym możliwe jest pobieranie informacji z bazy danych oraz otrzymywanie ich w postaci obiektów. Polecenia te możemy wykonywać za pomocą konsoli Django po wpisaniu następującej komendy:
+Po utworzeniu modeli danych, Django automatycznie udostępnia interfejs QuerySet, który umożliwia tworzenie, pobieranie, aktualizowanie i usuwanie obiektów. Są to polecenia, dzięki którym możliwe jest pobieranie informacji z bazy danych oraz otrzymywanie ich w postaci obiektów. Polecenia te możemy wykonywać z pomocą konsoli po wpisaniu następującej komendy:
 \begin{lstlisting}[style=DOS]
 >python manage.py shell
 \end{lstlisting}
@@ -1295,10 +1191,10 @@ W tym momencie mamy możliwość tworzenia, otrzymywania oraz filtrowania obiekt
 >>>task = Task.objects.create(text = 'zadanie przyklad',
 	wronganswers = [20,12,32], correctans = [21],type = 2,
 	author = user,level = 1, private = False, points = 2)
->>>task.skill.add(skil)
+>>>task.skill.add(skill)
 
 \end{lstlisting}
-W powyższym przykładzie należy początkowo pobrać z bazy obiekt użytkownika oraz wybraną umiejętność. Następnym krokiem jest utworzenie obiektu Task używając metody create oraz wprowadzając odpowiednie dane. Na końcu należy przypisać umiejętność do pola skill, ponieważ użyta została relacja many-to-many. Poniżej znajduję się SQL wykonany przez Django.
+W powyższym przykładzie należy początkowo pobrać z bazy obiekt użytkownika oraz wybraną umiejętność. Następnym krokiem jest utworzenie obiektu Task używając metody \textbf{create} oraz wprowadzając odpowiednie dane. Na końcu należy przypisać obiekt skill do pola task.skill. Poniżej znajduję się SQL wykonany przez Django.
 \begin{lstlisting}[style=DOS]
 SELECT "customuser"."id",
        "customuser"."password",
@@ -1327,11 +1223,10 @@ Pobieranie danych z bazy może być wykonane na wiele sposobów. Oto kilka metod
 \item filter() - zwraca rekordy spełniające warunek w filter()
 \item reverse() - obiekty zwracane będą w odwrotnej kolejności
 \item distinct() - zwraca tylko unikalne obiekty bez duplikatów
-\item inne
 \end{itemize}
 Pobieranie obiektów z bazy danych czasem może trwać długo, dlatego istotne jest to, aby wykonywane skrypty działały w sposób optymalny. 
 
-Ważną informacją jest to, że zapytania wykonują się dopiero w momencie odniesienia do danych. Istotne jest również to, że jeśli ponownie wykonamy to samo zapytanie, czas jego wykonania będzie krótszy niż poprzednio, ponieważ zostanie ono zapisane w cache.
+Ważnym jest, że zapytania wykonują się dopiero w momencie odniesienia do danych. Jeśli ponownie wykonamy to samo zapytanie, czas jego wykonania będzie krótszy niż poprzednio, ponieważ zostanie ono zapisane w cache.
 \begin{lstlisting}[style=DOS]
 >>>tasks = Task.objects.all()
 >>>list(tasks)
@@ -1339,7 +1234,7 @@ Ważną informacją jest to, że zapytania wykonują się dopiero w momencie odn
 \end{lstlisting}
 W powyższym przykładzie zapytanie zostało wykonane dopiero w drugiej linii. Element listy tasks[0] został zapamiętany, więc zapytanie nie zostało ponownie wywołane.
 
-Zdarza się, że podczas pozyskiwania danych z bazy zostają pobrane całe obiekty, mimo że jest to niepotrzebne, ponieważ wykorzystywane jest jedynie kilka parametrów. Takie działanie może znacząco wpłynąć na czas wykonania, dlatego skorzystać można z \textbf{values} (wynik w formie słownika), lub \textbf{values\_list} (wynik w formie listy)
+Zdarza się, że podczas pozyskiwania danych z bazy zostają pobrane całe obiekty, mimo że wykorzystywane jest jedynie kilka parametrów. Takie działanie może znacząco wpłynąć na czas wykonania, dlatego warto skorzystać z \textbf{values} (wynik w formie słownika), lub \textbf{values\_list} (wynik w formie listy)
 \begin{lstlisting}[style=DOS]
 >>> Task.objects.all()
 SELECT "task"."id",
@@ -1357,7 +1252,7 @@ SELECT "task"."id",
 SELECT "task"."text"
   FROM "task"
 \end{lstlisting}
-Jeżeli przechodzimy po liście obiektów tylko raz, można wykorzystać do tego iterator, który podczas iteracji odwoływać się będzie do kolejnych elementów. W ten sposób unikniemy niepotrzebnego ładowania całego querysetu. Poniższy przykład ukazuje o wiele szybsze działanie polecenia przy użyciu iteratora.
+Przechodząc po liście obiektów tylko raz, można wykorzystać do tego iterator, który podczas iteracji odwoływać się będzie do kolejnych elementów. W ten sposób unikniemy niepotrzebnego ładowania całego querysetu. Poniższy przykład ukazuje o wiele szybsze działanie polecenia przy użyciu iteratora.
 \begin{lstlisting}[style=DOS]
 >>> for task in Task.objects.all():
 ...     text = task.text
@@ -1375,7 +1270,7 @@ CURSOR WITH HOLD
 Execution time: 0.002761s [Database: default]
 \end{lstlisting}
 
-Funkcja \textbf{select\_related} to taka, która podczas wykonywania zapytania podąża za relacjami klucza obcego, pobierając odpowiednie dane obiektu powiązanego relacją.
+Funkcja \textbf{select\_related} podczas wykonywania zapytania podąża za relacjami klucza obcego, pobierając odpowiednie dane obiektu powiązanego relacją.
 Funkcja ta w przeciwności do wykonywania wielu zapytań, pozwala na stworzenie jednego, złożonego, w którym użycie klucza obcego nie będzie skutkowało wykonaniem kolejnego zapytania. Przykładem będzie sytuacja, w której dla dziesięciu zadań posiadających umiejętność o id równym 6, chcemy wypisać ich autorów.
 \begin{lstlisting}[style=DOS]
 >>> id_of_authors = []
@@ -1432,7 +1327,6 @@ UPDATE "authentication_task"
    SET "type" = 1
  WHERE "authentication_task"."points" = 4
 Execution time: 0.170321s [Database: default]
-592
 \end{lstlisting}
 \subsection{Usuwanie obiektu}
 Metoda \textbf{delete()} wykonuje zapytanie SQL usuwające dla wszystkich wierszy w QuerySet.
