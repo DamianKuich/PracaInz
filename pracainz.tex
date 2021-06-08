@@ -7,7 +7,7 @@
 % Zdefiniuj kodowanie pliku źródłowego (domyślnie utf8)
 \usepackage[utf8]{inputenc}
 \DeclareUnicodeCharacter{200B}{{\hskip 0pt}}
-%\usepackage{authblk}
+\usepackage{authblk}
 \usepackage{float}
 \usepackage{enumerate}
 \usepackage{hyperref}
@@ -69,12 +69,12 @@
 % ======================================================== %
 
 % --- Autor pracy
-\author{Jan Kowalski}
+\author{Damian Kuich, Mikołaj Kowalczyk, Mateusz Michalski}
 % --- Numer albumu
-\album{123456}
+\album{434735, 434725, 123456}
 % --- Tytuł pracy (w języku polskim i angielskim)
-\titlePL{Moja praca}
-\titleEN{My thesis}
+\titlePL{Platforma do generowania sprawdzianów z matematyki}
+\titleEN{Platform for generating math tests}
 % --- Typ pracy (inżynierska, licencjacka, magisterska)
 \type{inżynierska}
 % --- Wydział (wykaz skrótów):
@@ -99,11 +99,11 @@
 \field{informatyka}
 % --- Specjalność (w formie mianownikowej)
 % --- (ustaw puste, jeśli bez specjalności)
-\specialty{finansowa i aktuarialna}
+\specialty{}
 % --- Promotor (w dopełniaczu)
-\supervisor{prof. UAM dr. hab. Jana Nowaka}
+\supervisor{dr. Bartłomiej Przybylski}
 % --- Data złożenia pracy (Miasto, miesiąc rok)
-\date{Poznań, wrzesień 2017}
+\date{Poznań, \today{} r.}
 
 % --- Płeć autora (M/K)
 \stsex{M}
@@ -168,8 +168,7 @@ Zespół podzielony na dwie grupy dwuosobowe. Jedna z nich odpowiedzialna jest z
 
 \section{Podział prac}
 
-\begin{itemize}
-\item Damian Kuich
+\subsection{Damian Kuich:}
 \begin{itemize}
 \item Implementacja aplikacji serwerowej API
 \item Zarządzanie dokumentacją
@@ -178,27 +177,20 @@ Zespół podzielony na dwie grupy dwuosobowe. Jedna z nich odpowiedzialna jest z
 \item Projektowanie architektury aplikacji serwerowej
 \item Komunikacja na linii zespół - klient(nauczyciele matematyki dla szkół ponadpodstawowych, jak i podstawowych). Komunikacja odbywała się mailowo, bądź przy pomocy portali społecznościowych(np. facebook).
 \end{itemize}
-\item Mikołaj Kowalczyk
+\subsection{Mikołaj Kowalczyk:}
 \begin{itemize}
 \item Implementacja aplikacji serwerowej API
 \item Zarządzanie dokumentacją
 \item Stworzenia bazy danych na potrzeby aplikacji API
 \item Projektowanie architektury aplikacji serwerowej
 \end{itemize}
-\item Łukasz Kubiak
-\begin{itemize}
-\item Implementacja aplikacji webowej
-\item Obsługa API i formularzy.
-\item Zarządzanie dokumentacją
-\item Projektowanie architektury aplikacji webowej
-\end{itemize}
-\item Mateusz Michalski
+\subsection{Mateusz Michalski:}
 \begin{itemize}
 \item Projektowanie interface’u użytkownika
 \item Zarządzanie dokumentacją
 \item Projektowanie architektury aplikacji webowej
 \end{itemize}
-\end{itemize}
+
 
 
 \section{Podział Pracy Inżynierskiej}
@@ -206,11 +198,7 @@ Zespół podzielony na dwie grupy dwuosobowe. Jedna z nich odpowiedzialna jest z
 Kolejne rozdziały pracy dyplomowej opisują zagadnienia, z którymi zespół zapoznał
 się podczas tworzenia projektu inżynierskiego.
 
-\begin{itemize}
-\item \textbf{Rozdział 1:} "Implementacja REST API z wykorzystaniem frameworka Django REST "
-
-
-Autor: Damian Kuich 
+\subsection{Rozdział 1: "Implementacja REST API z wykorzystaniem frameworka Django REST " -  Damian Kuich } 
 \begin{itemize}
 \item Historia REST API
 \item Python, a REST API
@@ -222,10 +210,10 @@ Autor: Damian Kuich
 \item REST API w projekcie "Gen-Mat"
 
 \end{itemize}
-\item \textbf{Rozdział 2:} "Integracja projektu opartego o Django z bazą danych PostgreSQL "
+\subsection{Rozdział 2: "Integracja projektu opartego o Django z bazą danych PostgreSQL " - Mikołaj Kowalczyk} 
 
 
-Autor: Mikołaj Kowalczyk
+
 \begin{itemize}
 \item Krótki opis co to jest baza danych
 \item Charakterystyka, MySQL, MS SQL Server, Oracle, PostgreSQL
@@ -236,25 +224,12 @@ Autor: Mikołaj Kowalczyk
 \item Opis czynności związanych z dostępem do danych za pomocą Django.
 \item Opis czynności mających na celu zachowanie integralności oraz spójności danych.
 \end{itemize}
-\item \textbf{Rozdział 3:} "Tworzenie projektu graficznego i osadzenie go w serwisie przy pomocy Material-UI"
-
-
-Autor: Łukasz Kubiak
-\begin{itemize}
-\item Co to jest język HTML
-\item Kaskadowe Arkusze Stylów
-\item Definiowanie właściwości CSS w JSON
-\item TWorzenie klas w makeStyle
-\end{itemize}
-\item \textbf{Rozdział 4:} "React jako narzędzie do tworzenia interfejsu użytkownika"
-
-Autor: Mateusz Michalski
+\subsection{Rozdział 3: "Tworzenie projektu graficznego i osadzenie go w serwisie przy pomocy Material-UI" - Mateusz Michalski} 
 \begin{itemize}
 \item Czym jest React
 \item Podstawowe pojęcia Reacta
 \item Zaawansowane pojęcia Reacta
 \item Budowanie interfesju przy pomocy komponentów
-\end{itemize}
 \end{itemize}
 \section{Opis Technologii}
 Serwis “Gen-Mat” korzysta z szerokiego zakresu technologii. Produkt oparty jest w szczególności na dwóch językach: Pythonie w wersji 3 i JavaScritp'cie w wersji. Głównym czynnikiem, który kierował nami przy wyborze technologii było doświadczenie członków zespołu przy projektowaniu systemów opartych na danych językach programowania. Również ważnym aspektem była dla nas prostota przy implementacji naszych założeń projektowych i funkcjonalności.. Podstawą naszego projektu jest, też serwer oparty na serwisie Heroku. Umożliwia nam on szybkie i łatwe wdrażanie serwisu na etap produkcyjny, zachowując przy tym wysoką jakość świadczonych usług hostingowych. Projekt nasz jako aplikacja webowa, podzielony został na dwie główne części. Część backend’ową oraz część frontend’ową.  
