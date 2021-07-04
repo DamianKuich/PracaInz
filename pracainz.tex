@@ -15,6 +15,26 @@
 \usepackage{adjustbox}
 \usepackage{xcolor}
 \usepackage{listings}
+\lstset{
+  literate={ą}{{\k a}}1
+  		     {Ą}{{\k A}}1
+           {ż}{{\. z}}1
+           {Ż}{{\. Z}}1
+           {ź}{{\' z}}1
+           {Ź}{{\' Z}}1
+           {ć}{{\' c}}1
+           {Ć}{{\' C}}1
+           {ę}{{\k e}}1
+           {Ę}{{\k E}}1
+           {ó}{{\' o}}1
+           {Ó}{{\' O}}1
+           {ń}{{\' n}}1
+           {Ń}{{\' N}}1
+           {ś}{{\' s}}1
+           {Ś}{{\' S}}1
+           {ł}{{\l}}1
+           {Ł}{{\L}}1
+}
 \usepackage{enumitem}
 
 %\usepackage[utf8]{inputenc}
@@ -1552,26 +1572,65 @@ npm update
 {
 JSX czyli Javascript XML jest rozszerzeniem składni języka Javascript, które pozwala na używanie znaczników HTML razem z językiem Javascript. Jest to niezwykle przydatne narzędzie, które ułatwia nam na operowanie danymi przetwarzanymi w kodzie Javascriptowym oraz ułatwia ich wyświetlanie przy pomocy znaczników HTML. JSX możemy wykorzystać w wielu celach.
 
-\begin{figure}[H]
-\centering
-\includegraphics[width=13cm]{JSX example h3.png}
-\caption{Fragment pliku MaterialUiUserExams.js
-}
-\label{react dev example.jpg}
-\end{figure}
+
+
+\begin{lstlisting}[
+caption={Fragment pliku MaterialUiUserExams.js, przykładowe użycie JSX}
+]
+<ListItemText>
+	primary={<h3>{section.Section}</h3>}
+	secondary={"Dostępnych zadań: " + section.sectionTaskCount}
+</ListItemText>
+\end{lstlisting}
+
+
 
 Jednym ze sposobów użycia jest łatwa możliwość otrzymania wartości zmiennej używanej w kodzie javascriptowym. W powyższym przykładzie wykorzystujemy to, aby otrzymać nazwę każdego działu, który następnie wyświetlamy użytkownikowi.
 JSX jest w stanie obsłużyć dowolne, prawidłowe wyrażenie w języku Javascript, które zostało zamknięte wewnątrz nawiasów klamrowych. Dzięki czemu możemy nie tylko uzyskać wartości zmiennych, ale również je modyfikować oraz wywoływać funkcje javascriptowe, jeśli tego potrzebujemy.
 
 
 
-\begin{figure}[H]
-\centering
-\includegraphics[width=13cm]{JSX example map.png}
-\caption{Wywołanie funkcji map wewnątrz <List>
-}
-\label{react dev example.jpg}
-\end{figure}
+\begin{lstlisting}[
+caption={Wywołanie funkcji map wewnątrz elementu <List>}
+]
+<List>
+ {sections.map((section) => {
+                     
+	  return (
+	 <>
+	 <ListItem
+	 button onClick={this.hideSection(section)}>
+
+		 <ListItemText>
+		 primary={<h3>{section.Section}</h3>}
+		 secondary={"Dostępnych zadań: " + section.sectionTaskCount}
+		 </ListItemText>
+		 {(this.state.hiddenSections.indexOf(section.id) !== -1)
+		 ? <ExpandLess /> : <ExpandMore />}
+	 </ListItem>
+
+		 <Collapse in={(this.state.hiddenSections
+			.includes(section.id))} 
+		timeout="auto" unmountOnExit>
+			 <List component="div" disablePadding>
+			 <ListItem button
+			 key={section.id}
+			 onClick={this.handleToggleAll(section)}>
+			 <ListItemIcon>
+			 	<Checkbox
+			 	edge="start"
+			 	checked={this.state.
+				fullyChecked.indexOf(section.id) !== -1}
+				 tabIndex={-1}/>
+			 </ListItemIcon>
+			 <ListItemText 
+			 primary={<b>Zaznacz wszystkie</b>}  />
+	 </ListItem>
+...
+</List>
+\end{lstlisting}
+
+
 
 Po kompilacji wyrażenia JSX stają się wywołaniami funkcji w języku Javascript, oznacza to, że możliwe jest używanie wyrażeń w JSX wewnątrz instrukcji warunkowych, pętli, przypisywać je do zmiennych, używać jako argumentów oraz zwracać z funkcji.
 Oczywiście oznacza to, że jeśli ktoś nie chce korzystać z JSX, może tego nie robić. Możliwe jest stworzenie wszystkich komponentów w czystym Javascripcie, natomiast JSX jest narzędziem bardzo wygodnym, mocno usprawniającym pracę z Reactem, dlatego jest zdecydowanie zalecanym rozwiązaniem.
@@ -1582,21 +1641,29 @@ Oczywiście oznacza to, że jeśli ktoś nie chce korzystać z JSX, może tego n
 {
 Interfejs w Reactcie składa się z komponentów. Komponenty są jak javascriptowe funkcje, które przyjmują pewne wartości na wejściu, a następnie zwracają elementy reactowe, które opisują, co ma pojawić się na ekranie.
 Wyróżniamy dwa typy komponentów - komponenty klasowe oraz komponenty funkcyjne.
-\begin{figure}[H]
-\centering
-\includegraphics[width=13cm]{Komponent klasowy.png}
-\caption{Przykład komponentu klasowego
-}
-\label{komponent klasowy}
-\end{figure}
 
-\begin{figure}[H]
-\centering
-\includegraphics[width=13cm]{komponent funkcyjny.png}
-\caption{Przykład komponentu funkcyjnego
+
+\begin{lstlisting}[
+caption={Przykład komponentu klasowego}
+]
+class ClassComponent extends Component{
+  render(){
+    return <h2>Przykład komponentu klasowego</h2>
+  }
 }
-\label{komponent funkcyjny}
-\end{figure}
+
+\end{lstlisting}
+
+
+\begin{lstlisting}[
+caption={Przykład komponentu funkcyjnego}
+]
+function FunctionComponent(props){
+  return <h2>Przykład komponentu funkcyjnego</h2>
+}
+
+\end{lstlisting}
+
 Jedną z zasad obowiązujących podczas budowy komponentów, zarówno funkcyjnych jak i klasowych pozostaje nienaruszalność właściwości(ang. props) przekazywanych podczas deklaracji funkcji, dane, które mają zmieniać się dynamiczne powinny być przechowywane w stanach.
 Obecnie podstawową różnicą pozostaje składnia, w przeszłości komponenty funkcyjne nie posiadały stanów ani metod pozwalających na uruchamianie kodu w odpowiednich momentach, z tych powodów komponentów funkcyjnych używano tylko do budowy komponentów, które nie musiały być dynamiczne. Zmieniło się to wraz z wprowadzeniem Hooków.
 Warto również wiedzieć, że komponenty mogą odwoływać się do innych komponentów, co promuje pisanie ich z myślą o możliwości wielokrotnego wykorzystania. Możemy to wykorzystać na przykład tworząc komponent ekranu ładowania, następnie możemy go użyć w innych komponentach, renderując go wtedy, gdy użytkownik będzie oczekiwał na odpowiedź od serwera.
@@ -1627,14 +1694,31 @@ W czasie aktualizacji wywołana zostaje analogiczna metoda - componentDidUpdate,
 \newline
 \newline
 Stan może przyjąć dowolną wartość, true, false, null, może być liczbą, stringiem lub tablicą.
-\begin{figure}[H]
-\centering
-\includegraphics[width=13cm]{class comp i stan.png}
-\caption{Diagram metod cyklu życia
-Klasowy komponent posiadający stany
-}
-\label{metody cyklu zycia}
-\end{figure}
+
+\begin{lstlisting}[
+caption={Przykład komponentu klasowego korzystającego ze stanów}
+]
+  class UserExams extends Component {
+    constructor(props) {
+      super(props);
+      this.state = {
+        exams: null,
+        open: false,
+        listExpand:{},
+        generatedId: null,
+        generatedName: null,
+        sections: null,
+        groups: null,
+        ileotw: '',
+        ilezamk: '',
+        level: '',
+        skills: '', 
+        groups: '',
+      }
+    }
+  }
+
+\end{lstlisting}
 
 }
 
@@ -1643,33 +1727,53 @@ Klasowy komponent posiadający stany
 
 Renderowanie warunkowe umożliwia wyświetlanie elementów na podstawie stanu twojej aplikacji. Oznacza to, że jesteśmy w stanie uzależnić interfejs(to, co widzi użytkownik) od wartości zwracanej przez zastosowaną przez nas instrukcje warunkową.
 Do renderowania warunkowego możemy użyć klasycznej instrukcji if,
-\begin{figure}[H]
-\centering
-\includegraphics[width=13cm]{renderowanie z ifem.png}
-\caption{Renderowanie warunkowe przy pomocy instrukcji if,
-}
+\begin{lstlisting}[
+caption={Renderowanie warunkowe przy pomocy instrukcji if}
+]
+      if (!exams ) {
+        return (
+          <Loading  message={"Ładowanie kolekcji sprawdzianów"} >
+	</Loading>
+        );
+      }
 
-\end{figure}
+\end{lstlisting}
 
 operatora warunkowego, często stosowanego jako krótsza wersja instrukcji if
-\begin{figure}[H]
-\centering
-\includegraphics[width=13cm]{Render operator warunkowy.png}
-\caption{Renderowanie warunkowe przy pomocy operatora warunkowego
-}
 
-\end{figure}
+\begin{lstlisting}[
+caption={Renderowanie przy pomocy operatora warunkowego}
+]
+{editView == "email" ?
+	(
+		<h1>Widok, który zobaczy użytkownik,
+		jeśli warunek zostanie spełniony </h1>
+	):
+	(
+		<h1>Widok, który zobaczy użytkownik
+		 jeśli warunek nie zostanie spełniony</h1>
+	)
+
+
+\end{lstlisting}
+
+
 
 \pagebreak
 jak i przy pomocy operatora logicznego \&\&.
 
-\begin{figure}[H]
-\centering
-\includegraphics[width=13cm]{render &&.png}
-\caption{Renderowanie warunkowe przy pomocy operatora logicznego \&\&
-}
+\begin{lstlisting}[
+caption={Renderowanie warunkowe przy pomocy operatora logicznego \&\&}
+]
+{
+	isSubmitting &&  <LoadingScreenB></LoadingScreenB>
+}  
 
-\end{figure}
+
+
+\end{lstlisting}
+
+
 
 
 \subsection{Hooki}
@@ -1682,34 +1786,58 @@ Jak podają developerzy, głownymi powodami, dla których wprowadzili hooki był
 \newline
 Jeśli chcemy skorzystać ze stanu w komponencie funkcyjnym należy użyć hooka stanu.
 
-\begin{figure}[H]
-\centering
-\includegraphics[width=13cm]{hook stanu.png}
-\caption{Wywołanie hooka stanu
-}
 
-\end{figure}	
+\begin{lstlisting}[
+caption={Wywołanie hooka stanu}
+]
+const [editView, setEditView] = React.useState("email");
+
+
+\end{lstlisting}
 
 Powyższy przykład pokazuje jak użyć hooka stanu, gdzie editView jest nazwą stanu, a email jest jego wartością początkową. W przypadku potrzeby zaktualizowania wartości należy 
 wywołać funkcję setEditView.
 
-\begin{figure}[H]
-\centering
-\includegraphics[width=13cm]{zmiana stanu hook.png}
-\caption{Przykładowe wywołanie funkcji setEditView
-}
 
-\end{figure}	
+\begin{lstlisting}[
+caption={Zmiana stanu przy pomocy funkcji setEditView}
+]
+<Button variant="contained" 
+color="primary" 
+onClick={(e)=>setEditView("name")}  >
+	Zmień nazwę użytkownika
+</Button>
+
+
+\end{lstlisting}
 
 Jeśli chcemy dokonać operacji w określonym cyklu życia komponentu należy użyć hooka useEffect. Możemy o nim myśleć jak o połączeniu metod componentDidMount, componentDidUpdate oraz componentWillUnmount w jedną.
 
-\begin{figure}[H]
-\centering
-\includegraphics[width=13cm]{use effect przyklad.png}
-\caption{Przykładowe użycie hooka use efect
-}
 
-\end{figure}	
+\begin{lstlisting}[
+caption={Przykładowe użycie hooka useEffect}
+]
+  useEffect(() => {
+    const fetchSections = () => {
+      console.log("useeffect");
+      axiosInstanceNoAuth
+        .get("/user/sections2/")
+        .then((response) => {
+          const parsed = response.data.map((section) => {
+            section.skill = section.skilll;
+            return section;
+          });
+          setSections(parsed);
+        })
+        .catch((error) => {
+          setSections(false);
+        });
+    };
+    fetchSections();
+  }
+
+
+\end{lstlisting}
 
 \subsection{Obsługa zdarzeń}
 {
@@ -1718,33 +1846,40 @@ Przykładowymi zdarzeniami mogą być onClick - w przypadku kliknięcia myszką,
 W odróżnieniu od np. HTMLa w Reactcie zdarzenia zapisujemy tzw. camelCasem. \footnote{camelCase jest konwencją, w której w nazwach kolejne wyrazy zapisujemy łącznie, a każdy kolejny(nie licząc pierwszego) rozpoczynamy wielką literą}
 Instrukcje obsługi zdarzenia są przekazywane jako funkcje.
 
-\begin{figure}[H]
-\centering
-\includegraphics[width=13cm]{onclick remove exam.png}
-\caption{Przykładowe obsłużenie zdarzenia onClick
+\begin{lstlisting}[
+caption={Przykładowa obsługa zdarzenia onClick}
+]
+<BootstrapTooltip title="Skopiuj sprawdzian">
+	<IconButton  onClick={() => 
+	{this.createExamCopy(exam);}}>
+		<FileCopyIcon />
+	</IconButton>
+</BootstrapTooltip>
+
+
+\end{lstlisting}
+
 }
-
-\end{figure}	
-
-}
-
+Powyższy przykład pokazuje jeden ze sposobów obsługi zdarzeń wykorzystywanych w gen-mat. Kliknięcie przycisku IconButton powoduje wywołanie funkcji createExamCopy, która jest odpowiedzialna za utworzenie kopii sprawdzianu.
 Innym sposobem na przekazanie instrukcji obsługi zdarzenia jest napisanie funkcji obsługi, następnie jej związanie(ang. bind) i wywołanie jej przy pomocy this.
 
-\begin{figure}[H]
-\centering
-\includegraphics[width=13cm]{zbindowanie.png}
-\caption{Związanie
-}
+\begin{lstlisting}[
+caption={Związanie}
+]
+this.hideSection = this.hideSection.bind(this);
 
-\end{figure}	
 
-\begin{figure}[H]
-\centering
-\includegraphics[width=13cm]{hidesection wywo.png}
-\caption{Obsługa zdarzenia przy pomocy zbindowanej metody
-}
+\end{lstlisting}
 
-\end{figure}	
+\begin{lstlisting}[
+caption={Wywołanie obsługi zdarzenia po związaniu}
+]
+<ListItem
+button 
+onClick={this.hideSection(section)}>
+
+
+\end{lstlisting}
 
 
 
@@ -1786,44 +1921,97 @@ tej instancji.
 
 
 Gen-mat używa dwóch instancji Axios.
-\begin{figure}[H]
-\centering
-\includegraphics[width=13cm]{axios instancje.png}
-\caption{Instancje Axios
-}
 
-\end{figure}
+\begin{lstlisting}[
+caption={Instancje axios projektu gen-mat}
+]
+import axios from "axios";
+
+export const axiosInstanceNoAuth = axios.create({
+  baseURL: window.location.origin + "/api/",
+  timeout: 30000,
+  headers: {
+    "Content-Type": "application/json",
+    accept: "application/json",
+  },
+});
+
+export const axiosInstance = axios.create({
+  baseURL: window.location.origin + "/api/",
+  timeout: 30000,
+  headers: {
+    Authorization: "JWT " + localStorage.getItem("access_token"),
+    "Content-Type": "application/json",
+    accept: "application/json",
+  },
+});
+
+
+\end{lstlisting}
 
 Gdzie baseURL oznacza adres URL, timeout służy do określania maksymalnego czasu(w milisekundach) jaki żądanie ma na wykonanie, zanim zostanie anulowane, dodatkowo na podstawie zawartości nagłówka serwer jest w stanie odróżnić czy zapytanie zostało wysłane przez użytkownika zalogowanego czy przez użytkownika niezalogowanego. Aby wysłać żądanie należy  odwołać się do instancji, określić rodzaj żądania, podać dokładną ścieżkę oraz, w zależności od tego, co mamy do przekazania serwerowi, przesłać dane.
 
-\begin{figure}[H]
-\centering
-\includegraphics[width=13cm]{instance get.png}
-\caption{Przykład wywołania GET Request w jednej z instancji
-}
+\begin{lstlisting}[
+caption={Przykładowe wyowałanie zapytania GET, aby otrzymać sprawdziany użytkownika}
+]
+  updateExams = () => {
+    this.setState({ exams: null });
+    axiosInstance
+      .get("/user/tests/")
+      .then((response) => {
+        console.log("UE update response", response, "exams", response.data);
+        this.setState({ exams: response.data });
+      })
+      .catch((error) => {
+        console.log("UE update error response", error);
+      });
+  }
 
-\end{figure}
 
-\begin{figure}[H]
-\centering
-\includegraphics[width=13cm]{axios post.png}
-\caption{Przykład wywołania POST Request w jednej z instancji
-}
+\end{lstlisting}
 
-\end{figure}
+\pagebreak
+\begin{lstlisting}[
+caption={Wywołanie zapytania POST w celu utworzenia rejestracji nowego użytkownika }
+]
+axiosInstanceNoAuth
+	.post("/user/create/", {
+		username: values.name,
+		password: values.password,
+		email: values.email,
+	})
+
+
+\end{lstlisting}
 
 
 \subsection{Yup}
 Yup jest narzędziem przydatnym przy parsowaniu oraz walidacji\hyperlink{[13]}{[13]}. Yup pozwala na tworzenie schematów, do których następnie
 można przyrównać interesujący nas element. Yup pozwala nam porównywać zarówno wartości zmiennych, jak i ich typy.
 
-\begin{figure}[H]
-\centering
-\includegraphics[width=13cm]{yup przyklad.png}
-\caption{Yup - przykład użycia
-}
+\begin{lstlisting}[
+caption={Yup - przykład użycia }
+]
+validationSchema={Yup.object().shape({
+	name: Yup.string()
+		.min(2, "Nazwa użytkownika musi 
+		się składać z minimum 2 znaków!")
+		.max(50, "Hasło może zawierać maksymalnie 50 znaków!")
+		.required(FRS),
+	password: Yup.string()
+		.min(8, "Hasło musi zawierać co najmniej 8 znaków!")
+		.max(50, "Hasło może zawierać maksymalnie 50 znaków!")
+		.required(FRS),
+	passwordConfirm: Yup.string()
+		.oneOf([Yup.ref("password")], "Hasła są różne")
+		.required(FRS),
+	email: Yup.string()
+		.email("Nieprawidłowy adres e-mail")
+		.required(FRS),
+})}
 
-\end{figure}
+
+\end{lstlisting}
 
 
 \subsection{Formik}
@@ -1842,13 +2030,94 @@ początkowe wartości w initialValues, podstawowymi metodami pomocniczymi są:
 Dodatkowo Formik pomaga w walidacji pól na poziomie formularza dzięki validationSchema, która w połączeniu z Yupem sprawia, że walidacja z poziomu formularza staje się
 bardzo prosta. Wystarczy stworzyć schemat przy pomocy Yupa a następnie jako validationSchema użyć obiektu stworzonego w Yup.
 
-\begin{figure}[H]
-\centering
-\includegraphics[width=13cm]{Formik deklaracja.png}
-\caption{Formik deklaracja
-}
 
-\end{figure}
+\begin{lstlisting}[
+caption={Formik - deklaracja }
+]
+<Formik
+  initialValues={{
+    name: "",
+    password: "",
+  }}
+  validationSchema={Yup.object().shape({
+    password: Yup.string()
+      .min(8, "Hasło musi zawierać co najmniej 8 znaków!")
+      .max(50, "Hasło może zawierać maksymalnie 50 znaków!")
+      .required(FRS),
+    name: Yup.string()
+      .min(2, "Hasło musi zawierać co najmniej 8 znaków!")
+      .max(50, "Hasło może zawierać maksymalnie 50 znaków!")
+      .required(FRS),
+  })}
+  onSubmit={(values, helpers) => {
+    setTimeout(() => {
+      helpers.setSubmitting(true);
+      axiosInstance
+        .post("/token/obtain/", {
+          username: values.name,
+          password: values.password,
+        })
+        .then((response) => {
+          axiosInstance.defaults.headers["Authorization"] =
+            "JWT " + response.data.access;
+          localStorage.setItem(
+            "access_token",
+            response.data.access
+          );
+          localStorage.setItem(
+            "refresh_token",
+            response.data.refresh
+          );
+          helpers.setSubmitting(false);
+          props.checkUser();
+          props.history.push("/");
+        })
+        .catch((error) => {
+          const errResponse = error.response;
+          helpers.setSubmitting(false);
+          if (
+            errResponse.status === 401 &&
+            errResponse.statusText === "Unauthorized"
+          ) {
+            enqueueSnackbar("Nieprawidłowy adres e-mail lub hasło", { 
+              variant: 'error',
+          })
+            helpers.setValues(
+              {
+name: "",
+password: "",
+              },
+              false
+            );
+            helpers.setTouched(
+              {
+name: false,
+password: false,
+              },
+              false
+            );
+            helpers.setFieldError(
+              "general",
+              "Nieprawidłowa nazwa użytkownika lub hasło"
+            );
+           
+          }
+        });
+    }, 400);
+  }}
+>
+  {({
+    values,
+    errors,
+    touched,
+    handleChange,
+    handleBlur,
+    handleSubmit,
+    isSubmitting,
+  }) => {
+
+
+\end{lstlisting}
 
 Oprócz wcześniej wspomnianych właściwościach jako podstawowe Formik zapewnia:
 \newline
@@ -1875,13 +2144,84 @@ Dodatkowo React Router pozwala na wyłuskanie opcjonalnego parametru w adresie U
 Jednym z najważniejszych komponentów w React Router jest Route, jego podstawową funkcją jest wyświetlanie właściwej części interfejsu pod podanym adresem URL.
 Kolejnym przydatnym komponentem jest Switch, sprawia, że renderuje się pierwszy Route, który odpowiada podanemu adresowi, zapobiega to niechcianym renderom widoków, które przypadkiem mogą również pasować do podanej ścieżki. Komponent Redirect nadpisuje obecny adres i nawiguje pod nowy adres.
 
-\begin{figure}[H]
-\centering
-\includegraphics[width=13cm]{route switch.png}
-\caption{ścieżki dostępne w projekcie Gen-mat
-}
 
-\end{figure}
+\begin{lstlisting}[
+caption={Ścieżki dostępne w projekcie gen-mat }
+]
+<Switch>
+  <Route
+    exact
+    path={"/login/"}
+    render={(props) => <Login {...global} {...props} />}
+  />
+  
+  <Route
+    exact
+    path={"/mytasks/"}
+    render={(props) => <MaterialUiTaskCollection {...global} {...props} />}
+  />
+  <Route
+    exact
+    path={"/signup/"}
+    render={(props) => <Signup {...global} {...props} />}
+  />
+  <Route
+    exact
+    path={"/signupsuccess/:token"}
+    render={(props) => (
+      <RegisterSuccess {...global} {...props} />
+    )}
+  />
+  <Route
+    exact
+    path="/activateaccount/:token/"
+    render={(props) => (
+      <AccountActivation {...props} {...global} />
+    )}
+  />
+  <Route
+    exact
+    path="/passreset/:token"
+    render={(props) => <PasswordReset {...props} {...global} />}
+  />
+  <Route
+    exact
+    path="/requestresetpassword/"
+    render={(props) => (
+      <PasswordResetRequest {...props} {...global} />
+    )}
+  />
+  <Route
+    exact
+    path="/addtask/"
+    render={(props) => <AddTask {...props} {...global} />}
+  />
+  <Route
+    path={"/myaccount/"}
+    render={(props) => (
+      <UserAccountManager {...props} {...global} />
+    )}
+  />
+  <Route
+    path={"/editor/:id/"}
+    render={(props) => <ExamEditor {...props} {...global} />}
+  />
+  <Route
+    path={"/userexams/"}
+    render={(props) => <UserExams {...props} {...global} />}
+  />
+  <Route
+    path={"/loggedout"}
+    render={(props) => <LoggedOut {...props} {...global} />}
+  />
+  <Route
+    path={"/"}
+    render={(props) => <HomePage {...props} {...global} />}
+  />
+</Switch>
+
+
+\end{lstlisting}
 
 React Router posiada kilka przydatnych hooków, useHistory, useLocation, useParams, useRouteMatch. Hook useHistory daje nam dostęp do pakietu history, który oferuje kolejne usprawnienia 
 nawigacyjne oferując właściwości i metody takie jak:
@@ -1891,13 +2231,12 @@ nawigacyjne oferując właściwości i metody takie jak:
 \newline
 Rozważmy następującą sytuację - użytkownik zapomniał hasła, korzysta z funkcji "reset hasła", na adres e-mail otrzymuje link, którego ostatnią częścią
 jest losowo wygenerowany ciąg znaków - token, nasza aplikacja musi być w stanie wydobyć ten token oraz sprawdzić czy jest poprawny, jest to możliwe dzięki użyciu useParams.
-\begin{figure}[H]
-\centering
-\includegraphics[width=13cm]{useparams.png}
-\caption{wywołanie useParams
-}
+\begin{lstlisting}[
+caption={Przykładowe użycie useParams}
+]
+  const passwordToken = useParams().token;
 
-\end{figure}
+\end{lstlisting}
 
 
 
