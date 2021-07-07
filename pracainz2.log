@@ -1,7 +1,7 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.11) (preloaded format=pdflatex 2021.4.23)  7 JUL 2021 21:46
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.11) (preloaded format=pdflatex 2021.4.23)  7 JUL 2021 21:41
 entering extended mode
-**./pracainz.tex
-(pracainz.tex
+**./pracainz2.tex
+(pracainz2.tex
 LaTeX2e <2020-10-01> patch level 2
 L3 programming layer <2020-10-27> xparse <2020-03-03> (amuthesis.cls
 Document Class: amuthesis 2017/10/01 AMU Thesis
@@ -1012,7 +1012,7 @@ File: lipsum.ltd.tex 2021-03-03 v2.3 The Lorem ipsum dummy text
 ))
 \@quotelevel=\count439
 \@quotereset=\count440
- (pracainz.aux
+ (pracainz2.aux
 
 LaTeX Warning: Label `Cache' multiply defined.
 
@@ -1041,7 +1041,7 @@ LaTeX Warning: Label `latexcompanion' multiply defined.
 LaTeX Warning: Label `react dev example.jpg' multiply defined.
 
 )
-\openout1 = `pracainz.aux'.
+\openout1 = `pracainz2.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 148.
 LaTeX Font Info:    ... okay on input line 148.
@@ -1120,10 +1120,10 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 LaTeX Info: Redefining \ref on input line 148.
 LaTeX Info: Redefining \pageref on input line 148.
 LaTeX Info: Redefining \nameref on input line 148.
- (pracainz.out)
-(pracainz.out)
+ (pracainz2.out)
+(pracainz2.out)
 \@outlinefile=\write4
-\openout4 = `pracainz.out'.
+\openout4 = `pracainz2.out'.
 
  (F:\MIKTEX\tex/context/base/mkii\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -1172,14 +1172,14 @@ File: polish.lbx 2020/08/23 v3.15a biblatex localization (PK/MW)
 Package biblatex Info: Input encoding 'utf8' detected.
 Package biblatex Info: Automatic encoding selection.
 (biblatex)             Assuming data encoding 'utf8'.
-\openout3 = `pracainz.bcf'.
+\openout3 = `pracainz2.bcf'.
 
 Package biblatex Info: Trying to load bibliographic data...
-Package biblatex Info: ... file 'pracainz.bbl' found.
- (pracainz.bbl)
+Package biblatex Info: ... file 'pracainz2.bbl' found.
+ (pracainz2.bbl)
 Package biblatex Info: Reference section=0 on input line 148.
 Package biblatex Info: Reference segment=0 on input line 148.
-<uam-logo.pdf, id=335, 547.04375pt x 479.7925pt>
+<uam-logo.pdf, id=331, 547.04375pt x 479.7925pt>
 File: uam-logo.pdf Graphic file (type pdf)
 <use uam-logo.pdf>
 Package pdftex.def Info: uam-logo.pdf  used on input line 151.
@@ -1215,11 +1215,11 @@ LaTeX Font Info:    Font shape `U/msb/m/n' will be
 (Font)              scaled to size 8.33606pt on input line 165.
  [4
 
-] (pracainz.toc [5
+] (pracainz2.toc [5
 
 ] [6])
 \tf@toc=\write5
-\openout5 = `pracainz.toc'.
+\openout5 = `pracainz2.toc'.
 
  [7]
 Package microtype Info: Character `029' is missing
@@ -1338,7 +1338,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removed on input line 331.
 
 [14]
-<api.png, id=515, 1204.5pt x 388.45125pt>
+<api.png, id=510, 1204.5pt x 388.45125pt>
 File: api.png Graphic file (type png)
 <use api.png>
 Package pdftex.def Info: api.png  used on input line 337.
@@ -1378,7 +1378,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 352--353
 
  []
 
-<uri.jpg, id=525, 549.05125pt x 181.67876pt>
+<uri.jpg, id=520, 549.05125pt x 181.67876pt>
 File: uri.jpg Graphic file (type jpg)
 <use uri.jpg>
 Package pdftex.def Info: uri.jpg  used on input line 358.
@@ -1409,7 +1409,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 379--380
 
  []
 
-<SOAP.png, id=533, 679.53876pt x 367.3725pt>
+<SOAP.png, id=528, 679.53876pt x 367.3725pt>
 File: SOAP.png Graphic file (type png)
 <use SOAP.png>
 Package pdftex.def Info: SOAP.png  used on input line 384.
@@ -1469,7 +1469,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 404--405
 
  []
 
-<restarch.jpg, id=550, 656.4525pt x 480.79625pt>
+<restarch.jpg, id=545, 656.4525pt x 480.79625pt>
 File: restarch.jpg Graphic file (type jpg)
 <use restarch.jpg>
 Package pdftex.def Info: restarch.jpg  used on input line 411.
@@ -1511,7 +1511,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 461--462
 
  []
 
-<rest.jpeg, id=600, 784.9325pt x 672.5125pt>
+<rest.jpeg, id=595, 784.9325pt x 672.5125pt>
 File: rest.jpeg Graphic file (type jpg)
 <use rest.jpeg>
 Package pdftex.def Info: rest.jpeg  used on input line 470.
@@ -1596,7 +1596,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 3.5pt
 (hyperref)                removed on input line 644.
 
-<mtv.png, id=688, 322.05319pt x 227.1988pt>
+<mtv.png, id=683, 322.05319pt x 227.1988pt>
 File: mtv.png Graphic file (type png)
 <use mtv.png>
 Package pdftex.def Info: mtv.png  used on input line 649.
@@ -1861,7 +1861,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 3.5pt
 (hyperref)                removed on input line 1044.
 
-<gl-relacje.png, id=824, 335.45325pt x 263.7855pt>
+<gl-relacje.png, id=819, 335.45325pt x 263.7855pt>
 File: gl-relacje.png Graphic file (type png)
 <use gl-relacje.png>
 Package pdftex.def Info: gl-relacje.png  used on input line 1048.
@@ -1894,7 +1894,7 @@ Overfull \hbox (43.01797pt too wide) in paragraph at lines 1107--1108
 ]  
  []
 
-<skillsec.png, id=897, 163.812pt x 69.861pt>
+<skillsec.png, id=892, 163.812pt x 69.861pt>
 File: skillsec.png Graphic file (type png)
 <use skillsec.png>
 Package pdftex.def Info: skillsec.png  used on input line 1117.
@@ -1916,7 +1916,7 @@ Overfull \hbox (43.01797pt too wide) in paragraph at lines 1132--1133
  []
 
 [44 <./skillsec.png>]
-<task_skill.png, id=923, 187.902pt x 245.11575pt>
+<task_skill.png, id=918, 187.902pt x 245.11575pt>
 File: task_skill.png Graphic file (type png)
 <use task_skill.png>
 Package pdftex.def Info: task_skill.png  used on input line 1157.
@@ -2089,7 +2089,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 1506--1508
 
  []
 
-<statystyki react vue angular.png, id=1155, 973.38657pt x 534.49687pt>
+<statystyki react vue angular.png, id=1150, 973.38657pt x 534.49687pt>
 File: statystyki react vue angular.png Graphic file (type png)
 <use statystyki react vue angular.png>
 Package pdftex.def Info: statystyki react vue angular.png  used on input line 1
@@ -2108,7 +2108,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 [57
 
 ] [58 <./statystyki react vue angular.png>]
-<react dev example.jpg, id=1169, 481.8pt x 301.125pt>
+<react dev example.jpg, id=1164, 481.8pt x 301.125pt>
 File: react dev example.jpg Graphic file (type jpg)
 <use react dev example.jpg>
 Package pdftex.def Info: react dev example.jpg  used on input line 1528.
@@ -2190,7 +2190,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 2.73749pt
 (hyperref)                removed on input line 1678.
 
-<diagram metod cyklu życia.png, id=1246, 887.56593pt x 330.48468pt>
+<diagram metod cyklu życia.png, id=1241, 887.56593pt x 330.48468pt>
 File: diagram metod cyklu życia.png Graphic file (type png)
 <use diagram metod cyklu życia.png>
 Package pdftex.def Info: diagram metod cyklu życia.png  used on input line 168
@@ -2240,7 +2240,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 2.73749pt
 (hyperref)                removed on input line 1899.
 
-<promises.png, id=1349, 603.0028pt x 223.58531pt>
+<promises.png, id=1344, 603.0028pt x 223.58531pt>
 File: promises.png Graphic file (type png)
 <use promises.png>
 Package pdftex.def Info: promises.png  used on input line 1904.
@@ -2376,70 +2376,37 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package microtype Info: Character `029' is missing
 (microtype)             in font `T1/pplx/m/sc/10.95'.
 (microtype)             Ignoring protrusion settings for this character.
+ [79
 
-! Missing $ inserted.
-<inserted text> 
-                $
-l.2257 
-       
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.2257 
-       
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-[79
-
-] (pracainz.aux)
-
-Package rerunfilecheck Warning: File `pracainz.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `pracainz.out':
-(rerunfilecheck)             Before: B96424B9B3AB89575240D48D520482F4;16398
-(rerunfilecheck)             After:  EE6EF772440B37F8BA59E49A547F3B85;16252.
-
-LaTeX Warning: There were undefined references.
+] (pracainz2.aux)
+Package rerunfilecheck Info: File `pracainz2.out' has not changed.
+(rerunfilecheck)             Checksum: EE6EF772440B37F8BA59E49A547F3B85;16252.
 
 
 LaTeX Warning: There were multiply-defined labels.
 
-
-Package biblatex Warning: Please (re)run Biber on the file:
-(biblatex)                pracainz
-(biblatex)                and rerun LaTeX afterwards.
-
-Package logreq Info: Writing requests to 'pracainz.run.xml'.
-\openout1 = `pracainz.run.xml'.
+Package logreq Info: Writing requests to 'pracainz2.run.xml'.
+\openout1 = `pracainz2.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 28239 strings out of 479791
- 445201 string characters out of 2886001
- 1451357 words of memory out of 3000000
- 43327 multiletter control sequences out of 15000+200000
- 618538 words of font info for 471 fonts, out of 3000000 for 9000
+ 28244 strings out of 479791
+ 445282 string characters out of 2886001
+ 1451404 words of memory out of 3000000
+ 43326 multiletter control sequences out of 15000+200000
+ 618074 words of font info for 475 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 81i,12n,128p,1359b,2372s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 81i,12n,128p,1360b,2372s stack positions out of 5000i,500n,10000p,200000b,50000s
 {F:/MIKTEX/fonts/enc/dvips/sourcecodepro/a_lutrty.enc}{F:/MIKTEX/fonts/enc/dv
 ips/base/8r.enc}<F:/MIKTEX/fonts/type1/adobe/sourcecodepro/SourceCodePro-It.pfb
 ><F:/MIKTEX/fonts/type1/adobe/sourcecodepro/SourceCodePro-Regular.pfb><F:/MIKTE
 X/fonts/type1/adobe/sourcecodepro/SourceCodePro-Semibold.pfb><F:/MIKTEX/fonts/t
-ype1/public/amsfonts/cm/cmr10.pfb><F:/MIKTEX/fonts/type1/public/fpl/fplrc8a.pfb
-><F:/MIKTEX/fonts/type1/urw/palatino/uplb8a.pfb><F:/MIKTEX/fonts/type1/urw/pala
-tino/uplr8a.pfb><F:/MIKTEX/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on pracainz.pdf (79 pages, 1085311 bytes).
+ype1/public/fpl/fplrc8a.pfb><F:/MIKTEX/fonts/type1/urw/palatino/uplb8a.pfb><F:/
+MIKTEX/fonts/type1/urw/palatino/uplr8a.pfb><F:/MIKTEX/fonts/type1/urw/palatino/
+uplri8a.pfb>
+Output written on pracainz2.pdf (79 pages, 1077029 bytes).
 PDF statistics:
- 1879 PDF objects out of 2073 (max. 8388607)
+ 1870 PDF objects out of 2073 (max. 8388607)
  992 named destinations out of 1000 (max. 500000)
- 102111 words of extra memory for PDF output out of 106986 (max. 10000000)
+ 102103 words of extra memory for PDF output out of 106986 (max. 10000000)
 
