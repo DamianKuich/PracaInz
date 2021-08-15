@@ -828,13 +828,13 @@ Kompleksowe wsparcie transakcyjne & Funkcjonalność zależna od dodatków\\
 Pełna kontrola przepływu pracy & Wcześniejsza wiedza jest koniecznością\\
 Elastyczność open source &\\
 Szerokie zastosowanie i łatwe w użyciu &\\
-Szybki, przenośny i bezpieczny &\\
+Szybki, przenośny i bezpieczny &\\Konieczna jest znajomość tematu
 \bottomrule
 \end{tabular}
 \end{adjustbox}
 \end{table}
 \section{MS SQL Server}
-MS SQL Server to relacyjny system zarządzania bazami danych (RDBM) opracowany i obsługiwany przez firmę Microsoft. Używa wariantu \emph{Structured Query Language} (SQL) o nazwie T-SQL (dla Transact-SQL). Zwykle zawiera silnik relacyjnej bazy danych, który przechowuje dane w tabelach, kolumnach i wierszach,  \emph{Integration Services} (SSIS), który jest narzędziem do przenoszenia danych do importowania, eksportowania i przekształcania danych,  \emph{Reporting Services} (SSRS), który służy do tworzenia raporty i udostępniają raporty użytkownikom końcowym, a także  \emph{Analysis Services} (SSAS), czyli wielowymiarowa baza danych służąca do wykonywania zapytań o dane z głównego silnika bazy danych. 
+MS SQL Server to relacyjny system zarządzania bazami danych (RDBM) opracowany i obsługiwany przez firmę Microsoft. Używa wariantu \emph{Structured Query Language} (SQL) o nazwie T-SQL (dla Transact-SQL). Zwykle zawiera silnik relacyjnej bazy danych, który przechowuje dane w tabelach, kolumnach i wierszach,  \emph{Integration Services} (SSIS), które są narzędziem do przenoszenia danych do importowania, eksportowania i przekształcania danych,  \emph{Reporting Services} (SSRS), które służą do tworzenia raporty i udostępniają raporty użytkownikom końcowym, a także  \emph{Analysis Services} (SSAS), czyli wielowymiarowa baza danych służąca do wykonywania zapytań o dane z głównego silnika bazy danych. 
 
 MS SQL Server oferuje obsługę języków programowania takich jak: C\#, C++, Delphi, Go, Java, JavaScript, PHP, Python, R, Ruby , Visual Basic.
 MS SQL Server jest dostępny na systemach \texttt{Microsoft Windows} oraz Linux.
@@ -849,7 +849,7 @@ MS SQL Server jest dostępny na systemach \texttt{Microsoft Windows} oraz Linux.
 \toprule
 Zalety & Wady\\
 \midrule
-Dostępna wersja darmowa systemu & Drogie wydanie dla przedsiębiorstw\\
+Dostępna wersja darmowa systemu & Kosztowna wersja dla przedsiębiorstw\\
 Wysokie bezpieczeństwo danych & Ograniczona kompatybilność\\
 Łatwość konfiguracji & Kilka problemów ze stabilnością\\
 Łatwość konfiguracji & \\
@@ -877,7 +877,7 @@ Zalety & Wady\\
 Wszechstronność & Trudny do nauczenia i obsługi\\
 Kompatybilność ze składnią SQL i PL & Wysoki koszt obsługi\\
 Poprawiona wydajność & Składniki zapytań poza standardem ANSI \\
-Grupowanie transakcji & Intensywne wykorzystanie sprzętu\\
+Grupowanie transakcji & Intensywne obciążenie sprzętu\\
 \bottomrule
 \end{tabular}
 \end{adjustbox}
@@ -915,7 +915,7 @@ Zdolny do obsługi danych w TB &  \\
 \end{table}
   
 
-W naszym projekcie wybrany został PostgreSQL. Jednym w głównych czynników wpływających na wybór był fakt, że PostgreSQL oferowany jest poprzez używaną przez nas platformę chmurową Heroku. 
+W naszym projekcie zastosowany został PostgreSQL. Jednym w głównych czynników wpływających na wybór był fakt, że PostgreSQL oferowany jest poprzez używaną przez nas platformę chmurową Heroku. 
 \section{Łączenie z bazą danych PostgreSQL}
 Integracja Django z PostgreSQL rozpoczyna się od stworzenia nowej bazy lub połączenia z istniejącą już bazą danych.
 Domyślnie Django jest skonfigurowane do używania \texttt{SQLite} jako swojego zaplecza, dlatego wymagana jest lekka zmiana zawartość pliku settings.py tak, aby używacie Postgresa było możliwe. 
@@ -1191,7 +1191,7 @@ W tym momencie mamy możliwość tworzenia, otrzymywania oraz filtrowania obiekt
 >>>task.skill.add(skill)
 
 \end{lstlisting}
-W powyższym przykładzie należy początkowo pobrać z bazy obiekt użytkownika oraz wybraną umiejętność. Następnym krokiem jest utworzenie obiektu \texttt{Task} używając metody \texttt{create} oraz wprowadzając odpowiednie dane. Na końcu należy przypisać obiekt \texttt{skill} do pola \texttt{task.skill}. Poniżej znajduję się SQL wykonany przez Django.
+W powyższym przykładzie należy początkowo pobrać z bazy obiekt użytkownika oraz wybraną umiejętność. Następnym krokiem jest utworzenie obiektu \texttt{Task} przy pomocy metody \texttt{create} i po wprowadzeniu odpowiednich danych. Na końcu należy przypisać obiekt \texttt{skill} do pola \texttt{task.skill}. Poniżej znajduję się skrypt SQL wykonany przez Django.
 \begin{lstlisting}[style=DOS]
 SELECT "customuser"."id",
        "customuser"."password",
@@ -1249,7 +1249,7 @@ SELECT "task"."id",
 SELECT "task"."text"
   FROM "task"
 \end{lstlisting}
-Przechodząc po liście obiektów tylko raz, można wykorzystać do tego iterator, który podczas iteracji odwoływać się będzie do kolejnych elementów. W ten sposób unikniemy niepotrzebnego ładowania całego querysetu. Poniższy przykład ukazuje o wiele szybsze działanie polecenia przy użyciu iteratora.
+Przechodząc po liście obiektów tylko raz, można wykorzystać do tego iterator, który podczas iteracji odwoływać się będzie do kolejnych elementów. W ten sposób unikniemy niepotrzebnego ładowania całego zapytania. Poniższy przykład ukazuje o wiele szybsze działanie polecenia przy użyciu iteratora.
 \begin{lstlisting}[style=DOS]
 >>> for task in Task.objects.all():
 ...     text = task.text
@@ -1331,7 +1331,7 @@ Metoda \texttt{delete()} wykonuje zapytanie SQL usuwające dla wszystkich wiersz
 >>> Task.objects.filter(points = 1).delete()
 \end{lstlisting}
 \section{Wyzwalacze Django-PostgreSQL}
-Wyzwalacze mogą rozwiązywać wiele różnych problemów na poziomie bazy danych lepiej niż na poziomie aplikacji Django. Dzięki wyzwalaczom można np.:
+Wyzwalacze mogą rozwiązywać wiele różnych problemów na poziomie bazy danych lepiej niż na poziomie aplikacji Django. Dzięki wyzwalaczom możliwa jest np.:
 \begin{itemize}
 \item ochrona przez usuwaniem oraz zmienianiem wierszy lub kolumn
 \item śledzenie zmian w modelach lub kolumnach
@@ -1366,7 +1366,7 @@ django.db.utils.InternalError: pgtrigger:
 CONTEXT:  
  PL/pgSQL function pgtrigger_protect_deletes_f1129() line 14 at RAISE
 \end{lstlisting}
-Chcąc usunąć dział o id równym 3 otrzymujemy błąd informujący o tym, że operacja ta nie jest możliwa. Takie działanie zapewnia nas o tym, że działy lub umiejętności nie zostaną usunięte.
+Chcąc usunąć dział o id równym 3 otrzymujemy błąd informujący o tym, że operacja ta nie jest możliwa. Takie działanie daje nam pewność, że działy lub umiejętności nie zostaną usunięte.
 \subsection{Możliwość wyłącznie tworzenie lub odczytu}
 Wyzwalacz \texttt{pgtrigger.Protect} oferuję nie tylko ochronę przed usunięciem modelu. Kolejną przydatną opcją jest ochrona przez aktualizowaniem danych modelu.
 \begin{lstlisting}[
