@@ -288,7 +288,7 @@ Wstęp ma wprowadzić czytelnika w podstawowe definicje. Głównym zadaniem tego
 \end{center}
 \textbf{Żądanie}(ang. \emph{Request}) w formie HTTP powinno posiadać cztery elementy:
 \begin{enumerate}
-\item \textbf{Metode HTTP}(ang. \emph{Request method}) - służy do określenia metody, którą chcemy wykorzystać na danym zasobie.
+\item \textbf{Metode HTTP}(ang. \emph{Request method}) - określenie metody, którą chcemy wykorzystać dla danego zasobu.
 \item \textbf{Nagłówek}(ang. \emph{Header}) - może skłądać się kilku części i ma za zadanie przechowywać dodatkowe infromacje o żądaniu.
 \item \textbf{Ścieżkę do zasobu}(ang. \emph{Resource path}) - URI, czyli ścieżka dostepu do zasobu.
 \item \textbf{Ciało}(ang. \emph{Body}) - Składuje się tu dodatkowe informacje, które później wykorzystywane są do edycji albo tworzenia zasobów po stronie serwera. Może być puste.
@@ -297,7 +297,7 @@ Wstęp ma wprowadzić czytelnika w podstawowe definicje. Głównym zadaniem tego
 
 \begin{lstlisting}[
 language={HTML},
-caption={Przykładowe żądanie HTTP}
+caption={Przykład żądania HTTP}
 ]
 POST news.com/articles
 Accept: application/json
@@ -335,7 +335,7 @@ Metoda HTTP jest częścią zapytania HTTP odpowiedzialną za określenie akcji,
 \begin{figure}[H]
 \centering
 \includegraphics[width=14cm]{api.png}
-\caption{Przykład działania API\newline
+\caption{Zasada działania API\newline
 Źródło: https://techrevv.com/what-is-api-and-its-types/}
 \label{Cache}
 \end{figure}
@@ -356,7 +356,7 @@ URI składa się z dwóch kompnentów. Pierwszym z nich jest \textbf{URL}(ang. \
 \begin{figure}[H]
 \centering
 \includegraphics[width=14cm]{uri.jpg}
-\caption{Przykład URI, URL i URN\newline
+\caption{Zasada działania URI, URL i URN\newline
 Źródło: https://prateekvjoshi.com/2014/02/22/url-vs-uri-vs-urn/}
 \label{Cache}
 \end{figure}
@@ -409,19 +409,19 @@ Systemy oparte na architekturze REST nazywamy RESTful, jeżeli spełniają pewne
 \begin{figure}[H]
 \centering
 \includegraphics[width=14cm]{restarch.jpg}
-\caption{Przykład REST API opartej na architekturze REST}
+\caption{Zasada działania REST API opartej na architekturze REST}
 \label{REST API}
 \end{figure}
 
 Zasada ta zawiera jeszcze cztery reguły, który pomagają nam uprościć architekturę: 
 \begin{enumerate}
-\item \textbf{Resource identification in requests} - Sposób reprezentacji zasobu może być różny i odłączny od samego zasobu np. serwer nie wysyła danych prosto odczytanych z bazy tylko w formacie JSON albo XML.\newline  
+\item \textbf{Resource identification in requests} - Sposób reprezentacji zasobu może być różny i odłączny od samego zasobu np. serwer nie wysyła danych wprost odczytanych z bazy tylko w formacie JSON albo XML.\newline  
 
 \item \textbf{Resource manipulation through representations}  - Po otrzymaniu reprezentacji zasobów wraz z jego metadanymi od serwera, klient (jeśli ma do tego uprawnienia) może modyfikować oraz usuwać zasoby.\newline  
 
 \item \textbf{Self-descriptive messages} - Odpowiedź serwera powinna zawierać wystarczającą ilość informacji, aby serwer mógł ją obsłużyć np. poprzez wartość "media type" (inaczej "MIME type").\newline  
 
-\item \textbf{Hypermedia as the engine of application state} (HATEOAS) - HATEOAS jest ograniczeniem architektury aplikacji REST, która sprawia, że architektura stylu RESTful jest inna od większości innych architektur. Termin "hypermedia" odnosi się do wszelkich treści zawierających łącza do innych form mediów, takich jak obrazy, filmy i teksty. Styl architektoniczny REST pozwala nam używać linków hipermedialnych w treści odpowiedzi. Pozwala klientowi dynamicznie przechodzić do odpowiednich zasobów korzystając z łącz hipermedialnych. Poruszanie się po łączach hipermedialnych jest koncepcyjnie takie samo, jak przeglądanie stron internetowych przez użytkownika, klikając odpowiednie hiperłącza, aby osiągnąć ostateczny cel. Najlepiej zobrazować to na przykładzie Graph API od Facebooka np. korzystając z przykładowej odpowiedzi z ichniejszej dokumentacji. Niektóre wartości zostały skrócone dla przejrzystości: 
+\item \textbf{Hypermedia as the engine of application state} (HATEOAS) - HATEOAS jest ograniczeniem architektury aplikacji REST, która sprawia, że architektura stylu RESTful jest inna od większości innych architektur. Termin "hypermedia" odnosi się do wszelkich treści zawierających łącza do innych form mediów, takich jak obrazy, filmy i teksty. Styl architektoniczny REST pozwala nam używać linków hipermedialnych w treści odpowiedzi. Pozwala klientowi dynamicznie przechodzić do odpowiednich zasobów korzystając z łącz hipermedialnych. Najlepiej zobrazować to na przykładzie Graph API od Facebooka np. korzystając z przykładowej odpowiedzi z ichniejszej dokumentacji. Niektóre wartości zostały skrócone dla przejrzystości: 
 
 \begin{lstlisting}[
 caption={Odpowiedź od Graph API}
@@ -463,7 +463,7 @@ W sekcji paging, pod kluczem next widnieje link, który poprowadzi nas do kolejn
 
 \item \textbf{Client-Serwer}
 
-Powinna być widoczna granica pomiędzy klientem, a serwerem. Oznacza to, że klient i serwer mogą rozwijać się bez ingerencji pomiędzy sobą. Podział, pomaga w realizacji ww. Uniform Interface, a także zwiększa możliwości skalowania i rozszerzalność, a obsługa błędów jest znacznie łatwiejsza. Jeżeli na przykład dokonamy jakiejś zmiany w aplikacji pisanej dla systemu iOS (to będzie nasz klient), to zmiana ta nie powinna w żaden sposób wpływać na aplikacje serwerową (strukturę bazy danych itp.). Tak samo powinno to działać w drugą stronę. 
+Powinna być widoczna granica pomiędzy klientem, a serwerem. Oznacza to, że klient i serwer mogą rozwijać się bez ingerencji pomiędzy sobą. Zamysł ten pomaga w realizacji ww. Uniform Interface, a także zwiększa możliwości skalowania i rozszerzalność, a obsługa błędów jest znacznie łatwiejsza. Jeżeli na przykład dokonamy jakiejś zmiany w aplikacji pisanej dla systemu iOS (to będzie nasz klient), to zmiana ta nie powinna w żaden sposób wpływać na aplikacje serwerową (strukturę bazy danych itp.). Tak samo powinno to działać w drugą stronę. 
 
 \begin{figure}[H]
 \centering
@@ -476,7 +476,7 @@ Powinna być widoczna granica pomiędzy klientem, a serwerem. Oznacza to, że kl
 
 \item \textbf{Cacheable} - odpowiedź, którą użytkownik otrzyma z REST API musi jasno definiować, czy ma ona być cacheable czy non-cacheable. Ma to znaczenie przy danych, które bardzo szybko stają się nieaktualne oraz przy danych, które aktualizują się relatywnie rzadko – nie ma sensu na przykład cache’ować współrzędnych geograficznych pędzącego samolotu, natomiast już jego kolor czy nazwę już tak.\newline
 
-\item \textbf{Layered System} - REST pozwala na odseparowanie warstw. Możemy wdrożyć nasze API na serwer A, przechowywać dane na serwerze B i przetwarzać żądania na serwerze C. Klient nie wie o zewnętrznych usługach i serwisach, z których korzysta serwer. Pozwala to na rozbicie serwisu na wiele mikroserwisów, które można łatwo aktualizować. Dzięki temu zachowujemy transparentność i separację logiki od warstwy WWW. Niestety takie rozwiązanie ma pewne problemy, ponieważ może wprowadzać opóźnienia przez potrzebę komunikacji pomiędzy różnymi częściami naszej aplikacji.\newline
+\item \textbf{Layered System} - REST pozwala na odseparowanie warstw. Możemy wdrożyć nasze API na serwer A, przechowywać dane na serwerze B i przetwarzać żądania na serwerze C. Klient nie wie o zewnętrznych usługach i serwisach, z których korzysta serwer. Pozwala to na rozbicie serwisu na wiele mikroserwisów, które można łatwo aktualizować. Dzięki temu zachowujemy transparentność i separację logiki od warstwy WWW. Niestety takie rozwiązanie ma pewne wady, ponieważ może wprowadzać opóźnienia przez potrzebę komunikacji pomiędzy różnymi częściami naszej aplikacji.\newline
 
 \item \textbf{Code-On-Demand} - Jest to zasada, która jest opcjonalna, ponieważ prawie zawsze będziemy wysyłać dane w statycznej formie, jak np. XML albo JSON. Nasz serwis może wysyłać gotowe fragmenty kodu np. skrypty JavaScript do ich przetworzenia. 
 
@@ -490,7 +490,7 @@ The key abstraction of information in REST is a resource. Any information that c
 \subsection{Czym jest zasób?}
 \end{center}
 
-\textbf{Zasób}(ang. \emph{Resource}) jest elemenetarną częścią REST API. Podczas interakcji z API właśnie je wykorzystujemy. Czym jest więc zasób ? Pytanie to nie jest tak łatwe do odpowiedzienia, ponieważ zasób jest to pojęcie abstrakcyjne. Dowolna informacja, która może posiadać nazwę, może być zasobem. Dlatego też przyjęto kilka podstawowych kryteriów by można było nazwać daną informację zasobem:\newline
+\textbf{Zasób}(ang. \emph{Resource}) jest elemenentarną częścią REST API. Wykorzystujemy go właśnie podczas interakcji z API. Czym więc jest zasób ? Nie jest łatwo odpowiedzieć na to pytanie, ponieważ zasób jest to pojęcie abstrakcyjne. Dowolna informacja, która może posiadać nazwę, może być zasobem. Dlatego też przyjęto kilka podstawowych kryteriów by można było nazwać daną informację zasobem:\newline
 
 \begin{enumerate}
 \item Musi być rzeczownikiem.
@@ -568,7 +568,7 @@ caption={Odpowiedzi}
 { "error":"Wrong data input." }
 \end{lstlisting}
 
-\item \textbf{Poziom 1} - Na pierwszym poziomie modelu dojrzałości wykorzystywane jest wiele identyfikatorów URI, jednakże nadal wykorzystuje podstawowe metody HTTP, jak np. GET, czy POST. Na tym poziomie mamy już zdefiniowane zasoby, które powinny posiadać indywidualny identyfikator URI. Zasób nie powinien być dostępny pod wieloma adresami, tzn. musi mieć unikalny adres.
+\item \textbf{Poziom 1} - Na pierwszym poziomie modelu dojrzałości wykorzystywane jest wiele identyfikatorów URI, jednakże używa się podstawowych metod HTTP, jak np. GET, czy POST. Na tym poziomie mamy już zdefiniowane zasoby, które powinny posiadać indywidualny identyfikator URI. Zasób nie powinien być dostępny pod wieloma adresami, tzn. musi mieć unikalny adres.
 
 \begin{lstlisting}[
 language={Python},
@@ -621,7 +621,7 @@ caption={Odpowiedzi}
 
 \item \textbf{Poziom 3} - Trzeci poziom (najwyższy) RMM wymaga implementacji HATEOAS. W wielu firmach trzeci poziom modelu nie jest realizowany, ze względu na dodatkową złożoność API. Firmy godzą się, z tym że ich API znajduje się na 2 poziomie, tym samy nie jest to RESTful API. HATEOAS kieruje interakcją dla klienta. Klient API nie zna wszystkich punktów końcowych API, dla których może wykonać żądanie.
 
-Przeanalizujmy następujący przykład. Z dokumentacji API wiemy, pod jakim adresem URI możemy uzyskać osobę o danym identyfikatorze. Wykonujemy żądanie GET, w wyniku którego otrzymujemy strukturę z danymi identyfikującymi osobę. Stosując HATEOAS dla pola identyfikującego adres osoby, zamiast id adresu otrzymamy adres URI do dodatkowych informacji dla powyższego zasobu. Przechodząc pod wybrany adres URI osoby, uzyskamy szczegółowe dane, gdzie np. zamiast identyfikatora adresu osoby otrzymamy link do zasobu reprezentującego adres. Wykorzystując HATEOAS dostarczamy klientowi linki do poruszania się po API. Zastosowanie HATEOAS minimalizuje nam dokumentacje API. Usługa zaimplementowana na poziomie trzecim jest uważana za RESTful API.
+Przeanalizujmy następujący przykład. Z dokumentacji API wiemy, pod jakim adresem URI możemy znaleźć osobę o danym identyfikatorze. Wykonujemy żądanie GET, w wyniku którego otrzymujemy strukturę z danymi identyfikującymi osobę. Stosując HATEOAS dla pola identyfikującego adres osoby, zamiast id adresu otrzymamy adres URI do dodatkowych informacji dla powyższego zasobu. Przechodząc pod wybrany adres URI osoby, uzyskamy szczegółowe dane, gdzie np. zamiast identyfikatora adresu osoby otrzymamy link do zasobu reprezentującego adres. Wykorzystując HATEOAS dostarczamy klientowi linki do poruszania się po API. Zastosowanie HATEOAS minimalizuje nam dokumentacje API. Usługa zaimplementowana na poziomie trzecim jest uważana za RESTful API.
 
 \begin{lstlisting}[
 language={Python},
@@ -642,7 +642,7 @@ HTTP/1.1 200 OK
 \end{enumerate}
 
 \section{Django}
-\textbf{Django} jest open-source frameworkiem webowym opartym na języku Python, który umożliwia w bardzo prosty sposób tworzenie skalowalnych i szybkich serwisów. Powstał pod koniec 2003 roku jako ewolucyjne rozwinięcie aplikacji internetowych, tworzonych przez grupę programistów związanych z Lawrence Journal-World. Operuje on na modelu architektonicznym \textbf{MTV}(ang. \emph{Model-Template-Views}). 
+\textbf{Django}jest open-source frameworkiem webowym opartym na języku Python, który  w bardzo prosty sposób umożliwia tworzenie skalowalnych i szybkich serwisów. Powstał pod koniec 2003 roku jako ewolucyjne rozwinięcie aplikacji internetowych, tworzonych przez grupę programistów związanych z Lawrence Journal-World. Operuje on na modelu architektonicznym \textbf{MTV}(ang. \emph{Model-Template-Views}). 
 
 \begin{figure}[H]
 \centering
@@ -667,7 +667,7 @@ View służy do przetwarzania żądań i odpowiedzi HTTP. Ekstraktuje dane potrz
 \begin{center}
 \subsection{Models}
 \end{center}
-Modele do obiekty, które kształtują strukturę danych aplikacji. Umozliwiają one wykonywanie operacji na danych takich ja usuwanie, dodawanie, czy modyfikowanie.
+Modele to obiekty, które kształtują strukturę danych aplikacji. Umożliwiają wykonywanie na danych operacji, takich jak usuwanie, dodawanie, czy modyfikowanie. 
 
 
 \begin{center}
@@ -687,13 +687,13 @@ Unifrom Interface mówił o ujednoliceniu API i danych, by były one klarowne dl
 \begin{center}
 \subsection{HATEOAS}
 \end{center}
-To, czego nie zapewnia framework REST, to domyślnie odczytywalne formatów, takich jak HAL, Collection + JSON, JSON API lub mikroformaty HTML. Nie ma też możliwości automatycznego tworzenia w pełni HATEOAS interfejsów API. Takie postępowanie wiązałoby się z dokonywaniem mieszanych w odczuciu wyborów dotyczących API, które naprawdę powinny pozostać poza zakresem frameworka.
+To czego REST nie zrobi, to dostarczenie czytelnych dla maszyny formantów hypermedialnych takich jak HAL, Collection+JSON, JSON API lub mikroformantów HTML w sposób domyślny. Nie da też możliwości automagicznego stworzenia pełnego API HATEOAS zawierającego opisy formatów i semantycznie oflagowanych hiperlinków. Dla osiągnięcia takiego efektu musiałyby zostać podjęte decyzje wykraczające poza obszar frameworka. 
 
 
 \begin{center}
 \subsection{Client-Server}
 \end{center}
-Już sama esencja, tego, że Django REST Framework pozwala ci tworzyć backend serwera, który nie jest częścią interfejsu użytkownika aplikacji, jest istotą architektury klient-serwer. Każda aplikacja, którą tworzysz za pomocą Django Rest Framework posiada backend API , które jest zupełnie oddzielne od API klienta.
+Już sama esencja tego, że Django REST Framework pozwala utworzyć backend serwera, który nie jest częścią interfejsu użytkownika aplikacji, jest istotą architektury klient-serwer. Każda aplikacja, którą tworzymy za pomocą Django Rest Framework posiada API, ￼￼które jest zupełnie oddzielne od API klienta. 
 
 
 \begin{center}
@@ -729,7 +729,7 @@ Django zapewnia wiele interesujących połączeń między warstwami, a użycie D
 Django umozliwia na roszerzenie funkcjonalności szablonów do wysyłania np. formularzy jako endpoint.
 
 \section{Podsumowanie}
-W pracy przedstawiłem podstawowe zagadnienia związane z API. Omówiłem, także główne cechy i zasady REST. Zwróciłem też uwagę na to, co tworzy nasze API RESTful. Wspomniałem, też o ewolucji API dzieki modelowi dojrzałości Richardsona. Na końcu mojej pracy znowu przedstawiłem główne założenia architektury REST, jednakże tym razem do stwierdzenia czy Django REST Framework naprawdę pozwala na tworzenie prawdziwego RESTful API. Po przeanalizowaniu implementacji główny paradygmatów REST w Django REST Framework, czy nawet w samym Django mogę wywnioskować, że umożliwia on tworzenie API zgodnie z REST.
+W pracy przedstawiłem podstawowe zagadnienia związane z API. Omówiłem także główne cechy i zasady REST. Zwróciłem uwagę na to, co sprawia, że nasze API jest RESTful. Wspomniałem też o ewolucji API dzięki modelowi dojrzałości Richardsona. Na końcu mojej pracy ponownie przedstawiłem główne założenia architektury REST, jednakże tym razem dla stwierdzenia czy Django REST Framework naprawdę pozwala na tworzenie prawdziwego RESTful API. Po przeanalizowaniu implementacji głównych paradygmatów REST w Django REST Framework, czy nawet w samym Django, mogę wywnioskować, że umożliwia on tworzenie API zgodnie z REST. 
 
 \section{Bibliografia}
 \begin{enumerate}[leftmargin=5pt,rightmargin=5pt]
