@@ -281,18 +281,18 @@ Wstęp ma wprowadzić czytelnika w podstawowe definicje. Głównym zadaniem tego
 \subsection{HTTP}
 \end{center}
 
-"\textbf{HTTP}(ang. \emph{Hypertext Transfer Protocol}) jest protokołem przesyłania dokumentów hipertekstowych. Jest to podstawowy protokół sieci \textbf{WWW}(ang. \emph{World Wide Web}), za pomocą którego przesyła się żądania udostępnienia dokumentów WWW i informacje o kliknięciu odnośnika oraz informacje z formularzy. Zadaniem stron WWW jest publikowanie informacji – natomiast protokół HTTP właśnie to umożliwia.
+\textbf{HTTP}(ang. \emph{Hypertext Transfer Protocol}) jest protokołem przesyłania dokumentów hipertekstowych. Jest to podstawowy protokół sieci \textbf{WWW}(ang. \emph{World Wide Web}), za pomocą którego przesyła się żądania udostępnienia dokumentów WWW i informacje o kliknięciu odnośnika oraz informacje z formularzy. Zadaniem stron WWW jest publikowanie informacji – natomiast protokół HTTP właśnie to umożliwia.
 
 \begin{center}
 \subsection{HTTP Request}
 \end{center}
 \textbf{Żądanie}(ang. \emph{Request}) w formie HTTP powinno posiadać cztery elementy:
-\begin{enumerate}
+\begin{itemize}
 \item \textbf{Metode HTTP}(ang. \emph{Request method}) - określenie metody, którą chcemy wykorzystać dla danego zasobu.
 \item \textbf{Nagłówek}(ang. \emph{Header}) - może skłądać się kilku części i ma za zadanie przechowywać dodatkowe infromacje o żądaniu.
 \item \textbf{Ścieżkę do zasobu}(ang. \emph{Resource path}) - URI, czyli ścieżka dostepu do zasobu.
 \item \textbf{Ciało}(ang. \emph{Body}) - Składuje się tu dodatkowe informacje, które później wykorzystywane są do edycji albo tworzenia zasobów po stronie serwera. Może być puste.
-\end{enumerate}
+\end{itemize}
 
 
 \begin{lstlisting}[
@@ -317,7 +317,7 @@ Body:
 \end{center}
 Metoda HTTP jest częścią zapytania HTTP odpowiedzialną za określenie akcji, która ma zostać podjęta w wyniku zapytania HTTP. Istnieje siedem aktualnie najczęściej wykorzystywanych metod:
 
-\begin{enumerate}
+\begin{itemize}
 \item \textbf{GET} - Odczytuje reprezentację zasobu i powinno wyłącznie zwracać dane.
 \item \textbf{POST} - Wykorzystywane w celu przesyłania danych do wskazanego zasobu.
 \item \textbf{PUT} - Aktualizuje całą reprezentację zasobu z wykorzystaniem przesłanych danych.
@@ -325,7 +325,7 @@ Metoda HTTP jest częścią zapytania HTTP odpowiedzialną za określenie akcji,
 \item \textbf{DELETE} - Usuwa wskazany zasób lub kolekcje zasobów.
 \item \textbf{HEAD} - Pełni identyczną rolę jak GET, jednak w tym przypadku odpowiedź nie zawiera ciała, lecz nagłówki.
 \item \textbf{OPTIONS} - Zwraca infromację o możliwych opcjach dostępnych na danym zasobie.
-\end{enumerate}
+\end{itemize}
 
 \begin{center}
 \subsection{Czym w zasadzie jest API ?}
@@ -344,13 +344,13 @@ Metoda HTTP jest częścią zapytania HTTP odpowiedzialną za określenie akcji,
 \subsection{Co to jest URI ?}
 \end{center}
 \textbf{URI}(ang. \emph{Uniform Resource Identifier}) jest to ciąg znaków identyfikujący jakiś zasób, który, na chwilą obecną dla uproszczenia, będziemy utożsamiać z jakąś informacją. Istnieje pięć głównym charakterystyk URI:
-\begin{enumerate}
+\begin{itemize}
 \item Ciąg znaków powinien być \textbf{zwięzły}, czyli nie może składać się ze spacji, tabulatorów i innych niepotrzebnych znaków.\newline
 \item Nasza infromacja może być \textbf{materialna}, czyli odwoływać się do elementu świata rzeczywistego np. budynku, osoby, ale także \textbf{abstrakcyjna}, czyli odwoływać się do np. usługi czy dokumentu sieci Web.\newline
 \item Identyfikator URI jest na stałe przypisany do danego zasobu. Powinien być \textbf{stabilny}, czyli nie zmieniać sie i nie znikać.\newline
 \item Użytkownik może \textbf{odwołać się} do identyfikatora URI i otrzymać treściwą infromację zwrotną.\newline
 \item Identyfikatory dokumentów sieci Web muszą być \textbf{jednoznaczne}, czyli nie powinny być mylone z identyfikatorami innych zasobów.\newline
-\end{enumerate}
+\end{itemize}
 URI składa się z dwóch kompnentów. Pierwszym z nich jest \textbf{URL}(ang. \emph{Uniform Resource Locator}), który odnosi się do podzestawu URI. Oprócz identyfikacji zasobów, zapewnia on środki do ulokowania zasobu i opisuje podstawowy mechanizm dostępu (np. jego "położenie" w sieci). \textbf{URN}(ang. \emph{Uniform Resource Name}) to podzbiór identyfikatorów URI, które zawierają nazwę w danej przestrzeni, ale nie zawierają lokalizacji. Dokumentacja mówi nam też, że każdy lokator może być też identyfikatorem, czyli \textbf{każdy URL może być URI, ale istnieją URI, które nie są URL}.
 
 \begin{figure}[H]
@@ -375,8 +375,11 @@ https://somewebsite.org/name/{nameId} #Can be whole URL link
 \end{lstlisting}
 
 \section{REST oraz REST API}
-\begin{enumerate}
-\item{Historia REST i REST API}\newline
+
+\begin{center}
+\subsection{Historia REST i REST API}
+\end{center}
+
 
 W latach dziewięćdziesiątych nie istniały jeszcze żadne ustandaryzowane metody tworzenia API oraz ich używania. Najczęściej używanym protokołem był \textbf{SOAP}(ang. \emph{Simple Object Access Protocol}), który mimo posiadania w swej definicji słowa "\emph{Simple}" , był strasznie skomplikowany do tworzenia, przetwarzania i debugowania. Wymagał on ręcznego napisania pliku XML z wywołaniem \textbf{RPC}(ang. \emph{Remote Procedure Call}) w body. Po napisaniu trzeba było sprecyzować endpoint, przesłać metodą POST definicje w \textbf{kopercie}(ang. \emph{SOAP envelope}) co znajduje się w wiadomości, dla kogo jest przeznaczona i czy wiadomość jest obowiązkowa lub opcjonalna do danego endpointa.
 \begin{figure}[H]
@@ -403,7 +406,7 @@ Wszystko zmieniło się w 2000 roku, kiedy to grupka deweloperów pod kierownict
 
 Systemy oparte na architekturze REST nazywamy RESTful, jeżeli spełniają pewne wymagania. Systemy RESTful charakteryzują się tym, że są stateless i mają mocno podkreśloną granicę pomiędzy Klientem, a Serwerem. Roy Fielding podał sześć głównych cech, które powinny zawierać systemy oparte o architekturę REST:\newline  
 
-\begin{enumerate}
+\begin{itemize}
 \item \textbf{Uniform Interface} - Serwer powinien udostępniać jednolite API, które będzie klarowne dla wszystkich systemów komunikujących się z nim. Dane powinny być w tym samym formacie i zawierać taki sam zakres. Interfejs powinien spełniać wymogi dla wielu urządzeń i aplikacji. Zasoby w systemie powinny mieć jeden Uniform Resource Identifier, który pozwalałby na wymianę danych i powinny być łatwo dostępne przez np. HTTP request GET.
 
 \begin{figure}[H]
@@ -414,7 +417,7 @@ Systemy oparte na architekturze REST nazywamy RESTful, jeżeli spełniają pewne
 \end{figure}
 
 Zasada ta zawiera jeszcze cztery reguły, który pomagają nam uprościć architekturę: 
-\begin{enumerate}
+\begin{itemize}
 \item \textbf{Resource identification in requests} - Sposób reprezentacji zasobu może być różny i odłączny od samego zasobu np. serwer nie wysyła danych wprost odczytanych z bazy tylko w formacie JSON albo XML.\newline  
 
 \item \textbf{Resource manipulation through representations}  - Po otrzymaniu reprezentacji zasobów wraz z jego metadanymi od serwera, klient (jeśli ma do tego uprawnienia) może modyfikować oraz usuwać zasoby.\newline  
@@ -459,7 +462,7 @@ caption={Odpowiedź od Graph API}
 \end{lstlisting}
 
 W sekcji paging, pod kluczem next widnieje link, który poprowadzi nas do kolejnych wyników.\newline 
-\end{enumerate}
+\end{itemize}
 
 \item \textbf{Client-Serwer}
 
@@ -479,6 +482,7 @@ Powinna być widoczna granica pomiędzy klientem, a serwerem. Oznacza to, że kl
 \item \textbf{Layered System} - REST pozwala na odseparowanie warstw. Możemy wdrożyć nasze API na serwer A, przechowywać dane na serwerze B i przetwarzać żądania na serwerze C. Klient nie wie o zewnętrznych usługach i serwisach, z których korzysta serwer. Pozwala to na rozbicie serwisu na wiele mikroserwisów, które można łatwo aktualizować. Dzięki temu zachowujemy transparentność i separację logiki od warstwy WWW. Niestety takie rozwiązanie ma pewne wady, ponieważ może wprowadzać opóźnienia przez potrzebę komunikacji pomiędzy różnymi częściami naszej aplikacji.\newline
 
 \item \textbf{Code-On-Demand} - Jest to zasada, która jest opcjonalna, ponieważ prawie zawsze będziemy wysyłać dane w statycznej formie, jak np. XML albo JSON. Nasz serwis może wysyłać gotowe fragmenty kodu np. skrypty JavaScript do ich przetworzenia. 
+\end{itemize}
 
 \section{Podstawowy element REST API, czyli zasoby}
 
@@ -492,12 +496,12 @@ The key abstraction of information in REST is a resource. Any information that c
 
 \textbf{Zasób}(ang. \emph{Resource}) jest elemenentarną częścią REST API. Wykorzystujemy go właśnie podczas interakcji z API. Czym więc jest zasób ? Nie jest łatwo odpowiedzieć na to pytanie, ponieważ zasób jest to pojęcie abstrakcyjne. Dowolna informacja, która może posiadać nazwę, może być zasobem. Dlatego też przyjęto kilka podstawowych kryteriów by można było nazwać daną informację zasobem:\newline
 
-\begin{enumerate}
+\begin{itemize}
 \item Musi być rzeczownikiem.
 \item Musi być unikatowa, czyli definiować konkretną rzecz i być jak najbardziej sprecyzowana. Np. budynek nie jest zasobem, ponieważ jest zbyt ogólny, lecz biblioteka już nim jest. 
 \item Musi być możliwa do przedstawienia w formie danych.
 \item Music posiadać przynajmniej jeden adres URI, pod którym jest dostępny. URI jednocześnie jest nazwą, jak i zdresem zasobu.\newline
-\end{enumerate}
+\end{itemize}
 
 \begin{center}
 \subsection{Nazewnictwo}
@@ -505,7 +509,7 @@ The key abstraction of information in REST is a resource. Any information that c
 
 Odpowiednie nazewnicto i struktura infromacji pozwala na zwiększenie użyteczności oraz elastyczności, ułatwiając rozbudowę i modyfikację aplikacji. Niestety sposób nazywania zasobów jest kwestią bardzo dyskusyjną i nie istnieje jedna zasada jak powinniśmy poprawnie nazywać zasoby. Jednakże istnieją wskazówki w jaki sposób możemy je nazywać:\newline
 
-\begin{enumerate}
+\begin{itemize}
 \item \textbf{Obiekty vs. Akcje} - Zasoby powinny być tak zaprojektowane by były odłączne od akcji. Dzięki temu możemy wykonywać wiele akcji na pojedyńczym zasobie. Przytoczę taki przykład:\newline
 \begin{lstlisting}[
 language={Python},
@@ -530,7 +534,7 @@ Jak widać przykład pierwszy posiada jeden zasób users na którym wykonujemy r
 \item \textbf{Rzeczowniki vs. Czasowniki} - jednym ze sposobów weryfikacji, czy zasób jest odłączony od akcji, jest użycie samego rzeczownika w nazwie. Jeśli w adresie URI zasobu znajduje się czasownik, np. /getUsers lub /addUsers, to możemy podejrzewać że ten zasób jest bardzo mocno powiązany z konkretną akcją.\newline
 
 \item \textbf{Liczba pojedyncza vs. Liczba mnoga} - starajmy się używać liczby mnogiej przy nazewnictwie zasobów, np. /users zamiast /user. Zwiększa to czytelność naszego API, jednakże ta zasada jest bardzo dyskusyjna. Obiektywnie nasze API powinno być zbudowane konsekwentnie i spójnie. 
-\end{enumerate}
+\end{itemize}
 
 \begin{center}
 \section{Model dojrzałości Richardsona}
@@ -538,7 +542,7 @@ Jak widać przykład pierwszy posiada jeden zasób users na którym wykonujemy r
 
 Jako że REST jest tylko zbiorem wytycznych i dobrych rad dla tworzenia API to deweloperzy mają bardzo dużą elastyczność do definiowania jak bardzo REST będzie ich API. Zakładając sytuację, że napisałeś sobie prostą aplikację RESTful API, to skąd możesz mieć pewność że jest ona w stylu REST ? Ktoś może Ci powiedzieć, że skoro wykorzystujesz protokół HTTP i używasz formatu danych JSON, to twój serwis jest RESTful. \textbf{Model dojrzałości Richardsona}(ang. \emph{Richardson Maturity Model}) pozwala ocenić w jakim stopniu twoja aplikacja jest RESTful. Model definiuje 4 poziomy(0-3) i zakłada, że \textbf{każde API należy do jednego z czterech poziomów dojrzałości}.
 
-\begin{enumerate}
+\begin{itemize}
 \item \textbf{Poziom 0} - Na poziomie zerowym modelu dojrzałości znajdują się aplikacje, które nie spełniają założeń architektury REST. Protokół HTTP wykorzystywany jest tylko jako warstwa transportowa. Używane są tylko metody GET i POST oraz status zwracany zawsze jest 200 OK. Nie ma unikalnych adresów dla zasobów. Do tego poziomu zaliczamy np. protokoły SOAP i RPC.
 
 \begin{lstlisting}[
@@ -592,13 +596,13 @@ DELETE /api/something/item_id
 \end{lstlisting}
 
 Drugi poziom wprowadza też roszerzenie dla naszych statusów odpowiedzi. Będziemy teraz wykorzystywać statusy zależnie od sposobu realizacji zapytania.
-\begin{enumerate}
+\begin{itemize}
 \item 1XX – Kody informacyjne
 \item 2XX – Kody powodzenia
 \item 3XX – Kody przekierowania
 \item 4XX – Kody błędu aplikacji klienta
 \item 5XX – Kody błędu serwera
-\end{enumerate}
+\end{itemize}
 
 \begin{lstlisting}[
 language={Python},
@@ -639,10 +643,10 @@ HTTP/1.1 200 OK
   "link":{"address":"/api/addresses/43"} }
 \end{lstlisting} 
 
-\end{enumerate}
+\end{itemize}
 
 \section{Django}
-\textbf{Django}jest open-source frameworkiem webowym opartym na języku Python, który  w bardzo prosty sposób umożliwia tworzenie skalowalnych i szybkich serwisów. Powstał pod koniec 2003 roku jako ewolucyjne rozwinięcie aplikacji internetowych, tworzonych przez grupę programistów związanych z Lawrence Journal-World. Operuje on na modelu architektonicznym \textbf{MTV}(ang. \emph{Model-Template-Views}). 
+\textbf{Django} jest open-source frameworkiem webowym opartym na języku Python, który  w bardzo prosty sposób umożliwia tworzenie skalowalnych i szybkich serwisów. Powstał pod koniec 2003 roku jako ewolucyjne rozwinięcie aplikacji internetowych, tworzonych przez grupę programistów związanych z Lawrence Journal-World. Operuje on na modelu architektonicznym \textbf{MTV}(ang. \emph{Model-Template-Views}). 
 
 \begin{figure}[H]
 \centering
@@ -1060,7 +1064,12 @@ W Django możliwe jest użycie trzech najpopularniejszych typów relacji w bazie
 \item Wiele do wielu ang. \emph{Many-to-many}
 
 \end{itemize}
+
+
+\begin{center}
 \subsection{Relacje jeden do jednego}
+\end{center}
+
 W relacji jeden do jednego tylko jeden rekord tabeli A (najczęściej klucz podstawowy) może być powiązany z innym rekordem tabeli B mającym taką samą wartość. Przykładem może być uczeń, który posiada tylko jedną szafkę w szkole.
 W Django należy użyć typu \texttt{OneToOneField}, aby zdefiniować relację jeden do jednego.
 \begin{lstlisting}[
@@ -1084,7 +1093,10 @@ class Student(models.Model):
     def __str__(self):
         return self.name
 \end{lstlisting}
+
+\begin{center}
 \subsection{Relacje jeden do wielu}
+\end{center}
 
 Relacja jeden do wielu jest najczęściej używanym typem połączenia i odpowiada sytuacji, gdy pojedynczemu rekordowi z tabeli A jest przyporządkowany jeden lub wiele rekordów z tabeli B, natomiast pojedynczemu rekordowi z tabeli B jest przyporządkowany dokładnie jeden rekord z tabeli A.
 Aby zdefiniować relację jeden do wielu w Django, należy użyć \textbf{ForeignKey}. Przykładem mogą być modele \texttt{Section} (dział) oraz \texttt{Skill} (umiejętność) zawarte w projekcie.
@@ -1119,7 +1131,10 @@ class Skill(models.Model):
 \end{figure}
 
 W modelu Skill zawarty jest klucz obcy modelu Section, co pozwala na przypisanie kilku umiejętności do jednego działu.
+
+\begin{center}
 \subsection{Relacje wiele do wielu}
+\end{center}
 Relacja wiele do wielu występuje w sytuacji, gdy rekordowi tabeli A przyporządkowany jest jeden lub wiele rekordów tabeli B. Sytuacja ta ma miejsce również z drugiej strony.
 Aby zdefiniować relację wiele do wielu w Django, należy użyć \texttt{ManyToManyField}. Za przykład można obrać model \texttt{Task} (zadanie) oraz \texttt{Skill} (umiejętność).
 \begin{lstlisting}[
@@ -1159,7 +1174,10 @@ Niewidoczny model pośredni stworzony przez Django wymaga pary kluczy. Jest to k
 \end{figure}
 
 W przypadku naszego projektu stworzona została tabela o nazwie \texttt{task\_skill} zawierającą trzy kolumny: \texttt{id}, \texttt{task\_id} oraz \texttt{skill\_id}.
+
+\begin{center}
 \subsection{Integralność danych}
+\end{center}
 Wszystkie relacje tworzą zależności między połączonymi modelami, więc ważne jest, aby określić co dzieje się z drugą stroną, gdy pierwsza zostanie usunięta.
 W tym celu została stworzona opcja \texttt{on\_delete}, której zadaniem jest określać co należy zrobić z rekordami, których druga strona została usunięta. Opcja ta jest dostępna dla wszystkich trzech relacji i może przyjmować następujące wartości:
 \begin{itemize}
@@ -1180,7 +1198,10 @@ Kolejnym wymogiem jest zaimportowanie modeli, na których chcemy pracować.
 >>>from projekt.models import Task, CustomUser, Skill
 \end{lstlisting}
 W tym momencie mamy możliwość tworzenia, otrzymywania oraz filtrowania obiektów.
+
+\begin{center}
 \subsection{Tworzenie obiektu}
+\end{center}
 \begin{lstlisting}[style=DOS]
 >>>user = CustomUser.objects.get(id = 1)
 >>>skill = Skill.objects.get(id = 1)
@@ -1211,7 +1232,10 @@ VALUES ('zadanie przyklad', ARRAY['20','12','32']::varchar(200)[],
 	ARRAY['21']::varchar(200)[], 2, 1, 1, false, 2) 
 	RETURNING "task"."id"
 \end{lstlisting}
+
+\begin{center}
 \subsection{Pobieranie obiektu}
+\end{center}
 Pobieranie danych z bazy może być wykonane na wiele sposobów. Oto kilka metod:
 \begin{itemize}
 \item \texttt{all()} - zwraca wszystkie rekordy danego modelu
@@ -1315,7 +1339,11 @@ Execution time: 0.002796s [Database: default]
 >>> print(id_of_authors)
 [2, 4, 4, 3, 4, 2, 1, 3, 4, 3]
 \end{lstlisting}
+
+\begin{center}
 \subsection{Aktualizacja obiektu}
+\end{center}
+
 Metoda \texttt{update()} wykonuje zapytanie aktualizujące SQL dla określonych pól i zwraca liczbę dopasowanych wierszy. Na przykład, aby zmienić typ wszystkich zadań o punktacji równej 3 potrzebne jest polecenie:
 \begin{lstlisting}[style=DOS]
 >>> Task.objects.filter(points = 4).update(type = 1)
@@ -1324,12 +1352,18 @@ UPDATE "authentication_task"
  WHERE "authentication_task"."points" = 4
 Execution time: 0.170321s [Database: default]
 \end{lstlisting}
+
+\begin{center}
 \subsection{Usuwanie obiektu}
+\end{center}
 Metoda \texttt{delete()} wykonuje zapytanie SQL usuwające dla wszystkich wierszy w QuerySet.
 \begin{lstlisting}[style=DOS]
 >>> Task.objects.filter(points = 1).delete()
 \end{lstlisting}
+
+\begin{center}
 \section{Wyzwalacze Django-PostgreSQL}
+\end{center}
 Wyzwalacze mogą rozwiązywać wiele różnych problemów na poziomie bazy danych lepiej niż na poziomie aplikacji Django. Dzięki wyzwalaczom możliwa jest np.:
 \begin{itemize}
 \item ochrona przez usuwaniem oraz zmienianiem wierszy lub kolumn
@@ -1341,7 +1375,10 @@ Aby używać wyzwalaczy bazy PostgreSQL w Django z pomocą przychodzi dodatek \t
 >pip install django-pgtrigger
 \end{lstlisting}
 Wykonując powyższe polecenie oraz dodając \texttt{pgtrigger} do \textbf{INSTALLED\_APPS} można rozpocząć współpracę z \texttt{django-pgtrigger}.
+\begin{center}
 \subsection{Ochrona przed usunięciem modelu}
+\end{center}
+
 Definicja pgtrigger.Protect wywołuje ochronę przed wykonaniem wybranej operacji.
 \begin{lstlisting}[
 language={Python},
@@ -1366,7 +1403,10 @@ CONTEXT:
  PL/pgSQL function pgtrigger_protect_deletes_f1129() line 14 at RAISE
 \end{lstlisting}
 Chcąc usunąć dział o id równym 3 otrzymujemy błąd informujący o tym, że operacja ta nie jest możliwa. Takie działanie daje nam pewność, że działy lub umiejętności nie zostaną usunięte.
-\subsection{Możliwość wyłącznie tworzenie lub odczytu}
+\begin{center}
+\subsection{Możliwość wyłącznie tworzenia lub odczytu}
+\end{center}
+
 Wyzwalacz \texttt{pgtrigger.Protect} oferuję nie tylko ochronę przed usunięciem modelu. Kolejną przydatną opcją jest ochrona przez aktualizowaniem danych modelu.
 \begin{lstlisting}[
 language={Python},
@@ -1401,7 +1441,10 @@ caption={Fragment pliku \texttt{models.py}}
 class Task(models.Model):
    ...
 \end{lstlisting}
+
+\begin{center}
 \subsection{Miękkie usuwanie}
+\end{center}
 Zdarza się, że użytkownik usunie utworzony przez siebie sprawdzian, lecz po pewnym czasie chce go odzyskac. Można użyć wtedy \texttt{pgtrigger.SoftDelete}, który zapobiegnie całkowitemu usunięciu obiektu, poprzez zmianę wartości pola obiektu.
 \begin{lstlisting}[
 language={Python},
@@ -1418,7 +1461,10 @@ class Test(models.Model):
     ... 
 \end{lstlisting}
 Gdy użytkownik usunie sprawdzian, pole \texttt{is\_active} zmieni swoją wartość na \texttt{False} i nie będzie juz wyświetlane na jego liście. Jeśli jednak będzie on chciał owy sprawdzian odzyskać, musi zrobić to z listy usuniętych sprawdzianów lub przez inne przeznaczone do tego rozwiązanie.
+\begin{center}
 \subsection{Śledzenie zmian}
+\end{center}
+
 Jeżeli potrzebna jest możliwość śledzenia zmian w modelach użyteczne może okazac się \texttt{django-pghistory}, które zapewnia automatyczne i konfigurowalne śledzenie historii dla modeli Django przy użyciu wyzwalaczy. Aby używać \texttt{django-pghistory} potrzebne również będzie zainstalowanie aplikacji \texttt{django-pgconnection} oraz odpowiednie skonfigurowanie pliku settings.py. Po instalacji należy wykonać migrację.
 \begin{lstlisting}[
 language={Python},
@@ -1682,9 +1728,11 @@ Warto również wiedzieć, że komponenty mogą odwoływać się do innych kompo
 Stan zawiera dane związane z danym komponentem, które mogą ulegać zmianie. Stan powinien być obiektem javascriptowym, aby go zmodyfikować należy wywołać metodę setState. Dodatkowo komponenty posiadają metody cyklu życia, które są odpowiedzialne za uruchamianie kodu w odpowiednich momentach.
 \newline
 Cykl życia komponentu możemy podzielić na 3 etapy:
-\newline- Montowanie(ang. Mounting), czyli pierwsze stworzenie instancji komponentu i włożenie go do drzewa DOM
-\newline- Aktualizacja, czyli zmiany we właściwościach lub stanie komponentu
-\newline- Odmontowanie(ang. Unmounting), czyli usunięcie komponentu z drzewa DOM
+\begin{itemize}
+\item Montowanie(ang. Mounting), czyli pierwsze stworzenie instancji komponentu i włożenie go do drzewa DOM
+\item Aktualizacja, czyli zmiany we właściwościach lub stanie komponentu
+\item Odmontowanie(ang. Unmounting), czyli usunięcie komponentu z drzewa DOM
+\end{itemize}
 \begin{figure}[H]
 \centering
 \includegraphics[width=13cm]{diagram metod cyklu życia.png}
@@ -1785,10 +1833,11 @@ caption={Renderowanie warunkowe przy pomocy operatora logicznego \&\&}
 Hooki zostały wprowadzone w wersji 16.8. Pozwalają używać stanów oraz innych funkcjonalności Reacta w komponentach funkcyjnych.
 \newline
 Jak podają developerzy, głównymi powodami, dla których wprowadzili hooki było to, że:
-\newline -Współdzielenie logiki związanej ze stanem pomiędzy komponentami jest trudne
-\newline -Wraz ze wzrostem złożoności komponentów stają się one zbyt trudne do zrozumienia
-\newline -Klasy są mylące zarówno dla ludzi jak i maszyn
-\newline
+\begin{itemize}
+\item Współdzielenie logiki związanej ze stanem pomiędzy komponentami jest trudne
+\item Wraz ze wzrostem złożoności komponentów stają się one zbyt trudne do zrozumienia
+\item Klasy są mylące zarówno dla ludzi jak i maszyn
+\end{itemize}
 Jeśli chcemy skorzystać ze stanu w komponencie funkcyjnym, należy użyć hooka stanu.
 
 
@@ -1866,7 +1915,7 @@ caption={Przykładowa obsługa zdarzenia onClick}
 
 }
 Powyższy przykład pokazuje jeden ze sposobów obsługi zdarzeń wykorzystywanych w Gen-mat. Kliknięcie przycisku IconButton powoduje wywołanie funkcji createExamCopy, która jest odpowiedzialna za utworzenie kopii sprawdzianu.
-Innym sposobem na przekazanie instrukcji obsługi zdarzenia jest napisanie funkcji obsługi, następnie jej związanie(ang. bind) i wywołanie jej przy pomocy \it{this}.
+Innym sposobem na przekazanie instrukcji obsługi zdarzenia jest napisanie funkcji obsługi, następnie jej związanie(ang. bind) i wywołanie jej przy pomocy {\it this}.
 
 \begin{lstlisting}[
 caption={Związanie}
@@ -1891,12 +1940,11 @@ onClick={this.hideSection(section)}>
 \section{Tworzenie formularzy oraz wymiana danych z serwerem}
 \bigbreak
 Jedną z podstawowych rzeczy, które musi zrobić prawie każdy interfejs w dzisiejszych aplikacjach internetowych jest obsługa formularzy oraz wymiana danych między serwerem, aplikacją oraz użytkownikiem. Interfejs projektu Gen-mat w tym celu używa głównie trzech bibliotek:
-\newline
--Axios
-\newline
--Formik
-\newline
--Yup
+\begin{itemize}
+\item Axios
+\item Formik
+\item Yup
+\end{itemize}
 
 \subsection{Axios}
 Axios~\cite{axios} jest Klientem HTTP dla node.js oraz przeglądarki opartym na javascriptowym obiekcie Promise, który służy do obsługi operacji asynchronicznych.
@@ -1912,15 +1960,12 @@ Axios~\cite{axios} jest Klientem HTTP dla node.js oraz przeglądarki opartym na 
 \end{figure}
 
 Dzięki Axios możemy tworzyć requesty - żądania HTTP(ang. Hypertext Transfer Protocol), które są podstawową formą komunikacji z serwerem. HTTP opisuje formę żądania klienta oraz formę odpowiedzi na to żądanie ze strony serwera. Do najważniejszych metod httprequestów, na których się skupimy, należą:
-\newline
-- GET - metoda wysyłająca żądanie otrzymania danych, powinna być ograniczona jedynie do pobierania danych, nie powinna ich przesyłać
-\newline
-- PUT - metoda używana w celu przesłania danych między klientem oraz serwerem w celu aktualizacji wybranego zasobu
-\newline
-- POST - metoda używana w celu przesłania danych między klientem oraz serwerem
-\newline
-- DELETE - żądanie usunięcia danych
-\newline
+\begin{itemize}
+\item GET - metoda wysyłająca żądanie otrzymania danych, powinna być ograniczona jedynie do pobierania danych, nie powinna ich przesyłać
+\item PUT - metoda używana w celu przesłania danych między klientem oraz serwerem w celu aktualizacji wybranego zasobu
+\item POST - metoda używana w celu przesłania danych między klientem oraz serwerem
+\item DELETE - żądanie usunięcia danych
+\end{itemize}
 Axios pozwala na tworzenie instancji z własną konfiguracją, która będzie stosowana domyślnie przy każdym wysłaniu żądania przy pomocy
 tej instancji.
 
@@ -2025,13 +2070,11 @@ Jak podaje sam autor, powodem, dla którego stworzył Formik była chęć zestan
 \newline
 Formik daje nam dostęp do przemyślanych pól oraz metod pomocniczych przydatnych przy tworzeniu formularzy. Na początku możemy przekazać
 początkowe wartości w initialValues, podstawowymi metodami pomocniczymi są:
-\newline
-- handleSubmit - procedura obsługi wysyłania
-\newline
-- handleChange - procedura obsługi zmian
-\newline
-- values - w tej metodzie przechowywane sa aktualne wartości obecne w formularzu.
-\newline
+\begin{itemize}
+\item handleSubmit - procedura obsługi wysyłania
+\item handleChange - procedura obsługi zmian
+\item values - w tej metodzie przechowywane sa aktualne wartości obecne w formularzu.
+\end{itemize}
 Dodatkowo Formik pomaga w walidacji pól na poziomie formularza dzięki validationSchema, która w połączeniu z Yupem sprawia, że walidacja z poziomu formularza staje się
 bardzo prosta. Wystarczy stworzyć schemat przy pomocy Yupa a następnie jako validationSchema użyć obiektu stworzonego w Yupie.
 
@@ -2125,15 +2168,12 @@ password: false,
 \end{lstlisting}
 
 Oprócz wcześniej wspomnianych właściwościach jako podstawowych Formik zapewnia:
-\newline
-- dirty - zwracające true, gdy między wartościami values a początkowymi wartościami przekazanymi w initialValues nie zachodzi głęboka równość.
-\newline
-- handleBlur - procedura obsługi zdarzenia onBlur - używana, gdy chcemy monitorować, czy konkretna dana wejściowa została dotknięta.
-\newline
-- isSubmitting - który sprawdza stan przesyłania formularza, zwraca wartość \it{true}, gdy formularz jest aktualnie przesyłany, w innym wypadku zwraca \it{false}
-\newline
-- setFieldError - pozwalający na ustawienie dodatkowej wiadomośc, gdy w wybranym polu wystąpi błąd
-\newline
+\begin{itemize}
+\item dirty - zwracające true, gdy między wartościami values a początkowymi wartościami przekazanymi w initialValues nie zachodzi głęboka równość.
+\item handleBlur - procedura obsługi zdarzenia onBlur - używana, gdy chcemy monitorować, czy konkretna dana wejściowa została dotknięta.
+\item isSubmitting - który sprawdza stan przesyłania formularza, zwraca wartość {\it true}, gdy formularz jest aktualnie przesyłany, w innym wypadku zwraca {\it false}
+\item setFieldError - pozwalający na ustawienie dodatkowej wiadomośc, gdy w wybranym polu wystąpi błąd
+\end{itemize}
 
 
 
@@ -2230,10 +2270,11 @@ caption={Ścieżki dostępne w projekcie gen-mat }
 
 React Router posiada kilka przydatnych hooków: useHistory, useLocation, useParams, useRouteMatch. Hook useHistory daje nam dostęp do pakietu history, który oferuje kolejne usprawnienia 
 nawigacyjne oferując właściwości i metody takie jak:
-\newline - location- obiekt reprezentujący obecny adres
-\newline - push- który przepycha nowy adres na ostatnie miejsce na stosie historii
-\newline - goBack- funkcja wracająca na poprzedni adres
-\newline
+\begin{itemize}
+\item location - obiekt reprezentujący obecny adres
+\item push - który przepycha nowy adres na ostatnie miejsce na stosie historii
+\item goBack - funkcja wracająca na poprzedni adres
+\end{itemize}
 Rozważmy następującą sytuację - użytkownik zapomniał hasła, korzysta z funkcji "reset hasła", na adres e-mail otrzymuje link, którego ostatnią częścią
 jest losowo wygenerowany ciąg znaków - token. Aplikacja musi być w stanie wydobyć ten token oraz sprawdzić czy jest poprawny, jest to możliwe dzięki użyciu useParams.
 \begin{lstlisting}[
@@ -2257,6 +2298,4 @@ sugeruje, że nie zostanie porzucony w najbliższej przyszłości, co również 
 
 \printbibliography
 
-\end{enumerate}
-\end{enumerate}
 \end{document}
