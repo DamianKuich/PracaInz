@@ -93,7 +93,7 @@
 % --- Autor pracy
 \author{Damian Kuich, Mikołaj Kowalczyk, Mateusz Michalski}
 % --- Numer albumu
-\album{434735, 434725, 416128}
+\album{434735, 434725, 123456}
 % --- Tytuł pracy (w języku polskim i angielskim)
 \titlePL{Platforma do generowania sprawdzianów z matematyki}
 \titleEN{Platform for generating math tests}
@@ -154,9 +154,16 @@
 
 % Blok abstraktu w języku polskim
 \begin{streszczenie}
-\lipsum[1]
+Przedmiotem pracy jest przedstawienie komponentów składających się na projekt platformy webowej do generowania sprawdzianów z matematyki. W trakcie tworzenia serwisu musieliśmy podejmować wiele decyzji związanych z użyciem dostepnych rozwiązań technologicznych do rozwiązywania pojawiających się problemów. 
 
-\paragraph{Słowa kluczowe:} klasa
+Pierwsza część ma za zadanie wprowadzenia w podstawowe struktury organizacyjne i technologiczne, który były wykorzystywane przy tworzeniu aplikacji. Poruszona zostanie kwestia jaki cel ma nasza aplikacja spełniać i jakie założenia zostały ustalone. Opisana zostanie organizacja pracy i metodyka jaka pomagała nam przy tworzeniu kolejnych etapów serwisu oraz podział prac pomiędzy członków grupy deweloperskiej. 
+
+W drugiej części przedstawiona zostanie idea tworzeniu serwisów na podstawie architektury REST. Zaczynając od podstawowych pojęć związanych z budową serwisów webowych, a kończąc na technologii, która została wykorzystana do implementacji owej architektury do naszej aplikacji. 
+
+Trzecia część pracy
+
+Ostatni rozdział zawiera
+
 \end{streszczenie}
 
 % Opcjonalny blok dedykacji
@@ -173,7 +180,7 @@ Tu możesz umieścić swoją dedykację.
 
 \chapter{Wprowadzenie}
 
-\section{Opis Projektu}
+\section{Cel i założenia projektu}
 
 “Gen-Mat” jest to nowy serwis webowy do generowania i publikacji sprawdzianów z matematyki na poziomie szkół ponadpodstawowych. Głównym jego zadaniem jest pomóc grupie docelowej (nauczycielom matematyki) oszczędzić cenny czas, poprzez uproszczenie procesu tworzenia sprawdzianu. Nauczyciel zostanie odciążony z wymyślania i pisania zadań do sprawdzianu. Do jego dyspozycji przeznaczone są zadania zawarte w naszej bazie danych. Czynność, którą nauczyciel musi wykonać to wyszukanie poszczególnych zadań oraz przeniesienie ich na sprawdzian.
 
@@ -186,6 +193,8 @@ Na bieżący moment baza danych składać będzię się wyłącznie z zadań zac
 Aby wyeliminować ryzyko niewystarczającej ilości zadań, wprowadzona została możliwość dodawania zadań bezpośrednio przez nauczycieli, aby każdy z nich mógł stworzyć swój idealny sprawdzian. W trosce o prywatność naszych użytkowników, każdy z nich będzie miał możliwość decydowania czy chce podzielić się z innymi nauczycielami stworzonym przez siebie zadaniem. Zadania dodane do bazy danych będą również weryfikowane przez osobę do tego przeznaczoną, aby nie zawierały treści, które mogą być nieodpowiednie w jakikolwiek sposób.
 
 Zespół podzielony na dwie grupy dwuosobowe. Jedna z nich odpowiedzialna jest za Frontend, a druga za Backend. Zespół obrał metodyke pracy Scrum. Zadania są przypisywane przez Scrum Mastera na podstawie umiejętności danego członka zespołu. Następnie, co jakiś czas sprawdzany jest postęp danego zadania na podstawie tzw. “Task Review”. Ostatnim punktem jest testowanie, czy zostało wykonane w sposób poprawny oraz czy nie pojawiły się jakiekolwiek błędy.
+
+Głównym celem projektu było stworzenie aplikacji webowej pozwalającej na automatyczne generowanie sprawdzianów z matematyki. Głównym założeniem projektu było stworzenie aplikacji webowej pozwalającej na generowanie sprawdzianów w sposób łatwy i szybki. 
 
 
 \section{Podział prac}
