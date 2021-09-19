@@ -43,6 +43,35 @@
       \verb https://formik.org/docs/overview
       \endverb
     \endentry
+    \entry{django}{book}{}
+      \name{author}{1}{}{%
+        {{hash=4b391b2392458f3f1f92f0b33887d9f4}{%
+           family={Foundation},
+           familyi={F\bibinitperiod},
+           given={Django\bibnamedelima Software},
+           giveni={D\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {otwarto: 01/12/2021}%
+      }
+      \strng{namehash}{4b391b2392458f3f1f92f0b33887d9f4}
+      \strng{fullhash}{4b391b2392458f3f1f92f0b33887d9f4}
+      \strng{bibnamehash}{4b391b2392458f3f1f92f0b33887d9f4}
+      \strng{authorbibnamehash}{4b391b2392458f3f1f92f0b33887d9f4}
+      \strng{authornamehash}{4b391b2392458f3f1f92f0b33887d9f4}
+      \strng{authorfullhash}{4b391b2392458f3f1f92f0b33887d9f4}
+      \field{sortinit}{F}
+      \field{sortinithash}{fb0c0faa89eb6abae8213bf60e6799ea}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Oficjalna strona framework’a Django}
+      \verb{urlraw}
+      \verb https://docs.djangoproject.com/en/3.1/%7D
+      \endverb
+      \verb{url}
+      \verb https://docs.djangoproject.com/en/3.1/%7D
+      \endverb
+    \endentry
     \entry{reactstory}{book}{}
       \name{author}{1}{}{%
         {{hash=166e19602ba3f85cbe9590f79d3ce461}{%
