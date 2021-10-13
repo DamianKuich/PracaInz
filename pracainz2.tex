@@ -743,45 +743,6 @@ Django umozliwia na roszerzenie funkcjonalności szablonów do wysyłania np. fo
 \section{Podsumowanie}
 W pracy przedstawiłem podstawowe zagadnienia związane z API. Omówiłem także główne cechy i zasady REST. Zwróciłem uwagę na to, co sprawia, że nasze API jest RESTful. Wspomniałem też o ewolucji API dzięki modelowi dojrzałości Richardsona. Na końcu mojej pracy ponownie przedstawiłem główne założenia architektury REST, jednakże tym razem dla stwierdzenia czy Django REST Framework naprawdę pozwala na tworzenie prawdziwego RESTful API. Po przeanalizowaniu implementacji głównych paradygmatów REST w Django REST Framework, czy nawet w samym Django, mogę wywnioskować, że umożliwia on tworzenie API zgodnie z REST. 
 
-\section{Bibliografia}
-\begin{enumerate}[leftmargin=5pt,rightmargin=5pt]
-\item Dokumentacja Frameworka Django REST. https://www.django-rest-framework.org.
-
-\item Mark, M. REST API Design Rulebook. O'Reilly, 2011. 
-
-\item REST API Tutorial, https://restfulapi.net. 
-
-\item WIKIPEDIA.ORG. API. https://en.wikipedia.org/wiki/API. 
-
-\item Krzysztof. RESTful API – Richardson Maturity Model. https://devkr.pl (2018) 
-
-\item Dokumentacja Frameworka Django. https://docs.djangoproject.com/en/3.2/
-
-\item WIKIPEDIA.ORG. Representational state transfer. https://en.wikipedia.org/wiki/Representational-state-transfer
-
-\item Rinu Gour. Working Structure of Django MTV Architecture. https://towardsdatascience.com/working-structure-of-django-mtv-architecture-a741c8c64082 (2019)
-
-\item Grzegorz Kwaśniewski. REST API od podstaw. https://www.devmobile.pl/rest-api-od-podstaw/ (2018)
-
-\item T. Berners-Lee. Uniform Resource Identifier (URI): Generic Syntax. https://www.ietf.org/rfc/rfc3986.txt (2005)
-
-\item Dominik Szczpaniak. Wstep do REST API. https://devszczepaniak.pl/wstep-do-rest-api/ (2018)
-
-\item Smartbear. API Endpoints - What Are They? Why Do They Matter? https://smartbear.com/learn/performance-monitoring/api-endpoints/
-
-\item Read Me. The History of REST APIs. https://blog.readme.com/the-history-of-rest-apis/ (2016)
-
-\item bd90. Dlaczego Twoje API nie jest RESTful. https://bd90.pl/dlaczego-twoje-api-nie-jest-restful/ (2018)
-
-\item Geordy James. Creating a simple REST API in PHP. https://cutt.ly/6bMyxTy (2017)
-
-\item Hooman Staff. What is API – And it’s Types. https://techrevv.com/what-is-api-and-its-types/ (2021)
-
-\item SoapUI Documentation. What Is A REST API?. https://www.soapui.org/learn/api/what-is-a-rest-api/
-
-\item Patryk Sładek. REST API – model dojrzałości Richardsona. https://jakzostacprogramista.net/2020/11/25/rest-api-model-dojrzalosci-richardsona/ (2020)
-\end{enumerate}
-
 \chapter{Integracja projektu opartego o Django z bazą danych PostgreSQL}
 Baza danych to zbiór informacji, danych, zazwyczaj przechowywanych w formie elektronicznej w systemie komputerowych.  
 
@@ -1504,57 +1465,6 @@ Powyższy kod pozwala na zapisywanie informacji dotyczących tworzonych zadań p
 Istnieje wiele innych zastosowań \texttt{django-pghistory}. Aby poznać wszystkie z nich, warto zapoznać się z dokumentacją.
 \section{Podsumowanie}
 W tym rozdziale zawarte zostały informacje na temat współpracy frameworka Django z bazą danych PostgreSQL. Treści te pokazują w jaki sposób poprawnie łączyć się z bazą, tworzyć modele oraz wykorzystywać relację na przykładzie projektu Generatora Sprawdzianów. Opisane zostało również jak w optymalny sposób odpytywać bazę danych oraz wykorzystywać przydatne pakiety mające na celu pomoc we współpracy z PostgreSQL.
-\begin{thebibliography}{9}
-\bibitem{Django Software Foundation} 
-Django Software Foundation, Oficjalna strona framework’a Django, dostęp w internecie 20.05.2021r.
-\\\texttt{https://docs.djangoproject.com/en/3.1/}
-
-
-\bibitem{latexcompanion} 
-Oracle Corporation and/or its affiliates, Oficjalna dokumentacja MySQL, dostęp w internecie: 13.05.2021r.
-\\\texttt{https://dev.mysql.com/doc/}
-
-
-\bibitem{latexcompanion} 
-The PostgreSQL Global Development Group, Oficjalna dokumentacja PostgreSQL, dostęp w internecie: 13.05.2021r.
-\\\texttt{https://www.postgresql.org/docs/}
-
-
-\bibitem{latexcompanion} 
-Microsoft, Oficjalna dokumentacja Microsoft SQL Server, dostęp w internecie: 13.05.2021r.
-\\\texttt{https://docs.microsoft.com/en-us/sql/sql-server/}
-
-
-\bibitem{latexcompanion} 
-Oracle Corporation, Oficjalna dokumentacja Oracle Database, dostęp w internecie: 13.05.2021r.
-\\\texttt{https://docs.oracle.com/en/database/}
-
-
-\bibitem{latexcompanion} 
-Wes Kendall, Oficjalna dokumentacja django-pghistory, dostęp w internecie: 03.06.2021r.
-\\\texttt{https://django-pghistory.readthedocs.io/en/latest/index.html}
-
-
-\bibitem{latexcompanion} 
-Wes Kendall, Oficjalna dokumentacja django-pgtrigger, dostęp w internecie: 03.06.2021r.
-\\\texttt{https://django-pgtrigger.readthedocs.io/en/latest/toc.html}
-
-
-\bibitem{latexcompanion} 
-Wes Kendall, Oficjalna dokumentacja django-pgconnection, dostęp w internecie: 04.06.2021r.
-\\\texttt{https://django-pgconnection.readthedocs.io/en/latest/}
-
-
-\bibitem{Sammy Lee} 
-Sammy Lee, Data Engineering with Python, Django, and PostgreSQL, dostęp w internecie: 23.05.2021r.
-\\\texttt{https://towardsdatascience.com/data-engineering-with-python-django-and-postgresql-99409492769}
-
-\bibitem{Django Book} 
-Adrian Holovaty, Jacob K. Moss, The Definitive Guide to Django:
-Web Development Done Right
-\\\texttt{http://gsl-archive.mit.edu/media/programs/mexico-summer-2014/materials/djangobook.pdf}
-\end{thebibliography}
-
 
 \chapter {React jako narzędzie do tworzenia interfejsu użytkownika}
 
@@ -2302,8 +2212,8 @@ caption={Przykładowe użycie useParams}
 React jest potężnym narzędziem do tworzenia interfejsów. Jego ogromna popularność przekłada się na gigantyczną ilość materiałów wspomagających jego przyswojenie, co w połączeniu z relatywnie niską barierą wejścia składa się na atrakcyjny wybór dla osób bez większego doświadczenia w tworzeniu interfejsów.
 Dodatkowym atutem jest kompatybilność z szeroką ilością narzędzi ułatwiających pracę oraz dających więcej możliwości. Fakt, że React jest stale rozwijany oraz używany przez ogromne firmy
 sugeruje, że nie zostanie porzucony w najbliższej przyszłości, co również może skłaniać do wybrania właśnie tej biblioteki.
-~\nocite{django}
 
+\nocite{*}
 
 
 \printbibliography

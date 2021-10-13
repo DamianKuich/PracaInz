@@ -1,15 +1,15 @@
 [0] Config.pm:312> INFO - This is Biber 2.15 (beta)
-[0] Config.pm:315> INFO - Logfile is 'pracainz2.blg'
-[143] biber-MSWIN64:330> INFO - === 
-[170] Biber.pm:415> INFO - Reading 'pracainz2.bcf'
-[312] Biber.pm:952> INFO - Found 9 citekeys in bib section 0
-[340] Biber.pm:4334> INFO - Processing section 0
-[364] Biber.pm:4523> INFO - Looking for bibtex format file 'automatyzacja-bibliografia.bib' for section 0
-[372] bibtex.pm:1682> INFO - LaTeX decoding ...
-[384] bibtex.pm:1494> INFO - Found BibTeX data source 'automatyzacja-bibliografia.bib'
-[441] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
-[441] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[441] Biber.pm:4162> INFO - Sorting list 'nty/global//global/global' of type 'entry' with template 'nty' and locale 'en-US'
-[441] Biber.pm:4168> INFO - No sort tailoring available for locale 'en-US'
-[468] bbl.pm:651> INFO - Writing 'pracainz2.bbl' with encoding 'UTF-8'
-[474] bbl.pm:754> INFO - Output to pracainz2.bbl
+[1] Config.pm:315> INFO - Logfile is 'pracainz2.blg'
+[145] biber-MSWIN64:330> INFO - === 
+[175] Biber.pm:415> INFO - Reading 'pracainz2.bcf'
+[321] Biber.pm:949> INFO - Using all citekeys in bib section 0
+[354] Biber.pm:4334> INFO - Processing section 0
+[375] Biber.pm:4523> INFO - Looking for bibtex format file 'automatyzacja-bibliografia.bib' for section 0
+[389] bibtex.pm:1682> INFO - LaTeX decoding ...
+[412] bibtex.pm:1494> INFO - Found BibTeX data source 'automatyzacja-bibliografia.bib'
+[500] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[500] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[500] Biber.pm:4162> INFO - Sorting list 'nty/global//global/global' of type 'entry' with template 'nty' and locale 'en-US'
+[500] Biber.pm:4168> INFO - No sort tailoring available for locale 'en-US'
+[531] bbl.pm:651> INFO - Writing 'pracainz2.bbl' with encoding 'UTF-8'
+[537] bbl.pm:754> INFO - Output to pracainz2.bbl

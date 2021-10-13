@@ -1,15 +1,15 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.11) (preloaded format=pdflatex 2021.4.23)  12 SEP 2021 20:51
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.11) (preloaded format=pdflatex 2020.11.17)  10 OCT 2021 14:46
 entering extended mode
 **./pracainz2.tex
 (pracainz2.tex
 LaTeX2e <2020-10-01> patch level 2
 L3 programming layer <2020-10-27> xparse <2020-03-03> (amuthesis.cls
 Document Class: amuthesis 2017/10/01 AMU Thesis
-(F:\MIKTEX\tex/latex/mwcls\mwbk.cls
+(C:\Users\Damian\AppData\Local\Programs\MiKTeX\tex/latex/mwcls\mwbk.cls
 Document Class: mwbk 2017/05/13 v0.75 A LaTeX document class (MW)
 *** Beta version. Formatting may change
 *** in future versions of this class.
-(F:\MIKTEX\tex/latex/mwcls\mwbk11.clo
+(C:\Users\Damian\AppData\Local\Programs\MiKTeX\tex/latex/mwcls\mwbk11.clo
 File: mwbk11.clo 2017/05/13 v0.75 A document class size option (MW)
 )
 \@parindent=\dimen138
@@ -25,18 +25,20 @@ File: mwbk11.clo 2017/05/13 v0.75 A document class size option (MW)
 \abovecaptionskip=\skip47
 \belowcaptionskip=\skip48
 \bibindent=\dimen139
-) (F:\MIKTEX\tex/latex/polski\polski.sty
+)
+(C:\Users\Damian\AppData\Local\Programs\MiKTeX\tex/latex/polski\polski.sty
 Package: polski 2017/05/04 v1.3.4 Polish language package
 
    Switching to Polish text encoding and Polish maths fonts.
-(F:\MIKTEX\tex/latex/base\ot4enc.def
+(C:\Users\Damian\AppData\Local\Programs\MiKTeX\tex/latex/base\ot4enc.def
 File: ot4enc.def 2020/08/10 v2.0s Standard LaTeX file
 Now handling font encoding OT4 ...
 ... no UTF-8 mapping file for font encoding OT4
 )
 LaTeX Font Info:    Trying to load font information for OT4+cmr on input line 3
 60.
- (F:\MIKTEX\tex/latex/polski\ot4cmr.fd
+
+(C:\Users\Damian\AppData\Local\Programs\MiKTeX\tex/latex/polski\ot4cmr.fd
 File: ot4cmr.fd 2008/02/24 v1.2.1 Font defs for fonts PL (MW)
 )
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
@@ -71,41 +73,45 @@ LaTeX Font Info:    Overwriting symbol font `letters' in version `bold'
 LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
 (Font)                  OMS/cmsy/b/n --> OMS/plsy/b/n on input line 360.
 )
-(F:\MIKTEX\tex/generic/iftex\ifxetex.sty
+(C:\Users\Damian\AppData\Local\Programs\MiKTeX\tex/generic/iftex\ifxetex.sty
 Package: ifxetex 2019/10/25 v0.7 ifxetex legacy package. Use iftex instead.
- (F:\MIKTEX\tex/generic/iftex\iftex.sty
+
+(C:\Users\Damian\AppData\Local\Programs\MiKTeX\tex/generic/iftex\iftex.sty
 Package: iftex 2020/03/06 v1.0d TeX engine tests
-)) (F:\MIKTEX\tex/generic/iftex\ifluatex.sty
+))
+(C:\Users\Damian\AppData\Local\Programs\MiKTeX\tex/generic/iftex\ifluatex.sty
 Package: ifluatex 2019/10/25 v1.5 ifluatex legacy package. Use iftex instead.
 )
-(F:\MIKTEX\tex/latex/psnfss\mathpazo.sty
+(C:\Users\Damian\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\mathpazo.sty
 Package: mathpazo 2020/03/25 PSNFSS-v9.3 Palatino w/ Pazo Math (D.Puga, WaS) 
 \symupright=\mathgroup4
-) (F:\MIKTEX\tex/latex/psnfss\avant.sty
+)
+(C:\Users\Damian\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\avant.sty
 Package: avant 2020/03/25 PSNFSS-v9.3 (SPQR) 
-) (F:\MIKTEX\tex/latex/sourcecodepro\sourcecodepro.sty
+)
+(C:\Users\Damian\AppData\Local\Programs\MiKTeX\tex/latex/sourcecodepro\sourceco
+depro.sty
 Package: sourcecodepro 2018/01/13 v2.7 Adobe's Source Code Pro typeface
 
-(F:\MIKTEX\tex/latex/xkeyval\xkeyval.sty
+(C:\Users\Damian\AppData\Local\Programs\MiKTeX\tex/latex/xkeyval\xkeyval.sty
 Package: xkeyval 2014/12/03 v2.7a package option processing (HA)
 
-(F:\MIKTEX\tex/generic/xkeyval\xkeyval.tex
-(F:\MIKTEX\tex/generic/xkeyval\xkvutils.tex
+(C:\Users\Damian\AppData\Local\Programs\MiKTeX\tex/generic/xkeyval\xkeyval.tex
+(C:\Users\Damian\AppData\Local\Programs\MiKTeX\tex/generic/xkeyval\xkvutils.tex
 \XKV@toks=\toks15
 \XKV@tempa@toks=\toks16
-
-(F:\MIKTEX\tex/generic/xkeyval\keyval.tex))
+(C:\Users\Damian\AppData\Local\Programs\MiKTeX\tex/generic/xkeyval\keyval.tex))
 \XKV@depth=\count184
 File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
-))
-(F:\MIKTEX\tex/latex/base\fontenc.sty
+)) (C:\Users\Damian\AppData\Local\Programs\MiKTeX\tex/latex/base\fontenc.sty
 Package: fontenc 2020/08/10 v2.0s Standard LaTeX package
- (F:\MIKTEX\tex/latex/ly1\ly1enc.def
+
+(C:\Users\Damian\AppData\Local\Programs\MiKTeX\tex/latex/ly1\ly1enc.def
 File: ly1enc.def 2009/07/22 v0.7 TeX 'n ANSI encoding (DPC/KB)
 Now handling font encoding LY1 ...
 ... processing UTF-8 mapping file for font encoding LY1
 
-(F:\MIKTEX\tex/latex/base\ly1enc.dfu
+(C:\Users\Damian\AppData\Local\Programs\MiKTeX\tex/latex/base\ly1enc.dfu
 File: ly1enc.dfu 2019/11/14 v1.2k UTF-8 support for inputenc
    defining Unicode char U+00A0 (decimal 160)
    defining Unicode char U+00A1 (decimal 161)
@@ -235,12 +241,14 @@ File: ly1enc.dfu 2019/11/14 v1.2k UTF-8 support for inputenc
 ))
 LaTeX Font Info:    Trying to load font information for T1+pplx on input line 1
 12.
- (F:\MIKTEX\tex/latex/psnfss\t1pplx.fd
+
+(C:\Users\Damian\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\t1pplx.fd
 File: t1pplx.fd 2004/09/06 font definitions for T1/pplx.
-))) (F:\MIKTEX\tex/latex/geometry\geometry.sty
+)))
+(C:\Users\Damian\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.sty
 Package: geometry 2020/01/02 v5.9 Page Geometry
 
-(F:\MIKTEX\tex/generic/iftex\ifvtex.sty
+(C:\Users\Damian\AppData\Local\Programs\MiKTeX\tex/generic/iftex\ifvtex.sty
 Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 )
 \Gm@cnth=\count185
@@ -256,64 +264,71 @@ Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 \Gm@layoutvoffset=\dimen147
 \Gm@dimlist=\toks17
 
-(F:\MIKTEX\tex/latex/geometry\geometry.cfg))
-(F:\MIKTEX\tex/latex/hyperref\hyperref.sty
+(C:\Users\Damian\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.cfg)
+)
+(C:\Users\Damian\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hyperref.sty
 Package: hyperref 2020-05-15 v7.00e Hypertext links for LaTeX
 
-(F:\MIKTEX\tex/generic/ltxcmds\ltxcmds.sty
+(C:\Users\Damian\AppData\Local\Programs\MiKTeX\tex/generic/ltxcmds\ltxcmds.sty
 Package: ltxcmds 2020-05-10 v1.25 LaTeX kernel commands for general use (HO)
 )
-(F:\MIKTEX\tex/generic/pdftexcmds\pdftexcmds.sty
+(C:\Users\Damian\AppData\Local\Programs\MiKTeX\tex/generic/pdftexcmds\pdftexcmd
+s.sty
 Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO
 )
 
-(F:\MIKTEX\tex/generic/infwarerr\infwarerr.sty
+(C:\Users\Damian\AppData\Local\Programs\MiKTeX\tex/generic/infwarerr\infwarerr.
+sty
 Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
 )
 Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
 Package pdftexcmds Info: \pdfdraftmode found.
 )
-(F:\MIKTEX\tex/generic/kvsetkeys\kvsetkeys.sty
+(C:\Users\Damian\AppData\Local\Programs\MiKTeX\tex/generic/kvsetkeys\kvsetkeys.
+sty
 Package: kvsetkeys 2019/12/15 v1.18 Key value parser (HO)
 )
-(F:\MIKTEX\tex/generic/kvdefinekeys\kvdefinekeys.sty
+(C:\Users\Damian\AppData\Local\Programs\MiKTeX\tex/generic/kvdefinekeys\kvdefin
+ekeys.sty
 Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
 )
-(F:\MIKTEX\tex/generic/pdfescape\pdfescape.sty
+(C:\Users\Damian\AppData\Local\Programs\MiKTeX\tex/generic/pdfescape\pdfescape.
+sty
 Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
 )
-(F:\MIKTEX\tex/latex/hycolor\hycolor.sty
+(C:\Users\Damian\AppData\Local\Programs\MiKTeX\tex/latex/hycolor\hycolor.sty
 Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
 )
-(F:\MIKTEX\tex/latex/letltxmacro\letltxmacro.sty
+(C:\Users\Damian\AppData\Local\Programs\MiKTeX\tex/latex/letltxmacro\letltxmacr
+o.sty
 Package: letltxmacro 2019/12/03 v1.6 Let assignment for LaTeX macros (HO)
 )
-(F:\MIKTEX\tex/latex/auxhook\auxhook.sty
+(C:\Users\Damian\AppData\Local\Programs\MiKTeX\tex/latex/auxhook\auxhook.sty
 Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
 )
-(F:\MIKTEX\tex/latex/kvoptions\kvoptions.sty
+(C:\Users\Damian\AppData\Local\Programs\MiKTeX\tex/latex/kvoptions\kvoptions.st
+y
 Package: kvoptions 2020-10-07 v3.14 Key value format for package options (HO)
 )
 \@linkdim=\dimen148
 \Hy@linkcounter=\count188
 \Hy@pagecounter=\count189
-
-(F:\MIKTEX\tex/latex/hyperref\pd1enc.def
+ (C:\Users\Damian\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\pd1enc.def
 File: pd1enc.def 2020-05-15 v7.00e Hyperref: PDFDocEncoding definition (HO)
 Now handling font encoding PD1 ...
 ... no UTF-8 mapping file for font encoding PD1
 )
-(F:\MIKTEX\tex/generic/intcalc\intcalc.sty
+(C:\Users\Damian\AppData\Local\Programs\MiKTeX\tex/generic/intcalc\intcalc.sty
 Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
 )
-(F:\MIKTEX\tex/generic/etexcmds\etexcmds.sty
+(C:\Users\Damian\AppData\Local\Programs\MiKTeX\tex/generic/etexcmds\etexcmds.st
+y
 Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
 )
 \Hy@SavedSpaceFactor=\count190
 Package hyperref Info: Option `unicode' set `true' on input line 4338.
-
-(F:\MIKTEX\tex/latex/hyperref\puenc.def
+ (C:\Users\Damian\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\puenc.def
 File: puenc.def 2020-05-15 v7.00e Hyperref: PDF Unicode definition (HO)
 Now handling font encoding PU ...
 ... no UTF-8 mapping file for font encoding PU
@@ -326,17 +341,18 @@ Package hyperref Info: Backreferencing OFF on input line 4484.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4717.
 \c@Hy@tempcnt=\count191
- (F:\MIKTEX\tex/latex/url\url.sty
+(C:\Users\Damian\AppData\Local\Programs\MiKTeX\tex/latex/url\url.sty
 \Urlmuskip=\muskip16
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
 LaTeX Info: Redefining \url on input line 5076.
 \XeTeXLinkMargin=\dimen149
 
-(F:\MIKTEX\tex/generic/bitset\bitset.sty
+(C:\Users\Damian\AppData\Local\Programs\MiKTeX\tex/generic/bitset\bitset.sty
 Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
 
-(F:\MIKTEX\tex/generic/bigintcalc\bigintcalc.sty
+(C:\Users\Damian\AppData\Local\Programs\MiKTeX\tex/generic/bigintcalc\bigintcal
+c.sty
 Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
 )
 ))
@@ -353,7 +369,7 @@ Package hyperref Info: PDF/A mode OFF on input line 6377.
 LaTeX Info: Redefining \ref on input line 6417.
 LaTeX Info: Redefining \pageref on input line 6421.
 
-(F:\MIKTEX\tex/latex/base\atbegshi-ltx.sty
+(C:\Users\Damian\AppData\Local\Programs\MiKTeX\tex/latex/base\atbegshi-ltx.sty
 Package: atbegshi-ltx 2020/08/17 v1.0a Emulation of the original atbegshi packa
 ge
 with kernel methods
@@ -363,11 +379,10 @@ with kernel methods
 \c@Hfootnote=\count195
 )
 Package hyperref Info: Driver (autodetected): hpdftex.
-
-(F:\MIKTEX\tex/latex/hyperref\hpdftex.def
+ (C:\Users\Damian\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hpdftex.def
 File: hpdftex.def 2020-05-15 v7.00e Hyperref driver for pdfTeX
 
-(F:\MIKTEX\tex/latex/base\atveryend-ltx.sty
+(C:\Users\Damian\AppData\Local\Programs\MiKTeX\tex/latex/base\atveryend-ltx.sty
 Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atvery packag
 e
 with kernel methods
@@ -375,10 +390,12 @@ with kernel methods
 \Fld@listcount=\count196
 \c@bookmark@seq@number=\count197
 
-(F:\MIKTEX\tex/latex/rerunfilecheck\rerunfilecheck.sty
+(C:\Users\Damian\AppData\Local\Programs\MiKTeX\tex/latex/rerunfilecheck\rerunfi
+lecheck.sty
 Package: rerunfilecheck 2019/12/05 v1.9 Rerun checks for auxiliary files (HO)
 
-(F:\MIKTEX\tex/generic/uniquecounter\uniquecounter.sty
+(C:\Users\Damian\AppData\Local\Programs\MiKTeX\tex/generic/uniquecounter\unique
+counter.sty
 Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
 )
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
@@ -386,15 +403,16 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 )
 \Hy@SectionHShift=\skip49
 )
-(F:\MIKTEX\tex/latex/xcolor\xcolor.sty
+(C:\Users\Damian\AppData\Local\Programs\MiKTeX\tex/latex/xcolor\xcolor.sty
 Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
 
-(F:\MIKTEX\tex/latex/graphics-cfg\color.cfg
+(C:\Users\Damian\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\color.cfg
 File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
 Package xcolor Info: Driver file: pdftex.def on input line 225.
 
-(F:\MIKTEX\tex/latex/graphics-def\pdftex.def
+(C:\Users\Damian\AppData\Local\Programs\MiKTeX\tex/latex/graphics-def\pdftex.de
+f
 File: pdftex.def 2020/10/05 v1.2a Graphics/color driver for pdftex
 )
 Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1348.
@@ -407,24 +425,24 @@ Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
 Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
 )
-(F:\MIKTEX\tex/latex/amsmath\amsmath.sty
+(C:\Users\Damian\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsmath.sty
 Package: amsmath 2020/09/23 v2.17i AMS math features
 \@mathmargin=\skip50
 
 For additional information on amsmath, use the `?' option.
-(F:\MIKTEX\tex/latex/amsmath\amstext.sty
+(C:\Users\Damian\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amstext.sty
 Package: amstext 2000/06/29 v2.01 AMS text
 
-(F:\MIKTEX\tex/latex/amsmath\amsgen.sty
+(C:\Users\Damian\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
 \@emptytoks=\toks18
 \ex@=\dimen152
 ))
-(F:\MIKTEX\tex/latex/amsmath\amsbsy.sty
+(C:\Users\Damian\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
 \pmbraise@=\dimen153
 )
-(F:\MIKTEX\tex/latex/amsmath\amsopn.sty
+(C:\Users\Damian\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsopn.sty
 Package: amsopn 2016/03/08 v2.02 operator names
 )
 \inf@bad=\count198
@@ -465,18 +483,17 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
 LaTeX Info: Redefining \[ on input line 2923.
 LaTeX Info: Redefining \] on input line 2924.
 )
-(F:\MIKTEX\tex/latex/amsfonts\amssymb.sty
+(C:\Users\Damian\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\amssymb.sty
 Package: amssymb 2013/01/14 v3.01 AMS font symbols
 
-(F:\MIKTEX\tex/latex/amsfonts\amsfonts.sty
+(C:\Users\Damian\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\amsfonts.sty
 Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 \symAMSa=\mathgroup5
 \symAMSb=\mathgroup6
 LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
-))
-(F:\MIKTEX\tex/latex/amscls\amsthm.sty
+)) (C:\Users\Damian\AppData\Local\Programs\MiKTeX\tex/latex/amscls\amsthm.sty
 Package: amsthm 2020/05/29 v2.20.6
 \thm@style=\toks23
 \thm@bodyfont=\toks24
@@ -488,16 +505,17 @@ Package: amsthm 2020/05/29 v2.20.6
 \thm@headsep=\skip55
 \dth@everypar=\toks28
 )
-(F:\MIKTEX\tex/latex/graphics\graphicx.sty
+(C:\Users\Damian\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphicx.sty
 Package: graphicx 2020/09/09 v1.2b Enhanced LaTeX Graphics (DPC,SPQR)
 
-(F:\MIKTEX\tex/latex/graphics\graphics.sty
+(C:\Users\Damian\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphics.sty
 Package: graphics 2020/08/30 v1.4c Standard LaTeX Graphics (DPC,SPQR)
 
-(F:\MIKTEX\tex/latex/graphics\trig.sty
+(C:\Users\Damian\AppData\Local\Programs\MiKTeX\tex/latex/graphics\trig.sty
 Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
 )
-(F:\MIKTEX\tex/latex/graphics-cfg\graphics.cfg
+(C:\Users\Damian\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\graphics.
+cfg
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
 Package graphics Info: Driver file: pdftex.def on input line 105.
@@ -505,28 +523,30 @@ Package graphics Info: Driver file: pdftex.def on input line 105.
 \Gin@req@height=\dimen161
 \Gin@req@width=\dimen162
 )
-(F:\MIKTEX\tex/latex/microtype\microtype.sty
-Package: microtype 2021/03/14 v2.8c Micro-typographical refinements (RS)
+(C:\Users\Damian\AppData\Local\Programs\MiKTeX\tex/latex/microtype\microtype.st
+y
+Package: microtype 2019/11/18 v2.7d Micro-typographical refinements (RS)
 \MT@toks=\toks29
 \MT@count=\count276
 LaTeX Info: Redefining \textls on input line 790.
 \MT@outer@kern=\dimen163
-LaTeX Info: Redefining \textmicrotypecontext on input line 1374.
+LaTeX Info: Redefining \textmicrotypecontext on input line 1354.
 \MT@listname@count=\count277
 
-(F:\MIKTEX\tex/latex/microtype\microtype-pdftex.def
-File: microtype-pdftex.def 2021/03/14 v2.8c Definitions specific to pdftex (RS)
+(C:\Users\Damian\AppData\Local\Programs\MiKTeX\tex/latex/microtype\microtype-pd
+ftex.def
+File: microtype-pdftex.def 2019/11/18 v2.7d Definitions specific to pdftex (RS)
 
-LaTeX Info: Redefining \lsstyle on input line 915.
-LaTeX Info: Redefining \lslig on input line 915.
+LaTeX Info: Redefining \lsstyle on input line 914.
+LaTeX Info: Redefining \lslig on input line 914.
 \MT@outer@space=\skip56
 )
 Package microtype Info: Loading configuration file microtype.cfg.
 
-(F:\MIKTEX\tex/latex/microtype\microtype.cfg
-File: microtype.cfg 2021/03/14 v2.8c microtype main configuration file (RS)
-))
-(F:\MIKTEX\tex/latex/tools\array.sty
+(C:\Users\Damian\AppData\Local\Programs\MiKTeX\tex/latex/microtype\microtype.cf
+g
+File: microtype.cfg 2019/11/18 v2.7d microtype main configuration file (RS)
+)) (C:\Users\Damian\AppData\Local\Programs\MiKTeX\tex/latex/tools\array.sty
 Package: array 2019/08/31 v2.4l Tabular extension package (FMi)
 \col@sep=\dimen164
 \ar@mcellbox=\box49
@@ -535,7 +555,8 @@ Package: array 2019/08/31 v2.4l Tabular extension package (FMi)
 \extratabsurround=\skip57
 \backup@length=\skip58
 \ar@cellbox=\box50
-) (F:\MIKTEX\tex/latex/tools\tabularx.sty
+)
+(C:\Users\Damian\AppData\Local\Programs\MiKTeX\tex/latex/tools\tabularx.sty
 Package: tabularx 2020/01/15 v2.11c `tabularx' package (DPC)
 \TX@col@width=\dimen166
 \TX@old@table=\dimen167
@@ -545,7 +566,7 @@ Package: tabularx 2020/01/15 v2.11c `tabularx' package (DPC)
 \TX@cols=\count278
 \TX@ftn=\toks31
 )
-(F:\MIKTEX\tex/latex/tools\longtable.sty
+(C:\Users\Damian\AppData\Local\Programs\MiKTeX\tex/latex/tools\longtable.sty
 Package: longtable 2020/01/07 v4.13 Multi-page Table package (DPC)
 \LTleft=\skip59
 \LTright=\skip60
@@ -563,13 +584,13 @@ Package: longtable 2020/01/07 v4.13 Multi-page Table package (DPC)
 \c@LT@chunks=\count283
 \LT@p@ftn=\toks32
 )
-(F:\MIKTEX\tex/latex/makecell\makecell.sty
+(C:\Users\Damian\AppData\Local\Programs\MiKTeX\tex/latex/makecell\makecell.sty
 Package: makecell 2009/08/03 V0.1e Managing of Tab Column Heads and Cells
 \rotheadsize=\dimen172
 \c@nlinenum=\count284
 \TeXr@lab=\toks33
-)
-(F:\MIKTEX\tex/latex/booktabs\booktabs.sty
+) (C:\Users\Damian\AppData\Local\Programs\MiKTeX\tex/latex/booktabs\booktabs.st
+y
 Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
 \heavyrulewidth=\dimen173
 \lightrulewidth=\dimen174
@@ -588,17 +609,16 @@ Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
 \@thisruleclass=\count287
 \@lastruleclass=\count288
 \@thisrulewidth=\dimen185
-)
-(F:\MIKTEX\tex/latex/tools\verbatim.sty
+) (C:\Users\Damian\AppData\Local\Programs\MiKTeX\tex/latex/tools\verbatim.sty
 Package: verbatim 2019/11/10 v1.5r LaTeX2e package for verbatim enhancements
 \every@verbatim=\toks34
 \verbatim@line=\toks35
 \verbatim@in@stream=\read2
 )
-(F:\MIKTEX\tex/latex/caption\caption.sty
+(C:\Users\Damian\AppData\Local\Programs\MiKTeX\tex/latex/caption\caption.sty
 Package: caption 2020/10/26 v3.5g Customizing captions (AR)
 
-(F:\MIKTEX\tex/latex/caption\caption3.sty
+(C:\Users\Damian\AppData\Local\Programs\MiKTeX\tex/latex/caption\caption3.sty
 Package: caption3 2020/10/21 v2.2e caption3 kernel (AR)
 \captionmargin=\dimen186
 \captionmargin@=\dimen187
@@ -622,10 +642,10 @@ See the caption package documentation for explanation.
 \c@continuedfloat=\count290
 Package caption Info: hyperref package is loaded.
 Package caption Info: longtable package is loaded.
-(F:\MIKTEX\tex/latex/caption\ltcaption.sty
+(C:\Users\Damian\AppData\Local\Programs\MiKTeX\tex/latex/caption\ltcaption.sty
 Package: ltcaption 2020/05/30 v1.4b longtable captions (AR)
 ))
-(F:\MIKTEX\tex/latex/listings\listings.sty
+(C:\Users\Damian\AppData\Local\Programs\MiKTeX\tex/latex/listings\listings.sty
 \lst@mode=\count291
 \lst@gtempboxa=\box55
 \lst@token=\toks36
@@ -639,13 +659,13 @@ Package: ltcaption 2020/05/30 v1.4b longtable captions (AR)
 \lst@lineno=\count296
 \lst@maxwidth=\dimen196
 
-(F:\MIKTEX\tex/latex/listings\lstmisc.sty
+(C:\Users\Damian\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstmisc.sty
 File: lstmisc.sty 2020/03/24 1.8d (Carsten Heinz)
 \c@lstnumber=\count297
 \lst@skipnumbers=\count298
 \lst@framebox=\box56
 )
-(F:\MIKTEX\tex/latex/listings\listings.cfg
+(C:\Users\Damian\AppData\Local\Programs\MiKTeX\tex/latex/listings\listings.cfg
 File: listings.cfg 2020/03/24 1.8d listings configuration
 ))
 Package: listings 2020/03/24 1.8d (Carsten Heinz)
@@ -653,25 +673,27 @@ Package: listings 2020/03/24 1.8d (Carsten Heinz)
 \c@definition=\count300
 \c@example=\count301
 \c@task=\count302
-
-(F:\MIKTEX\tex/latex/base\ifthen.sty
+ (C:\Users\Damian\AppData\Local\Programs\MiKTeX\tex/latex/base\ifthen.sty
 Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
 )
-(F:\MIKTEX\tex/latex/l3packages/xparse\xparse.sty
-(F:\MIKTEX\tex/latex/l3kernel\expl3.sty
+(C:\Users\Damian\AppData\Local\Programs\MiKTeX\tex/latex/l3packages/xparse\xpar
+se.sty
+(C:\Users\Damian\AppData\Local\Programs\MiKTeX\tex/latex/l3kernel\expl3.sty
 Package: expl3 2020-10-27 L3 programming layer (loader) 
 
-(F:\MIKTEX\tex/latex/l3backend\l3backend-pdftex.def
+(C:\Users\Damian\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pd
+ftex.def
 File: l3backend-pdftex.def 2020-09-24 L3 backend support: PDF output (pdfTeX)
 \l__kernel_color_stack_int=\count303
 \l__pdf_internal_box=\box57
 ))
 Package: xparse 2020-10-27 L3 Experimental document command parser
 
-(F:\MIKTEX\tex/latex/l3packages/xparse\xparse-generic.tex))
-(F:\MIKTEX\tex/latex/fancyhdr\fancyhdr.sty
-Package: fancyhdr 2021/01/28 v4.0.1 Extensive control of page headers and foote
-rs
+(C:\Users\Damian\AppData\Local\Programs\MiKTeX\tex/latex/l3packages/xparse\xpar
+se-generic.tex))
+(C:\Users\Damian\AppData\Local\Programs\MiKTeX\tex/latex/fancyhdr\fancyhdr.sty
+Package: fancyhdr 2019/01/31 v3.10 Extensive control of page headers and footer
+s
 \f@nch@headwidth=\skip63
 \f@nch@O@elh=\skip64
 \f@nch@O@erh=\skip65
@@ -683,56 +705,60 @@ rs
 \f@nch@O@orf=\skip71
 )
 
-Package fancyhdr Warning: \fancyhead's `E' option without twoside option is use
+Package Fancyhdr Warning: \fancyhead's `E' option without twoside option is use
 less on input line 705.
 
 
-Package fancyhdr Warning: \fancyhead's `E' option without twoside option is use
+Package Fancyhdr Warning: \fancyhead's `E' option without twoside option is use
 less on input line 707.
 
-) (F:\MIKTEX\tex/latex/base\inputenc.sty
+) (C:\Users\Damian\AppData\Local\Programs\MiKTeX\tex/latex/base\inputenc.sty
 Package: inputenc 2020/08/01 v1.3d Input encoding file
 \inpenc@prehook=\toks37
 \inpenc@posthook=\toks38
 )
    defining Unicode char U+200B (decimal 8203)
 
-(F:\MIKTEX\tex/latex/preprint\authblk.sty
+(C:\Users\Damian\AppData\Local\Programs\MiKTeX\tex/latex/preprint\authblk.sty
 Package: authblk 2001/02/27 1.3 (PWD)
 \affilsep=\skip72
 \@affilsep=\skip73
 \c@Maxaffil=\count304
 \c@authors=\count305
 \c@affil=\count306
-) (F:\MIKTEX\tex/latex/float\float.sty
+)
+(C:\Users\Damian\AppData\Local\Programs\MiKTeX\tex/latex/float\float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \c@float@type=\count307
 \float@exts=\toks39
 \float@box=\box58
 \@float@everytoks=\toks40
 \@floatcapt=\box59
-) (F:\MIKTEX\tex/latex/tools\enumerate.sty
+)
+(C:\Users\Damian\AppData\Local\Programs\MiKTeX\tex/latex/tools\enumerate.sty
 Package: enumerate 2015/07/23 v3.00 enumerate extensions (DPC)
 \@enLab=\toks41
 )
-(F:\MIKTEX\tex/latex/multirow\multirow.sty
+(C:\Users\Damian\AppData\Local\Programs\MiKTeX\tex/latex/multirow\multirow.sty
 Package: multirow 2021/03/15 v2.8 Span multiple rows of a table
 \multirow@colwidth=\skip74
 \multirow@cntb=\count308
 \multirow@dima=\skip75
 \bigstrutjot=\dimen197
 )
-(F:\MIKTEX\tex/latex/adjustbox\adjustbox.sty
+(C:\Users\Damian\AppData\Local\Programs\MiKTeX\tex/latex/adjustbox\adjustbox.st
+y
 Package: adjustbox 2020/08/19 v1.3 Adjusting TeX boxes (trim, clip, ...)
 
-(F:\MIKTEX\tex/latex/adjustbox\adjcalc.sty
+(C:\Users\Damian\AppData\Local\Programs\MiKTeX\tex/latex/adjustbox\adjcalc.sty
 Package: adjcalc 2012/05/16 v1.1 Provides advanced setlength with multiple back
 -ends (calc, etex, pgfmath)
 )
-(F:\MIKTEX\tex/latex/adjustbox\trimclip.sty
+(C:\Users\Damian\AppData\Local\Programs\MiKTeX\tex/latex/adjustbox\trimclip.sty
 Package: trimclip 2020/08/19 v1.2 Trim and clip general TeX material
 
-(F:\MIKTEX\tex/latex/collectbox\collectbox.sty
+(C:\Users\Damian\AppData\Local\Programs\MiKTeX\tex/latex/collectbox\collectbox.
+sty
 Package: collectbox 2012/05/17 v0.4b Collect macro arguments as boxes
 \collectedbox=\box60
 )
@@ -742,7 +768,8 @@ Package: collectbox 2012/05/17 v0.4b Collect macro arguments as boxes
 \tc@ury=\dimen257
 Package trimclip Info: Using driver 'tc-pdftex.def'.
 
-(F:\MIKTEX\tex/latex/adjustbox\tc-pdftex.def
+(C:\Users\Damian\AppData\Local\Programs\MiKTeX\tex/latex/adjustbox\tc-pdftex.de
+f
 File: tc-pdftex.def 2019/01/04 v2.2 Clipping driver for pdftex
 ))
 \adjbox@Width=\dimen258
@@ -754,28 +781,29 @@ File: tc-pdftex.def 2019/01/04 v2.2 Clipping driver for pdftex
 \adjbox@pdepth=\dimen264
 \adjbox@ptotalheight=\dimen265
 
-(F:\MIKTEX\tex/latex/ifoddpage\ifoddpage.sty
+(C:\Users\Damian\AppData\Local\Programs\MiKTeX\tex/latex/ifoddpage\ifoddpage.st
+y
 Package: ifoddpage 2016/04/23 v1.1 Conditionals for odd/even page detection
 \c@checkoddpage=\count309
 )
-(F:\MIKTEX\tex/latex/varwidth\varwidth.sty
+(C:\Users\Damian\AppData\Local\Programs\MiKTeX\tex/latex/varwidth\varwidth.sty
 Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
 \@vwid@box=\box61
 \sift@deathcycles=\count310
 \@vwid@loff=\dimen266
 \@vwid@roff=\dimen267
 ))
-(F:\MIKTEX\tex/latex/biblatex\biblatex.sty
+(C:\Users\Damian\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\biblatex.sty
 Package: biblatex 2020/08/23 v3.15a programmable bibliographies (PK/MW)
 
-(F:\MIKTEX\tex/latex/etoolbox\etoolbox.sty
+(C:\Users\Damian\AppData\Local\Programs\MiKTeX\tex/latex/etoolbox\etoolbox.sty
 Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
 \etb@tempcnta=\count311
-)
-(F:\MIKTEX\tex/latex/logreq\logreq.sty
+) (C:\Users\Damian\AppData\Local\Programs\MiKTeX\tex/latex/logreq\logreq.sty
 Package: logreq 2010/08/04 v1.0 xml request logger
 \lrq@indent=\count312
- (F:\MIKTEX\tex/latex/logreq\logreq.def
+
+(C:\Users\Damian\AppData\Local\Programs\MiKTeX\tex/latex/logreq\logreq.def
 File: logreq.def 2010/08/04 v1.0 logreq spec v1.0
 ))
 \c@tabx@nest=\count313
@@ -836,7 +864,8 @@ File: logreq.def 2010/08/04 v1.0 logreq spec v1.0
 \c@mincompwidth=\count357
 Package biblatex Info: Trying to load biblatex default data model...
 Package biblatex Info: ... file 'blx-dm.def' found.
-(F:\MIKTEX\tex/latex/biblatex\blx-dm.def
+
+(C:\Users\Damian\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\blx-dm.def
 File: blx-dm.def 2020/08/23 v3.15a biblatex localization (PK/MW)
 )
 Package biblatex Info: Trying to load biblatex custom data model...
@@ -926,7 +955,8 @@ Package biblatex Info: ... file 'biblatex-dm.cfg' not found.
 Package biblatex Info: Trying to load compatibility code...
 Package biblatex Info: ... file 'blx-compat.def' found.
 
-(F:\MIKTEX\tex/latex/biblatex\blx-compat.def
+(C:\Users\Damian\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\blx-compat.de
+f
 File: blx-compat.def 2020/08/23 v3.15a biblatex compatibility (PK/MW)
 )
 Package biblatex Info: expl3
@@ -936,13 +966,14 @@ Package biblatex Info: expl3
 Package biblatex Info: Trying to load expl3 case changing code...
 Package biblatex Info: ... file 'blx-case-expl3.def' found.
 
-(F:\MIKTEX\tex/latex/biblatex\blx-case-expl3.def
+(C:\Users\Damian\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\blx-case-expl
+3.def
 File: blx-case-expl3 2020/08/23 v3.15a expl3 case changing code for biblatex
 )
 Package biblatex Info: Trying to load generic definitions...
 Package biblatex Info: ... file 'biblatex.def' found.
 
-(F:\MIKTEX\tex/latex/biblatex\biblatex.def
+(C:\Users\Damian\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\biblatex.def
 File: biblatex.def 2020/08/23 v3.15a biblatex compatibility (PK/MW)
 \c@textcitecount=\count426
 \c@textcitetotal=\count427
@@ -961,12 +992,14 @@ File: biblatex.def 2020/08/23 v3.15a biblatex compatibility (PK/MW)
 Package biblatex Info: Trying to load bibliography style 'numeric'...
 Package biblatex Info: ... file 'numeric.bbx' found.
 
-(F:\MIKTEX\tex/latex/biblatex/bbx\numeric.bbx
+(C:\Users\Damian\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/bbx\numeric.b
+bx
 File: numeric.bbx 2020/08/23 v3.15a biblatex bibliography style (PK/MW)
 Package biblatex Info: Trying to load bibliography style 'standard'...
 Package biblatex Info: ... file 'standard.bbx' found.
 
-(F:\MIKTEX\tex/latex/biblatex/bbx\standard.bbx
+(C:\Users\Damian\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/bbx\standard.
+bbx
 File: standard.bbx 2020/08/23 v3.15a biblatex bibliography style (PK/MW)
 \c@bbx:relatedcount=\count435
 \c@bbx:relatedtotal=\count436
@@ -974,7 +1007,8 @@ File: standard.bbx 2020/08/23 v3.15a biblatex bibliography style (PK/MW)
 Package biblatex Info: Trying to load citation style 'numeric'...
 Package biblatex Info: ... file 'numeric.cbx' found.
 
-(F:\MIKTEX\tex/latex/biblatex/cbx\numeric.cbx
+(C:\Users\Damian\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/cbx\numeric.c
+bx
 File: numeric.cbx 2020/08/23 v3.15a biblatex citation style (PK/MW)
 Package biblatex Info: Redefining '\cite'.
 Package biblatex Info: Redefining '\parencite'.
@@ -991,10 +1025,10 @@ Package biblatex Info: Redefining '\smartcites'.
 Package biblatex Info: Trying to load configuration file...
 Package biblatex Info: ... file 'biblatex.cfg' found.
 
-(F:\MIKTEX\tex/latex/biblatex\biblatex.cfg
+(C:\Users\Damian\AppData\Local\Programs\MiKTeX\tex/latex/biblatex\biblatex.cfg
 File: biblatex.cfg 
 ))
-(F:\MIKTEX\tex/latex/enumitem\enumitem.sty
+(C:\Users\Damian\AppData\Local\Programs\MiKTeX\tex/latex/enumitem\enumitem.sty
 Package: enumitem 2019/06/20 v3.9 Customized lists
 \enitkv@toks@=\toks42
 \labelindent=\skip98
@@ -1003,44 +1037,15 @@ Package: enumitem 2019/06/20 v3.9 Customized lists
 \enit@inbox=\box62
 \enit@count@id=\count437
 \enitdp@description=\count438
-)
-(F:\MIKTEX\tex/latex/lipsum\lipsum.sty
-Package: lipsum 2021-03-03 v2.3 150 paragraphs of Lorem Ipsum dummy text
+) (C:\Users\Damian\AppData\Local\Programs\MiKTeX\tex/latex/lipsum\lipsum.sty
+Package: lipsum 2019/01/02 v2.2 150 paragraphs of Lorem Ipsum dummy text
 
-(F:\MIKTEX\tex/latex/lipsum\lipsum.ltd.tex
-File: lipsum.ltd.tex 2021-03-03 v2.3 The Lorem ipsum dummy text
+(C:\Users\Damian\AppData\Local\Programs\MiKTeX\tex/latex/lipsum\lipsum.ltd.tex
+File: lipsum.ltd.tex 2019/01/02 v2.2 The Lorem ipsum dummy text
 ))
 \@quotelevel=\count439
 \@quotereset=\count440
- (pracainz2.aux
-
-LaTeX Warning: Label `Cache' multiply defined.
-
-
-LaTeX Warning: Label `obraz-przyklad' multiply defined.
-
-
-LaTeX Warning: Label `latexcompanion' multiply defined.
-
-
-LaTeX Warning: Label `latexcompanion' multiply defined.
-
-
-LaTeX Warning: Label `latexcompanion' multiply defined.
-
-
-LaTeX Warning: Label `latexcompanion' multiply defined.
-
-
-LaTeX Warning: Label `latexcompanion' multiply defined.
-
-
-LaTeX Warning: Label `latexcompanion' multiply defined.
-
-
-LaTeX Warning: Label `react dev example.jpg' multiply defined.
-
-)
+ (pracainz2.aux)
 \openout1 = `pracainz2.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 148.
@@ -1062,7 +1067,8 @@ LaTeX Font Info:    ... okay on input line 148.
 LaTeX Font Info:    Checking defaults for LY1/ptm/m/n on input line 148.
 LaTeX Font Info:    Trying to load font information for LY1+ptm on input line 1
 48.
- (F:\MIKTEX\tex/latex/ly1\ly1ptm.fd
+
+(C:\Users\Damian\AppData\Local\Programs\MiKTeX\tex/latex/ly1\ly1ptm.fd
 File: ly1ptm.fd 2001/02/01 font definitions for LY1/ptm using Berry names.
 )
 LaTeX Font Info:    ... okay on input line 148.
@@ -1106,13 +1112,14 @@ LaTeX Font Info:    ... okay on input line 148.
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 Package hyperref Info: Link coloring OFF on input line 148.
-(F:\MIKTEX\tex/latex/hyperref\nameref.sty
+(C:\Users\Damian\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\nameref.sty
 Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
 
-(F:\MIKTEX\tex/latex/refcount\refcount.sty
+(C:\Users\Damian\AppData\Local\Programs\MiKTeX\tex/latex/refcount\refcount.sty
 Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 )
-(F:\MIKTEX\tex/generic/gettitlestring\gettitlestring.sty
+(C:\Users\Damian\AppData\Local\Programs\MiKTeX\tex/generic/gettitlestring\getti
+tlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count441
@@ -1120,12 +1127,16 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 LaTeX Info: Redefining \ref on input line 148.
 LaTeX Info: Redefining \pageref on input line 148.
 LaTeX Info: Redefining \nameref on input line 148.
- (pracainz2.out)
-(pracainz2.out)
+ (pracainz2.out) (pracainz2.out
+! I can't write on file `pracainz2.pdf'.
+Please type another file name for output: pracainz4
+)
 \@outlinefile=\write4
 \openout4 = `pracainz2.out'.
 
- (F:\MIKTEX\tex/context/base/mkii\supp-pdf.mkii
+
+(C:\Users\Damian\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.m
+kii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count442
 \scratchdimen=\dimen269
@@ -1138,7 +1149,9 @@ LaTeX Info: Redefining \nameref on input line 148.
 \MPnumerator=\count446
 \makeMPintoPDFobject=\count447
 \everyMPtoPDFconversion=\toks45
-) (F:\MIKTEX\tex/latex/epstopdf-pkg\epstopdf-base.sty
+)
+(C:\Users\Damian\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-
+base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 85.
@@ -1149,13 +1162,13 @@ Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
 Package microtype Info: Automatic font expansion enabled (level 2),
 (microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
-Package microtype Info: Using default expansion set `alltext-nott'.
+Package microtype Info: Using default expansion set `basictext'.
 LaTeX Info: Redefining \showhyphens on input line 148.
 Package microtype Info: No adjustment of tracking.
 Package microtype Info: No adjustment of interword spacing.
 Package microtype Info: No adjustment of character kerning.
 
-(F:\MIKTEX\tex/latex/microtype\mt-ppl.cfg
+(C:\Users\Damian\AppData\Local\Programs\MiKTeX\tex/latex/microtype\mt-ppl.cfg
 File: mt-ppl.cfg 2005/11/16 v1.6 microtype config. file: Palatino (RS)
 )
 Package caption Info: Begin \AtBeginDocument code.
@@ -1166,7 +1179,8 @@ Package caption Info: End \AtBeginDocument code.
 Package biblatex Info: Trying to load language 'polish'...
 Package biblatex Info: ... file 'polish.lbx' found.
 
-(F:\MIKTEX\tex/latex/biblatex/lbx\polish.lbx
+(C:\Users\Damian\AppData\Local\Programs\MiKTeX\tex/latex/biblatex/lbx\polish.lb
+x
 File: polish.lbx 2020/08/23 v3.15a biblatex localization (PK/MW)
 )
 Package biblatex Info: Input encoding 'utf8' detected.
@@ -1187,14 +1201,17 @@ Package pdftex.def Info: uam-logo.pdf  used on input line 151.
  [1
 
 
-{C:/Users/Matillas/AppData/Local/MiKTeX/pdftex/config/pdftex.map} <./uam-logo.p
-df>]
-(F:\MIKTEX\tex/latex/psnfss\ot1pplx.fd) (F:\MIKTEX\tex/latex/psnfss\omlzplm.fd)
-(F:\MIKTEX\tex/latex/psnfss\omszplm.fd) (F:\MIKTEX\tex/latex/psnfss\omxzplm.fd)
-(F:\MIKTEX\tex/latex/psnfss\ot1zplm.fd)
-(F:\MIKTEX\tex/latex/microtype\mt-msa.cfg)
-(F:\MIKTEX\tex/latex/microtype\mt-msb.cfg)
-(F:\MIKTEX\tex/latex/sourcecodepro\t1sourcecodepro-tlf.fd)
+{C:/Users/Damian/AppData/Local/MiKTeX/pdftex/config/pdftex.map} <./uam-logo.pdf
+>]
+(C:\Users\Damian\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\ot1pplx.fd)
+(C:\Users\Damian\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\omlzplm.fd)
+(C:\Users\Damian\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\omszplm.fd)
+(C:\Users\Damian\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\omxzplm.fd)
+(C:\Users\Damian\AppData\Local\Programs\MiKTeX\tex/latex/psnfss\ot1zplm.fd)
+(C:\Users\Damian\AppData\Local\Programs\MiKTeX\tex/latex/microtype\mt-msa.cfg)
+(C:\Users\Damian\AppData\Local\Programs\MiKTeX\tex/latex/microtype\mt-msb.cfg)
+(C:\Users\Damian\AppData\Local\Programs\MiKTeX\tex/latex/sourcecodepro\t1source
+codepro-tlf.fd)
 Underfull \hbox (badness 10000) in paragraph at lines 153--153
 
  []
@@ -1215,13 +1232,16 @@ LaTeX Font Info:    Font shape `U/msb/m/n' will be
 (Font)              scaled to size 8.33606pt on input line 172.
  [4
 
-] (pracainz2.toc [5
+]
 
-] [6])
+Package hyperref Warning: old toc file detected, not used; run LaTeX again.
+
 \tf@toc=\write5
 \openout5 = `pracainz2.toc'.
 
- [7]
+[5
+
+]
 Package microtype Info: Character `029' is missing
 (microtype)             in font `T1/pplx/m/sc/14'.
 (microtype)             Ignoring protrusion settings for this character.
@@ -1231,7 +1251,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 3.5pt
 (hyperref)                removed on input line 183.
 
-[8
+[6
 
 ]
 
@@ -1254,7 +1274,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 2.73749pt
 (hyperref)                removed on input line 218.
 
-[9]
+[7]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 3.5pt
@@ -1287,7 +1307,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Overfull \vbox (10.71455pt too high) detected at line 258
  []
 
-[10]
+[8]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 3.5pt
@@ -1299,14 +1319,12 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removed on input line 273.
 
 
-Package fancyhdr Warning: \headheight is too small (13.6pt): 
-(fancyhdr)                Make it at least 22.83502pt, for example:
-(fancyhdr)                \setlength{\headheight}{22.83502pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
+Package Fancyhdr Warning: \headheight is too small (13.6pt): 
+Make it at least 22.83502pt.
+We now make it that large for the rest of the document.
+This may cause the page layout to be inconsistent, however.
 
-(fancyhdr)                \addtolength{\topmargin}{-9.23502pt}.
-
-[11] [12]
+[9] [10]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 3.5pt
@@ -1322,19 +1340,18 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 2.73749pt
 (hyperref)                removed on input line 296.
 
-[13
+[11
 
-] (F:\MIKTEX\tex/latex/listings\lstlang1.sty
+]
+(C:\Users\Damian\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.sty
 File: lstlang1.sty 2020/03/24 1.8d listings language file
-)
-(F:\MIKTEX\tex/latex/listings\lstmisc.sty
+) (C:\Users\Damian\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstmisc.sty
 File: lstmisc.sty 2020/03/24 1.8d (Carsten Heinz)
 )
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
 nput line 310.
 LaTeX Font Info:    Font shape `T1/SourceCodePro-TLF/m/n' will be
 (Font)              scaled to size 8.36993pt on input line 311.
-
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 2.73749pt
@@ -1345,8 +1362,8 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 2.73749pt
 (hyperref)                removed on input line 340.
 
-[14]
-<api.png, id=503, 1204.5pt x 388.45125pt>
+[12]
+<api.png, id=407, 1204.5pt x 388.45125pt>
 File: api.png Graphic file (type png)
 <use api.png>
 Package pdftex.def Info: api.png  used on input line 346.
@@ -1381,12 +1398,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 360--361
 
  []
 
-[15 <./api.png>]
+[13 <./api.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 361--362
 
  []
 
-<uri.jpg, id=510, 549.05125pt x 181.67876pt>
+<uri.jpg, id=415, 549.05125pt x 181.67876pt>
 File: uri.jpg Graphic file (type jpg)
 <use uri.jpg>
 Package pdftex.def Info: uri.jpg  used on input line 367.
@@ -1401,9 +1418,9 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 2.73749pt
 (hyperref)                removed on input line 374.
 
-(F:\MIKTEX\tex/latex/listings\lstlang1.sty
+(C:\Users\Damian\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.sty
 File: lstlang1.sty 2020/03/24 1.8d listings language file
-) [16 <./uri.jpg>]
+) [14 <./uri.jpg>]
 LaTeX Font Info:    Font shape `T1/SourceCodePro-TLF/m/it' will be
 (Font)              scaled to size 9.29993pt on input line 382.
 
@@ -1417,7 +1434,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 2.73749pt
 (hyperref)                removed on input line 389.
 
-<SOAP.png, id=516, 679.53876pt x 367.3725pt>
+<SOAP.png, id=421, 679.53876pt x 367.3725pt>
 File: SOAP.png Graphic file (type png)
 <use SOAP.png>
 Package pdftex.def Info: SOAP.png  used on input line 396.
@@ -1427,7 +1444,7 @@ Overfull \hbox (14.22636pt too wide) in paragraph at lines 396--398
  [][] 
  []
 
-[17]
+[15]
 Underfull \hbox (badness 10000) in paragraph at lines 401--403
 
  []
@@ -1462,7 +1479,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 408--409
 
  []
 
-[18 <./SOAP.png>]
+[16 <./SOAP.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 409--410
 
  []
@@ -1477,7 +1494,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 416--417
 
  []
 
-<restarch.jpg, id=532, 656.4525pt x 480.79625pt>
+<restarch.jpg, id=437, 656.4525pt x 480.79625pt>
 File: restarch.jpg Graphic file (type jpg)
 <use restarch.jpg>
 Package pdftex.def Info: restarch.jpg  used on input line 423.
@@ -1487,7 +1504,7 @@ Overfull \hbox (14.22636pt too wide) in paragraph at lines 423--424
  [][] 
  []
 
-[19]
+[17]
 Underfull \hbox (badness 10000) in paragraph at lines 430--431
 
  []
@@ -1502,7 +1519,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 434--435
 
  []
 
-[20 <./restarch.jpg>]
+[18 <./restarch.jpg>]
 Overfull \hbox (221.57803pt too wide) in paragraph at lines 465--466
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
 ][][][][]  
@@ -1513,8 +1530,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 473--474
 
  []
 
-[21]
-<rest.jpeg, id=578, 784.9325pt x 672.5125pt>
+[19]
+<rest.jpeg, id=483, 784.9325pt x 672.5125pt>
 File: rest.jpeg Graphic file (type jpg)
 <use rest.jpeg>
 Package pdftex.def Info: rest.jpeg  used on input line 482.
@@ -1529,7 +1546,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 487--488
 
  []
 
-[22 <./rest.jpeg>]
+[20 <./rest.jpeg>]
 Underfull \hbox (badness 10000) in paragraph at lines 489--490
 
  []
@@ -1544,7 +1561,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 3.5pt
 (hyperref)                removed on input line 496.
 
-[23]
+[21]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 2.73749pt
@@ -1575,7 +1592,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 522--526
 
  []
 
-[24]
+[22]
 Underfull \hbox (badness 10000) in paragraph at lines 541--542
 
  []
@@ -1590,16 +1607,16 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 3.5pt
 (hyperref)                removed on input line 549.
 
-[25]
+[23]
 LaTeX Font Info:    Font shape `T1/SourceCodePro-TLF/sb/n' will be
 (Font)              scaled to size 9.29993pt on input line 590.
- [26] [27]
+ [24] [25]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 3.5pt
 (hyperref)                removed on input line 657.
 
-<mtv.png, id=644, 322.05319pt x 227.1988pt>
+<mtv.png, id=549, 322.05319pt x 227.1988pt>
 File: mtv.png Graphic file (type png)
 <use mtv.png>
 Package pdftex.def Info: mtv.png  used on input line 662.
@@ -1615,7 +1632,7 @@ Overfull \hbox (23.62169pt too wide) in paragraph at lines 664--664
 -side/Django/Introduction| 
  []
 
-[28]
+[26]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 2.73749pt
@@ -1631,7 +1648,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 2.73749pt
 (hyperref)                removed on input line 681.
 
-[29 <./mtv.png>]
+[27 <./mtv.png>]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 2.73749pt
@@ -1652,7 +1669,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 2.73749pt
 (hyperref)                removed on input line 701.
 
-[30]
+[28]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 2.73749pt
@@ -1673,7 +1690,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 2.73749pt
 (hyperref)                removed on input line 733.
 
-[31]
+[29]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 2.73749pt
@@ -1684,115 +1701,35 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 3.5pt
 (hyperref)                removed on input line 743.
 
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                \kern 3.5pt
-(hyperref)                removed on input line 746.
-
-
-Overfull \hbox (23.69177pt too wide) in paragraph at lines 748--749
-[]\T1/pplx/m/n/10.95 (-20) Dokumentacja Fra-me-wor-ka Djan-go REST. https://www
-.django-rest-framework.org. 
- []
-
-
-Overfull \hbox (165.1589pt too wide) in paragraph at lines 760--761
-[]\T1/pplx/m/n/10.95 (-20) WIKIPEDIA.ORG. Re-pre-sen-ta-tio-nal sta-te trans-fe
-r. https://en.wikipedia.org/wiki/Representational-state-transfer 
- []
-
-
-Overfull \hbox (356.65176pt too wide) in paragraph at lines 762--763
-[]\T1/pplx/m/n/10.95 (-20) Rinu Gour. Wor-king Struc-tu-re of Djan-go MTV Ar-ch
-i-tec-tu-re. https://towardsdatascience.com/working-structure-of-django-mtv-arc
-hitecture-a741c8c64082
- []
-
-
-Overfull \hbox (88.31502pt too wide) in paragraph at lines 764--765
-[]\T1/pplx/m/n/10.95 (-20) Grzegorz Kwa-±niew-ski. REST API od pod-staw. https:
-//www.devmobile.pl/rest-api-od-podstaw/
- []
-
-
-Overfull \hbox (119.38354pt too wide) in paragraph at lines 766--767
-[]\T1/pplx/m/n/10.95 (-20) T. Berners-Lee. Uni-form Re-so-ur-ce Iden-ti-fier (U
-RI): Ge-ne-ric Syn-tax. https://www.ietf.org/rfc/rfc3986.txt
- []
-
-
-Overfull \hbox (51.24167pt too wide) in paragraph at lines 768--769
-[]\T1/pplx/m/n/10.95 (-20) Dominik Szcz-pa-niak. Wstep do REST API. https://dev
-szczepaniak.pl/wstep-do-rest-api/
- []
-
-[32]
-Overfull \hbox (286.0341pt too wide) in paragraph at lines 770--771
-[]\T1/pplx/m/n/10.95 (-20) Smartbear. API End-po-ints - What Are They? Why Do T
-hey Mat-ter? https://smartbear.com/learn/performance-monitoring/api-endpoints/ 
-
- []
-
-
-Overfull \hbox (42.6383pt too wide) in paragraph at lines 772--773
-[]\T1/pplx/m/n/10.95 (-20) Read Me. The Hi-sto-ry of REST APIs. https://blog.re
-adme.com/the-history-of-rest-apis/
- []
-
-
-Overfull \hbox (78.3083pt too wide) in paragraph at lines 774--775
-[]\T1/pplx/m/n/10.95 (-20) bd90. Dla-cze-go Two-je API nie jest RE-ST-ful. http
-s://bd90.pl/dlaczego-twoje-api-nie-jest-restful/
- []
-
-
-Overfull \hbox (69.4997pt too wide) in paragraph at lines 778--779
-[]\T1/pplx/m/n/10.95 (-20) Hooman Staff. What is API  And it's Ty-pes. https:/
-/techrevv.com/what-is-api-and-its-types/
- []
-
-
-Overfull \hbox (114.87903pt too wide) in paragraph at lines 780--781
-[]\T1/pplx/m/n/10.95 (-20) SoapUI Do-cu-men-ta-tion. What Is A REST API?. https
-://www.soapui.org/learn/api/what-is-a-rest-api/ 
- []
-
-
-Overfull \hbox (321.31644pt too wide) in paragraph at lines 782--783
-[]\T1/pplx/m/n/10.95 (-20) Patryk Sªa-dek. REST API  mo-del doj-rza-ªo-±ci Ri-
-chard-so-na. https://jakzostacprogramista.net/2020/11/25/rest-api-model-dojrzal
-osci-richardsona/
- []
-
-[33] [34
+[30] [31
 
 ]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 3.5pt
-(hyperref)                removed on input line 818.
+(hyperref)                removed on input line 779.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 3.5pt
-(hyperref)                removed on input line 848.
+(hyperref)                removed on input line 809.
 
-[35]
+[32]
 LaTeX Font Info:    Font shape `T1/SourceCodePro-TLF/m/n' will be
-(Font)              scaled to size 10.18341pt on input line 852.
+(Font)              scaled to size 10.18341pt on input line 813.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 3.5pt
-(hyperref)                removed on input line 873.
+(hyperref)                removed on input line 834.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 3.5pt
-(hyperref)                removed on input line 897.
+(hyperref)                removed on input line 858.
 
-[36]
-Overfull \hbox (1.1588pt too wide) in paragraph at lines 898--900
+[33]
+Overfull \hbox (1.1588pt too wide) in paragraph at lines 859--861
 []\T1/pplx/m/n/10.95 (-20) PostgreSQL to dar-mo-wy i otwar-ty sys-tem za-rz¡-dz
 a-nia obiektowo-relacyjnymi
  []
@@ -1800,411 +1737,375 @@ a-nia obiektowo-relacyjnymi
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 3.5pt
-(hyperref)                removed on input line 931.
+(hyperref)                removed on input line 892.
 
-[37]
+[34]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 3.5pt
-(hyperref)                removed on input line 951.
+(hyperref)                removed on input line 912.
 
 
-Overfull \hbox (14.87381pt too wide) in paragraph at lines 953--955
+Overfull \hbox (14.87381pt too wide) in paragraph at lines 914--916
 \T1/SourceCodePro-TLF/m/n/10.95 ,Te-xt-Field, Fo-re-ign-Key, In-te-ger-Field, B
 o-ole-an-Field, Da-te-Ti-me-Field. 
  []
 
-[38]
-Overfull \hbox (10.16791pt too wide) in paragraph at lines 985--986
+[35]
+Overfull \hbox (10.16791pt too wide) in paragraph at lines 946--947
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
 ]  
  []
 
-[39]
+[36]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 3.5pt
-(hyperref)                removed on input line 1010.
+(hyperref)                removed on input line 971.
 
-(F:\MIKTEX\tex/latex/listings\lstlang1.sty
+(C:\Users\Damian\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.sty
 File: lstlang1.sty 2020/03/24 1.8d listings language file
-) [40]
+) [37]
+
+LaTeX Warning: Reference `sql' on page 38 undefined on input line 1015.
+
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 3.5pt
-(hyperref)                removed on input line 1056.
+(hyperref)                removed on input line 1017.
 
-<gl-relacje.png, id=784, 335.45325pt x 263.7855pt>
+<gl-relacje.png, id=670, 335.45325pt x 263.7855pt>
 File: gl-relacje.png Graphic file (type png)
 <use gl-relacje.png>
-Package pdftex.def Info: gl-relacje.png  used on input line 1060.
+Package pdftex.def Info: gl-relacje.png  used on input line 1021.
 (pdftex.def)             Requested size: 341.44627pt x 227.6239pt.
-[41]
+[38]
+
+LaTeX Warning: Reference `relacje' on page 39 undefined on input line 1026.
+
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 2.73749pt
-(hyperref)                removed on input line 1079.
+(hyperref)                removed on input line 1040.
 
-[42 <./gl-relacje.png>]
+[39 <./gl-relacje.png>]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 2.73749pt
-(hyperref)                removed on input line 1107.
+(hyperref)                removed on input line 1068.
 
-[43]
-Overfull \hbox (10.16791pt too wide) in paragraph at lines 1127--1128
+[40]
+Overfull \hbox (10.16791pt too wide) in paragraph at lines 1088--1089
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
 ]  
  []
 
-<skillsec.png, id=852, 163.812pt x 69.861pt>
+<skillsec.png, id=737, 163.812pt x 69.861pt>
 File: skillsec.png Graphic file (type png)
 <use skillsec.png>
-Package pdftex.def Info: skillsec.png  used on input line 1137.
+Package pdftex.def Info: skillsec.png  used on input line 1098.
 (pdftex.def)             Requested size: 170.71652pt x 72.81146pt.
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 2.73749pt
-(hyperref)                removed on input line 1145.
+(hyperref)                removed on input line 1106.
 
 
-Overfull \hbox (10.16791pt too wide) in paragraph at lines 1155--1156
+Overfull \hbox (10.16791pt too wide) in paragraph at lines 1116--1117
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
 ]  
  []
 
-[44 <./skillsec.png>]
-<task_skill.png, id=879, 187.902pt x 245.11575pt>
+[41 <./skillsec.png>]
+<task_skill.png, id=765, 187.902pt x 245.11575pt>
 File: task_skill.png Graphic file (type png)
 <use task_skill.png>
-Package pdftex.def Info: task_skill.png  used on input line 1180.
+Package pdftex.def Info: task_skill.png  used on input line 1141.
 (pdftex.def)             Requested size: 227.63449pt x 227.62614pt.
 
-Overfull \hbox (8.37321pt too wide) in paragraph at lines 1185--1186
+Overfull \hbox (8.37321pt too wide) in paragraph at lines 1146--1147
 []\T1/pplx/m/n/10.95 (-20) W przy-pad-ku na-sze-go pro-jek-tu stwo-rzo-na zo-st
 a-ªa ta-be-la o na-zwie \T1/SourceCodePro-TLF/m/n/10.95 task_skill
  []
 
-[45 <./task_skill.png>]
+[42 <./task_skill.png>]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 2.73749pt
-(hyperref)                removed on input line 1188.
+(hyperref)                removed on input line 1149.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 3.5pt
-(hyperref)                removed on input line 1200.
+(hyperref)                removed on input line 1161.
 
 LaTeX Font Info:    Font shape `T1/SourceCodePro-TLF/sb/n' will be
-(Font)              scaled to size 8.36993pt on input line 1207.
-[46]
+(Font)              scaled to size 8.36993pt on input line 1168.
+[43]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 2.73749pt
-(hyperref)                removed on input line 1212.
+(hyperref)                removed on input line 1173.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 2.73749pt
-(hyperref)                removed on input line 1246.
+(hyperref)                removed on input line 1207.
 
-[47] [48] [49]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                \kern 2.73749pt
-(hyperref)                removed on input line 1353.
-
-[50]
+[44] [45] [46]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 2.73749pt
-(hyperref)                removed on input line 1366.
+(hyperref)                removed on input line 1314.
+
+[47]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \kern 2.73749pt
+(hyperref)                removed on input line 1327.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 3.5pt
-(hyperref)                removed on input line 1374.
+(hyperref)                removed on input line 1335.
+
+
+Overfull \hbox (1.30562pt too wide) in paragraph at lines 1347--1348
+\T1/pplx/m/n/10.95 (-20) Wykonuj¡c po-wy»-sze po-le-ce-nie oraz do-da-j¡c \T1/S
+ourceCodePro-TLF/m/n/10.95 pgtrig-ger \T1/pplx/m/n/10.95 (-20) do \T1/pplx/b/n/
+10.95 IN-STAL-LED_APPS
+ []
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 2.73749pt
-(hyperref)                removed on input line 1388.
+(hyperref)                removed on input line 1349.
 
-[51]
+[48]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \kern 2.73749pt
+(hyperref)                removed on input line 1377.
+
+[49]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 2.73749pt
 (hyperref)                removed on input line 1416.
 
-[52]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 2.73749pt
-(hyperref)                removed on input line 1455.
+(hyperref)                removed on input line 1435.
 
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                \kern 2.73749pt
-(hyperref)                removed on input line 1474.
-
-[53]
+[50]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 3.5pt
-(hyperref)                removed on input line 1505.
+(hyperref)                removed on input line 1466.
 
-[54]
-Overfull \hbox (153.06639pt too wide) in paragraph at lines 1549--1551
-\T1/SourceCodePro-TLF/m/n/10 https://towardsdatascience.com/data-engineering-wi
-th-python-django-and-postgresql-99409492769 
- []
-
-
-Overfull \hbox (108.42674pt too wide) in paragraph at lines 1553--1556
-\T1/SourceCodePro-TLF/m/n/10 http://gsl-archive.mit.edu/media/programs/mexico-s
-ummer-2014/materials/djangobook.pdf 
- []
-
-[55
-
-pdfTeX warning (ext4): destination with the same identifier (name{cite.latexcom
-panion}) has been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  
-l.1559 ...ie do tworzenia interfejsu uÅ¼ytkownika}
-                                                  pdfTeX warning (ext4): destin
-ation with the same identifier (name{cite.latexcompanion}) has been already use
-d, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  
-l.1559 ...ie do tworzenia interfejsu uÅ¼ytkownika}
-                                                  pdfTeX warning (ext4): destin
-ation with the same identifier (name{cite.latexcompanion}) has been already use
-d, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  
-l.1559 ...ie do tworzenia interfejsu uÅ¼ytkownika}
-                                                  pdfTeX warning (ext4): destin
-ation with the same identifier (name{cite.latexcompanion}) has been already use
-d, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  
-l.1559 ...ie do tworzenia interfejsu uÅ¼ytkownika}
-                                                  pdfTeX warning (ext4): destin
-ation with the same identifier (name{cite.latexcompanion}) has been already use
-d, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  
-l.1559 ...ie do tworzenia interfejsu uÅ¼ytkownika}
-                                                  pdfTeX warning (ext4): destin
-ation with the same identifier (name{cite.latexcompanion}) has been already use
-d, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  
-l.1559 ...ie do tworzenia interfejsu uÅ¼ytkownika}
-                                                  ]
+[51]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 3.5pt
-(hyperref)                removed on input line 1561.
+(hyperref)                removed on input line 1471.
 
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 9.37807pt on input line 1563.
+(Font)              scaled to size 9.37807pt on input line 1473.
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 7.29405pt on input line 1563.
+(Font)              scaled to size 7.29405pt on input line 1473.
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 5.21004pt on input line 1563.
+(Font)              scaled to size 5.21004pt on input line 1473.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 9.37807pt on input line 1563.
+(Font)              scaled to size 9.37807pt on input line 1473.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 7.29405pt on input line 1563.
+(Font)              scaled to size 7.29405pt on input line 1473.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 5.21004pt on input line 1563.
+(Font)              scaled to size 5.21004pt on input line 1473.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1563--1565
+Underfull \hbox (badness 10000) in paragraph at lines 1473--1475
 
  []
 
-<statystyki react vue angular.png, id=1108, 973.38657pt x 534.49687pt>
+<statystyki react vue angular.png, id=986, 973.38657pt x 534.49687pt>
 File: statystyki react vue angular.png Graphic file (type png)
 <use statystyki react vue angular.png>
 Package pdftex.def Info: statystyki react vue angular.png  used on input line 1
-570.
+480.
 (pdftex.def)             Requested size: 398.33858pt x 218.72919pt.
 
-Overfull \hbox (14.22636pt too wide) in paragraph at lines 1570--1571
+Overfull \hbox (14.22636pt too wide) in paragraph at lines 1480--1481
  [][] 
  []
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 3.5pt
-(hyperref)                removed on input line 1577.
+(hyperref)                removed on input line 1487.
 
-[56
+[52
 
 ]
-<react dev example.jpg, id=1116, 481.8pt x 301.125pt>
+<react dev example.jpg, id=995, 481.8pt x 301.125pt>
 File: react dev example.jpg Graphic file (type jpg)
 <use react dev example.jpg>
-Package pdftex.def Info: react dev example.jpg  used on input line 1585.
+Package pdftex.def Info: react dev example.jpg  used on input line 1495.
 (pdftex.def)             Requested size: 369.88582pt x 231.18692pt.
 
-Overfull \hbox (37.48099pt too wide) in paragraph at lines 1589--1589
+Overfull \hbox (37.48099pt too wide) in paragraph at lines 1499--1499
  \T1/SourceCodePro-TLF/m/n/10.95 GhS5JaH1p5pPBIUpj22mjNRNdR3Ana8FKz4B7JwsA6HIFV
 XGuU7pa4ELiW6iUNhs0Iyg = 
  []
 
-[57 <./statystyki react vue angular.png>]
+[53 <./statystyki react vue angular.png>]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 3.5pt
-(hyperref)                removed on input line 1602.
+(hyperref)                removed on input line 1512.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1604--1616
+Underfull \hbox (badness 10000) in paragraph at lines 1514--1526
 
  []
 
-[58 <./react dev example.jpg>]
+[54 <./react dev example.jpg>]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 3.5pt
-(hyperref)                removed on input line 1625.
+(hyperref)                removed on input line 1535.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 2.73749pt
-(hyperref)                removed on input line 1630.
+(hyperref)                removed on input line 1540.
 
 
-Overfull \hbox (15.74791pt too wide) in paragraph at lines 1642--1643
+Overfull \hbox (15.74791pt too wide) in paragraph at lines 1552--1553
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
 ][][]  
  []
 
-[59]
-Overfull \hbox (65.96793pt too wide) in paragraph at lines 1666--1667
+[55]
+Overfull \hbox (65.96793pt too wide) in paragraph at lines 1576--1577
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
 ][][]  
  []
 
 
-Overfull \hbox (43.64792pt too wide) in paragraph at lines 1668--1669
+Overfull \hbox (43.64792pt too wide) in paragraph at lines 1578--1579
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
 ]  
  []
 
 
-Overfull \hbox (4.5879pt too wide) in paragraph at lines 1678--1679
+Overfull \hbox (4.5879pt too wide) in paragraph at lines 1588--1589
 [][][][][][][][][][][][][][][][][][][][][][][][]  
  []
 
 
-Overfull \hbox (43.64792pt too wide) in paragraph at lines 1683--1684
+Overfull \hbox (43.64792pt too wide) in paragraph at lines 1593--1594
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]  
  []
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 2.73749pt
-(hyperref)                removed on input line 1700.
+(hyperref)                removed on input line 1610.
 
-[60]
+[56]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 2.73749pt
-(hyperref)                removed on input line 1735.
+(hyperref)                removed on input line 1645.
 
-[61]
-<diagram metod cyklu Å¼ycia.png, id=1199, 887.56593pt x 330.48468pt>
+[57]
+<diagram metod cyklu Å¼ycia.png, id=1079, 887.56593pt x 330.48468pt>
 File: diagram metod cyklu Å¼ycia.png Graphic file (type png)
 <use diagram metod cyklu Å¼ycia.png>
-Package pdftex.def Info: diagram metod cyklu Å¼ycia.png  used on input line 174
+Package pdftex.def Info: diagram metod cyklu Å¼ycia.png  used on input line 165
 7.
 (pdftex.def)             Requested size: 369.88582pt x 137.72346pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1754--1759
+Underfull \hbox (badness 10000) in paragraph at lines 1664--1669
 
  []
 
-[62 <./diagram metod cyklu Å¼ycia.png>]
+[58 <./diagram metod cyklu Å¼ycia.png>]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 2.73749pt
-(hyperref)                removed on input line 1788.
+(hyperref)                removed on input line 1698.
 
 
-Overfull \hbox (4.5879pt too wide) in paragraph at lines 1797--1798
+Overfull \hbox (4.5879pt too wide) in paragraph at lines 1707--1708
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
 ]  
  []
 
-[63] [64]
+[59] [60]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 2.73749pt
-(hyperref)                removed on input line 1841.
+(hyperref)                removed on input line 1751.
+
+[61]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \kern 2.73749pt
+(hyperref)                removed on input line 1815.
+
+[62]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \kern 3.5pt
+(hyperref)                removed on input line 1859.
+
+
+Overfull \vbox (6.092pt too high) detected at line 1859
+ []
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \kern 2.73749pt
+(hyperref)                removed on input line 1868.
+
+<promises.png, id=1181, 603.0028pt x 223.58531pt>
+File: promises.png Graphic file (type png)
+<use promises.png>
+Package pdftex.def Info: promises.png  used on input line 1873.
+(pdftex.def)             Requested size: 369.88582pt x 137.14761pt.
+[63] [64 <./promises.png>]
+Overfull \hbox (4.5879pt too wide) in paragraph at lines 1912--1913
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+]  
+ []
+
+
+Overfull \hbox (65.96793pt too wide) in paragraph at lines 1931--1932
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][]  
+ []
 
 [65]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 2.73749pt
-(hyperref)                removed on input line 1905.
-
-[66]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                \kern 3.5pt
-(hyperref)                removed on input line 1949.
+(hyperref)                removed on input line 1957.
 
 
-Overfull \vbox (6.092pt too high) detected at line 1949
- []
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                \kern 2.73749pt
-(hyperref)                removed on input line 1958.
-
-<promises.png, id=1299, 603.0028pt x 223.58531pt>
-File: promises.png Graphic file (type png)
-<use promises.png>
-Package pdftex.def Info: promises.png  used on input line 1963.
-(pdftex.def)             Requested size: 369.88582pt x 137.14761pt.
-[67] [68 <./promises.png>]
-Overfull \hbox (4.5879pt too wide) in paragraph at lines 2002--2003
-[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
-]  
- []
-
-
-Overfull \hbox (65.96793pt too wide) in paragraph at lines 2021--2022
-[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
-][][][][][][][][][][][][]  
- []
-
-[69]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                \kern 2.73749pt
-(hyperref)                removed on input line 2047.
-
-
-Overfull \hbox (32.48792pt too wide) in paragraph at lines 2058--2059
+Overfull \hbox (32.48792pt too wide) in paragraph at lines 1968--1969
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
 ][][][][][][][][][][][][][][]  
  []
 
 
-Overfull \hbox (21.32791pt too wide) in paragraph at lines 2061--2062
+Overfull \hbox (21.32791pt too wide) in paragraph at lines 1971--1972
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
 ][][][][][][][][][][][][][][]  
  []
 
 
-Overfull \hbox (32.48792pt too wide) in paragraph at lines 2062--2063
+Overfull \hbox (32.48792pt too wide) in paragraph at lines 1972--1973
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
 ][][][][][][][][][][][][][][]  
  []
@@ -2212,72 +2113,168 @@ Overfull \hbox (32.48792pt too wide) in paragraph at lines 2062--2063
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 2.73749pt
-(hyperref)                removed on input line 2076.
+(hyperref)                removed on input line 1986.
 
-[70] [71]
-Overfull \hbox (26.90791pt too wide) in paragraph at lines 2139--2140
+[66] [67]
+Overfull \hbox (26.90791pt too wide) in paragraph at lines 2049--2050
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
 ][][][][][][]  
  []
 
-[72]
+[68]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 3.5pt
-(hyperref)                removed on input line 2191.
+(hyperref)                removed on input line 2101.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2192--2200
+Underfull \hbox (badness 10000) in paragraph at lines 2102--2110
 
  []
 
-[73]
-Overfull \hbox (60.38792pt too wide) in paragraph at lines 2215--2216
+[69]
+Overfull \hbox (60.38792pt too wide) in paragraph at lines 2125--2126
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
 ][][][][]  
  []
 
-[74] [75] [76]
+[70] [71] [72]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 3.5pt
-(hyperref)                removed on input line 2301.
+(hyperref)                removed on input line 2211.
 
-[77]
+[73]
 Package microtype Info: Character `029' is missing
 (microtype)             in font `T1/pplx/m/sc/10.95'.
 (microtype)             Ignoring protrusion settings for this character.
- [78
 
-] (pracainz2.aux)
-Package rerunfilecheck Info: File `pracainz2.out' has not changed.
-(rerunfilecheck)             Checksum: 1E50871E74B06D36BB22A182418910C2;16542.
+Overfull \hbox (10.62823pt too wide) in paragraph at lines 2220--2220
+[]$\T1/SourceCodePro-TLF/m/n/10.95 https : / / towardsdatascience . com / data 
+-[] engineering -[] with -[] python -[]
+ []
 
 
-LaTeX Warning: There were multiply-defined labels.
+Overfull \hbox (23.29234pt too wide) in paragraph at lines 2220--2220
+[]$\T1/SourceCodePro-TLF/m/n/10.95 https : / / en . wikibooks . org / wiki / La
+TeX / Generating _ Bibliographies _
+ []
+
+
+Overfull \hbox (4.74706pt too wide) in paragraph at lines 2220--2220
+[]\T1/pplx/m/it/10.95 (-20) Oficjalna do-ku-men-ta-cja django-pghistory\T1/pplx
+/m/n/10.95 (-20) . Wes Ken-dall. \T1/pplx/m/sc/10.95 (-20) url\T1/pplx/m/n/10.9
+5 (-20) : []$\T1/SourceCodePro-TLF/m/n/10.95 https : / / django -[]
+ []
+
+[74
+
+]
+Overfull \hbox (4.15683pt too wide) in paragraph at lines 2220--2220
+[]\T1/pplx/m/it/10.95 (-20) Oficjalna do-ku-men-ta-cja django-pgtrigger\T1/pplx
+/m/n/10.95 (-20) . Wes Ken-dall. \T1/pplx/m/sc/10.95 (-20) url\T1/pplx/m/n/10.9
+5 (-20) : []$\T1/SourceCodePro-TLF/m/n/10.95 https : / / django -[]
+ []
+
+
+Overfull \hbox (20.27103pt too wide) in paragraph at lines 2220--2220
+\T1/SourceCodePro-TLF/m/n/10.95 pgtrigger . readthedocs . io / en / latest / to
+c . html$[] \T1/pplx/m/n/10.95 (-20) (term. wiz. 03.06.2021). 
+ []
+
+
+Overfull \hbox (12.26997pt too wide) in paragraph at lines 2220--2220
+\T1/pplx/m/n/10.95 (-20) Gro-up. \T1/pplx/m/sc/10.95 (-20) url\T1/pplx/m/n/10.9
+5 (-20) : []$\T1/SourceCodePro-TLF/m/n/10.95 https : / / www . postgresql . org
+ / docs/$[] \T1/pplx/m/n/10.95 (-20) (term. wiz. 13.05.2021). 
+ []
+
+
+Overfull \hbox (15.41899pt too wide) in paragraph at lines 2220--2220
+[]\T1/pplx/m/it/10.95 (-20) REST API od pod-staw\T1/pplx/m/n/10.95 (-20) . Grze
+-gorz Kwa-±niew-ski. \T1/pplx/m/sc/10.95 (-20) url\T1/pplx/m/n/10.95 (-20) : []
+$\T1/SourceCodePro-TLF/m/n/10.95 https : / / www . devmobile .
+ []
+
+[75] (pracainz2.aux)
+
+Package rerunfilecheck Warning: File `pracainz2.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `pracainz2.out':
+(rerunfilecheck)             Before: 1E50871E74B06D36BB22A182418910C2;16542
+(rerunfilecheck)             After:  6B28F82DD98F1B3D8865087B2F6B0684;16395.
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+
+Package biblatex Warning: Please (re)run Biber on the file:
+(biblatex)                pracainz2
+(biblatex)                and rerun LaTeX afterwards.
 
 Package logreq Info: Writing requests to 'pracainz2.run.xml'.
 \openout1 = `pracainz2.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 28224 strings out of 479791
- 445247 string characters out of 2886001
- 1458498 words of memory out of 3000000
- 43331 multiletter control sequences out of 15000+200000
- 618769 words of font info for 488 fonts, out of 3000000 for 9000
+ 27948 strings out of 479799
+ 455269 string characters out of 2869247
+ 1456342 words of memory out of 3000000
+ 43295 multiletter control sequences out of 15000+200000
+ 607079 words of font info for 329 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  81i,12n,128p,1343b,2080s stack positions out of 5000i,500n,10000p,200000b,50000s
-{F:/MIKTEX/fonts/enc/dvips/sourcecodepro/a_lutrty.enc}{F:/MIKTEX/fonts/enc/dv
-ips/base/8r.enc}<F:/MIKTEX/fonts/type1/adobe/sourcecodepro/SourceCodePro-It.pfb
-><F:/MIKTEX/fonts/type1/adobe/sourcecodepro/SourceCodePro-Regular.pfb><F:/MIKTE
-X/fonts/type1/adobe/sourcecodepro/SourceCodePro-Semibold.pfb><F:/MIKTEX/fonts/t
-ype1/public/fpl/fplrc8a.pfb><F:/MIKTEX/fonts/type1/urw/palatino/uplb8a.pfb><F:/
-MIKTEX/fonts/type1/urw/palatino/uplr8a.pfb><F:/MIKTEX/fonts/type1/urw/palatino/
-uplri8a.pfb>
-Output written on pracainz2.pdf (78 pages, 1072868 bytes).
+pdfTeX warning (dest): name{section*.103} has been referenced but does not ex
+ist, replaced by a fixed one
+
+pdfTeX warning (dest): name{section*.97} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{section*.91} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{section*.83} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{section*.68} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{section*.66} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{section*.63} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{section*.58} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{section*.56} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{section*.54} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{section*.52} has been referenced but does not exist
+, replaced by a fixed one
+
+{C:/Users/Damian/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/sourcecodepro/a_
+lutrty.enc}{C:/Users/Damian/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/
+8r.enc}<C:/Users/Damian/AppData/Local/Programs/MiKTeX/fonts/type1/adobe/sourcec
+odepro/SourceCodePro-It.pfb><C:/Users/Damian/AppData/Local/Programs/MiKTeX/font
+s/type1/adobe/sourcecodepro/SourceCodePro-Regular.pfb><C:/Users/Damian/AppData/
+Local/Programs/MiKTeX/fonts/type1/adobe/sourcecodepro/SourceCodePro-Semibold.pf
+b><C:/Users/Damian/AppData/Local/Programs/MiKTeX/fonts/type1/public/fpl/fplrc8a
+.pfb><C:/Users/Damian/AppData/Local/Programs/MiKTeX/fonts/type1/urw/palatino/up
+lb8a.pfb><C:/Users/Damian/AppData/Local/Programs/MiKTeX/fonts/type1/urw/palatin
+o/uplr8a.pfb><C:/Users/Damian/AppData/Local/Programs/MiKTeX/fonts/type1/urw/pal
+atino/uplri8a.pfb>
+Output written on pracainz4.pdf (75 pages, 1058520 bytes).
 PDF statistics:
- 1822 PDF objects out of 2073 (max. 8388607)
- 950 named destinations out of 1000 (max. 500000)
- 102111 words of extra memory for PDF output out of 106986 (max. 10000000)
+ 1752 PDF objects out of 2073 (max. 8388607)
+ 949 named destinations out of 1000 (max. 500000)
+ 50911 words of extra memory for PDF output out of 51595 (max. 10000000)
 
