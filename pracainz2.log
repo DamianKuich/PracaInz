@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (MiKTeX 21.10) (preloaded format=pdflatex 2021.11.22)  4 DEC 2021 15:19
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (MiKTeX 21.10) (preloaded format=pdflatex 2021.11.22)  4 DEC 2021 15:27
 entering extended mode
 **./pracainz2.tex
 (pracainz2.tex
@@ -2185,16 +2185,10 @@ $\T1/SourceCodePro-TLF/m/n/10.95 https : / / www . devmobile .
 
 [77] (pracainz2.aux)
 
-LaTeX Warning: There were undefined references.
-
-
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `pracainz2.out' has not changed.
 (rerunfilecheck)             Checksum: A4D7E06447F0C72147680450CEBF11F1;15188.
-
-Package biblatex Warning: Please rerun LaTeX.
-
 Package logreq Info: Writing requests to 'pracainz2.run.xml'.
 \openout1 = `pracainz2.run.xml'.
 
@@ -2202,7 +2196,7 @@ Package logreq Info: Writing requests to 'pracainz2.run.xml'.
 Here is how much of TeX's memory you used:
  28980 strings out of 478699
  494018 string characters out of 2846487
- 1474059 words of memory out of 3000000
+ 1474869 words of memory out of 3000000
  45192 multiletter control sequences out of 15000+600000
  486380 words of font info for 476 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -2218,7 +2212,7 @@ pfb><C:/Users/Damian/AppData/Local/Programs/MiKTeX/fonts/type1/public/fpl/fplrc
 uplb8a.pfb><C:/Users/Damian/AppData/Local/Programs/MiKTeX/fonts/type1/urw/palat
 ino/uplr8a.pfb><C:/Users/Damian/AppData/Local/Programs/MiKTeX/fonts/type1/urw/p
 alatino/uplri8a.pfb>
-Output written on pracainz2.pdf (77 pages, 1074119 bytes).
+Output written on pracainz2.pdf (77 pages, 1074118 bytes).
 PDF statistics:
  1831 PDF objects out of 2073 (max. 8388607)
  941 named destinations out of 1000 (max. 500000)
