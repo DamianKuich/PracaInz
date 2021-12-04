@@ -37,7 +37,6 @@
            {ł}{{\l}}1
            {Ł}{{\L}}1
 }
-\usepackage{enumitem}
 
 %\usepackage[utf8]{inputenc}
 %\DeclareUnicodeCharacter{200B}{{\hskip 0pt}}
@@ -90,10 +89,19 @@
 % Dane autora i pracy                                      %
 % ======================================================== %
 
+% \firstAuthor
+\firstAuthor{Damian Kuich}
+\secondAuthor{Mkołaj Kowalczyki}
+\thirdAuthor{Mateusz Michalski}
+
+\firstAlbum{434735}
+\secondAlbum{434725}
+\thirdAlbum{123456}
+
 % --- Autor pracy
-\author{Damian Kuich, Mikołaj Kowalczyk, Mateusz Michalski}
+%\author{Damian Kuich, Mikołaj Kowalczyk, Mateusz Michalski}
 % --- Numer albumu
-\album{434735, 434725, 123456}
+%\album{434735, 434725, 123456}
 % --- Tytuł pracy (w języku polskim i angielskim)
 \titlePL{Platforma do generowania sprawdzianów z matematyki}
 \titleEN{Platform for generating math tests}
@@ -123,7 +131,7 @@
 % --- (ustaw puste, jeśli bez specjalności)
 \specialty{}
 % --- Promotor (w dopełniaczu)
-\supervisor{dr. Bartłomiej Przybylski}
+\supervisor{dr. Bartłomieja Przybylskiego}
 % --- Data złożenia pracy (Miasto, miesiąc rok)
 \date{Poznań, \today{} r.}
 
@@ -154,22 +162,22 @@
 
 % Blok abstraktu w języku polskim
 \begin{streszczenie}
-Przedmiotem pracy jest przedstawienie komponentów składających się na projekt platformy webowej do generowania sprawdzianów z matematyki. W trakcie tworzenia serwisu musieliśmy podejmować wiele decyzji związanych z użyciem dostepnych rozwiązań technologicznych do rozwiązywania pojawiających się problemów. 
+Przedmiotem pracy jest przedstawienie komponentów składających się na projekt platformy webowej do generowania sprawdzianów z matematyki. W trakcie tworzenia serwisu musieliśmy podejmować wiele decyzji związanych z użyciem dostępnych rozwiązań technologicznych do rozwiązywania pojawiających się problemów.
 
-Pierwsza część ma za zadanie wprowadzenia w podstawowe struktury organizacyjne i technologiczne, który były wykorzystywane przy tworzeniu aplikacji. Poruszona zostanie kwestia jaki cel ma nasza aplikacja spełniać i jakie założenia zostały ustalone. Opisana zostanie organizacja pracy i metodyka jaka pomagała nam przy tworzeniu kolejnych etapów serwisu oraz podział prac pomiędzy członków grupy deweloperskiej. 
+Pierwsza część ma za zadanie wprowadzenie w podstawowe struktury organizacyjne i technologiczne, który były wykorzystywane przy tworzeniu aplikacji. Poruszona została kwestia, jaki cel ma nasza aplikacja spełniać i jakie założenia zostały ustalone. Opisana została organizacja pracy i metodyka, która pomagała nam przy tworzeniu kolejnych etapów serwisu, oraz podział prac pomiędzy członków grupy deweloperskiej.
 
-W drugiej części przedstawiona zostanie idea tworzeniu serwisów na podstawie architektury REST. Zaczynając od podstawowych pojęć związanych z budową serwisów webowych, a kończąc na technologii, która została wykorzystana do implementacji owej architektury do naszej aplikacji. 
+W drugiej części przedstawiona została idea tworzeniu serwisów na podstawie architektury REST. Zaczynając od podstawowych pojęć związanych z budową serwisów webowych, a kończąc na technologii, która została wykorzystana do implementacji owej architektury do naszej aplikacji.
 
 Trzecia część pracy opowiada o wybranych systemach bazodanowych, ich plusach oraz minusach. Następnie opisana jest integracja Django z PostgreSQL, czyli m.in. połączenie z bazą danych, stworzenie modeli dla danych oraz jak poprawnie wykonywać zapytania, aby nie narażać bazy na zbyt duże obciążenia.
 
-Ostatni rozdział opisuje javascriptową bibliotekę React, jej historię, specyfikacją oraz użycie w procesie budowania interfejsu projektu Gen-mat. Rozdział dodatkowo przybliża biblioteki Yup, Axios oraz Formik używane przy tworzeniu oraz wymianie formularzy.
+Ostatni rozdział opisuje javascriptową bibliotekę React, jej historię, specyfikację oraz użycie w procesie budowania interfejsu projektu Gen-Mat. Rozdział dodatkowo przybliża biblioteki Yup, Axios oraz Formik używane przy tworzeniu oraz wymianie formularzy.
 
 \end{streszczenie}
 
 % Opcjonalny blok dedykacji
-\begin{dedykacja}
-Tu możesz umieścić swoją dedykację.
-\end{dedykacja}
+%\begin{dedykacja}
+%Tu możesz umieścić swoją dedykację.
+%\end{dedykacja}
 
 % Spis treści
 \tableofcontents
@@ -194,90 +202,26 @@ Aby wyeliminować ryzyko niewystarczającej ilości zadań, wprowadzona została
 
 Zespół podzielony na dwie grupy dwuosobowe. Jedna z nich odpowiedzialna jest za Frontend, a druga za Backend. Zespół obrał metodyke pracy Scrum. Zadania są przypisywane przez Scrum Mastera na podstawie umiejętności danego członka zespołu. Następnie, co jakiś czas sprawdzany jest postęp danego zadania na podstawie tzw. “Task Review”. Ostatnim punktem jest testowanie, czy zostało wykonane w sposób poprawny oraz czy nie pojawiły się jakiekolwiek błędy.
 
-Głównym celem projektu było stworzenie aplikacji webowej pozwalającej na automatyczne generowanie sprawdzianów z matematyki. Głównym założeniem projektu było stworzenie aplikacji webowej pozwalającej na generowanie sprawdzianów w sposób łatwy i szybki. 
-
-
-\section{Podział prac}
-
-\subsection{Damian Kuich:}
-\begin{itemize}
-\item Implementacja aplikacji serwerowej API
-\item Zarządzanie dokumentacją
-\item Pomoc przy tworzeniu bazy danych na potrzeby aplikacji API
-\item Reprezentatywna rola przed klientem
-\item Projektowanie architektury aplikacji serwerowej
-\item Komunikacja na linii zespół - klient(nauczyciele matematyki dla szkół ponadpodstawowych, jak i podstawowych). Komunikacja odbywała się mailowo, bądź przy pomocy portali społecznościowych(np. facebook).
-\end{itemize}
-\subsection{Mikołaj Kowalczyk:}
-\begin{itemize}
-\item Implementacja aplikacji serwerowej API
-\item Zarządzanie dokumentacją
-\item Stworzenia bazy danych na potrzeby aplikacji API
-\item Projektowanie architektury aplikacji serwerowej
-\end{itemize}
-\subsection{Mateusz Michalski:}
-\begin{itemize}
-\item Projektowanie interface’u użytkownika
-\item Zarządzanie dokumentacją
-\item Projektowanie architektury aplikacji webowej
-\end{itemize}
-
-
+Głównym celem projektu było stworzenie aplikacji webowej pozwalającej na automatyczne generowanie sprawdzianów z matematyki. Głównym założeniem projektu było stworzenie aplikacji webowej pozwalającej na generowanie sprawdzianów w sposób łatwy i szybki.  
 
 \section{Podział Pracy Inżynierskiej}
+ Kolejne rozdziały pracy dyplomowej opisują zagadnienia, z którymi zespół zapoznał się podczas tworzenia projektu inżynierskiego.
 
-Kolejne rozdziały pracy dyplomowej opisują zagadnienia, z którymi zespół zapoznał
-się podczas tworzenia projektu inżynierskiego.
+\subsection{ "Implementacja REST API z wykorzystaniem frameworka Django REST " -  Damian Kuich} 
+ Pierwszy rozdział opisuje metodykę REST, jak i technolgie korzystające z niej. Przedstawione zostaną podstawowe definicje potrzebne do zrozumienia całości pracy. Opiszę paradygmaty jakie musi spełniać aplikacja by móc być nazwana RESTful. W dalszej części przedstawię technolgię Django, jak i framework Django REST i opiszę jak ten framework skorelowany jest z ideą REST. 
 
-\subsection{Rozdział 1: "Implementacja REST API z wykorzystaniem frameworka Django REST " -  Damian Kuich } 
-\begin{itemize}
-\item Historia REST API
-\item Python, a REST API
-\item  Django REST framework
-\item Zalożenia architektury REST
-\item Róznice pomiędzy API, a REST API
-\item Zasady
-\item Obsługiwanie błędów
-\item REST API w projekcie "Gen-Mat"
+\subsection{ "Integracja projektu opartego o Django z bazą danych PostgreSQL " - Mikołaj Kowalczyk} 
+ W tym rozdziale zostanie poruszony temat baz danych oraz integracja framework’a Django z wybranym systemem bazodanowym. Odpowie on na pytanie, co to jest baza danych, oraz zawarta w nim będzie charakterystyka systemów bazodanowych MySQL, MS SQL Server, Oracle i PostgreSQL. W rozdziale opisany zostanie proces modelowania oraz tworzenia elementów bazy danych za pomocą Django, oraz w jaki sposób się z nią komunikować. Wszelkie przykłady opierać się będą na podstawie bazy utworzonej na potrzeby projektu. Opisane zostaną wybrane modele oraz relacje między tabelami, dzięki którym projekt zachowuje spójną całość. Rozdział będzie zawierał informacje na temat dostępu do danych oraz jak je pozyskiwać w sposób optymalny, nie narażający bazy na zbyt duże obciążenie.
 
-\end{itemize}
-\subsection{Rozdział 2: "Integracja projektu opartego o Django z bazą danych PostgreSQL " - Mikołaj Kowalczyk} 
+\subsection{ "React jako narzędzie do tworzenia interfejsu użytkownika" - Mateusz Michalski} 
+ Ten rozdział opisuje proces tworzenia interfejsu graficznego aplikacji webowej. Opowiada o Reactcie - javascriptowej bibliotece przeznaczonej do budowania interfejsów, przybliża jak tworzyć oraz używać reactowe komponenty. Ponadto przedstawia sposoby wymiany danych między użytkownikiem a serwerem z perspektywy frontendu oraz technologie ułatwiające obsługę formularzy.
 
-
-
-\begin{itemize}
-\item Krótki opis co to jest baza danych
-\item Charakterystyka, MySQL, MS SQL Server, Oracle, PostgreSQL
-\item Zestawienie wad oraz zalet każdego z wyżej wymienionych systemów.
-\item Opis modelowania bazy danych, tworzenia jej przez Django oraz sposób w jaki się z nią łączy.
-\item Wylistowanie oraz opis najważniejszych modeli danych w naszej bazie.
-\item Opisanie relacji miedzy tabelami.
-\item Opis czynności związanych z dostępem do danych za pomocą Django.
-\item Opis czynności mających na celu zachowanie integralności oraz spójności danych.
-\end{itemize}
-\subsection{Rozdział 3: "React jako narzędzie do tworzenia interfejsu użytkownika" - Mateusz Michalski} 
-\begin{itemize}
-\item Ten rozdział opisuje proces tworzenia interfejsu graficznego aplikacji webowej. Opowiada o Reactcie - javascriptowej bibliotece przeznaczonej do budowania interfejsów, przybliża jak tworzyć oraz używać reactowe komponenty. Ponadto przedstawia sposoby wymiany danych między użytkownikiem a serwerem z perspektywy frontendu oraz technologie ułatwiające obsługę formularzy.
-
-\end{itemize}
 \section{Opis Technologii}
-Serwis “Gen-Mat” korzysta z szerokiego zakresu technologii. Produkt oparty jest w szczególności na dwóch językach: Pythonie w wersji 3 i JavaScritp'cie w wersji. Głównym czynnikiem, który kierował nami przy wyborze technologii było doświadczenie członków zespołu przy projektowaniu systemów opartych na danych językach programowania. Również ważnym aspektem była dla nas prostota przy implementacji naszych założeń projektowych i funkcjonalności.. Podstawą naszego projektu jest, też serwer oparty na serwisie Heroku. Umożliwia nam on szybkie i łatwe wdrażanie serwisu na etap produkcyjny, zachowując przy tym wysoką jakość świadczonych usług hostingowych. Projekt nasz jako aplikacja webowa, podzielony został na dwie główne części. Część backend’ową oraz część frontend’ową.   
+Serwis “Gen-Mat” korzysta z szerokiego zakresu technologii. Produkt oparty jest w szczególności na dwóch językach: Pythonie w wersji 3 i JavaScritp'cie w wersji. Głównym czynnikiem, który kierował nami przy wyborze technologii było doświadczenie członków zespołu przy projektowaniu systemów opartych na danych językach programowania. Również ważnym aspektem była dla nas prostota przy implementacji naszych założeń projektowych i funkcjonalności.. Podstawą naszego projektu jest, też serwer oparty na serwisie Heroku. Umożliwia nam on szybkie i łatwe wdrażanie serwisu na etap produkcyjny, zachowując przy tym wysoką jakość świadczonych usług hostingowych. Projekt nasz jako aplikacja webowa, podzielony został na dwie główne części. Część backend’ową oraz część frontend’ową.     
 
 Backend odpowiedzialny jest za to czego użytkownik korzystający z naszego serwisu nie widzi. To są takie czynności, jak np. naprawa i utrzymywanie bazy danych, obsługa użytkowników, obsługa tokenów, spajanie zadań do utworzenia sprawdzianów etc. . Wykorzystuje on Pythonowy framework Django, który umożliwia nam w łatwy i prosty sposób stworzenie wysokiej jakości produktu. W pierwszej iteracji produktu podstawową bazą danych była MariaDB, jednakże wraz z rozwojem została ona zmieniona. Aktualnie serwis nasz korzysta z baz danych udostępnionych na Heroku, które operują na silniku PostgreSQL.   
 
 Frontend za to odpowiedzialny jest za część wizualną projektu. Obsługuję on np. wszystkie zapytania wysyłane przez użytkowników, przetwarzanie danych wysyłanych z bazy danych i wyświetlanie ich, komunikację z bazą danych za pomocą API, łączenie się z serwerem za pomocą HTTP, obsługa sesji uzytkownika etc . Ta część naszego projektu opiera się na frameworku React, Który bazuje na języku JavaScript. Projekt nasz korzysta, też z frameworka Django REST do tworzenia RESTful API.
-
-
-\section{Wdrożenie Serwisu}
-
-Opracowywany system informatyczny przeszedł kolejne kroki wdrożeniowe:
-\begin{itemize}
-\item Przygotowanie dokumentacji systemu, dokumentacji dla użytkownika
-\item Przygotowanie i skonfigurowanie niezbędnych środowisk, infrastruktury technicznej
-\item Przetestowanie systemu przez grupę testową potencjalnych użytkowników
-\item Przygotowanie systemu do wprowadzenia go na serwer zewnętrzny
-\item Udostępnienie systemu użytkownikom, użytkownicy mogą się dostać na serwis wchodząc w link, pod którym znajduje się nasz serwis. System został całościowo wdrożony przy pomocy platformy chmurowej Heroku.
-\end{itemize}
 
 \chapter{Implementacja REST API z wykorzystaniem frameworka Django REST}
 
@@ -363,8 +307,7 @@ URI składa się z dwóch kompnentów. Pierwszym z nich jest \textbf{URL}(ang. \
 \begin{figure}[H]
 \centering
 \includegraphics[width=14cm]{uri.jpg}
-\caption{Zasada działania URI, URL i URN\newline
-Źródło: https://prateekvjoshi.com/2014/02/22/url-vs-uri-vs-urn/}
+\caption{Zasada działania URI, URL i URN}
 \label{Cache}
 \end{figure}
 
@@ -477,7 +420,7 @@ Powinna być widoczna granica pomiędzy klientem, a serwerem. Oznacza to, że kl
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=14cm]{rest.jpeg}
+\includegraphics[width=14cm]{rest.png}
 \caption{REST w prosty sposób pomaga deweloperom w planowaniu interakcji pomiędzy niezależnymi systemami}
 \label{REST}
 \end{figure}
