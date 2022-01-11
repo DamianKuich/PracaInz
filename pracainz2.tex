@@ -832,7 +832,7 @@ Zdolny do obsługi danych w TB &  \\
 W naszym projekcie zastosowany został PostgreSQL. Jednym w głównych czynników wpływających na wybór był fakt, że PostgreSQL oferowany jest poprzez używaną przez nas platformę chmurową Heroku. 
 \section{Łączenie z bazą danych PostgreSQL}
 Integracja Django z PostgreSQL rozpoczyna się od stworzenia nowej bazy lub połączenia z istniejącą już bazą danych.
-Domyślnie Django jest skonfigurowane do używania \texttt{SQLite} jako swojego zaplecza, dlatego wymagana jest lekka zmiana zawartość pliku settings.py tak, aby używacie Postgresa było możliwe. 
+Domyślnie Django jest skonfigurowane do używania \texttt{SQLite} jako swojego zaplecza, dlatego wymagana jest lekka zmiana zawartość pliku settings.py tak, aby używanie Postgresa było możliwe. 
 
 Poniżej znajduję się kod potrzebny do połączenia się bazą danych oferowaną przez Heroku. 
 \begin{lstlisting}[
@@ -867,7 +867,7 @@ Pola modeli przeznaczone dla PostgreSQL (django.contrib.postgres.fields):
 	\item \texttt{DateRangeField} - pole przechowuje zakres dat
 \end{itemize}
 
-Każde pole określone jest poprzez specyficzne argumenty. Przykładowo pole\texttt{CharField} wymaga podania argumentu\texttt{max\_length}, który określa maksymalną ilość znaków. Każde pole posiada również zestaw argumentów dostępnych dla każdego z nich np.: \texttt{null (True/False)}, \texttt{blank (True/False)}, \texttt{default}, \texttt{unique (True/False)}.
+Każde pole określone jest poprzez specyficzne argumenty. Przykładowo pole \texttt{CharField} wymaga podania argumentu \texttt{max\_length}, który określa maksymalną ilość znaków. Każde pole posiada również zestaw argumentów dostępnych dla każdego z nich np.: \texttt{null (True/False)}, \texttt{blank (True/False)}, \texttt{default}, \texttt{unique (True/False)}.
 
 \begin{lstlisting}[
 language={Python},
@@ -1073,7 +1073,7 @@ Jeśli model źródłowy i docelowy różnią się, generowane są następujące
 
 \textbf{<zawierający\_model>\_id}: model \textbf{id}, który deklaruje \textbf{ManyToManyField}
 
-\textbf{<inny\_modell>\_id}: model \textbf{id}, który wskazywany jest przez \textbf{ManyToManyField}
+\textbf{<inny\_model>\_id}: model \textbf{id}, który wskazywany jest przez \textbf{ManyToManyField}
 \end{quote}
 Niewidoczny model pośredni stworzony przez Django wymaga pary kluczy. Jest to klucz podstawowy modelu źródłowego oraz klucz modelu docelowego, dlatego oba obiekty muszą istnieć, zanim będą mogły zostać powiązane.
 
@@ -1255,7 +1255,7 @@ Execution time: 0.002796s [Database: default]
 \subsection{Aktualizacja obiektu}
 \end{center}
 
-Metoda \texttt{update()} wykonuje zapytanie aktualizujące SQL dla określonych pól i zwraca liczbę dopasowanych wierszy. Na przykład, aby zmienić typ wszystkich zadań o punktacji równej 3 potrzebne jest polecenie:
+Metoda \texttt{update()} wykonuje zapytanie aktualizujące SQL dla określonych pól i zwraca liczbę dopasowanych wierszy. Na przykład, aby zmienić typ wszystkich zadań o punktacji równej 4 potrzebne jest polecenie:
 \begin{lstlisting}[style=DOS]
 >>> Task.objects.filter(points = 4).update(type = 1)
 UPDATE "authentication_task"
@@ -1333,7 +1333,7 @@ class Task(models.Model):
    ...
 \end{lstlisting}
 Powyższy kod ukazuję ochronę modelu, dającą możliwość jedynie tworzenia nowego zadania w bazie. Próba zmiany jego wartości lub usunięcia skutkować będzie błędem. Możliwa jest również ochrona poszczególnego pola modelu.
-Jeżeli chcemy, aby użytkownik nie mógł zmieniać typu lub poziomy zadania, należy użyć:
+Jeżeli chcemy, aby użytkownik nie mógł zmieniać typu lub poziomu zadania, należy użyć:
 
 \begin{lstlisting}[
 language={Python},
