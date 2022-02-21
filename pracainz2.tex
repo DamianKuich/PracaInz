@@ -1819,8 +1819,8 @@ Axios~\cite{axios} jest Klientem HTTP dla node.js oraz przeglądarki opartym na 
 Dzięki Axios możemy tworzyć requesty - żądania HTTP, które są podstawową formą komunikacji z serwerem. HTTP opisuje formę żądania klienta oraz formę odpowiedzi na to żądanie ze strony serwera. Do najważniejszych metod httprequestów, na których się skupimy, należą:
 \begin{itemize}
 \item GET - metoda wysyłająca żądanie otrzymania danych, powinna być ograniczona jedynie do pobierania danych, nie powinna ich przesyłać
-\item PUT - metoda używana w celu przesłania danych między klientem oraz serwerem w celu aktualizacji wybranego zasobu
-\item POST - metoda używana w celu przesłania danych między klientem oraz serwerem
+\item PUT - metoda używana w celu przesłania danych między klientem  \\ oraz serwerem w celu aktualizacji wybranego zasobu
+\item POST - metoda używana w celu przesłania danych między klientem \\  oraz serwerem
 \item DELETE - żądanie usunięcia danych
 \end{itemize}
 Axios pozwala na tworzenie instancji z własną konfiguracją, która będzie stosowana domyślnie przy każdym wysłaniu żądania przy pomocy
@@ -1930,10 +1930,10 @@ początkowe wartości w initialValues, podstawowymi metodami pomocniczymi są:
 \begin{itemize}
 \item handleSubmit - procedura obsługi wysyłania
 \item handleChange - procedura obsługi zmian
-\item values - w tej metodzie przechowywane sa aktualne wartości obecne w formularzu.
+\item values - w tej metodzie przechowywane są aktualne wartości obecne  \\ w formularzu.
 \end{itemize}
-Dodatkowo Formik pomaga w walidacji pól na poziomie formularza dzięki validationSchema, która w połączeniu z Yupem sprawia, że walidacja z poziomu formularza staje się
-bardzo prosta. Wystarczy stworzyć schemat przy pomocy Yupa a następnie jako validationSchema użyć obiektu stworzonego w Yupie.
+Kolejnym sposobem użycia Formika razem z Yupem, wykorzystywanym w projekcie Gen-mat, jest walidacja pól na poziomie formularza przy pomocy validationSchema. 
+Najpierw stworzony zostaje obiekt Yupowy o określonych wartościach a następnie zostaje on przypisany jako validationSchema.
 
 
 \begin{lstlisting}[
@@ -1950,8 +1950,8 @@ caption={Formik - deklaracja }
       .max(50, "Hasło może zawierać maksymalnie 50 znaków!")
       .required(FRS),
     name: Yup.string()
-      .min(2, "Hasło musi zawierać co najmniej 8 znaków!")
-      .max(50, "Hasło może zawierać maksymalnie 50 znaków!")
+      .min(2, "Nazwa musi zawierać co najmniej 8 znaków!")
+      .max(50, "Nazwa może zawierać maksymalnie 50 znaków!")
       .required(FRS),
   })}
   onSubmit={(values, helpers) => {
