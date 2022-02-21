@@ -1574,7 +1574,7 @@ function FunctionComponent(props){
 
 Jedną z zasad obowiązujących podczas budowy komponentów, zarówno funkcyjnych jak i klasowych pozostaje nienaruszalność właściwości (ang. props) przekazywanych podczas deklaracji funkcji, dane, które mają zmieniać się dynamiczne powinny być przechowywane w stanach.
 Obecnie podstawową różnicą pozostaje składnia, w przeszłości komponenty funkcyjne nie posiadały stanów ani metod pozwalających na uruchamianie kodu w odpowiednich momentach, z tych powodów komponentów funkcyjnych używano tylko do budowy komponentów, które nie musiały być dynamiczne. Zmieniło się to wraz z wprowadzeniem Hooków.
-Warto również wiedzieć, że komponenty mogą odwoływać się do innych komponentów, co promuje pisanie ich z myślą o możliwości wielokrotnego wykorzystania. Możemy to wykorzystać na przykład tworząc komponent ekranu ładowania, następnie możemy go użyć w innych komponentach, renderując go wtedy, gdy użytkownik będzie oczekiwał na odpowiedź od serwera.
+Warto również wiedzieć, że komponenty mogą odwoływać się do innych komponentów, co promuje pisanie ich z myślą \\o możliwości wielokrotnego wykorzystania. Możemy to wykorzystać na przykład tworząc komponent ekranu ładowania, następnie możemy go użyć w innych komponentach, renderując go wtedy, gdy użytkownik będzie oczekiwał na odpowiedź od serwera.
 
 
 
@@ -1722,7 +1722,7 @@ onClick={(e)=>setEditView("name")}  >
 
 \end{lstlisting}
 
-Jeśli chcemy dokonać operacji w określonym cyklu życia komponentu należy użyć hooka useEffect. Możemy o nim myśleć jak o połączeniu metod componentDidMount, componentDidUpdate oraz componentWillUnmount w jedną.
+Jeśli chcemy dokonać operacji w określonym cyklu życia komponentu należy użyć hooka useEffect. Możemy o nim myśleć jak o połączeniu metod componentDidMount, componentDidUpdate oraz componentWillUnmount \\w jedną.
 
 
 \begin{lstlisting}[
@@ -1796,7 +1796,7 @@ onClick={this.hideSection(section)}>
 
 \section{Tworzenie formularzy oraz wymiana danych z serwerem}
 \bigbreak
-Jedną z podstawowych rzeczy, które musi zrobić prawie każdy interfejs w dzisiejszych aplikacjach internetowych jest obsługa formularzy oraz wymiana danych między serwerem, aplikacją oraz użytkownikiem. Interfejs projektu Gen-mat w tym celu używa głównie trzech bibliotek:
+Jedną z podstawowych rzeczy, które musi zrobić prawie każdy interfejs \\w dzisiejszych aplikacjach internetowych jest obsługa formularzy oraz wymiana danych między serwerem, aplikacją oraz użytkownikiem. Interfejs projektu Gen-mat w tym celu używa głównie trzech bibliotek:
 \begin{itemize}
 \item Axios
 \item Formik
@@ -1816,7 +1816,7 @@ Axios~\cite{axios} jest Klientem HTTP dla node.js oraz przeglądarki opartym na 
 \label{react dev example.jpg}
 \end{figure}
 
-Dzięki Axios możemy tworzyć requesty - żądania HTTP, które są podstawową formą komunikacji z serwerem. HTTP opisuje formę żądania klienta oraz formę odpowiedzi na to żądanie ze strony serwera. Do najważniejszych metod httprequestów, na których się skupimy, należą:
+Dzięki Axios możemy tworzyć requesty - żądania HTTP, które są podstawową formą komunikacji z serwerem. HTTP opisuje formę żądania klienta \\oraz formę odpowiedzi na to żądanie ze strony serwera. Do najważniejszych metod httprequestów, na których się skupimy, należą:
 \begin{itemize}
 \item GET - metoda wysyłająca żądanie otrzymania danych, powinna być ograniczona jedynie do pobierania danych, nie powinna ich przesyłać
 \item PUT - metoda używana w celu przesłania danych między klientem  \\ oraz serwerem w celu aktualizacji wybranego zasobu
@@ -1923,7 +1923,7 @@ validationSchema={Yup.object().shape({
 
 \subsection{Formik}
 Formik jest biblioteką usprawniającą tworzenie formularzy w Reaccie. Pomaga w przekazywaniu wartości ze stanów oraz do stanów,walidacji i wyłapywaniu błędów oraz przesyłaniem formularzy.
-Jak podaje sam autor, powodem, dla którego stworzył Formik była chęć zestandaryzowania komponentów wejścia oraz sposobu przepływu danych wewnątrz formularzy~\cite{formik}.
+Jak podaje sam autor, powodem, \\dla którego stworzył Formik była chęć zestandaryzowania komponentów wejścia oraz sposobu przepływu danych wewnątrz formularzy~\cite{formik}.
 \newline
 Formik daje nam dostęp do przemyślanych pól oraz metod pomocniczych przydatnych przy tworzeniu formularzy. Na początku możemy przekazać
 początkowe wartości w initialValues, podstawowymi metodami pomocniczymi są:
@@ -1932,7 +1932,7 @@ początkowe wartości w initialValues, podstawowymi metodami pomocniczymi są:
 \item handleChange - procedura obsługi zmian
 \item values - w tej metodzie przechowywane są aktualne wartości obecne  \\ w formularzu.
 \end{itemize}
-Kolejnym sposobem użycia Formika razem z Yupem, wykorzystywanym w projekcie Gen-mat, jest walidacja pól na poziomie formularza przy pomocy validationSchema. 
+Kolejnym sposobem użycia Formika razem z Yupem, wykorzystywanym \\w projekcie Gen-mat, jest walidacja pól na poziomie formularza przy pomocy validationSchema. 
 Najpierw stworzony zostaje obiekt Yupowy o określonych wartościach a następnie zostaje on przypisany jako validationSchema.
 
 
@@ -2029,7 +2029,7 @@ Oprócz wcześniej wspomnianych właściwościach jako podstawowych Formik zapew
 \item dirty - zwracające true, gdy między wartościami values a początkowymi wartościami przekazanymi w initialValues nie zachodzi głęboka równość.
 \item handleBlur - procedura obsługi zdarzenia onBlur - używana, gdy chcemy monitorować, czy konkretna dana wejściowa została dotknięta.
 \item isSubmitting - który sprawdza stan przesyłania formularza, zwraca wartość {\it true}, gdy formularz jest aktualnie przesyłany, w innym wypadku zwraca {\it false}
-\item setFieldError - pozwalający na ustawienie dodatkowej wiadomośc, gdy w wybranym polu wystąpi błąd
+\item setFieldError - pozwalający na ustawienie dodatkowej wiadomośc, gdy \\w wybranym polu wystąpi błąd
 \end{itemize}
 
 
@@ -2132,7 +2132,7 @@ nawigacyjne oferując właściwości i metody takie jak:
 \item push - który przepycha nowy adres na ostatnie miejsce na stosie historii
 \item goBack - funkcja wracająca na poprzedni adres
 \end{itemize}
-Rozważmy następującą sytuację - użytkownik zapomniał hasła, korzysta z funkcji ,,reset hasła'', na adres e-mail otrzymuje link, którego ostatnią częścią
+Rozważmy następującą sytuację - użytkownik zapomniał hasła, korzysta \\z funkcji ,,reset hasła'', na adres e-mail otrzymuje link, którego ostatnią częścią
 jest losowo wygenerowany ciąg znaków - token. Aplikacja musi być w stanie wydobyć ten token oraz sprawdzić czy jest poprawny, jest to możliwe dzięki użyciu useParams.
 \begin{lstlisting}[
 caption={Przykładowe użycie useParams}
@@ -2143,7 +2143,7 @@ caption={Przykładowe użycie useParams}
 
 
 
-
+  
 \pagebreak
 
 \section{Podsumowanie}
