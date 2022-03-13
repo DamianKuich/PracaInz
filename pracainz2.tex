@@ -103,8 +103,8 @@
 % --- Numer albumu
 %\album{434735, 434725, 123456}
 % --- Tytuł pracy (w języku polskim i angielskim)
-\titlePL{Platforma do generowania sprawdzianów z matematyki}
-\titleEN{Platform for generating math tests}
+\titlePL{Gen-mat - platforma do generowania sprawdzianów z matematyki}
+\titleEN{Gen-mat - platform for generating math tests}
 % --- Typ pracy (inżynierska, licencjacka, magisterska)
 \type{inżynierska}
 % --- Wydział (wykaz skrótów):
@@ -697,11 +697,11 @@ Django umożliwia na rozszerzenie funkcjonalności szablonów do wysyłania np. 
 W pracy przedstawiłem podstawowe zagadnienia związane z API. Omówiłem także główne cechy i zasady REST. Zwróciłem uwagę na to, co sprawia, że nasze API jest RESTful. Wspomniałem też o ewolucji API dzięki modelowi dojrzałości Richardsona. Na końcu mojej pracy ponownie przedstawiłem główne założenia architektury REST, jednakże tym razem dla stwierdzenia czy Django REST Framework naprawdę pozwala na tworzenie prawdziwego RESTful API. Po przeanalizowaniu implementacji głównych paradygmatów REST w Django REST Framework, czy nawet w samym Django, mogę wywnioskować, że umożliwia on tworzenie API zgodnie z REST.
 
 \chapter{Integracja projektu opartego o Django z bazą danych PostgreSQL}
-Baza danych to zbiór informacji, danych, zazwyczaj przechowywanych w formie elektronicznej w systemie komputerowych.  
+Baza danych to zbiór informacji, danych, zazwyczaj przechowywanych w formie elektronicznej w systemie komputerowym.  
 
-Dane umieszczone są w wierszach i kolumnach wielu tabel, dzięki czemu przetwarzanie ich oraz tworzenie zapytań ich dotyczących odbywa się w zorganizowany i sprawny sposób. W dzisiejszych czasach większość baz danych wykorzystuje język SQL (Structured Query Language, strukturalny język zapytań) do tworzenia zapytań i zapisywania danych.  
+Dane umieszczone są w wierszach i kolumnach wielu tabel, dzięki czemu przetwarzanie ich oraz tworzenie zapytań ich dotyczących odbywa się w zorganizowany i sprawny sposób. W dzisiejszych czasach większość baz danych wykorzystuje język SQL (Structured Query Language), czyli strukturalny język zapytań.  
 
-Język SQL to język programowania używany do tworzenia zapytań dotyczących danych. Jest wykorzystywany przez niemal wszystkie relacyjne bazy danych. Został on opracowany w latach 70. przez firmę IBM. Przy tworzeniu języka brała udział firma Oracle, czego efektem było wprowadzenie standardu SQL ANSI i powstanie wielu rozszerzeń języka SQL.  
+SQL to język programowania używany do tworzenia zapytań dotyczących danych. Jest wykorzystywany przez niemal wszystkie relacyjne bazy danych. Został on opracowany w latach 70. przez firmę IBM. Przy tworzeniu języka brała udział firma Oracle, czego efektem było wprowadzenie standardu SQL ANSI i powstanie wielu rozszerzeń języka SQL.  
 
 Istnieje wiele typów baz danych. Oto kilka z nich:  
 \begin{itemize}
@@ -711,15 +711,9 @@ Istnieje wiele typów baz danych. Oto kilka z nich:
 \item Hurtownie danych
 \item Bazy danych NoSQL
 \item Grafowe bazy danych
-\item Bazy danych OLTP
-\item Bazy danych open source
-\item Chmurowe bazy danych
-\item Wielomodelowa baza danych
-\item Bazy danych dokumentowe/JSON
-\item Samoczynne bazy danych
 \end{itemize}
 
-Bazy danych obsługiwane są przez DBMS, czyli system zarządzania bazami danych. Stanowi on swego rodzaju pomost między danymi a programami wykorzystującymi dane lub użytkownikami końcowymi. Dzięki niemu można pobierać, aktualizować informacje oraz konfigurować sposób, w jaki są one zorganizowane. System pozwala również na wykonywanie zadań administracyjnych, takich jak tworzenie oraz przywracanie kopii zapasowych.
+Bazy danych obsługiwane są przez system zarządzania DBMS (Database Management System). Stanowi on swego rodzaju pomost między danymi a programami wykorzystującymi te dane lub użytkownikami końcowymi. Dzięki niemu można pobierać, aktualizować informacje oraz konfigurować sposób, w jaki są one zorganizowane. System pozwala również na wykonywanie zadań administracyjnych, takich jak tworzenie oraz przywracanie kopii zapasowych.
 
 
 W mojej pracy krótko przedstawię cztery systemy zarządzania bazami danych: 
@@ -760,7 +754,7 @@ Szybki, przenośny i bezpieczny & Konieczna jest znajomość tematu\\
 \end{adjustbox}
 \end{table}
 \section{MS SQL Server}
-MS SQL Server to relacyjny system zarządzania bazami danych (RDBM) opracowany i obsługiwany przez firmę Microsoft. Używa wariantu \emph{Structured Query Language} (SQL) o nazwie T-SQL (dla Transact-SQL). Zwykle zawiera silnik relacyjnej bazy danych, który przechowuje dane w tabelach, kolumnach i wierszach,  \emph{Integration Services} (SSIS), które są narzędziem do przenoszenia danych do importowania, eksportowania i przekształcania danych,  \emph{Reporting Services} (SSRS), które służą do tworzenia raporty i udostępniają raporty użytkownikom końcowym, a także  \emph{Analysis Services} (SSAS), czyli wielowymiarowa baza danych służąca do wykonywania zapytań o dane z głównego silnika bazy danych. 
+MS SQL Server to relacyjny system zarządzania bazami danych (RDBM) opracowany i obsługiwany przez firmę Microsoft. Używa wariantu \emph{Structured Query Language} (SQL) o nazwie T-SQL. Zwykle zawiera silnik relacyjnej bazy danych, który przechowuje dane w tabelach, kolumnach i wierszach,  \emph{Integration Services} (SSIS), które są narzędziem do przenoszenia danych do importowania, eksportowania i przekształcania danych. W jego skład wchodzą również \emph{Reporting Services} (SSRS), które służą do tworzenia raportów i udostępniają je użytkownikom końcowym, a także  \emph{Analysis Services} (SSAS), czyli wielowymiarowa baza danych służąca do wykonywania zapytań o dane z głównego silnika. 
 
 MS SQL Server oferuje obsługę języków programowania takich jak: C\#, C++, Delphi, Go, Java, JavaScript, PHP, Python, R, Ruby , Visual Basic.
 MS SQL Server jest dostępny na systemach \texttt{Microsoft Windows} oraz Linux.
@@ -785,7 +779,7 @@ Wsparcie odzyskiwania danych & \\
 \end{adjustbox}
 \end{table}
 \section{Oracle}
-Oracle to system zarządzania relacyjnymi bazami danych wydany w 1980 roku z podstawowymi funkcjami SQL, który sam się steruje, zabezpiecza, samo naprawia i eliminuje podatne na błędy ręczne zarządzanie bazą danych. Umożliwia bezpieczne przechowywanie i szybkie pobieranie danych. Oracle to pierwsze narzędzie bazodanowe opracowane do celów biznesowych do zarządzania danymi za pomocą języka zapytań. 
+Oracle to system zarządzania relacyjnymi bazami danych wydany w 1980 roku z podstawowymi funkcjami SQL, który sam się steruje, zabezpiecza, samo naprawia i eliminuje podatne na błędy ręczne zarządzanie bazą danych. Umożliwia bezpieczne przechowywanie i szybkie pobieranie danych. Oracle to pierwsze narzędzie bazodanowe opracowane w celach biznesowych, do zarządzania danymi za pomocą języka zapytań. 
 
 Oracle oferuje obsługę języków programowania takich jak: C, C\#, C++, Delphi, Haskell, Java, JavaScript, C, Perl, PHP, Python, R, Ruby, Visual Basic.
 
@@ -843,13 +837,14 @@ Zdolny do obsługi danych w TB &  \\
 
 W naszym projekcie zastosowany został PostgreSQL. Jednym w głównych czynników wpływających na wybór był fakt, że PostgreSQL oferowany jest poprzez używaną przez nas platformę chmurową Heroku. 
 \section{Łączenie z bazą danych PostgreSQL}
-Integracja Django z PostgreSQL rozpoczyna się od stworzenia nowej bazy lub połączenia z istniejącą już bazą danych.
+Integracja Django z PostgreSQL rozpoczyna się od stworzenia nowej bazy lub połączenia z obecnie istniejącą.
 Domyślnie Django jest skonfigurowane do używania \texttt{SQLite} jako swojego zaplecza, dlatego wymagana jest lekka zmiana zawartość pliku settings.py tak, aby używanie Postgresa było możliwe. 
 
-Poniżej znajduję się kod potrzebny do połączenia się bazą danych oferowaną przez Heroku. 
+Poniżej znajduję się kod~\ref{databases} potrzebny do połączenia się bazą danych oferowaną przez Heroku. 
 \begin{lstlisting}[
 language={Python},
-caption={Fragment pliku \texttt{settings.py}}
+caption={Fragment pliku \texttt{settings.py}},
+label={databases}
 ]
 DATABASES = {,  
 	'default': { 
@@ -869,17 +864,17 @@ Najważniejszą częścią modelu są zdefiniowane pola bazy danych, będące in
 
 Pola modeli przeznaczone dla PostgreSQL (django.contrib.postgres.fields):
 \begin{itemize}
-	\item \texttt{ArrayField} - pole do przechowywania list danych
-	\item \texttt{HStoreField} - pole do przechowywania par klucz:wartość. W Pythonie typ danych reprezentowany jako dict
-	\item \texttt{JSONField} - pole do przechowywania danych zakodowanych w formacie \texttt{JSON}
-	\item \texttt{IntegerRangeField} - pole przechowuje zakres liczb całkowitych
-	\item \texttt{BigIntegerRangeField} - pole przechowuje zakres dużych liczb całkowitych
-	\item \texttt{DecimalRangeField} - pole przechowuje zakres wartości zmiennoprzecinkowych
-	\item \texttt{DateTimeRangeField} - pole przechowuje szereg sygnatur czasowych
-	\item \texttt{DateRangeField} - pole przechowuje zakres dat
+	\item \texttt{ArrayField} - pole do przechowywania list danych.
+	\item \texttt{HStoreField} - pole do przechowywania par klucz:wartość. W Pythonie typ danych reprezentowany jako dict.
+	\item \texttt{JSONField} - pole do przechowywania danych zakodowanych w formacie \texttt{JSON}.
+	\item \texttt{IntegerRangeField} - pole przechowuje zakres liczb całkowitych.
+	\item \texttt{BigIntegerRangeField} - pole przechowuje zakres dużych liczb całkowitych.
+	\item \texttt{DecimalRangeField} - pole przechowuje zakres wartości zmiennoprzecinkowych.
+	\item \texttt{DateTimeRangeField} - pole przechowuje szereg sygnatur czasowych.
+	\item \texttt{DateRangeField} - pole przechowuje zakres dat.
 \end{itemize}
 
-Każde pole określone jest poprzez specyficzne argumenty. Przykładowo pole \texttt{CharField} wymaga podania argumentu \texttt{max\_length}, który określa maksymalną ilość znaków. Każde pole posiada również zestaw argumentów dostępnych dla każdego z nich np.: \texttt{null (True/False)}, \texttt{blank (True/False)}, \texttt{default}, \texttt{unique (True/False)}.
+Każde pole określone jest poprzez argumenty. Przykładowo pole \texttt{CharField} wymaga podania argumentu \texttt{max\_length}, który określa maksymalną ilość znaków. Każde pole posiada również zestaw ogólnodostępnych argumentów np.: \texttt{null (True/False)}, \texttt{blank (True/False)}, \texttt{default}, \texttt{unique (True/False)}.
 
 \begin{lstlisting}[
 language={Python},
@@ -889,8 +884,11 @@ label={models}
 class Section(models.Model):
     section_name = models.CharField(max_length=500,unique=True)
 
-    # ...
-        return self.section_name
+    def __str__(self):
+        return self.self_name()
+
+    def self_name(self):
+        return self.name
 
 class Skill(models.Model):
     skill_name = models.CharField(max_length=500,unique=True)
@@ -900,19 +898,19 @@ class Skill(models.Model):
 
 class Task(models.Model):
     TYPES = {
-        (1, 'Otwarte'),
-        (2, 'Zamknięte'),
+        (1, "Otwarte"),
+        (2, "Zamknięte"),
     }
     LEVELS = {
-        (1, 'Podstawowy'),
-        (2, 'Rozszerzony'),
+        (1, "Podstawowy"),
+        (2, "Rozszerzony"),
     }
     text = models.CharField(max_length=600,unique=True)
     wrong_answers =ArrayField(models.CharField(
 				max_length=200), blank=True)
     correct_answers =ArrayField(models.CharField(
 				max_length=200), blank=True)
-    type = models.IntegerField(choices=TYPES)
+    task_type = models.IntegerField(choices=TYPES)
     level = models.IntegerField(choices=LEVELS)
 
 	  # ...
@@ -927,9 +925,8 @@ class TestJSON(models.Model):
         return self.name
 \end{lstlisting}
 
-Powyższy przykład~\ref{models} obrazuje definicje modeli \texttt{Skill}, \texttt{Section}, \texttt{Task} oraz \texttt{TestJSON}, 
-które odpowiadają zadaniu, działom wraz z umiejętnościami oraz obiektu testu w Generatorze Sprawdzianów. 
-Model \texttt{Task} zawiera m.in. pola wrong\_answers oraz correct\_answers będące typu \texttt{ArrayField}. Pola te przeznaczone
+Powyższy przykład~\ref{models} obrazuje definicje modeli \texttt{Skill}, \texttt{Section}, \texttt{Task} oraz \texttt{TestJSON}. 
+Model \texttt{Task} zawiera m.in. pola wrong\_answers oraz correct\_answers. Pola te przeznaczone
 są do przechowywania poprawnych oraz niepoprawnych odpowiedzi na pytania zamknięte. Odpowiedzi może być wiele, dlatego z pomocą
 przychodzi \texttt{ArrayField}, czyli lista obiektów. W tym przypadku są to obiekty typu tekstowego.
 Model \texttt{TestJSON} zawiera m.in. pole tasks, zawierające wszystkie zadania w formacie JSON przypisane do danego testu.
@@ -938,7 +935,7 @@ w oryginał.
 Na końcu każdego modelu dodana została jego reprezentacja, przez co w zakładce admin widoczna będzie nazwa obiektu, co w znacznym stopniu ułatwi jego identyfikację.
 
 \section{Migracje}
-Po zdefiniowaniu modelu, wymagane jest wykonanie migracji. Migracje to sposób Django na propagowanie zmian wprowadzanych w modelach takich jak dodawanie pola, edytowanie, usuwanie modelu itp. do schematu bazy danych. Są zaprojektowane w taki sposób, aby były w większości automatyczne, jednak wymagane jest ich tworzenie w taki sposób, aby uniknąć powstania błędów. \emph{Makemigrations} jest odpowiedzialne za pakowanie zmian w modelu do indywidualnych plików migracyjnych, z kolei \emph{migrate} jest odpowiedzialny za stosowanie ich w bazie danych.
+Po zdefiniowaniu modelu, wymagane jest wykonanie migracji. Migracje to sposób Django na propagowanie zmian schematu bazy danych takich jak dodawanie pola, edytowanie, usuwanie modelu itp. Są zaprojektowane w taki sposób, aby były w większości automatyczne, jednak wymagane jest ich tworzenie w taki sposób, aby uniknąć powstania błędów. \emph{Makemigrations} jest odpowiedzialne za pakowanie zmian w modelu do indywidualnych plików migracyjnych, z kolei \emph{migrate} jest odpowiedzialny za stosowanie ich w bazie danych.
 Niektóre bazy danych są bardziej wydajne niż inne, biorąc pod uwagę migrację schematów. PostgreSQL cechuje się wysoką wydajnością pod względem obsługi schematów, natomiast MySQL nie obsługuje transakcji zmiany schematu. Jeżeli dana migracja się nie powiedzie, zmuszeni jesteśmy ręcznie cofnąć zmiany, a następnie spróbować ponownie. 
 
 Aby zbudować tabele w bazie danych, wykonujemy migrację i uruchamiany ją poniższymi poleceniami: 
@@ -955,44 +952,43 @@ label={sql}
 ]
 CREATE TABLE "section" (
 	"id" serial NOT NULL PRIMARY KEY, 
-	"section_name" varchar(500) NOT NULL UNIQUE
-);
+	"section_name" varchar(500) NOT NULL UNIQUE);
+
 CREATE TABLE "skill" (
 	"id" serial NOT NULL PRIMARY KEY, 
 	"skill_name" varchar(500) NOT NULL UNIQUE, 
-	"section_id" integer NOT NULL
-);
+	"section_id" integer NOT NULL);
+
 CREATE TABLE "task" (
 	"id" serial NOT NULL PRIMARY KEY, 
 	"text" varchar(600) NOT NULL UNIQUE, 
 	"wrong_answers" varchar(200)[] NOT NULL, 
 	"correct_answers" varchar(200)[] NOT NULL,
-	"type" integer NOT NULL, 
+	"task_type" integer NOT NULL, 
 	"level" integer NOT NULL, 
 	"private" boolean NOT NULL, 
 	"points" integer NOT NULL, 
-	"author_id" integer NOT NULL
-);
+	"author_id" integer NOT NULL);
+
 CREATE TABLE "task_skill" (
 	"id" serial NOT NULL PRIMARY KEY, 
 	"task_id" integer NOT NULL, 
-	"skill_id" integer NOT NULL
-);
+	"skill_id" integer NOT NULL);
 	# ...
 \end{lstlisting}
 
-Porównując wycinek~\ref{models} z poleceniem~\ref{sql} zauważyć można, że w pliku models.py atrybut \texttt{id} będący kluczem głównym tabeli nie został zdefiniowany. W takim przypadku framework Django własnoręcznie wykonał jego określenie.
+Porównując wycinek~\ref{models} z poleceniem~\ref{sql} zauważyć można, że w pliku models.py nie został zdefiniowany atrybut \texttt{id}, będący kluczem głównym tabeli. W takim przypadku framework Django własnoręcznie wykonał jego określenie.
 
 \section{Relacje}
 
 \begin{figure}[H]
   \centering
   \includegraphics[width=12cm, height=8cm]{gl-relacje.png}
-  \caption{}
+  \caption{Główne tabele}
   \label{relacje}
 \end{figure}
 
-\noindent Powyższy rysunek~\ref{relacje} obrazuje głowne tabele znajdujące się w bazie danych naszego projektu. Każda tabela połączona jest z jedną, lub wieloma tabelami za pomocą relacji.
+\noindent Powyższy rysunek~\ref{relacje} obrazuje głowne tabele znajdujące się w bazie danych naszego projektu. Każda tabela połączona jest z jedną lub wieloma tabelami za pomocą relacji.
 
 Relacjami nazywamy skojarzenia między dwoma typami jednostek. W relacyjnej bazie danych działają one między dwiema tabelami, przy czym jedna tabela posiada klucz obcy klucza podstawowego drugiej tabeli. Dzięki relacjom możemy dzielić i przechowywać dane w różnych tabelach.
 
@@ -1026,8 +1022,7 @@ class Student(models.Model):
     locker = models.OneToOneField(
         School_locker,
         on_delete=models.CASCADE,
-        primary_key=True,
-    )
+        primary_key=True)
 
     def __str__(self):
         return self.name
@@ -1045,13 +1040,11 @@ caption={Jeden do wielu Section-Skill}
 ]
 class Section(models.Model):
     section_name = models.CharField(max_length=500,unique=True)
-
 	# ...
 
 class Skill(models.Model):
     skill_name = models.CharField(max_length=500,unique=True)
     section = models.ForeignKey(Section, on_delete=models.CASCADE)
-
 	# ...
 
 \end{lstlisting}
@@ -1080,7 +1073,6 @@ class Skill(models.Model):
 	# ...
 
 class Task(models.Model):
-	# ...
     skill = models.ManyToManyField(Skill)
 	# ...
 \end{lstlisting}
@@ -1089,7 +1081,7 @@ Sposób w jaki obiekty są ze sobą wiązane za pomocą relacji wiele do wielu z
 \begin{quote}
 "...nadal istnieje niejawna klasa modelu, której możesz użyć do bezpośredniego dostępu do tabeli utworzonej do przechowywania skojarzenia. Posiada trzy pola do łączenia modeli.
 
-Jeśli model źródłowy i docelowy różnią się, generowane są następujące pola:
+Jeśli model źródłowy i docelowy różnią się to generowane są następujące pola:
 
 \textbf{id}: klucz główny relacji
 
@@ -1340,15 +1332,15 @@ caption={Fragment pliku \texttt{models.py}}
 ]
 import pgtrigger
 @pgtrigger.register(
-	pgtrigger.Protect(name="delete_protect",
-			operation=pgtrigger.Delete)
-)
+    pgtrigger.Protect(
+        name = 'delete_protect', operation=pgtrigger.Delete)
+    )
 class Section(models.Model):
    ...
 \end{lstlisting}
 \begin{lstlisting}[style=DOS]
->>> sec = Section.objects.get(id=3)
->>> sec.delete()
+>>> section = Section.objects.get(id=3)
+>>> section.delete()
 django.db.utils.InternalError: pgtrigger: 
  Cannot delete rows from section table
 CONTEXT:  
@@ -1368,9 +1360,11 @@ xrightmargin=5pt,
 caption={Fragment pliku \texttt{models.py}}
 ]
 @pgtrigger.register(
-    pgtrigger.Protect(name="delete_update_protect",
-	operation=(pgtrigger.Update | pgtrigger.Delete)
-))
+    pgtrigger.Protect(
+        name="delete_update_protect",
+        operation=(pgtrigger.Update | pgtrigger.Delete)
+        )
+    )
 class Task(models.Model):
    ...
 \end{lstlisting}
@@ -1386,11 +1380,13 @@ caption={Fragment pliku \texttt{models.py}}
 @pgtrigger.register(
     pgtrigger.Protect(
         operation=pgtrigger.Update,
-        name = 'type_level_protect'
+        name = 'type_level_protect',
         condition=(
-         pgtrigger.Q(old__type__df=pgtrigger.F('new__type')) |
-         pgtrigger.Q(old__level__df=pgtrigger.F('new__level'))
-)))
+            pgtrigger.Q(old__type__df=pgtrigger.F('new__type')),
+            pgtrigger.Q(old__level__df=pgtrigger.F('new__level'))
+            )
+        )
+    )
 class Task(models.Model):
    ...
 \end{lstlisting}
@@ -1406,9 +1402,10 @@ xrightmargin=5pt,
 caption={Fragment pliku \texttt{models.py}}
 ]
 @pgtrigger.register(
-    pgtrigger.SoftDelete(name = 'soft_del',
-	field='is_active', value=False)
-)
+    pgtrigger.SoftDelete(
+        name = 'soft_del',
+	    field='is_active', value=False)
+    )
 class Test(models.Model):
     is_active = models.BooleanField(default=True)
     ... 
@@ -1425,11 +1422,11 @@ xleftmargin=5pt,
 xrightmargin=5pt,
 caption={Fragment pliku \texttt{settings.py}}
 ]
-DATABASES = pgconnection.configure({
-    'default': {
-	...
-    }
-})
+DATABASES = pgconnection.configure(
+    {
+        'default': {...}
+        }
+    )
 \end{lstlisting}
 Przykładem użycia \texttt{django-pghistory} może być potrzeba zbierania informacji na temat utworzenia nowych zadań matematycznych.
 \begin{lstlisting}[
@@ -1440,8 +1437,8 @@ xrightmargin=5pt,
 caption={Fragment pliku \texttt{settings.py}}
 ]
 @pghistory.track(
-    pghistory.AfterInsert('create'),
-)
+    pghistory.AfterInsert('create')
+    )
 class Task(models.Model):
 	...
 \end{lstlisting}
