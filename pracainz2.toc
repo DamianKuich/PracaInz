@@ -1,149 +1,149 @@
 \boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Rozdzia\PlPrIeC {\l }\nobreakspace {}1.\nobreakspace {}Wprowadzenie}{8}{section*.3}%
+\contentsline {chapter}{Rozdzia\PlPrIeC {\l }\nobreakspace {}1.\nobreakspace {}Wprowadzenie}{7}{section*.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{1.1.\nobreakspace {}\hskip 0.25em Cel i założenia projektu}{8}{section*.4}%
+\contentsline {section}{1.1.\nobreakspace {}\hskip 0.25em Cel i założenia projektu}{7}{section*.4}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{1.2.\nobreakspace {}\hskip 0.25em Podział pracy inżynierskiej}{9}{section*.5}%
+\contentsline {section}{1.2.\nobreakspace {}\hskip 0.25em Podział pracy inżynierskiej}{8}{section*.5}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{1.3.\nobreakspace {}\hskip 0.25em Opis Technologii}{10}{section*.6}%
+\contentsline {section}{1.3.\nobreakspace {}\hskip 0.25em Opis Technologii}{9}{section*.6}%
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Rozdzia\PlPrIeC {\l }\nobreakspace {}2.\nobreakspace {}Implementacja REST API z wykorzystaniem frameworka Django REST}{11}{section*.7}%
+\contentsline {chapter}{Rozdzia\PlPrIeC {\l }\nobreakspace {}2.\nobreakspace {}Implementacja REST API z wykorzystaniem frameworka Django REST}{10}{section*.7}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{2.1.\nobreakspace {}\hskip 0.25em Wstęp}{11}{section*.8}%
+\contentsline {section}{2.1.\nobreakspace {}\hskip 0.25em Wstęp}{10}{section*.8}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{2.1.1.\nobreakspace {}\hskip 0.25em HTTP}{11}{section*.9}%
+\contentsline {subsection}{2.1.1.\nobreakspace {}\hskip 0.25em HTTP}{10}{section*.9}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{2.1.2.\nobreakspace {}\hskip 0.25em HTTP Request}{11}{section*.10}%
+\contentsline {subsection}{2.1.2.\nobreakspace {}\hskip 0.25em HTTP Request}{10}{section*.10}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{2.1.3.\nobreakspace {}\hskip 0.25em Metody HTTP}{12}{section*.11}%
+\contentsline {subsection}{2.1.3.\nobreakspace {}\hskip 0.25em Metody HTTP}{11}{section*.11}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{2.1.4.\nobreakspace {}\hskip 0.25em Czym w zasadzie jest API ?}{12}{section*.12}%
+\contentsline {subsection}{2.1.4.\nobreakspace {}\hskip 0.25em Czym w zasadzie jest API ?}{11}{section*.12}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{2.1.5.\nobreakspace {}\hskip 0.25em Co to jest URI ?}{13}{section*.14}%
+\contentsline {subsection}{2.1.5.\nobreakspace {}\hskip 0.25em Co to jest URI ?}{12}{section*.14}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{2.1.6.\nobreakspace {}\hskip 0.25em Endpoints}{14}{section*.16}%
+\contentsline {subsection}{2.1.6.\nobreakspace {}\hskip 0.25em Endpoints}{13}{section*.16}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{2.2.\nobreakspace {}\hskip 0.25em REST oraz REST API}{14}{section*.17}%
+\contentsline {section}{2.2.\nobreakspace {}\hskip 0.25em REST oraz REST API}{13}{section*.17}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{2.2.1.\nobreakspace {}\hskip 0.25em Historia REST i REST API}{15}{section*.18}%
+\contentsline {subsection}{2.2.1.\nobreakspace {}\hskip 0.25em Historia REST i REST API}{14}{section*.18}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{2.3.\nobreakspace {}\hskip 0.25em Zasady REST}{16}{section*.20}%
+\contentsline {section}{2.3.\nobreakspace {}\hskip 0.25em Zasady REST}{15}{section*.19}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{2.4.\nobreakspace {}\hskip 0.25em Podstawowy element REST API, czyli zasoby}{20}{section*.23}%
+\contentsline {section}{2.4.\nobreakspace {}\hskip 0.25em Podstawowy element REST API, czyli zasoby}{19}{section*.22}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{2.4.1.\nobreakspace {}\hskip 0.25em Czym jest zasób?}{20}{section*.24}%
+\contentsline {subsection}{2.4.1.\nobreakspace {}\hskip 0.25em Czym jest zasób?}{19}{section*.23}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{2.4.2.\nobreakspace {}\hskip 0.25em Nazewnictwo}{21}{section*.25}%
+\contentsline {subsection}{2.4.2.\nobreakspace {}\hskip 0.25em Nazewnictwo}{20}{section*.24}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{2.5.\nobreakspace {}\hskip 0.25em Model dojrzałości Richardsona}{22}{section*.26}%
+\contentsline {section}{2.5.\nobreakspace {}\hskip 0.25em Model dojrzałości Richardsona}{21}{section*.25}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{2.6.\nobreakspace {}\hskip 0.25em Django}{25}{section*.27}%
+\contentsline {section}{2.6.\nobreakspace {}\hskip 0.25em Django}{23}{section*.26}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{2.6.1.\nobreakspace {}\hskip 0.25em URLs}{26}{section*.29}%
+\contentsline {subsection}{2.6.1.\nobreakspace {}\hskip 0.25em URLs}{24}{section*.28}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{2.6.2.\nobreakspace {}\hskip 0.25em Views}{26}{section*.30}%
+\contentsline {subsection}{2.6.2.\nobreakspace {}\hskip 0.25em Views}{24}{section*.29}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{2.6.3.\nobreakspace {}\hskip 0.25em Models}{27}{section*.31}%
+\contentsline {subsection}{2.6.3.\nobreakspace {}\hskip 0.25em Models}{25}{section*.30}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{2.6.4.\nobreakspace {}\hskip 0.25em Templates}{27}{section*.32}%
+\contentsline {subsection}{2.6.4.\nobreakspace {}\hskip 0.25em Templates}{25}{section*.31}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{2.7.\nobreakspace {}\hskip 0.25em Django REST Framework}{27}{section*.33}%
+\contentsline {section}{2.7.\nobreakspace {}\hskip 0.25em Django REST Framework}{25}{section*.32}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{2.7.1.\nobreakspace {}\hskip 0.25em Unifrom Interface}{27}{section*.34}%
+\contentsline {subsection}{2.7.1.\nobreakspace {}\hskip 0.25em Unifrom Interface}{25}{section*.33}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{2.7.2.\nobreakspace {}\hskip 0.25em HATEOAS}{27}{section*.35}%
+\contentsline {subsection}{2.7.2.\nobreakspace {}\hskip 0.25em HATEOAS}{25}{section*.34}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{2.7.3.\nobreakspace {}\hskip 0.25em Client-Server}{28}{section*.36}%
+\contentsline {subsection}{2.7.3.\nobreakspace {}\hskip 0.25em Client-Server}{26}{section*.35}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{2.7.4.\nobreakspace {}\hskip 0.25em Stateless}{28}{section*.37}%
+\contentsline {subsection}{2.7.4.\nobreakspace {}\hskip 0.25em Stateless}{26}{section*.36}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{2.7.5.\nobreakspace {}\hskip 0.25em Cacheable}{28}{section*.38}%
+\contentsline {subsection}{2.7.5.\nobreakspace {}\hskip 0.25em Cacheable}{26}{section*.37}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{2.7.6.\nobreakspace {}\hskip 0.25em Layered System}{28}{section*.39}%
+\contentsline {subsection}{2.7.6.\nobreakspace {}\hskip 0.25em Layered System}{26}{section*.38}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{2.7.7.\nobreakspace {}\hskip 0.25em Code-On-Demand}{29}{section*.40}%
+\contentsline {subsection}{2.7.7.\nobreakspace {}\hskip 0.25em Code-On-Demand}{27}{section*.39}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{2.8.\nobreakspace {}\hskip 0.25em Podsumowanie}{29}{section*.41}%
+\contentsline {section}{2.8.\nobreakspace {}\hskip 0.25em Podsumowanie}{27}{section*.40}%
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Rozdzia\PlPrIeC {\l }\nobreakspace {}3.\nobreakspace {}Integracja projektu opartego o Django z bazą danych PostgreSQL}{30}{section*.42}%
+\contentsline {chapter}{Rozdzia\PlPrIeC {\l }\nobreakspace {}3.\nobreakspace {}Integracja projektu opartego o Django z bazą danych PostgreSQL}{28}{section*.41}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{3.1.\nobreakspace {}\hskip 0.25em MySQL}{31}{section*.43}%
+\contentsline {section}{3.1.\nobreakspace {}\hskip 0.25em MySQL}{29}{section*.42}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{3.2.\nobreakspace {}\hskip 0.25em MS SQL Server}{32}{section*.45}%
+\contentsline {section}{3.2.\nobreakspace {}\hskip 0.25em MS SQL Server}{29}{section*.44}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{3.3.\nobreakspace {}\hskip 0.25em Oracle}{32}{section*.47}%
+\contentsline {section}{3.3.\nobreakspace {}\hskip 0.25em Oracle}{30}{section*.46}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{3.4.\nobreakspace {}\hskip 0.25em PostgreSQL}{33}{section*.49}%
+\contentsline {section}{3.4.\nobreakspace {}\hskip 0.25em PostgreSQL}{31}{section*.48}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{3.5.\nobreakspace {}\hskip 0.25em Łączenie z bazą danych PostgreSQL}{34}{section*.51}%
+\contentsline {section}{3.5.\nobreakspace {}\hskip 0.25em Łączenie z bazą danych PostgreSQL}{32}{section*.50}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{3.6.\nobreakspace {}\hskip 0.25em Modele}{34}{section*.52}%
+\contentsline {section}{3.6.\nobreakspace {}\hskip 0.25em Modele}{32}{section*.51}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{3.7.\nobreakspace {}\hskip 0.25em Migracje}{36}{section*.53}%
+\contentsline {section}{3.7.\nobreakspace {}\hskip 0.25em Migracje}{34}{section*.52}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{3.8.\nobreakspace {}\hskip 0.25em Relacje}{38}{section*.54}%
+\contentsline {section}{3.8.\nobreakspace {}\hskip 0.25em Relacje}{36}{section*.53}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{3.8.1.\nobreakspace {}\hskip 0.25em Relacje jeden do jednego}{38}{section*.56}%
+\contentsline {subsection}{3.8.1.\nobreakspace {}\hskip 0.25em Relacje jeden do jednego}{36}{section*.55}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{3.8.2.\nobreakspace {}\hskip 0.25em Relacje jeden do wielu}{39}{section*.57}%
+\contentsline {subsection}{3.8.2.\nobreakspace {}\hskip 0.25em Relacje jeden do wielu}{37}{section*.56}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{3.8.3.\nobreakspace {}\hskip 0.25em Relacje wiele do wielu}{40}{section*.59}%
+\contentsline {subsection}{3.8.3.\nobreakspace {}\hskip 0.25em Relacje wiele do wielu}{38}{section*.58}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{3.8.4.\nobreakspace {}\hskip 0.25em Integralność danych}{42}{section*.61}%
+\contentsline {subsection}{3.8.4.\nobreakspace {}\hskip 0.25em Integralność danych}{39}{section*.60}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{3.9.\nobreakspace {}\hskip 0.25em ORM w Django}{42}{section*.62}%
+\contentsline {section}{3.9.\nobreakspace {}\hskip 0.25em ORM w Django}{40}{section*.61}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{3.9.1.\nobreakspace {}\hskip 0.25em Tworzenie obiektu}{43}{section*.63}%
+\contentsline {subsection}{3.9.1.\nobreakspace {}\hskip 0.25em Tworzenie obiektu}{40}{section*.62}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{3.9.2.\nobreakspace {}\hskip 0.25em Pobieranie obiektu}{43}{section*.64}%
+\contentsline {subsection}{3.9.2.\nobreakspace {}\hskip 0.25em Pobieranie obiektu}{41}{section*.63}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{3.9.3.\nobreakspace {}\hskip 0.25em Aktualizacja obiektu}{46}{section*.65}%
+\contentsline {subsection}{3.9.3.\nobreakspace {}\hskip 0.25em Aktualizacja obiektu}{44}{section*.64}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{3.9.4.\nobreakspace {}\hskip 0.25em Usuwanie obiektu}{47}{section*.66}%
+\contentsline {subsection}{3.9.4.\nobreakspace {}\hskip 0.25em Usuwanie obiektu}{45}{section*.65}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{3.10.\nobreakspace {}\hskip 0.25em Wyzwalacze Django-PostgreSQL}{47}{section*.67}%
+\contentsline {section}{3.10.\nobreakspace {}\hskip 0.25em Wyzwalacze Django-PostgreSQL}{45}{section*.66}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{3.10.1.\nobreakspace {}\hskip 0.25em Ochrona przed usunięciem modelu}{47}{section*.68}%
+\contentsline {subsection}{3.10.1.\nobreakspace {}\hskip 0.25em Ochrona przed usunięciem modelu}{45}{section*.67}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{3.10.2.\nobreakspace {}\hskip 0.25em Możliwość wyłącznie tworzenia lub odczytu}{48}{section*.69}%
+\contentsline {subsection}{3.10.2.\nobreakspace {}\hskip 0.25em Możliwość wyłącznie tworzenia lub odczytu}{46}{section*.68}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{3.10.3.\nobreakspace {}\hskip 0.25em Miękkie usuwanie}{49}{section*.70}%
+\contentsline {subsection}{3.10.3.\nobreakspace {}\hskip 0.25em Miękkie usuwanie}{47}{section*.69}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{3.10.4.\nobreakspace {}\hskip 0.25em Śledzenie zmian}{49}{section*.71}%
+\contentsline {subsection}{3.10.4.\nobreakspace {}\hskip 0.25em Śledzenie zmian}{47}{section*.70}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{3.11.\nobreakspace {}\hskip 0.25em Podsumowanie}{50}{section*.72}%
+\contentsline {section}{3.11.\nobreakspace {}\hskip 0.25em Podsumowanie}{48}{section*.71}%
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Rozdzia\PlPrIeC {\l }\nobreakspace {}4.\nobreakspace {}React jako narzędzie do tworzenia interfejsu użytkownika}{51}{section*.73}%
+\contentsline {chapter}{Rozdzia\PlPrIeC {\l }\nobreakspace {}4.\nobreakspace {}React jako narzędzie do tworzenia interfejsu użytkownika}{49}{section*.72}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{4.1.\nobreakspace {}\hskip 0.25em Czym jest React?}{51}{section*.74}%
+\contentsline {section}{4.1.\nobreakspace {}\hskip 0.25em Czym jest React?}{49}{section*.73}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{4.2.\nobreakspace {}\hskip 0.25em Dlaczego warto korzystać z Reacta?}{51}{section*.76}%
+\contentsline {section}{4.2.\nobreakspace {}\hskip 0.25em Dlaczego warto korzystać z Reacta?}{49}{section*.75}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{4.3.\nobreakspace {}\hskip 0.25em Npm}{53}{section*.78}%
+\contentsline {section}{4.3.\nobreakspace {}\hskip 0.25em Npm}{51}{section*.77}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{4.4.\nobreakspace {}\hskip 0.25em Pojęcia Reacta}{54}{section*.79}%
+\contentsline {section}{4.4.\nobreakspace {}\hskip 0.25em Pojęcia Reacta}{52}{section*.78}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{4.4.1.\nobreakspace {}\hskip 0.25em JSX}{54}{section*.80}%
+\contentsline {subsection}{4.4.1.\nobreakspace {}\hskip 0.25em JSX}{52}{section*.79}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{4.4.2.\nobreakspace {}\hskip 0.25em Komponenty}{56}{section*.81}%
+\contentsline {subsection}{4.4.2.\nobreakspace {}\hskip 0.25em Komponenty}{54}{section*.80}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{4.4.3.\nobreakspace {}\hskip 0.25em Stan i cykl życia}{57}{section*.82}%
+\contentsline {subsection}{4.4.3.\nobreakspace {}\hskip 0.25em Stan i cykl życia}{55}{section*.81}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{4.4.4.\nobreakspace {}\hskip 0.25em Renderowanie warunkowe}{58}{section*.84}%
+\contentsline {subsection}{4.4.4.\nobreakspace {}\hskip 0.25em Renderowanie warunkowe}{56}{section*.83}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{4.4.5.\nobreakspace {}\hskip 0.25em Hooki}{60}{section*.85}%
+\contentsline {subsection}{4.4.5.\nobreakspace {}\hskip 0.25em Hooki}{58}{section*.84}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{4.4.6.\nobreakspace {}\hskip 0.25em Obsługa zdarzeń}{61}{section*.86}%
+\contentsline {subsection}{4.4.6.\nobreakspace {}\hskip 0.25em Obsługa zdarzeń}{59}{section*.85}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{4.5.\nobreakspace {}\hskip 0.25em Tworzenie formularzy oraz wymiana danych z serwerem}{62}{section*.87}%
+\contentsline {section}{4.5.\nobreakspace {}\hskip 0.25em Tworzenie formularzy oraz wymiana danych z serwerem}{60}{section*.86}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{4.5.1.\nobreakspace {}\hskip 0.25em Axios}{62}{section*.88}%
+\contentsline {subsection}{4.5.1.\nobreakspace {}\hskip 0.25em Axios}{60}{section*.87}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{4.5.2.\nobreakspace {}\hskip 0.25em Yup}{65}{section*.90}%
+\contentsline {subsection}{4.5.2.\nobreakspace {}\hskip 0.25em Yup}{63}{section*.89}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{4.5.3.\nobreakspace {}\hskip 0.25em Formik}{65}{section*.91}%
+\contentsline {subsection}{4.5.3.\nobreakspace {}\hskip 0.25em Formik}{63}{section*.90}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{4.6.\nobreakspace {}\hskip 0.25em React Router}{68}{section*.92}%
+\contentsline {section}{4.6.\nobreakspace {}\hskip 0.25em React Router}{66}{section*.91}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{4.7.\nobreakspace {}\hskip 0.25em Podsumowanie}{72}{section*.93}%
+\contentsline {section}{4.7.\nobreakspace {}\hskip 0.25em Podsumowanie}{70}{section*.92}%

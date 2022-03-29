@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (MiKTeX 21.10) (preloaded format=pdflatex 2021.11.22)  21 FEB 2022 00:53
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (MiKTeX 21.10) (preloaded format=pdflatex 2021.11.22)  28 MAR 2022 13:34
 entering extended mode
 **./pracainz2.tex
 (pracainz2.tex
@@ -1037,17 +1037,8 @@ Package: lipsum 2021-09-20 v2.7 150 paragraphs of Lorem Ipsum dummy text
 )
 \@quotelevel=\count448
 \@quotereset=\count449
- (pracainz2.aux
 
-LaTeX Warning: Label `Cache' multiply defined.
-
-
-LaTeX Warning: Label `obraz-przyklad' multiply defined.
-
-
-LaTeX Warning: Label `react dev example.jpg' multiply defined.
-
-)
+No file pracainz2.aux.
 \openout1 = `pracainz2.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 156.
@@ -1069,7 +1060,7 @@ LaTeX Font Info:    ... okay on input line 156.
 LaTeX Font Info:    Checking defaults for LY1/ptm/m/n on input line 156.
 LaTeX Font Info:    Trying to load font information for LY1+ptm on input line 1
 56.
- (C:\Users\Damian\AppData\Local\Programs\MiKTeX\tex/latex/ly1\ly1ptm.fd
+(C:\Users\Damian\AppData\Local\Programs\MiKTeX\tex/latex/ly1\ly1ptm.fd
 File: ly1ptm.fd 2001/02/01 font definitions for LY1/ptm using Berry names.
 )
 LaTeX Font Info:    ... okay on input line 156.
@@ -1257,26 +1248,19 @@ Underfull \hbox (badness 10000) in paragraph at lines 161--161
 [4
 
 
+] [5
+
+
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 167--168
-\T1/pplx/m/n/10.95 (+20) Po-ru-szo-na zo-sta-ªa kwe-stia,
- []
 
+Package hyperref Warning: old toc file detected, not used; run LaTeX again.
 
-Underfull \hbox (badness 10000) in paragraph at lines 169--170
-\T1/pplx/m/n/10.95 (+20) w¡ ser-wi-sów we-bo-wych,
- []
-
-[5
-
-
-] (pracainz2.toc [6
-
-])
 \tf@toc=\write5
 \openout5 = `pracainz2.toc'.
 
- [7]
+[6
+
+]
 Package microtype Info: Character `029' is missing
 (microtype)             in font `T1/pplx/m/sc/14'.
 (microtype)             Ignoring protrusion settings for this character.
@@ -1286,7 +1270,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 3.5pt
 (hyperref)                removed on input line 191.
 
-[8
+[7
 
 ]
 
@@ -1294,13 +1278,13 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 3.5pt
 (hyperref)                removed on input line 207.
 
-[9]
+[8]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 3.5pt
 (hyperref)                removed on input line 216.
 
-[10]
+[9]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 3.5pt
@@ -1320,11 +1304,12 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 File: lstlang1.sty 2020/03/24 1.8d listings language file
 ) (C:\Users\Damian\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstmisc.sty
 File: lstmisc.sty 2020/03/24 1.8d (Carsten Heinz)
-) [11
-
-]
+)
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
 nput line 249.
+[10
+
+]
 LaTeX Font Info:    Font shape `T1/SourceCodePro-TLF/m/n' will be
 (Font)              scaled to size 8.36993pt on input line 250.
 
@@ -1338,26 +1323,26 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 2.73749pt
 (hyperref)                removed on input line 279.
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 281--282
-\T1/pplx/m/n/10.95 (+20) ro-dza-jów API
- []
-
-[12]
-<api.png, id=446, 733.99219pt x 172.39406pt>
+<api.png, id=352, 987.69pt x 195.73125pt>
 File: api.png Graphic file (type png)
 <use api.png>
 Package pdftex.def Info: api.png  used on input line 285.
-(pdftex.def)             Requested size: 398.33858pt x 93.55963pt.
+(pdftex.def)             Requested size: 398.33858pt x 78.9362pt.
 
-Overfull \hbox (14.22636pt too wide) in paragraph at lines 285--287
+Overfull \hbox (14.22636pt too wide) in paragraph at lines 285--286
  [][] 
  []
 
+[11]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 2.73749pt
-(hyperref)                removed on input line 292.
+(hyperref)                removed on input line 291.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 295--296
+
+ []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 296--297
@@ -1379,42 +1364,33 @@ Underfull \hbox (badness 10000) in paragraph at lines 299--300
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 300--301
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 302--303
-\T1/pplx/m/n/10.95 (+20) by¢ te» iden-ty-fi-ka-to-rem,
- []
-
-[13 <./api.png>]
-<uri.jpg, id=455, 549.05125pt x 181.67876pt>
+<uri.jpg, id=369, 549.05125pt x 181.67876pt>
 File: uri.jpg Graphic file (type jpg)
 <use uri.jpg>
-Package pdftex.def Info: uri.jpg  used on input line 306.
+Package pdftex.def Info: uri.jpg  used on input line 305.
 (pdftex.def)             Requested size: 398.33858pt x 131.81212pt.
 
-Overfull \hbox (14.22636pt too wide) in paragraph at lines 306--307
+Overfull \hbox (14.22636pt too wide) in paragraph at lines 305--307
  [][] 
  []
 
+[12 <./api.png>]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 2.73749pt
 (hyperref)                removed on input line 312.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 314--315
-\T1/pplx/m/n/10.95 (+20) lo-ka-li-za-cja,
- []
 
 (C:\Users\Damian\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.sty
 File: lstlang1.sty 2020/03/24 1.8d listings language file
 )
 LaTeX Font Info:    Font shape `T1/SourceCodePro-TLF/m/it' will be
 (Font)              scaled to size 9.29993pt on input line 320.
+
+Overfull \hbox (15.74791pt too wide) in paragraph at lines 320--321
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][]  
+ []
+
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 3.5pt
@@ -1425,289 +1401,246 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 2.73749pt
 (hyperref)                removed on input line 327.
 
-[14 <./uri.jpg>]
-<SOAP.png, id=465, 679.53876pt x 367.3725pt>
-File: SOAP.png Graphic file (type png)
-<use SOAP.png>
-Package pdftex.def Info: SOAP.png  used on input line 334.
-(pdftex.def)             Requested size: 398.33858pt x 215.34647pt.
+[13 <./uri.jpg>]
+(C:\Users\Damian\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.sty
+File: lstlang1.sty 2020/03/24 1.8d listings language file
+)
+LaTeX Font Info:    Font shape `T1/SourceCodePro-TLF/sb/n' will be
+(Font)              scaled to size 9.29993pt on input line 337.
 
-Overfull \hbox (14.22636pt too wide) in paragraph at lines 334--336
- [][] 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 331--338
-\T1/pplx/m/n/10.95 (+20) prze-sªa¢ me-to-d¡ POST de-fi-ni-cje
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 339--340
+Underfull \hbox (badness 10000) in paragraph at lines 356--357
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 341--342
-
- []
-
-[15 <./SOAP.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 342--343
+Underfull \hbox (badness 10000) in paragraph at lines 358--359
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 343--344
+Underfull \hbox (badness 10000) in paragraph at lines 359--360
+
+ []
+
+[14]
+Underfull \hbox (badness 10000) in paragraph at lines 360--361
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 344--345
+Underfull \hbox (badness 10000) in paragraph at lines 361--362
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 345--346
+Underfull \hbox (badness 10000) in paragraph at lines 362--363
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 346--347
+Underfull \hbox (badness 10000) in paragraph at lines 363--364
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 347--348
+Underfull \hbox (badness 10000) in paragraph at lines 364--365
 
  []
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 3.5pt
-(hyperref)                removed on input line 352.
+(hyperref)                removed on input line 369.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 354--355
+Underfull \hbox (badness 10000) in paragraph at lines 371--372
 
  []
 
+<restarch.png, id=410, 595.22375pt x 325.215pt>
+File: restarch.png Graphic file (type png)
+<use restarch.png>
+Package pdftex.def Info: restarch.png  used on input line 378.
+(pdftex.def)             Requested size: 398.33858pt x 217.63983pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 357--358
-\T1/pplx/m/n/10.95 (+20) mie¢ je-den Uni-form Re-so-ur-ce Iden-ti-fier,
- []
-
-<restarch.jpg, id=472, 656.4525pt x 480.79625pt>
-File: restarch.jpg Graphic file (type jpg)
-<use restarch.jpg>
-Package pdftex.def Info: restarch.jpg  used on input line 361.
-(pdftex.def)             Requested size: 398.33858pt x 291.75197pt.
-
-Overfull \hbox (14.22636pt too wide) in paragraph at lines 361--362
+Overfull \hbox (14.22636pt too wide) in paragraph at lines 378--379
  [][] 
  []
 
-[16]
-Underfull \hbox (badness 10000) in paragraph at lines 368--369
-\T1/pplx/m/n/10.95 (+20) wprost od-czy-ta-nych
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 368--369
+[15]
+Underfull \hbox (badness 10000) in paragraph at lines 385--386
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 370--371
+Underfull \hbox (badness 10000) in paragraph at lines 387--388
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 372--373
+Underfull \hbox (badness 10000) in paragraph at lines 389--390
 
  []
 
-[17 <./restarch.jpg>]
-Overfull \hbox (221.57803pt too wide) in paragraph at lines 403--404
-[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
-][][][][]  
- []
-
-[18]
-Underfull \hbox (badness 10000) in paragraph at lines 411--412
-
+[16 <./restarch.png>]
+Overfull \hbox (65.33798pt too wide) in paragraph at lines 420--421
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 416--417
-\T1/pplx/m/n/10.95 (+20) po-ma-ga w re-ali-za-cji
+Underfull \hbox (badness 10000) in paragraph at lines 428--429
+
  []
 
-<rest.jpg, id=516, 539.01375pt x 259.7203pt>
+[17]
+<rest.jpg, id=456, 539.01375pt x 259.7203pt>
 File: rest.jpg Graphic file (type jpg)
 <use rest.jpg>
-Package pdftex.def Info: rest.jpg  used on input line 420.
+Package pdftex.def Info: rest.jpg  used on input line 437.
 (pdftex.def)             Requested size: 398.33858pt x 191.94034pt.
 
-Overfull \hbox (14.22636pt too wide) in paragraph at lines 420--421
+Overfull \hbox (14.22636pt too wide) in paragraph at lines 437--438
  [][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 425--426
+Underfull \hbox (badness 10000) in paragraph at lines 442--443
 
  []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 427--428
-\T1/pplx/m/n/10.95 (+20) przy da-nych,
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 427--428
-
- []
-
-[19 <./rest.jpg>]
-Underfull \hbox (badness 10000) in paragraph at lines 429--430
-
- []
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                \kern 3.5pt
-(hyperref)                removed on input line 434.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                \kern 2.73749pt
-(hyperref)                removed on input line 441.
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 444--445
 
  []
 
-[20]
-Underfull \hbox (badness 10000) in paragraph at lines 450--451
+
+Underfull \hbox (badness 10000) in paragraph at lines 446--447
+
+ []
+
+[18 <./rest.jpg>]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \kern 3.5pt
+(hyperref)                removed on input line 451.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \kern 2.73749pt
+(hyperref)                removed on input line 458.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 461--462
+
+ []
+
+[19]
+Underfull \hbox (badness 10000) in paragraph at lines 467--468
 
  []
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 2.73749pt
-(hyperref)                removed on input line 454.
+(hyperref)                removed on input line 471.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 457--458
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 460--464
-
- []
-
-[21]
-Underfull \hbox (badness 10000) in paragraph at lines 479--480
+Underfull \hbox (badness 10000) in paragraph at lines 474--475
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 481--482
+Underfull \hbox (badness 10000) in paragraph at lines 477--481
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 496--497
+
+ []
+
+[20]
+Underfull \hbox (badness 10000) in paragraph at lines 498--499
 
  []
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 3.5pt
-(hyperref)                removed on input line 487.
+(hyperref)                removed on input line 504.
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 493--494
-\T1/pplx/m/n/10.95 (+20) ny jest tyl-ko
- []
-
-[22]
-Underfull \hbox (badness 10000) in paragraph at lines 522--523
-\T1/pplx/m/n/10.95 (+20) jak np. GET,
- []
-
-LaTeX Font Info:    Font shape `T1/SourceCodePro-TLF/sb/n' will be
-(Font)              scaled to size 9.29993pt on input line 528.
-[23] [24]
+[21] [22]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 3.5pt
-(hyperref)                removed on input line 595.
+(hyperref)                removed on input line 610.
 
-<mtv.png, id=584, 322.05319pt x 227.1988pt>
+
+Overfull \hbox (13.84526pt too wide) in paragraph at lines 611--612
+\T1/pplx/m/n/10.95 (-20) bo-wych. Ope-ru-je on na mo-de-lu ar-chi-tek-to-nicz-n
+ym \T1/pplx/b/n/10.95 (-20) MTV\T1/pplx/m/n/10.95 (-20) (ang. \T1/pplx/m/it/10.
+95 (-20) Model-Template-Views\T1/pplx/m/n/10.95 (-20) ). 
+ []
+
+<mtv.png, id=508, 322.05319pt x 227.1988pt>
 File: mtv.png Graphic file (type png)
 <use mtv.png>
-Package pdftex.def Info: mtv.png  used on input line 600.
+Package pdftex.def Info: mtv.png  used on input line 615.
 (pdftex.def)             Requested size: 398.33858pt x 281.0337pt.
 
-Overfull \hbox (14.22636pt too wide) in paragraph at lines 600--602
+Overfull \hbox (14.22636pt too wide) in paragraph at lines 615--617
  [][] 
  []
 
 
-Overfull \hbox (23.62169pt too wide) in paragraph at lines 602--602
+Overfull \hbox (23.62169pt too wide) in paragraph at lines 617--617
  \T1/pplx/m/n/10.95 (-20) https://developer.mozilla.org/en-US/docs/Learn/Server
 -side/Django/Introduction| 
  []
+
+[23]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \kern 2.73749pt
+(hyperref)                removed on input line 622.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \kern 2.73749pt
+(hyperref)                removed on input line 628.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \kern 2.73749pt
+(hyperref)                removed on input line 634.
+
+[24 <./mtv.png>]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \kern 2.73749pt
+(hyperref)                removed on input line 640.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \kern 3.5pt
+(hyperref)                removed on input line 644.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \kern 2.73749pt
+(hyperref)                removed on input line 648.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \kern 2.73749pt
+(hyperref)                removed on input line 654.
 
 [25]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 2.73749pt
-(hyperref)                removed on input line 607.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                \kern 2.73749pt
-(hyperref)                removed on input line 613.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                \kern 2.73749pt
-(hyperref)                removed on input line 619.
-
-[26 <./mtv.png>]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                \kern 2.73749pt
-(hyperref)                removed on input line 625.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                \kern 3.5pt
-(hyperref)                removed on input line 629.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                \kern 2.73749pt
-(hyperref)                removed on input line 633.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 635--636
-\T1/pplx/m/n/10.95 (+20) ny URI dzi¦-ki,
- []
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                \kern 2.73749pt
-(hyperref)                removed on input line 639.
-
-[27]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                \kern 2.73749pt
-(hyperref)                removed on input line 645.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                \kern 2.73749pt
-(hyperref)                removed on input line 650.
+(hyperref)                removed on input line 660.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
@@ -1717,53 +1650,53 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 2.73749pt
-(hyperref)                removed on input line 671.
+(hyperref)                removed on input line 680.
 
-[28]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 2.73749pt
-(hyperref)                removed on input line 677.
+(hyperref)                removed on input line 686.
+
+[26]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \kern 2.73749pt
+(hyperref)                removed on input line 692.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 3.5pt
-(hyperref)                removed on input line 681.
+(hyperref)                removed on input line 696.
 
-[29]
-Underfull \hbox (badness 10000) in paragraph at lines 689--690
-\T1/pplx/m/n/10.95 (+20) nych. Zo-staª on opra-co-wa-ny
- []
-
-[30
+[27] [28
 
 ]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 3.5pt
-(hyperref)                removed on input line 717.
+(hyperref)                removed on input line 726.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 3.5pt
-(hyperref)                removed on input line 747.
+(hyperref)                removed on input line 756.
 
-[31]
+[29]
 LaTeX Font Info:    Font shape `T1/SourceCodePro-TLF/m/n' will be
-(Font)              scaled to size 10.18341pt on input line 751.
+(Font)              scaled to size 10.18341pt on input line 760.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 3.5pt
-(hyperref)                removed on input line 772.
+(hyperref)                removed on input line 781.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 3.5pt
-(hyperref)                removed on input line 796.
+(hyperref)                removed on input line 805.
 
-[32]
-Overfull \hbox (1.1588pt too wide) in paragraph at lines 797--799
+[30]
+Overfull \hbox (1.1588pt too wide) in paragraph at lines 806--808
 []\T1/pplx/m/n/10.95 (-20) PostgreSQL to dar-mo-wy i otwar-ty sys-tem za-rz¡-dz
 a-nia obiektowo-relacyjnymi
  []
@@ -1771,370 +1704,414 @@ a-nia obiektowo-relacyjnymi
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 3.5pt
-(hyperref)                removed on input line 830.
+(hyperref)                removed on input line 839.
 
-[33]
+[31]
+
+LaTeX Warning: Reference `databases' on page 32 undefined on input line 843.
+
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 3.5pt
-(hyperref)                removed on input line 850.
+(hyperref)                removed on input line 860.
 
 
-Overfull \hbox (14.87381pt too wide) in paragraph at lines 852--854
+Overfull \hbox (14.87381pt too wide) in paragraph at lines 862--864
 \T1/SourceCodePro-TLF/m/n/10.95 ,Te-xt-Field, Fo-re-ign-Key, In-te-ger-Field, B
 o-ole-an-Field, Da-te-Ti-me-Field. 
  []
 
-[34]
-Overfull \hbox (10.16791pt too wide) in paragraph at lines 884--885
+[32]
+Overfull \hbox (10.16791pt too wide) in paragraph at lines 895--896
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
 ]  
  []
 
-[35]
+[33]
+
+LaTeX Warning: Reference `models' on page 34 undefined on input line 928.
+
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 3.5pt
-(hyperref)                removed on input line 909.
+(hyperref)                removed on input line 937.
 
+[34]
 (C:\Users\Damian\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.sty
 File: lstlang1.sty 2020/03/24 1.8d listings language file
-) [36]
+)
+
+LaTeX Warning: Reference `models' on page 35 undefined on input line 980.
+
+
+LaTeX Warning: Reference `sql' on page 35 undefined on input line 980.
+
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 3.5pt
-(hyperref)                removed on input line 955.
+(hyperref)                removed on input line 982.
 
-<gl-relacje.png, id=704, 335.45325pt x 263.7855pt>
+<gl-relacje.png, id=639, 335.45325pt x 263.7855pt>
 File: gl-relacje.png Graphic file (type png)
 <use gl-relacje.png>
-Package pdftex.def Info: gl-relacje.png  used on input line 959.
+Package pdftex.def Info: gl-relacje.png  used on input line 986.
 (pdftex.def)             Requested size: 341.44627pt x 227.6239pt.
+[35]
+
+LaTeX Warning: Reference `relacje' on page 36 undefined on input line 991.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \kern 2.73749pt
+(hyperref)                removed on input line 1005.
+
+[36 <./gl-relacje.png>]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \kern 2.73749pt
+(hyperref)                removed on input line 1032.
+
+
+Overfull \hbox (10.16791pt too wide) in paragraph at lines 1047--1048
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+]  
+ []
+
+<skillsec.png, id=679, 163.812pt x 69.861pt>
+File: skillsec.png Graphic file (type png)
+<use skillsec.png>
+Package pdftex.def Info: skillsec.png  used on input line 1054.
+(pdftex.def)             Requested size: 170.71652pt x 72.81146pt.
 [37]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 2.73749pt
-(hyperref)                removed on input line 978.
+(hyperref)                removed on input line 1062.
 
-[38 <./gl-relacje.png>]
 
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                \kern 2.73749pt
-(hyperref)                removed on input line 1006.
-
-[39]
-Overfull \hbox (10.16791pt too wide) in paragraph at lines 1026--1027
+Overfull \hbox (10.16791pt too wide) in paragraph at lines 1072--1073
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
 ]  
  []
 
-<skillsec.png, id=770, 163.812pt x 69.861pt>
-File: skillsec.png Graphic file (type png)
-<use skillsec.png>
-Package pdftex.def Info: skillsec.png  used on input line 1036.
-(pdftex.def)             Requested size: 170.71652pt x 72.81146pt.
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                \kern 2.73749pt
-(hyperref)                removed on input line 1044.
-
-
-Overfull \hbox (10.16791pt too wide) in paragraph at lines 1054--1055
-[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
-]  
- []
-
-[40 <./skillsec.png>]
-<task_skill.png, id=796, 187.902pt x 245.11575pt>
+[38 <./skillsec.png>]
+<task_skill.png, id=725, 187.902pt x 245.11575pt>
 File: task_skill.png Graphic file (type png)
 <use task_skill.png>
-Package pdftex.def Info: task_skill.png  used on input line 1079.
+Package pdftex.def Info: task_skill.png  used on input line 1096.
 (pdftex.def)             Requested size: 227.63449pt x 227.62614pt.
 
-Overfull \hbox (8.37321pt too wide) in paragraph at lines 1084--1085
+Overfull \hbox (8.37321pt too wide) in paragraph at lines 1101--1102
 []\T1/pplx/m/n/10.95 (-20) W przy-pad-ku na-sze-go pro-jek-tu stwo-rzo-na zo-st
 a-ªa ta-be-la o na-zwie \T1/SourceCodePro-TLF/m/n/10.95 task_skill
  []
 
-[41 <./task_skill.png>]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 2.73749pt
-(hyperref)                removed on input line 1087.
+(hyperref)                removed on input line 1104.
+
+[39 <./task_skill.png>]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \kern 3.5pt
+(hyperref)                removed on input line 1116.
+
+LaTeX Font Info:    Font shape `T1/SourceCodePro-TLF/sb/n' will be
+(Font)              scaled to size 8.36993pt on input line 1123.
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \kern 2.73749pt
+(hyperref)                removed on input line 1128.
+
+[40]
+
+LaTeX Warning: Reference `taskcreate' on page 41 undefined on input line 1143.
+
+
+LaTeX Warning: Reference `taskcreatesql' on page 41 undefined on input line 114
+3.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \kern 2.73749pt
+(hyperref)                removed on input line 1169.
+
+[41]
+
+LaTeX Warning: Reference `taskall' on page 42 undefined on input line 1190.
+
+
+LaTeX Warning: Reference `fastquery' on page 42 undefined on input line 1210.
+
+[42] [43]
+
+LaTeX Warning: Reference `execution' on page 44 undefined on input line 1265.
+
+
+LaTeX Warning: Reference `selectrelated' on page 44 undefined on input line 126
+5.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \kern 2.73749pt
+(hyperref)                removed on input line 1288.
+
+[44]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                \kern 2.73749pt
+(hyperref)                removed on input line 1301.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 3.5pt
-(hyperref)                removed on input line 1099.
-
-LaTeX Font Info:    Font shape `T1/SourceCodePro-TLF/sb/n' will be
-(Font)              scaled to size 8.36993pt on input line 1106.
-[42]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                \kern 2.73749pt
-(hyperref)                removed on input line 1111.
+(hyperref)                removed on input line 1309.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 2.73749pt
-(hyperref)                removed on input line 1145.
+(hyperref)                removed on input line 1323.
 
-[43] [44] [45]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                \kern 2.73749pt
-(hyperref)                removed on input line 1252.
-
+[45]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 2.73749pt
-(hyperref)                removed on input line 1265.
+(hyperref)                removed on input line 1351.
+
+
+LaTeX Warning: Reference `pgtrigg' on page 46 undefined on input line 1371.
 
 [46]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                \kern 3.5pt
-(hyperref)                removed on input line 1273.
+(hyperref)                \kern 2.73749pt
+(hyperref)                removed on input line 1395.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 2.73749pt
-(hyperref)                removed on input line 1287.
+(hyperref)                removed on input line 1415.
 
 [47]
 
+LaTeX Warning: Reference `pgtrigger' on page 48 undefined on input line 1445.
+
+
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                \kern 2.73749pt
-(hyperref)                removed on input line 1315.
+(hyperref)                \kern 3.5pt
+(hyperref)                removed on input line 1448.
 
 [48]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                \kern 2.73749pt
-(hyperref)                removed on input line 1354.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                \kern 2.73749pt
-(hyperref)                removed on input line 1373.
-
-[49]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 3.5pt
-(hyperref)                removed on input line 1404.
-
-[50]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                \kern 3.5pt
-(hyperref)                removed on input line 1409.
+(hyperref)                removed on input line 1453.
 
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 11.40997pt on input line 1411.
+(Font)              scaled to size 11.40997pt on input line 1455.
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 8.33606pt on input line 1411.
+(Font)              scaled to size 8.33606pt on input line 1455.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 11.40997pt on input line 1411.
+(Font)              scaled to size 11.40997pt on input line 1455.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 8.33606pt on input line 1411.
+(Font)              scaled to size 8.33606pt on input line 1455.
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 9.37807pt on input line 1411.
+(Font)              scaled to size 9.37807pt on input line 1455.
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 7.29405pt on input line 1411.
+(Font)              scaled to size 7.29405pt on input line 1455.
 LaTeX Font Info:    Font shape `U/msa/m/n' will be
-(Font)              scaled to size 5.21004pt on input line 1411.
+(Font)              scaled to size 5.21004pt on input line 1455.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 9.37807pt on input line 1411.
+(Font)              scaled to size 9.37807pt on input line 1455.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 7.29405pt on input line 1411.
+(Font)              scaled to size 7.29405pt on input line 1455.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
-(Font)              scaled to size 5.21004pt on input line 1411.
+(Font)              scaled to size 5.21004pt on input line 1455.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1411--1413
+Underfull \hbox (badness 10000) in paragraph at lines 1455--1457
 
  []
 
-<statystyki react vue angular.png, id=1016, 973.38657pt x 534.49687pt>
+<statystyki react vue angular.png, id=949, 973.38657pt x 534.49687pt>
 File: statystyki react vue angular.png Graphic file (type png)
 <use statystyki react vue angular.png>
 Package pdftex.def Info: statystyki react vue angular.png  used on input line 1
-418.
+462.
 (pdftex.def)             Requested size: 398.33858pt x 218.72919pt.
 
-Overfull \hbox (14.22636pt too wide) in paragraph at lines 1418--1419
+Overfull \hbox (14.22636pt too wide) in paragraph at lines 1462--1463
  [][] 
  []
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 3.5pt
-(hyperref)                removed on input line 1425.
+(hyperref)                removed on input line 1469.
 
-[51
+[49
 
 ]
-<react dev example.jpg, id=1024, 481.8pt x 301.125pt>
+<react dev example.jpg, id=958, 481.8pt x 301.125pt>
 File: react dev example.jpg Graphic file (type jpg)
 <use react dev example.jpg>
-Package pdftex.def Info: react dev example.jpg  used on input line 1433.
+Package pdftex.def Info: react dev example.jpg  used on input line 1477.
 (pdftex.def)             Requested size: 369.88582pt x 231.18692pt.
 
-Overfull \hbox (37.48099pt too wide) in paragraph at lines 1437--1437
+Overfull \hbox (37.48099pt too wide) in paragraph at lines 1481--1481
  \T1/SourceCodePro-TLF/m/n/10.95 GhS5JaH1p5pPBIUpj22mjNRNdR3Ana8FKz4B7JwsA6HIFV
 XGuU7pa4ELiW6iUNhs0Iyg = 
  []
 
-[52 <./statystyki react vue angular.png>]
+[50 <./statystyki react vue angular.png>]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 3.5pt
-(hyperref)                removed on input line 1450.
+(hyperref)                removed on input line 1494.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1452--1464
+Underfull \hbox (badness 10000) in paragraph at lines 1496--1508
 
  []
 
-[53 <./react dev example.jpg>]
+[51 <./react dev example.jpg>]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 3.5pt
-(hyperref)                removed on input line 1473.
+(hyperref)                removed on input line 1517.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 2.73749pt
-(hyperref)                removed on input line 1478.
+(hyperref)                removed on input line 1522.
 
 
-Overfull \hbox (15.74791pt too wide) in paragraph at lines 1490--1491
+Overfull \hbox (15.74791pt too wide) in paragraph at lines 1534--1535
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
 ][][]  
  []
 
-[54]
-Overfull \hbox (65.96793pt too wide) in paragraph at lines 1514--1515
+[52]
+Overfull \hbox (65.96793pt too wide) in paragraph at lines 1558--1559
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
 ][][]  
  []
 
 
-Overfull \hbox (43.64792pt too wide) in paragraph at lines 1516--1517
+Overfull \hbox (43.64792pt too wide) in paragraph at lines 1560--1561
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
 ]  
  []
 
 
-Overfull \hbox (4.5879pt too wide) in paragraph at lines 1526--1527
+Overfull \hbox (4.5879pt too wide) in paragraph at lines 1570--1571
 [][][][][][][][][][][][][][][][][][][][][][][][]  
  []
 
 
-Overfull \hbox (43.64792pt too wide) in paragraph at lines 1531--1532
+Overfull \hbox (43.64792pt too wide) in paragraph at lines 1575--1576
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]  
  []
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 2.73749pt
-(hyperref)                removed on input line 1548.
+(hyperref)                removed on input line 1592.
 
-[55]
+[53]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 2.73749pt
-(hyperref)                removed on input line 1583.
+(hyperref)                removed on input line 1627.
 
-[56]
-<diagram metod cyklu Å¼ycia.png, id=1107, 887.56593pt x 330.48468pt>
+[54]
+<diagram metod cyklu Å¼ycia.png, id=1040, 887.56593pt x 330.48468pt>
 File: diagram metod cyklu Å¼ycia.png Graphic file (type png)
 <use diagram metod cyklu Å¼ycia.png>
-Package pdftex.def Info: diagram metod cyklu Å¼ycia.png  used on input line 159
-5.
+Package pdftex.def Info: diagram metod cyklu Å¼ycia.png  used on input line 163
+9.
 (pdftex.def)             Requested size: 369.88582pt x 137.72346pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1602--1607
+Underfull \hbox (badness 10000) in paragraph at lines 1646--1651
 
  []
 
-[57 <./diagram metod cyklu Å¼ycia.png>]
+[55 <./diagram metod cyklu Å¼ycia.png>]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 2.73749pt
-(hyperref)                removed on input line 1636.
+(hyperref)                removed on input line 1680.
 
 
-Overfull \hbox (4.5879pt too wide) in paragraph at lines 1645--1646
+Overfull \hbox (4.5879pt too wide) in paragraph at lines 1689--1690
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
 ]  
  []
 
-[58] [59]
+[56] [57]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 2.73749pt
-(hyperref)                removed on input line 1689.
+(hyperref)                removed on input line 1733.
 
-[60]
+[58]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 2.73749pt
-(hyperref)                removed on input line 1753.
+(hyperref)                removed on input line 1797.
 
-[61]
+[59]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 3.5pt
-(hyperref)                removed on input line 1797.
+(hyperref)                removed on input line 1841.
 
 
-Overfull \vbox (6.092pt too high) detected at line 1797
+Overfull \vbox (6.092pt too high) detected at line 1841
  []
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 2.73749pt
-(hyperref)                removed on input line 1806.
+(hyperref)                removed on input line 1850.
 
-<promises.png, id=1210, 603.0028pt x 223.58531pt>
+<promises.png, id=1143, 603.0028pt x 223.58531pt>
 File: promises.png Graphic file (type png)
 <use promises.png>
-Package pdftex.def Info: promises.png  used on input line 1811.
+Package pdftex.def Info: promises.png  used on input line 1855.
 (pdftex.def)             Requested size: 369.88582pt x 137.14761pt.
-[62] [63 <./promises.png>]
-Overfull \hbox (4.5879pt too wide) in paragraph at lines 1850--1851
+[60] [61 <./promises.png>]
+Overfull \hbox (4.5879pt too wide) in paragraph at lines 1894--1895
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
 ]  
  []
 
 
-Overfull \hbox (65.96793pt too wide) in paragraph at lines 1869--1870
+Overfull \hbox (65.96793pt too wide) in paragraph at lines 1913--1914
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
 ][][][][][][][][][][][][]  
  []
 
-[64]
+[62]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 2.73749pt
-(hyperref)                removed on input line 1895.
+(hyperref)                removed on input line 1939.
 
 
-Overfull \hbox (32.48792pt too wide) in paragraph at lines 1906--1907
+Overfull \hbox (32.48792pt too wide) in paragraph at lines 1950--1951
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
 ][][][][][][][][][][][][][][]  
  []
 
 
-Overfull \hbox (21.32791pt too wide) in paragraph at lines 1909--1910
+Overfull \hbox (21.32791pt too wide) in paragraph at lines 1953--1954
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
 ][][][][][][][][][][][][][][]  
  []
 
 
-Overfull \hbox (32.48792pt too wide) in paragraph at lines 1910--1911
+Overfull \hbox (32.48792pt too wide) in paragraph at lines 1954--1955
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
 ][][][][][][][][][][][][][][]  
  []
@@ -2142,101 +2119,115 @@ Overfull \hbox (32.48792pt too wide) in paragraph at lines 1910--1911
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 2.73749pt
-(hyperref)                removed on input line 1924.
+(hyperref)                removed on input line 1968.
 
-[65] [66]
-Overfull \hbox (26.90791pt too wide) in paragraph at lines 1987--1988
+[63] [64]
+Overfull \hbox (26.90791pt too wide) in paragraph at lines 2031--2032
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
 ][][][][][][]  
  []
 
-[67]
+[65]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 3.5pt
-(hyperref)                removed on input line 2039.
+(hyperref)                removed on input line 2083.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2040--2048
+Underfull \hbox (badness 10000) in paragraph at lines 2084--2092
 
  []
 
-[68]
-Overfull \hbox (60.38792pt too wide) in paragraph at lines 2063--2064
+[66]
+Overfull \hbox (60.38792pt too wide) in paragraph at lines 2107--2108
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
 ][][][][]  
  []
 
-[69] [70] [71]
+[67] [68] [69]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 3.5pt
-(hyperref)                removed on input line 2149.
+(hyperref)                removed on input line 2193.
 
-[72]
+[70]
 Package microtype Info: Character `029' is missing
 (microtype)             in font `T1/pplx/m/sc/10.95'.
 (microtype)             Ignoring protrusion settings for this character.
 
-Overfull \hbox (10.62823pt too wide) in paragraph at lines 2158--2158
+Overfull \hbox (10.62823pt too wide) in paragraph at lines 2202--2202
 []$\T1/SourceCodePro-TLF/m/n/10.95 https : / / towardsdatascience . com / data 
 -[] engineering -[] with -[] python -[]
  []
 
-[73
+[71
 
 ]
-Overfull \hbox (4.74706pt too wide) in paragraph at lines 2158--2158
+Overfull \hbox (4.74706pt too wide) in paragraph at lines 2202--2202
 []\T1/pplx/m/it/10.95 (-20) Oficjalna do-ku-men-ta-cja django-pghistory\T1/pplx
 /m/n/10.95 (-20) . Wes Ken-dall. \T1/pplx/m/sc/10.95 (-20) url\T1/pplx/m/n/10.9
 5 (-20) : []$\T1/SourceCodePro-TLF/m/n/10.95 https : / / django -[]
  []
 
 
-Overfull \hbox (4.15683pt too wide) in paragraph at lines 2158--2158
+Overfull \hbox (4.15683pt too wide) in paragraph at lines 2202--2202
 []\T1/pplx/m/it/10.95 (-20) Oficjalna do-ku-men-ta-cja django-pgtrigger\T1/pplx
 /m/n/10.95 (-20) . Wes Ken-dall. \T1/pplx/m/sc/10.95 (-20) url\T1/pplx/m/n/10.9
 5 (-20) : []$\T1/SourceCodePro-TLF/m/n/10.95 https : / / django -[]
  []
 
 
-Overfull \hbox (20.27103pt too wide) in paragraph at lines 2158--2158
+Overfull \hbox (20.27103pt too wide) in paragraph at lines 2202--2202
 \T1/SourceCodePro-TLF/m/n/10.95 pgtrigger . readthedocs . io / en / latest / to
 c . html$[] \T1/pplx/m/n/10.95 (-20) (term. wiz. 03.06.2021). 
  []
 
 
-Overfull \hbox (12.26997pt too wide) in paragraph at lines 2158--2158
+Overfull \hbox (12.26997pt too wide) in paragraph at lines 2202--2202
 \T1/pplx/m/n/10.95 (-20) Gro-up. \T1/pplx/m/sc/10.95 (-20) url\T1/pplx/m/n/10.9
 5 (-20) : []$\T1/SourceCodePro-TLF/m/n/10.95 https : / / www . postgresql . org
  / docs/$[] \T1/pplx/m/n/10.95 (-20) (term. wiz. 13.05.2021). 
  []
 
 
-Overfull \hbox (15.41899pt too wide) in paragraph at lines 2158--2158
+Overfull \hbox (15.41899pt too wide) in paragraph at lines 2202--2202
 []\T1/pplx/m/it/10.95 (-20) REST API od pod-staw\T1/pplx/m/n/10.95 (-20) . Grze
 -gorz Kwa-±niew-ski. \T1/pplx/m/sc/10.95 (-20) url\T1/pplx/m/n/10.95 (-20) : []
 $\T1/SourceCodePro-TLF/m/n/10.95 https : / / www . devmobile .
  []
 
-[74] (pracainz2.aux)
+[72] (pracainz2.aux)
 
-LaTeX Warning: There were multiply-defined labels.
+LaTeX Warning: There were undefined references.
 
-Package rerunfilecheck Info: File `pracainz2.out' has not changed.
-(rerunfilecheck)             Checksum: 243F268CBD4C02506EB34B91A665C0E9;13569.
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+
+Package rerunfilecheck Warning: File `pracainz2.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `pracainz2.out':
+(rerunfilecheck)             Before: 511DD51CE617957485AE9AA9DECE22B2;13643
+(rerunfilecheck)             After:  1F5D72F358B7AB54EB3EB354108E7ED9;13569.
+
+Package biblatex Warning: Please (re)run Biber on the file:
+(biblatex)                pracainz2
+(biblatex)                and rerun LaTeX afterwards.
+
 Package logreq Info: Writing requests to 'pracainz2.run.xml'.
 \openout1 = `pracainz2.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 28961 strings out of 478699
- 493854 string characters out of 2846487
- 1474866 words of memory out of 3000000
- 45189 multiletter control sequences out of 15000+600000
- 485974 words of font info for 468 fonts, out of 8000000 for 9000
+ 28986 strings out of 478699
+ 494445 string characters out of 2846487
+ 1464421 words of memory out of 3000000
+ 45233 multiletter control sequences out of 15000+600000
+ 482404 words of font info for 444 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 84i,12n,131p,1354b,1996s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 84i,12n,131p,1355b,2002s stack positions out of 5000i,500n,10000p,200000b,80000s
 {C:/Users/Damian/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/sourcecodepro/
 a_lutrty.enc}{C:/Users/Damian/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/bas
 e/8r.enc}<C:/Users/Damian/AppData/Local/Programs/MiKTeX/fonts/type1/adobe/sourc
@@ -2248,9 +2239,9 @@ pfb><C:/Users/Damian/AppData/Local/Programs/MiKTeX/fonts/type1/public/fpl/fplrc
 uplb8a.pfb><C:/Users/Damian/AppData/Local/Programs/MiKTeX/fonts/type1/urw/palat
 ino/uplr8a.pfb><C:/Users/Damian/AppData/Local/Programs/MiKTeX/fonts/type1/urw/p
 alatino/uplri8a.pfb>
-Output written on pracainz2.pdf (74 pages, 1049750 bytes).
+Output written on pracainz2.pdf (72 pages, 931190 bytes).
 PDF statistics:
- 1799 PDF objects out of 2073 (max. 8388607)
- 935 named destinations out of 1000 (max. 500000)
- 102039 words of extra memory for PDF output out of 106986 (max. 10000000)
+ 1735 PDF objects out of 2073 (max. 8388607)
+ 953 named destinations out of 1000 (max. 500000)
+ 95890 words of extra memory for PDF output out of 106986 (max. 10000000)
 
