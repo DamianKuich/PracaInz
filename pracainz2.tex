@@ -103,8 +103,8 @@
 % --- Numer albumu
 %\album{434735, 434725, 123456}
 % --- Tytuł pracy (w języku polskim i angielskim)
-\titlePL{Gen-mat - platforma do generowania sprawdzianów z matematyki}
-\titleEN{Gen-mat - platform for generating math tests}
+\titlePL{Platforma do generowania sprawdzianów z matematyki}
+\titleEN{Platform for generating math tests}
 % --- Typ pracy (inżynierska, licencjacka, magisterska)
 \type{inżynierska}
 % --- Wydział (wykaz skrótów):
@@ -163,15 +163,10 @@
 % Blok abstraktu w języku polskim
 \begin{streszczenie}
 Przedmiotem pracy jest przedstawienie komponentów składających się na projekt platformy webowej do generowania sprawdzianów z matematyki. W trakcie tworzenia serwisu musieliśmy podejmować wiele decyzji związanych z użyciem dostępnych rozwiązań technologicznych do rozwiązywania pojawiających się problemów.
-
 Pierwsza część ma za zadanie wprowadzenie w podstawowe struktury organizacyjne i technologiczne, który były wykorzystywane przy tworzeniu aplikacji. Poruszona została kwestia, jaki~ cel ma nasza aplikacja spełniać i jakie założenia zostały ustalone. Opisana została organizacja pracy i metodyka, która pomagała nam przy tworzeniu kolejnych etapów serwisu, oraz podział prac pomiędzy członków grupy deweloperskiej.
-
-W drugiej części przedstawiona została idea tworzeniu serwisów na podstawie architektury REST. Zaczynając od podstawowych pojęć związanych z budową serwisów webowych, a~ kończąc na technologii, która została wykorzystana do implementacji owej architektury do naszej aplikacji.
-
-Trzecia część pracy opowiada o wybranych systemach bazodanowych, ich plusach oraz minusach. Następnie opisana jest integracja Django z PostgreSQL, czyli m.in. połączenie z bazą danych, stworzenie modeli dla danych oraz jak poprawnie wykonywać zapytania, aby nie narażać bazy na zbyt duże obciążenia.
-
-Ostatni rozdział opisuje javascriptową bibliotekę React, jej historię, specyfikację oraz użycie w procesie budowania interfejsu projektu Gen-Mat. Rozdział dodatkowo przybliża biblioteki Yup, Axios oraz Formik używane przy tworzeniu oraz wymianie formularzy.
-
+W drugiej części przedstawiona została idea tworzenia serwisów na podstawie architektury REST. Zaczynając od podstawowych pojęć związanych z budową serwisów webowych, a~ kończąc na technologii, która została wykorzystana do implementacji owej architektury do naszej aplikacji.
+Trzecia część pracy opowiada o wybranych systemach bazodanowych, ich plusach oraz minusach. Następnie opisana jest integracja Django z PostgreSQL, czyli między innymi połączenie z bazą danych, stworzenie modeli dla danych oraz jak poprawnie wykonywać zapytania, aby nie narażać bazy na zbyt duże obciążenia.
+Ostatni rozdział opisuje javascriptową bibliotekę React, jej historię, specyfikację oraz użycie w procesie budowania interfejsu projektu Gen-Mat. Rozdział ten dodatkowo przybliża biblioteki Yup, Axios oraz Formik wykorzystywane przy tworzeniu oraz wymianie formularzy.
 \end{streszczenie}
 
 % Opcjonalny blok dedykacji
@@ -190,57 +185,55 @@ Ostatni rozdział opisuje javascriptową bibliotekę React, jej historię, specy
 
 \section{Cel i założenia projektu}
 
-,,Gen-Mat’’ jest to nowy serwis webowy do generowania i publikacji sprawdzianów z matematyki na poziomie szkół ponadpodstawowych. Głównym jego zadaniem jest uproszczenie procesu tworzenia. Nauczyciel zostanie odciążony z wymyślania i pisania zadań do sprawdzianu. Do jego dyspozycji przeznaczone są zadania zawarte w naszej bazie danych. Czynność, którą nauczyciel musi wykonać to wyszukanie poszczególnych zadań oraz przeniesienie ich na sprawdzian.
-
+,,Gen-Mat’’ to nowy serwis webowy do generowania i publikacji sprawdzianów z matematyki na poziomie szkół ponadpodstawowych. Jego głównym zadaniem jest uproszczenie procesu ich tworzenia. Nauczyciel zostanie odciążony z wymyślania i pisania zadań do sprawdzianu. Do jego dyspozycji przeznaczone są zadania dostępne w naszej bazie danych. Czynność, którą nauczyciel musi wykonać, to wyszukanie poszczególnych zadań oraz przeniesienie ich na sprawdzian.
 Atutem naszego generatora jest możliwość podzielenia sprawdzianu na grupy, dzięki czemu ograniczone zostanie oszukiwanie podczas pisania sprawdzianu.
-
 Kolejną wygodną opcją jest pominięcie wyboru zadań i postawienie na automatyczny wybór generatora. Jeżeli nauczycielowi nie spodobają się zadania wybrane przez serwis, może je w każdej chwili zamienić na inne.
-
-Na bieżący moment baza danych składa się wyłącznie z zadań zaczerpniętych z arkuszy Centralnej Komisji Egzaminacyjnej, ponieważ wymyślanie zadań przez założycieli serwisu wiązałoby się z bardzo dużym nakładem pracy oraz ryzykiem niskiej jakości zadań pod względem merytorycznym jak i edukacyjnym.
-
+Aktualnie baza danych składa się wyłącznie z zadań zaczerpniętych z arkuszy Centralnej Komisji Egzaminacyjnej, ponieważ wymyślanie zadań przez założycieli serwisu wiązałoby się z bardzo dużym nakładem pracy oraz ryzykiem niskiej jakości zadań pod względem merytorycznym jak i edukacyjnym.
 Aby wyeliminować ryzyko niewystarczającej ilości zadań, wprowadzona została możliwość dodawania zadań bezpośrednio przez nauczycieli, aby każdy z nich mógł stworzyć swój idealny sprawdzian. W trosce o prywatność naszych użytkowników, każdy z nich będzie miał możliwość decydowania czy chce podzielić się z innymi nauczycielami stworzonym przez siebie zadaniem. Zadania dodane do bazy danych będą również weryfikowane przez osobę do tego przeznaczoną, aby nie zawierały treści, które mogą być nieodpowiednie w jakikolwiek sposób.
-
-Zespół podzielony jest na dwie grupy. Jedna z nich odpowiedzialna jest za Frontend, a druga za Backend. Zespół obrał metodykę pracy Scrum. Zadania są przypisywane przez Scrum Mastera na podstawie umiejętności danego członka zespołu. Następnie, co jakiś czas sprawdzany jest postęp danego zadania na podstawie tzw. ,,Task Review’’. Ostatnim punktem jest testowanie czy zostało wykonane w sposób poprawny oraz czy nie pojawiły się jakiekolwiek błędy.
-
+Zespół podzielony jest na dwie grupy. Jedna z nich odpowiedzialna jest za Frontend, a druga za Backend. Zespół obrał metodykę pracy Scrum. Zadania są przypisywane przez Scrum Mastera na podstawie umiejętności danego członka zespołu. Następnie, co jakiś czas sprawdzany jest postęp danego zadania na podstawie tzw. ,,Task Review’’. Ostatnim punktem jest testowanie, czy zadanie zostało wykonane w sposób poprawny, oraz czy nie pojawiły się jakiekolwiek błędy.
 Głównym założeniem projektu było stworzenie aplikacji webowej pozwalającej na generowanie sprawdzianów w łatwy i szybki sposób.
 
 \section{Podział pracy inżynierskiej}
 Kolejne rozdziały pracy dyplomowej opisują zagadnienia, z którymi zespół zapoznał się podczas tworzenia projektu inżynierskiego.
+Pierwszy rozdział pt. \textbf{,,Implementacja REST API z wykorzystaniem frameworka Django REST''} autorstwa Damiana Kuicha opisuje metodykę REST, jak również technolgie z niej korzystające. Przedstawione są w niej podstawowe definicje potrzebne do zrozumienia całości pracy. Rozdział ten opisuje paradygmaty jakie musi spełniać aplikacja by móc być nazwana RESTful. W dalszej części przedstawiona jest technologia Django, jak i framework Django REST, oraz korelacja framework’a ideą REST. 
 
-Pierwszy rozdział pt. \textbf{,,Implementacja REST API z wykorzystaniem frameworka Django REST''} autorstwa Damiana Kuicha opisuje metodykę REST, jak i technolgie korzystające z niej. Przedstawione zostaną podstawowe definicje potrzebne do zrozumienia całości pracy. Opiszę paradygmaty jakie musi spełniać aplikacja by móc być nazwana RESTful. W dalszej części przedstawię technolgię Django, jak i framework Django REST i opiszę jak ten framework skorelowany jest z ideą REST. 
-
-Mikołaj Kowalczyk w rozdziale pt. \textbf{,,Integracja projektu opartego o Django z bazą danych PostgreSQL''} poruszy temat baz danych oraz integracja framework’a Django z wybranym systemem bazodanowym. Rozdział m.in. odpowie na pytanie co to jest baza danych, oraz zawarta w nim będzie charakterystyka systemów bazodanowych MySQL, MS SQL Server, Oracle i PostgreSQL. W rozdziale opisany zostanie proces modelowania oraz tworzenia elementów bazy danych za pomocą Django, oraz w jaki sposób się z nią komunikować. Wszelkie przykłady opierać się będą na podstawie bazy utworzonej na potrzeby projektu. Opisane zostaną wybrane modele oraz relacje między tabelami, dzięki którym projekt zachowuje spójną całość. Rozdział będzie zawierał informacje na temat dostępu do danych oraz jak je pozyskiwać w sposób optymalny, nie narażający bazy na zbyt duże obciążenie.
+Mikołaj Kowalczyk w rozdziale pt. \textbf{,,Integracja projektu opartego o Django z bazą danych PostgreSQL''} porusza temat baz danych oraz integracji framework’a Django z wybranym systemem bazodanowym. Rozdział odpowie między innymi na pytanie,  czym jest baza danych.  Zawarta w nim będzie również charakterystyka systemów bazodanowych MySQL, MS SQL Server, Oracle i PostgreSQL. W rozdziale tym opisany zostanie proces modelowania oraz tworzenia elementów bazy danych za pomocą Django, oraz sposób w jaki można się z nią komunikować. Wszelkie przykłady opierać się będą na podstawie bazy utworzonej na potrzeby projektu. Opisane zostaną wybrane modele oraz relacje między tabelami, dzięki którym projekt zachowuje spójną całość. Rozdział zawiera informacje na temat dostępu do danych oraz jak je pozyskiwać w sposób optymalny, nie narażający bazy na zbyt duże obciążenie.
  
-Rozdział pt. \textbf{,,React jako narzędzie do tworzenia interfejsu użytkownika''} autorstwa Mateusza Michalskiego opisuje proces tworzenia interfejsu graficznego aplikacji webowej. Opowiada o Reactcie - javascriptowej bibliotece przeznaczonej do budowania interfejsów, przybliża jak tworzyć oraz używać reactowe komponenty. Ponadto przedstawia sposoby wymiany danych między użytkownikiem a serwerem z perspektywy frontendu oraz technologie ułatwiające obsługę formularzy.
+Rozdział pt. \textbf{,,React jako narzędzie do tworzenia interfejsu użytkownika''} autorstwa Mateusza Michalskiego opisuje proces tworzenia interfejsu graficznego aplikacji webowej. Opowiada o Reakcie - javascriptowej bibliotece przeznaczonej do budowania interfejsów, przybliża jak tworzyć oraz używać reactowe komponenty. Ponadto, przedstawia sposoby wymiany danych między użytkownikiem a serwerem z perspektywy frontendu oraz technologie ułatwiające obsługę formularzy.
+%------------------------------ SPRAWDZONE ------------------------------
 
 \section{Opis Technologii}
-Serwis ,,Gen-Mat'' korzysta z szerokiego zakresu technologii. Produkt oparty jest w szczególności na dwóch językach: Pythonie w wersji 3 oraz JavaScritp'cie. Głównym czynnikiem, który kierował nami przy wyborze technologii było doświadczenie członków zespołu przy projektowaniu systemów opartych na danych językach programowania. Równie ważnym aspektem była dla nas prostota implementacji naszych założeń projektowych i funkcjonalności. Podstawą naszego projektu jest serwer oparty na serwisie Heroku. Umożliwia on szybkie i łatwe wdrażanie serwisu na etap produkcyjny, zachowując przy tym wysoką jakość świadczonych usług hostingowych. Projekt nasz jako aplikacja webowa, podzielony został na dwie główne części. Część backend’ową oraz część frontend’ową.     
+Serwis ,,Gen-Mat'' korzysta z szerokiego zakresu technologii. Produkt oparty jest w szczególności na dwóch językach: Python wersji 3 oraz JavaScritpt. Głównym czynnikiem, który kierował autorami przy wyborze technologii było doświadczenie członków zespołu przy projektowaniu systemów wykorzystujących dane języki programowania. Równie ważnym aspektem była prostota implementacji założeń projektowych i funkcjonalności. Podstawą projektu jest serwer oparty na serwisie Heroku. Umożliwia on szybkie i łatwe wdrażanie serwisu na etap produkcyjny, zachowując przy tym wysoką jakość świadczonych usług hostingowych. Projekt, jako aplikacja webowa, podzielony został na dwie główne części. Część backendową oraz część frontendową.     
+Backend odpowiedzialny jest za to, czego użytkownik korzystający z serwisu nie widzi. Są to czynności takie jak, na przykład, naprawa i utrzymywanie bazy danych, obsługa użytkowników, obsługa tokenów, spajanie zadań do utworzenia sprawdzianów itp. Wykorzystuje on Pythonowy framework Django, który umożliwia w łatwy i prosty sposób stworzenie wysokiej jakości produktu. W pierwszej iteracji produktu podstawową bazą danych była MariaDB, jednakże wraz z rozwojem została ona zmieniona. Aktualnie serwis korzysta z baz danych udostępnionych na Heroku, które operują na silniku PostgreSQL.   
+Frontend odpowiedzialny jest za część wizualną projektu. Obsługuję on na przykład wszystkie zapytania wysyłane przez użytkowników, przetwarzanie danych wysyłanych z bazy danych i wyświetlanie ich, komunikację z bazą danych za pomocą API, łączenie się z serwerem za pomocą HTTP, obsługę sesji uzytkownika i tym podobne. Ta część projektu wykorzystuje przede wszystkim Javascriptową bibliotekę React. Projekt korzysta również z frameworka Django REST do tworzenia RESTful API.
 
-Backend odpowiedzialny jest za to czego użytkownik korzystający z naszego serwisu nie widzi. To są takie czynności, jak np. naprawa i utrzymywanie bazy danych, obsługa użytkowników, obsługa tokenów, spajanie zadań do utworzenia sprawdzianów itp. Wykorzystuje on Pythonowy framework Django, który umożliwia nam w łatwy i prosty sposób stworzenie wysokiej jakości produktu. W pierwszej iteracji produktu podstawową bazą danych była MariaDB, jednakże wraz z rozwojem została ona zmieniona. Aktualnie serwis nasz korzysta z baz danych udostępnionych na Heroku, które operują na silniku PostgreSQL.   
-
-Frontend za to odpowiedzialny jest za część wizualną projektu. Obsługuję on np. wszystkie zapytania wysyłane przez użytkowników, przetwarzanie danych wysyłanych z bazy danych i wyświetlanie ich, komunikację z bazą danych za pomocą API, łączenie się z serwerem za pomocą HTTP, obsługa sesji uzytkownika itp. Ta część naszego projektu opiera się na frameworku React, Który bazuje na języku JavaScript. Projekt nasz korzysta, też z frameworka Django REST do tworzenia RESTful API.
+%------------------------------ SPRAWDZONE ------------------------------
 
 \chapter{Implementacja REST API z wykorzystaniem frameworka Django REST}
 
 \section{Wstęp}
-Wstęp ma wprowadzić czytelnika w podstawowe definicje. Głównym zadaniem tego podrozdziału jest postawienie w pewnym sensie fundamentów do dalszego zrozumienia pracy.
+
+Głównym celem tego podrozdziału przedstawienie podstawowych definicji oraz  postawienie  fundamentów do dalszego zrozumienia pracy.
 
 \begin{center}
 \subsection{HTTP}
 \end{center}
 
-\textbf{HTTP}(ang. \emph{Hypertext Transfer Protocol}) jest protokołem przesyłania dokumentów hipertekstowych. Jest to podstawowy protokół sieci \textbf{WWW}(ang. \emph{World Wide Web}), za pomocą którego przesyła się żądania. HTTP jest protokołem który umożliwia stronom WWW publikowanie informacji.
+\textbf{HTTP} (ang. \emph{Hypertext Transfer Protocol}) jest protokołem przesyłania dokumentów hipertekstowych. Jest to podstawowy protokół sieci \textbf{WWW} (ang. \emph{World Wide Web}), za pomocą którego przesyła się żądania. HTTP jest protokołem, który umożliwia stronom WWW publikowanie informacji.
 
 \begin{center}
 \subsection{HTTP Request}
 \end{center}
-\textbf{Żądanie}(ang. \emph{Request}) w formie HTTP powinno posiadać cztery elementy:
+\textbf{Żądanie} (ang. \emph{Request}) w formie HTTP powinno posiadać cztery elementy:
+
 \begin{itemize}
-\item \textbf{Metode HTTP}(ang. \emph{Request method}) - określenie metody, którą chcemy wykorzystać dla danego zasobu.
-\item \textbf{Nagłówek}(ang. \emph{Header}) - może skłądać się kilku części i ma za zadanie przechowywać dodatkowe informacje o żądaniu.
-\item \textbf{Ścieżkę do zasobu}(ang. \emph{Resource path}) - URI, czyli ścieżka dostępu do zasobu.
-\item \textbf{Ciało}(ang. \emph{Body}) - Składuje się tu dodatkowe informacje, które później wykorzystywane są do edycji albo tworzenia zasobów po stronie serwera. Może być puste.
+\item \textbf{Metode HTTP} (ang. \emph{Request method}) - określenie metody, którą chcemy wykorzystać dla danego zasobu.
+\item \textbf{Nagłówek} (ang. \emph{Header}) - może składać się z kilku części i ma za zadanie przechowywać dodatkowe informacje o żądaniu.
+\item \textbf{Ścieżkę do zasobu} (ang. \emph{Resource path}) - URI, czyli ścieżka dostępu do zasobu.
+\item \textbf{Ciało} (ang. \emph{Body}) - Składuje się tu dodatkowe informacje, które później wykorzystywane są do edycji, lub tworzenia zasobów po stronie serwera. Może być puste.
 \end{itemize}
+
+%------------------------------ SPRAWDZONE ------------------------------
 
 
 \begin{lstlisting}[
@@ -275,10 +268,11 @@ Metoda HTTP jest częścią zapytania HTTP odpowiedzialną za określenie akcji,
 \item \textbf{OPTIONS} - Zwraca informację o możliwych opcjach dostępnych na danym zasobie.
 \end{itemize}
 
+
 \begin{center}
 \subsection{Czym w zasadzie jest API ?}
 \end{center}
-\textbf{API}(ang. \emph{Application Programming Interface}) możemy najprościej przyrównać do rozmowy dwóch osób. Kiedy chcemy uzyskać informację od drugiej osoby to wysyłamy do niej \textbf{prośbę}(ang. \emph{Request}) o nią, a ona zwraca nam \textbf{odpowiedź}(ang. \emph{Response}) zawierającą pewne dane. W skrócie API systematyzuje sposób rozmowy pomiędzy dwoma stronami. Istnieje wiele rodzajów API ale w tej pracy skupimy się na Web API, czyli API dla serwisów internetowych. 
+\textbf{API} (ang. \emph{Application Programming Interface}) możemy najprościej przyrównać do rozmowy dwóch osób. Kiedy chcemy uzyskać informację od drugiej osoby,  wysyłamy do niej \textbf{prośbę} (ang. \emph{Request}) o nią, a ona zwraca nam \textbf{odpowiedź} (ang. \emph{Response}) zawierającą pewne dane.  API systematyzuje sposób rozmowy pomiędzy dwoma stronami. Istnieje wiele rodzajów API, jednakże w tej pracy skupimy się na Web API, czyli API dla serwisów internetowych. 
 
 \begin{figure}[H]
 \centering
@@ -287,18 +281,20 @@ Metoda HTTP jest częścią zapytania HTTP odpowiedzialną za określenie akcji,
 \label{Cache}
 \end{figure}
 
+% -------------------------------- 
 \begin{center}
 \subsection{Co to jest URI ?}
 \end{center}
-\textbf{URI}(ang. \emph{Uniform Resource Identifier}) jest to ciąg znaków identyfikujący jakiś zasób, który, na chwilą obecną dla uproszczenia, będziemy utożsamiać z~ jakąś informacją. Istnieje pięć głównym charakterystyk URI:
+\textbf{URI} (ang. \emph{Uniform Resource Identifier}) to ciąg znaków identyfikujący zasób, który, na chwilą obecną, dla uproszczenia będziemy utożsamiać z~ pewną informacją. Istnieje pięć głównym charakterystyk URI:
+
 \begin{itemize}
-\item Ciąg znaków powinien być \textbf{zwięzły}, czyli nie może składać się ze spacji, tabulatorów i innych niepotrzebnych znaków.\newline
-\item Nasza informacja może być \textbf{materialna}, czyli odwoływać się do elementu świata rzeczywistego np. budynku, osoby, ale także \textbf{abstrakcyjna}, czyli odwoływać się do np. usługi czy dokumentu sieci Web.\newline
-\item Identyfikator URI jest na stałe przypisany do danego zasobu. Powinien być \textbf{stabilny}, czyli nie zmieniać sie i nie znikać.\newline
-\item Użytkownik może \textbf{odwołać się} do identyfikatora URI i otrzymać treściwą infromację zwrotną.\newline
+\item Ciąg znaków powinien być \textbf{zwięzły}, czyli nie może składać się ze spacji, tabulatorów i innych zbędnych znaków.\newline
+\item Nasza informacja może być \textbf{materialna}, czyli odwoływać się do elementu świata rzeczywistego np. budynku, osoby, ale także \textbf{abstrakcyjna}, czyli odwoływać się do, przykładowo, usługi czy dokumentu sieci Web.\newline
+\item Identyfikator URI jest na stałe przypisany do danego zasobu. Powinien być \textbf{stabilny}, czyli nie zmieniać się i nie znikać.\newline
+\item Użytkownik może \textbf{odwołać się} do identyfikatora URI i otrzymać treściwą informację zwrotną.\newline
 \item Identyfikatory dokumentów sieci Web muszą być \textbf{jednoznaczne}, czyli~ nie powinny być mylone z identyfikatorami innych zasobów.\newline
 \end{itemize}
-URI składa się z dwóch komponentów. Pierwszym z nich jest \textbf{URL}(ang. \emph{Uniform Resource Locator}), który odnosi się do podzestawu URI. Oprócz identyfikacji zasobów, zapewnia on środki do ulokowania zasobu i opisuje podstawowy mechanizm dostępu (np. jego "położenie" w sieci). \textbf{URN}(ang. \emph{Uniform Resource Name}) to podzbiór identyfikatorów URI, które zawierają nazwę w danej przestrzeni,\break ale nie zawierają lokalizacji. Dokumentacja mówi nam też, że każdy lokator może być też identyfikatorem, czyli \textbf{każdy URL może być URI, ale istnieją URI, które nie są URL}.
+URI składa się z dwóch komponentów. Pierwszym z nich jest \textbf{URL} (ang. \emph{Uniform Resource Locator}), który odnosi się do podzbioru URI. Oprócz identyfikacji zasobów, zapewnia on środki do ulokowania zasobu i opisuje podstawowy mechanizm dostępu (np. jego "położenie" w sieci). \textbf{URN} (ang. \emph{Uniform Resource Name}) to podzbiór identyfikatorów URI, które zawierają nazwę w danej przestrzeni,\break ale nie zawierają lokalizacji. Dokumentacja mówi nam też, że każdy lokator może być też identyfikatorem, czyli \textbf{każdy URL może być URI, ale istnieją URI, które nie są URL}.
 
 \begin{figure}[H]
 \centering
@@ -308,10 +304,12 @@ URI składa się z dwóch komponentów. Pierwszym z nich jest \textbf{URL}(ang. 
 \label{Cache}
 \end{figure}
 
+%#####################################################
+
 \begin{center}
 \subsection{Endpoints}
 \end{center}
-Upraszczając, \textbf{punkt końcowy}(ang. \emph{Endpoint}) to jeden koniec kanału komunikacyjnego. Gdy interfejs API współdziała z innym systemem, punkty tej komunikacji są traktowane jako punkty końcowe. W przypadku interfejsów API punkt końcowy może zawierać adres URL serwera lub usługi. Każdy punkt końcowy to lokalizacja, z~ której interfejsy API mogą uzyskać dostęp do zasobów potrzebnych do wykonywania swoich funkcji. Gdy interfejs API żąda informacji z~ aplikacji internetowej lub serwera, otrzymuje odpowiedź. Miejsce, do którego interfejsy API wysyłają żądania i gdzie znajdują się zasoby, nazywane są punktami końcowymi.
+Upraszczając, \textbf{punkt końcowy} (ang. \emph{Endpoint}) to jeden koniec kanału komunikacyjnego. Gdy interfejs API współdziała z innym systemem, punkty tej komunikacji są traktowane jako punkty końcowe. W przypadku interfejsów API punkt końcowy może zawierać adres URL serwera lub usługi. Każdy punkt końcowy to lokalizacja, z~ której interfejsy API mogą uzyskać dostęp do zasobów potrzebnych do wykonywania swoich funkcji. Gdy interfejs API żąda informacji z~ aplikacji internetowej lub serwera, otrzymuje odpowiedź. Miejsce, do którego interfejsy API wysyłają żądania i gdzie znajdują się zasoby, nazywane są punktami końcowymi.
 
 \begin{lstlisting}[
 language={Python},
@@ -321,14 +319,16 @@ https://somewebsite.org/name/{nameId} #możemy wstawić cały link URL
 /name/{nameId} #ale nie musimy
 \end{lstlisting}
 
+\newpage 
 \section{REST oraz REST API}
 
 \begin{center}
 \subsection{Historia REST i REST API}
 \end{center}
+%#####################################################
 
+W latach dziewięćdziesiątych nie istniały jeszcze żadne ustandaryzowane metody tworzenia API oraz ich używania. Najczęściej używanym protokołem był \textbf{SOAP} (ang. \emph{Simple Object Access Protocol}), który mimo posiadania w swej definicji słowa ,,\emph{Simple}"'', był niezwykle skomplikowany do tworzenia, przetwarzania i debugowania. Wymagał on ręcznego utworzenia pliku XML z wywołaniem \textbf{RPC} (ang. \emph{Remote Procedure Call}) w body. Po napisaniu należało sprecyzować endpoint, przesłać metodą POST definicje w~ \textbf{kopercie} (ang. \emph{SOAP envelope}) z informacją, co znajduje się w wiadomości, dla kogo jest przeznaczona i czy jest ona obowiązkowa lub opcjonalna do danego endpointa.
 
-W latach dziewięćdziesiątych nie istniały jeszcze żadne ustandaryzowane metody tworzenia API oraz ich używania. Najczęściej używanym protokołem był \textbf{SOAP}(ang. \emph{Simple Object Access Protocol}), który mimo posiadania w swej definicji słowa ,,\emph{Simple}"'', był strasznie skomplikowany do tworzenia, przetwarzania i debugowania. Wymagał on ręcznego napisania pliku XML z wywołaniem \textbf{RPC}(ang. \emph{Remote Procedure Call}) w body. Po napisaniu trzeba było sprecyzować endpoint, przesłać metodą POST definicje w~ \textbf{kopercie}(ang. \emph{SOAP envelope}) co znajduje się w wiadomości, dla kogo jest przeznaczona i czy wiadomość jest obowiązkowa lub opcjonalna do danego endpointa.
 
 \begin{lstlisting}[
 language={XML},
@@ -353,7 +353,10 @@ caption={Przykładowe żądanie SOAP API}
   </SOAP:Body>
 </SOAP:Envelope>
 \end{lstlisting}
-Wszystko zmieniło się w 2000 roku, kiedy to grupka deweloperów pod kierownictwem \textbf{Roya Feldinga} postawiła sobie za cel utworzenie standardu, by każde dwa serwery mogły porozumiewać się pomiędzy sobą w prosty sposób. W tym samym roku ów lider wydał rozprawę doktorską pt. ,,\emph{Architectural Styles and the Design of Network-based Software}'', która to była zbiorem zasad nowej architektury nazwanej REST. Nowy standard opierał się na siedmiu głównych filarach:\newline 
+
+%##############################################
+
+Wszystko zmieniło się w 2000 roku, kiedy to grupka deweloperów pod kierownictwem \textbf{Roy’a Felding’a} postawiła sobie za cel utworzenie standardu, pozwalającego na to, by każde dwa serwery mogły porozumiewać się pomiędzy sobą w prosty sposób. W tym samym roku, ów lider wydał rozprawę doktorską pt. ,,\emph{Architectural Styles and the Design of Network-based Software}'', która była zbiorem zasad nowej architektury nazwanej REST. Nowy standard opierał się na siedmiu głównych filarach:\newline 
 \begin{itemize}
 \item \textbf{Wydajność} - interakcje pomiędzy komponentami powinny być natychmiastowe.\newline
 \item \textbf{Skalowalność} - umożliwiająca obsługę dużej ilości komponentów.\newline
@@ -363,16 +366,16 @@ Wszystko zmieniło się w 2000 roku, kiedy to grupka deweloperów pod kierownict
 \item \textbf{Przenośność} - możliwość przenoszenia kodu wraz z danymi.\newline
 \item \textbf{Niezawodność} - odporność na awarie na poziomie systemu.\newline
 \end{itemize}
+\textbf{REST}, czyli \emph{The Representational State Transfer} jest niczym innym, jak architekturą dla systemów webowych, która prawie zawsze bazuje na protokole HTTP. Jest to zbiór pewnych dobrych praktyk, które mają działać jako drogowskaz przy tworzeniu skalowalnych aplikacji. \textbf{REST API} jest natomiast interfejsem definiującym w jaki sposób użytkownik może skomunikować się z systemem, uzyskać dostęp do zasobów, oraz w jakim formacie je otrzymuje, którego to kształt jest zdefiniowany przez architekturę REST. 
 
-\textbf{REST}, czyli \emph{The Representational State Transfe}r jest niczym innym jak architekturą dla systemów webowych, który prawie zawsze bazuje na protokole HTTP. Jest to zbiór pewnych dobrych praktyk, które mają działać jako drogowskaz przy tworzeniu skalowalnych aplikacji. \textbf{REST API} jest natomiast interfejsem definiującym w jaki sposób użytkownik może skomunikować się z systemem, uzyskać dostęp do zasobów oraz w jakim formacie je otrzymuje, którego to kształt jest zdefiniowany przez architekturę REST. 
+% ##################################
 
 \section{Zasady REST}
 
-Systemy oparte na architekturze REST nazywamy RESTful, jeżeli spełniają pewne wymagania. Systemy RESTful charakteryzują się tym, że są stateless i mają mocno podkreśloną granicę pomiędzy Klientem, a Serwerem. Roy Fielding podał sześć głównych cech, które powinny zawierać systemy oparte o architekturę REST:\newline 
-
+Systemy oparte na architekturze REST nazywamy RESTful, jeżeli spełniają pewne wymagania. Systemy RESTful charakteryzują się tym, że są bezstanowe (ang. stateless) i mają mocno podkreśloną granicę pomiędzy Klientem, a Serwerem. Roy Fielding podał sześć głównych cech, które powinny zawierać systemy oparte o architekturę REST: 
+ 
 \begin{itemize}
-\item \textbf{Uniform Interface} - Serwer powinien udostępniać jednolite API, które będzie klarowne dla wszystkich systemów komunikujących się z nim. Dane powinny być w tym samym formacie i zawierać taki sam zakres. Interfejs powinien spełniać wymogi dla wielu urządzeń i aplikacji. Zasoby w systemie powinny mieć jeden Uniform Resource Identifier, który~ pozwalałby na wymianę danych i powinny być łatwo dostępne przez np. HTTP request GET.
-
+\item \textbf{Uniform Interface} - Serwer powinien udostępniać jednolite API, które będzie klarowne dla wszystkich systemów komunikujących się z nim. Dane powinny być w takim samym formacie i zawierać identyczny zakres. Interfejs powinien spełniać wymogi dla wielu urządzeń i aplikacji. Zasoby w systemie powinny mieć jeden Uniform Resource Identifier, który~ pozwalałby na wymianę danych i powinny być łatwo dostępne przez np. HTTP request GET.
 \begin{figure}[H]
 \centering
 \includegraphics[width=14cm]{restarch.png}
@@ -380,18 +383,18 @@ Systemy oparte na architekturze REST nazywamy RESTful, jeżeli spełniają pewne
 \label{REST API}
 \end{figure}
 
+
 Zasada ta zawiera jeszcze cztery reguły, który pomagają nam uprościć architekturę: 
+
 \begin{itemize}
 \item \textbf{Resource identification in requests} - Sposób reprezentacji zasobu może być różny i odłączny od samego zasobu np. serwer nie wysyła danych wprost odczytanych z~ bazy tylko w formacie JSON albo XML.\newline 
-
 \item \textbf{Resource manipulation through representations} - Po otrzymaniu reprezentacji zasobów wraz z jego metadanymi od serwera, klient (jeśli ma do tego uprawnienia) może modyfikować oraz usuwać zasoby.\newline 
-
 \item \textbf{Self-descriptive messages} - Odpowiedź serwera powinna zawierać wystarczającą ilość informacji, aby serwer mógł ją obsłużyć np. poprzez wartość ,,media type''(inaczej ,,MIME type'').\newline 
+\item \textbf{Hypermedia as the engine of application state} (HATEOAS) - HATEOAS jest ograniczeniem architektury aplikacji REST, która sprawia, że architektura stylu RESTful jest inna od większości innych architektur. Termin ,,hypermedia'' odnosi się do wszelkich treści zawierających łącza do innych form mediów, takich jak obrazy, filmy i teksty. Styl architektoniczny REST pozwala nam używać linków hipermedialnych w treści odpowiedzi. Pozwala klientowi dynamicznie przechodzić do odpowiednich zasobów korzystając z łącz hipermedialnych. Najlepiej zobrazować to na przykładzie Graph API od Facebooka np. korzystając z przykładowej odpowiedzi znajdującej się w dokumentacji. Niektóre wartości zostały skrócone dla przejrzystości: 
 
-\item \textbf{Hypermedia as the engine of application state} (HATEOAS) - HATEOAS jest ograniczeniem architektury aplikacji REST, która sprawia, że architektura stylu RESTful jest inna od większości innych architektur. Termin ,,hypermedia'' odnosi się do wszelkich treści zawierających łącza do innych form mediów, takich jak obrazy, filmy i teksty. Styl architektoniczny REST pozwala nam używać linków hipermedialnych w treści odpowiedzi. Pozwala klientowi dynamicznie przechodzić do odpowiednich zasobów korzystając z łącz hipermedialnych. Najlepiej zobrazować to na przykładzie Graph API od Facebooka np. korzystając z przykładowej odpowiedzi z ichniejszej dokumentacji. Niektóre wartości zostały skrócone dla przejrzystości: 
 
 \begin{lstlisting}[
-caption={Odpowiedź od Graph API}
+caption={Odpowiedź od Graph API}, basicstyle=\ttfamily\scriptsize
 ]
 {
 "feed": {
@@ -430,7 +433,8 @@ W sekcji paging, pod kluczem next widnieje link, który poprowadzi nas do kolejn
 
 \item \textbf{Client-Serwer}
 
-Powinna być widoczna granica pomiędzy klientem, a serwerem. Oznacza to, że klient i serwer mogą rozwijać się bez ingerencji pomiędzy sobą. Zamysł ten pomaga w realizacji ww. Uniform Interface, a także zwiększa możliwości skalowania i rozszerzalność, a obsługa błędów jest znacznie łatwiejsza. Jeżeli na przykład dokonamy jakiejś zmiany w aplikacji pisanej dla systemu iOS (to będzie nasz klient), to zmiana ta nie powinna w żaden sposób wpływać na aplikacje serwerową (strukturę bazy danych itp.). Tak samo powinno to działać w drugą stronę. 
+Projektując, a następnie implementując aplikacje klienta i serwera należy wyznaczyć widoczną granicę pomiędzy oba programami. Oznacza to, że klient i serwer mogą rozwijać się bez ingerencji pomiędzy sobą. Zamysł ten pomaga w realizacji ww. Uniform Interface, a także zwiększa możliwości skalowania i rozszerzalności, a obsługa błędów jest znacznie łatwiejsza. Jeżeli na przykład dokonamy zmiany w aplikacji pisanej dla systemu iOS (to będzie nasz klient), to zmiana ta nie powinna w żaden sposób wpływać na aplikacje serwerową (strukturę bazy danych i tym podobne). Tak samo powinno to działać w drugą stronę. 
+
 
 \begin{figure}[H]
 \centering
@@ -439,14 +443,14 @@ Powinna być widoczna granica pomiędzy klientem, a serwerem. Oznacza to, że kl
 \label{REST}
 \end{figure}
 
-\item \textbf{Stateless} - Według tego założenia wszystkie interakcje pomiędzy klientem, a serwerem powinny bezstanowe. Oznacza to, iż serwer nie zapisuje żadnych stanów aplikacji klienta, a jedynie przetwarza informacje wysyłane przez niego. Każde żądanie powinno być przetwarzane jako nowe i zawierać komplet informacji. Jeżeli klient musi być stanowy, jak np. przy logowaniu, to każde żądanie powinno zawierać informacje by je wykonać wraz z danymi do autoryzacji i uwierzytelniania.\newline 
+%###################################################
 
+\item \textbf{Stateless} - Według tego założenia wszystkie interakcje pomiędzy klientem, a serwerem powinny bezstanowe. Oznacza to, iż serwer nie zapisuje żadnych stanów aplikacji klienta, a jedynie przetwarza informacje wysyłane przez niego. Każde żądanie powinno być przetwarzane jako nowe i zawierać komplet informacji. Jeżeli klient musi być stanowy, jak np. przy logowaniu, to każde żądanie powinno zawierać informacje aby możliwe było je wykonać, wraz z danymi do autoryzacji i uwierzytelniania.\newline 
 \item \textbf{Cacheable} - odpowiedź, którą użytkownik otrzyma z REST API musi jasno definiować, czy ma ona być cacheable czy non-cacheable. Ma to znaczenie przy danych, które~ bardzo szybko stają się nieaktualne oraz przy danych, które aktualizują się relatywnie rzadko – nie ma sensu na przykład cache’ować współrzędnych geograficznych pędzącego samolotu, natomiast już jego kolor czy nazwę już tak.\newline
-
 \item \textbf{Layered System} - REST pozwala na odseparowanie warstw. Możemy wdrożyć nasze API na serwer A, przechowywać dane na serwerze B i przetwarzać żądania na serwerze C. Klient nie wie o zewnętrznych usługach i serwisach, z których korzysta serwer. Pozwala to na rozbicie serwisu na wiele mikroserwisów, które można łatwo aktualizować. Dzięki temu zachowujemy transparentność i separację logiki od warstwy WWW. Niestety takie rozwiązanie ma pewne wady, ponieważ może wprowadzać opóźnienia przez potrzebę komunikacji pomiędzy różnymi częściami naszej aplikacji.\newline
-
 \item \textbf{Code-On-Demand} - Jest to zasada, która jest opcjonalna, ponieważ prawie zawsze będziemy wysyłać dane w statycznej formie, jak np. XML albo JSON. Nasz serwis może wysyłać gotowe fragmenty kodu np. skrypty JavaScript do ich przetworzenia. 
 \end{itemize}
+%####################################################################
 
 \section{Podstawowy element REST API, czyli zasoby}
 
@@ -458,23 +462,25 @@ The key abstraction of information in REST is a resource. Any information that c
 \subsection{Czym jest zasób?}
 \end{center}
 
-\textbf{Zasób}(ang. \emph{Resource}) jest elementarną częścią REST API. Wykorzystujemy go właśnie podczas interakcji z API. Czym więc jest zasób ? Nie jest łatwo odpowiedzieć na to pytanie, ponieważ zasób jest to pojęcie abstrakcyjne. Dowolna informacja, która może posiadać nazwę, może być zasobem. Dlatego też przyjęto kilka podstawowych kryteriów by można było nazwać daną informację zasobem:\newline
+\textbf{Zasób} (ang. \emph{Resource}) jest elementarną częścią REST API. Wykorzystujemy go właśnie podczas interakcji z API. Czym więc jest zasób? Nie jest łatwo odpowiedzieć na to pytanie, ponieważ zasób to pojęcie abstrakcyjne. Dowolna informacja, która może posiadać nazwę, może być zasobem. Dlatego też przyjęto kilka podstawowych kryteriów, by można było nazwać daną informację zasobem:\newline
+
 
 \begin{itemize}
 \item Musi być rzeczownikiem.
-\item Musi być unikatowa, czyli definiować konkretną rzecz i być jak najbardziej sprecyzowana. Np. budynek nie jest zasobem, ponieważ jest zbyt ogólny, lecz biblioteka już nim jest. 
+\item Musi być unikatowa, czyli definiować konkretną rzecz i być jak najbardziej sprecyzowana. Przykładowo, budynek nie jest zasobem, ponieważ jest zbyt ogólny, lecz biblioteka już nim jest. 
 \item Musi być możliwa do przedstawienia w formie danych.
 \item Music posiadać przynajmniej jeden adres URI, pod którym jest dostępny. URI jednocześnie jest nazwą, jak i adresem zasobu.\newline
 \end{itemize}
+
 
 \begin{center}
 \subsection{Nazewnictwo}
 \end{center}
 
-Odpowiednie nazewnictwo i struktura informacji pozwala na zwiększenie użyteczności oraz elastyczności, ułatwiając rozbudowę i modyfikację aplikacji. Niestety sposób nazywania zasobów jest kwestią bardzo dyskusyjną i nie istnieje jedna zasada jak powinniśmy poprawnie nazywać zasoby. Jednakże istnieją wskazówki w jaki sposób możemy je nazywać:\newline
-
+Odpowiednie nazewnictwo i struktura informacji pozwala na zwiększenie użyteczności oraz elastyczności, ułatwiając rozbudowę i modyfikację aplikacji. Niestety sposób nazywania zasobów jest kwestią bardzo dyskusyjną i nie istnieje jedna zasada jak powinniśmy poprawnie nazywać zasoby. Jednakże istnieją wskazówki, które można zastosować:\newline
 \begin{itemize}
 \item \textbf{Obiekty vs. Akcje} - Zasoby powinny być tak zaprojektowane by były odłączne od akcji. Dzięki temu możemy wykonywać wiele akcji na pojedynczym zasobie. Przytoczę taki przykład:\newline
+
 \begin{lstlisting}[
 language={Python},
 caption={Przykład pierwszy}
@@ -493,18 +499,17 @@ POST /addUsers # Adds new user
 DELETE /users/delete # Deletes all users
 \end{lstlisting}
 
-Jak widać przykład pierwszy posiada jeden zasób users na którym wykonujemy różne akcje z wykorzystanie metod HTTP, czyli mamy jeden zasób na którym wykonujemy wiele akcji. Natomiast przykład drugi posiada trzy różne adresy, które są połączone z akcją wykonywaną w naszej aplikacji. Jednoznacznie widać, że założenia z przykładu drugiego mocno odbiegają od naszych założeń REST, ponieważ powiązanie API z naszą aplikacją uniemożliwia rozwijanie się aplikacji, jak i API niezależnie od siebie.\newline
-
+Pierwszy z powyższych przykładów posiada jeden zasób users, na którym wykonujemy różne akcje z wykorzystanie metod HTTP, czyli mamy jeden zasób na którym wykonujemy wiele akcji. Natomiast przykład drugi posiada trzy różne adresy, które są połączone z akcją wykonywaną w naszej aplikacji. Jednoznacznie widać, że założenia z przykładu drugiego mocno odbiegają od naszych założeń REST, ponieważ powiązanie API z naszą aplikacją uniemożliwia rozwijanie się aplikacji, jak i API niezależnie od siebie.\newline
 \item \textbf{Rzeczowniki vs. Czasowniki} - jednym ze sposobów weryfikacji, czy zasób jest odłączony od akcji, jest użycie samego rzeczownika w nazwie. Jeśli w adresie URI zasobu znajduje się czasownik, np. /getUsers lub /addUsers, to możemy podejrzewać że ten zasób jest bardzo mocno powiązany z konkretną akcją.\newline
-
 \item \textbf{Liczba pojedyncza vs. Liczba mnoga} - starajmy się używać liczby mnogiej przy nazewnictwie zasobów, np. /users zamiast /user. Zwiększa to czytelność naszego API, jednakże ta zasada jest bardzo dyskusyjna. Obiektywnie nasze API powinno być zbudowane konsekwentnie i spójnie. 
 \end{itemize}
+% ######################################################################
 
 \begin{center}
 \section{Model dojrzałości Richardsona}
 \end{center}
 
-Jako że REST jest tylko zbiorem wytycznych i dobrych rad dla tworzenia API to deweloperzy mają bardzo dużą elastyczność do definiowania jak bardzo REST będzie ich API. Zakładając sytuację, że napisałeś sobie prostą aplikację RESTful API, to skąd możesz mieć pewność że jest ona w stylu REST ? Ktoś może Ci powiedzieć, że skoro wykorzystujesz protokół HTTP i~ używasz formatu danych JSON, to twój serwis jest RESTful. \textbf{Model dojrzałości Richardsona}(ang. \emph{Richardson Maturity Model}) pozwala ocenić w jakim stopniu twoja aplikacja jest RESTful. Model definiuje 4 poziomy(0-3) i zakłada, że \textbf{każde API należy do jednego z czterech poziomów dojrzałości}.
+Jako, że REST jest tylko zbiorem wytycznych i dobrych rad dla tworzenia API, to deweloperzy mają bardzo dużą elastyczność do definiowania jak bardzo ``REST-owe`` będzie ich API. Zakładając sytuację, że napiszemy prostą aplikację RESTful API, to skąd możemy mieć pewność, że jest ona w stylu REST? Można powiedzieć, że skoro wykorzystujmy protokół HTTP i~ używamy formatu danych JSON, to serwis jest RESTful. \textbf{Model dojrzałości Richardsona}(ang. \emph{Richardson Maturity Model}) pozwala ocenić w jakim stopniu aplikacja jest RESTful. Model definiuje 4 poziomy (0-3) i zakłada, że \textbf{każde API należy do jednego z czterech poziomów dojrzałości}.
 
 \begin{itemize}
 \item \textbf{Poziom 0} - Na poziomie zerowym modelu dojrzałości znajdują się aplikacje, które nie spełniają założeń architektury REST. Protokół HTTP wykorzystywany jest tylko jako~ warstwa transportowa. Używane są tylko metody GET i POST oraz status zwracany zawsze jest 200 OK. Nie ma unikalnych adresów dla zasobów. Do tego poziomu zaliczamy np. protokoły SOAP i RPC.
@@ -525,6 +530,7 @@ POST /api/addSomething HTTP/1.1
 { "item_name":"Chair" }
 \end{lstlisting}
 
+\newpage 
 \begin{lstlisting}[
 language={Python},
 caption={Odpowiedzi}
@@ -536,7 +542,7 @@ caption={Odpowiedzi}
 { "error":"Wrong data input." }
 \end{lstlisting}
 
-\item \textbf{Poziom 1} - Na pierwszym poziomie modelu dojrzałości wykorzystywane jest wiele identyfikatorów URI, jednakże używa się podstawowych metod HTTP, jak np. GET, czy POST. Na tym poziomie mamy już zdefiniowane zasoby, które powinny posiadać indywidualny identyfikator URI. Zasób nie powinien być dostępny pod wieloma adresami, tzn. musi mieć unikalny adres.
+\item \textbf{Poziom 1} - Na pierwszym poziomie modelu dojrzałości wykorzystywanych jest wiele identyfikatorów URI, jednakże używa się podstawowych metod HTTP, jak np. GET, czy POST. Na tym poziomie mamy już zdefiniowane zasoby, które powinny posiadać indywidualny identyfikator URI. Zasób nie powinien być dostępny pod wieloma adresami, tzn. musi mieć unikalny adres.
 
 \begin{lstlisting}[
 language={Python},
@@ -546,7 +552,7 @@ POST /api/something/id/get
 POST /api/something/create
 \end{lstlisting}
 
-\item \textbf{Poziom 2} - Drugi poziom modelu dojrzałości rozszerza nasze podstawowe metody HTTP o dodatkowe, jak np. PUT, PATCH i DELETE. Będziemy także używać dodanych metod zgodnie z ich przeznaczeniem.
+\item \textbf{Poziom 2} - Drugi poziom modelu dojrzałości rozszerza podstawowe metody HTTP o dodatkowe, jak np. PUT, PATCH i DELETE. Dodane metody używane są zgodnie z ich przeznaczeniem.
 
 \begin{lstlisting}[
 language={Python},
@@ -559,7 +565,8 @@ PATCH /api/something/item_id
 DELETE /api/something/item_id
 \end{lstlisting}
 
-Drugi poziom wprowadza też rozszerzenie dla naszych statusów odpowiedzi. Będziemy teraz wykorzystywać statusy zależnie od sposobu realizacji zapytania.
+Drugi poziom wprowadza też rozszerzenie dla statusów odpowiedzi. Statusy należy wykorzystywać zależnie od sposobu realizacji zapytania.\\
+
 \begin{itemize}
 \item 1XX – Kody informacyjne
 \item 2XX – Kody powodzenia
@@ -568,6 +575,7 @@ Drugi poziom wprowadza też rozszerzenie dla naszych statusów odpowiedzi. Będz
 \item 5XX – Kody błędu serwera
 \end{itemize}
 
+\newpage 
 \begin{lstlisting}[
 language={Python},
 caption={Dodawanie np. rzeczy}
@@ -587,7 +595,7 @@ caption={Odpowiedzi}
 { "error":"Wrong data input." }
 \end{lstlisting}
 
-\item \textbf{Poziom 3} - Trzeci poziom (najwyższy) wymaga implementacji HATEOAS. HATEOAS zarządza interakcją dla klienta. Klient nie zna wszystkich punktów końcowych API, dla danych żądań.
+\item \textbf{Poziom 3} - Trzeci poziom (najwyższy) wymaga implementacji HATEOAS. HATEOAS zarządza interakcją dla klienta. Klient nie zna wszystkich punktów końcowych API dla danych żądań.
 
 \begin{lstlisting}[
 language={Python},
@@ -608,7 +616,7 @@ HTTP/1.1 200 OK
 \end{itemize}
 
 \section{Django}
-\textbf{Django} jest open-source frameworkiem bazującym na języku Python, który w bardzo prosty sposób umożliwia tworzenie skalowalnych i szybkich aplikacji webowych. Operuje on na modelu architektonicznym \textbf{MTV}(ang. \emph{Model-Template-Views}). 
+\textbf{Django} jest frameworkiem typu open-source,  bazującym na języku Python, który w bardzo prosty sposób umożliwia tworzenie skalowalnych i szybkich aplikacji webowych. Operuje on na modelu architektonicznym \textbf{MTV}(ang. \emph{Model-Template-Views}). 
 
 \begin{figure}[H]
 \centering
@@ -621,13 +629,12 @@ HTTP/1.1 200 OK
 \begin{center}
 \subsection{URLs}
 \end{center}
-Chociaż możliwe jest przetwarzanie żądań z każdego adresu URL za pośrednictwem jednej funkcji, znacznie łatwiej jest napisać oddzielny widok(ang. \emph{View}) do obsługi wielu zasobów. URLs służy do przekierowywania żądań HTTP do odpowiedniego widoku na podstawie adresu URL. Narzędzie odwzorowujące adresy URL może również dopasować określone wzorce ciągów lub cyfr, które pojawiają się w adresie URL, i przekazać je dalej jako dane.
-
+Chociaż możliwe jest przetwarzanie żądań z każdego adresu URL za pośrednictwem jednej funkcji, znacznie łatwiej jest napisać oddzielny widok (ang. \emph{View}) do obsługi wielu zasobów. URLs służy do przekierowywania żądań HTTP do odpowiedniego widoku na podstawie adresu URL. Narzędzie odwzorowujące adresy URL może również dopasować określone wzorce ciągów lub cyfr, które pojawiają się w adresie URL, i przekazać je dalej jako dane.
 
 \begin{center}
 \subsection{Views}
 \end{center}
-View służy do przetwarzania żądań i odpowiedzi HTTP. Pobiera dane potrzebne do wykonania żądań z pomocą modeli(ang. Models), jak i formatują odpowiedzi do szablonów(ang. Templates).
+View służy do przetwarzania żądań i odpowiedzi HTTP. Pobiera dane potrzebne do wykonania żądań z pomocą modeli (ang. Models), jak i formatują odpowiedzi do szablonów (ang. Templates).
 
 
 \begin{center}
@@ -640,31 +647,27 @@ Modele to obiekty, które kształtują strukturę danych aplikacji. Umożliwiaj�
 \subsection{Templates}
 \end{center}
 Szablony to pliki tekstowe definiujące strukturę lub układ pliku (na przykład strony HTML), z symbolami zastępczymi używanymi do reprezentowania rzeczywistej zawartości. Widok może dynamicznie tworzyć stronę HTML przy użyciu szablonu HTML, wypełniając ją danymi z modelu. Szablon może służyć do definiowania struktury dowolnego typu pliku nie tylko HTML.
-
 \section{Django REST Framework}
-\textbf{Django REST Framework} jest open-source frameworkiem napisanym w języku Python. Pozwala on na implementacje architektury REST do naszego API, co umożliwia nam utworzenie RESTful API. Opiszmy więc, jak została zaimplementowana architektura REST do tego frameworka, przechodząc przez jej główne założenia z rozdziału 2.3:
-
+\textbf{Django REST Framework} jest frameworkiem typu open-source napisanym w języku Python. Pozwala on na implementacje architektury REST do naszego API, co umożliwia nam utworzenie RESTful API. Opiszmy więc, jak została zaimplementowana architektura REST do tego frameworka, przechodząc przez jej główne założenia z rozdziału 2.3.
 \begin{center}
 \subsection{Unifrom Interface}
 \end{center}
-Unifrom Interface zakłada ujednolicenie API i danych, by były one klarowne dla innych serwisów. Powinno to oznaczać, że system powinien posiadać jeden główny URI dzięki, któremu~ byśmy mogli korzystać z metod HTTP. Django REST Framework pomaga w budowaniu interfejsu API REST poprzez tworzenie punktów końcowych za pomocą widoków ogólnych. Te ogólne widoki pomagają stworzyć pełny punkt końcowy CRUD (create, read...) w modelu Django przy niewielkim wysiłku. Utworzony punkt końcowy jest zgodny z interfejsem API Rest struktury adresu URL dla zasobu. 
+Unifrom Interface zakłada ujednolicenie API i danych, by były one klarowne dla innych serwisów. Powinno to oznaczać, że system powinien posiadać jeden główny URI dzięki, któremu~ byśmy mogli korzystać z metod HTTP. Django REST Framework pomaga w budowaniu interfejsu API REST poprzez tworzenie punktów końcowych za pomocą widoków ogólnych. Te ogólne widoki pomagają stworzyć pełny punkt końcowy CRUD (create, read, $\dots$) w modelu Django przy niewielkim wysiłku. Utworzony punkt końcowy jest zgodny z interfejsem API Rest struktury adresu URL dla zasobu. 
 
-
+\newpage 
 \begin{center}
 \subsection{HATEOAS}
 \end{center}
-To czego REST nie zrobi, to dostarczenie czytelnych dla maszyny formantów hypermedialnych takich jak HAL, Collection+JSON, JSON API lub mikroformantów HTML w sposób domyślny. Nie da też możliwości automatycznego stworzenia pełnego API HATEOAS zawierającego opisy formatów i semantycznie oflagowanych hiperlinków. Dla osiągnięcia takiego efektu musiałyby zostać podjęte decyzje wykraczające poza obszar frameworka. 
-
-
+To czego REST nie potrafi, to dostarczenie czytelnych dla maszyny formantów hypermedialnych takich jak HAL, Collection+JSON, JSON API lub mikroformantów HTML w sposób domyślny. Nie udostępnia również możliwości automatycznego stworzenia pełnego API HATEOAS zawierającego opisy formatów i semantycznie oflagowanych hiperlinków. Dla osiągnięcia takiego efektu musiałyby zostać podjęte decyzje wykraczające poza obszar frameworka. 
 \begin{center}
 \subsection{Client-Server}
 \end{center}
 Już sama esencja tego, że Django REST Framework pozwala utworzyć backend serwera, który nie jest częścią interfejsu użytkownika aplikacji, jest istotą architektury klient-serwer. Każda aplikacja, którą tworzymy za pomocą Django Rest Framework posiada API, które jest zupełnie oddzielne od API klienta. 
-
 \begin{center}
 \subsection{Stateless}
 \end{center}
-Django REST Framework dzięki interfejsowi WSGI/ASGI nie musi zapisywać żadnych informacji ani polegać na nich. Zobrazuje mniej więcej zasadę działania:
+Django REST Framework dzięki interfejsowi WSGI/ASGI nie musi zapisywać żadnych informacji ani polegać na nich. Poniżej zobrazowano skróconą zasadę działania:
+
 
 
 \begin{lstlisting}[
@@ -681,29 +684,25 @@ return response
 \end{center}
 Django REST Framework ma wbudowane narzędzia do Cachowania.
 
-
+\newpage
 \begin{center}
 \subsection{Layered System}
 \end{center}
-Django zapewnia wiele interesujących połączeń między warstwami, a użycie Django dla wszystkich warstw pozwala wykorzystać te połączenia. Na przykład użycie Django ORM oznacza, że otrzymujesz świetną aplikację administracyjną. Możesz wybrać inny ORM ale nie dostaniesz razem z nim aplikacji administratora. Django, też nie utrudnia rozbicia naszego serwisu na wiele pomniejszych mikroserwisów. 
-
-
+Django zapewnia wiele interesujących połączeń między warstwami, a użycie go dla wszystkich warstw pozwala wykorzystać te połączenia. PRzykładowo, użycie Django ORM oznacza, że otrzymujemy świetną aplikację administracyjną. Możemy wybrać inny ORM, ale nie dostaniemy wraz z nim aplikacji administratora. Django, też nie utrudnia rozbicia naszego serwisu na wiele pomniejszych mikroserwisów. 
 \begin{center}
 \subsection{Code-On-Demand}
 \end{center}
 Django umożliwia na rozszerzenie funkcjonalności szablonów do wysyłania np. formularzy jako endpoint.
-
 \section{Podsumowanie}
-W pracy przedstawiłem podstawowe zagadnienia związane z API. Omówiłem także główne cechy i zasady REST. Zwróciłem uwagę na to, co sprawia, że nasze API jest RESTful. Wspomniałem też o ewolucji API dzięki modelowi dojrzałości Richardsona. Na końcu mojej pracy ponownie przedstawiłem główne założenia architektury REST, jednakże tym razem dla stwierdzenia czy Django REST Framework naprawdę pozwala na tworzenie prawdziwego RESTful API. Po przeanalizowaniu implementacji głównych paradygmatów REST w Django REST Framework, czy nawet w samym Django, mogę wywnioskować, że umożliwia on tworzenie API zgodnie z REST.
+W pracy przedstawiono podstawowe zagadnienia związane z API. Omówiono także główne cechy i zasady REST. Zwrócono uwagę na to, co sprawia, że API jest RESTful. Wspomniano też o ewolucji API dzięki modelowi dojrzałości Richardsona. Na końcu ponownie przedstawiono główne założenia architektury REST, jednakże tym razem dla stwierdzenia czy Django REST Framework naprawdę pozwala na tworzenie prawdziwego RESTful API. Po przeanalizowaniu implementacji głównych paradygmatów REST w Django REST Framework, czy nawet w samym Django, można wywnioskować, że umożliwia on tworzenie API zgodnie z REST.
 
+%###############################################################
 \chapter{Integracja projektu opartego o Django z bazą danych PostgreSQL}
 Baza danych to zbiór informacji, danych, zazwyczaj przechowywanych w formie elektronicznej w systemie komputerowym.  
-
-Dane umieszczone są w wierszach i kolumnach wielu tabel, dzięki czemu przetwarzanie ich oraz tworzenie zapytań ich dotyczących odbywa się w zorganizowany i sprawny sposób. W dzisiejszych czasach większość baz danych wykorzystuje język SQL (Structured Query Language), czyli strukturalny język zapytań.  
-
-SQL to język programowania używany do tworzenia zapytań dotyczących danych. Jest wykorzystywany przez niemal wszystkie relacyjne bazy danych. Został on opracowany w latach 70. przez firmę IBM. Przy tworzeniu języka brała udział firma Oracle, czego efektem było wprowadzenie standardu SQL ANSI i powstanie wielu rozszerzeń języka SQL.  
-
+Dane umieszczone są w wierszach i kolumnach wielu tabel, dzięki czemu przetwarzanie ich oraz tworzenie zapytań ich dotyczących odbywa się w zorganizowany i sprawny sposób. W dzisiejszych czasach większość baz danych wykorzystuje język SQL (Structured Query Language, strukturalny język zapytań) do tworzenia zapytań i zapisywania danych.  
+Język SQL to język programowania używany do tworzenia zapytań dotyczących danych. Jest wykorzystywany przez niemal wszystkie relacyjne bazy danych. Został on opracowany w latach 70-tych przez firmę IBM. Przy tworzeniu języka brała udział firma Oracle, czego efektem było wprowadzenie standardu SQL ANSI i powstanie wielu rozszerzeń języka SQL.  
 Istnieje wiele typów baz danych. Oto kilka z nich:  
+
 \begin{itemize}
 \item Relacyjne bazy danych
 \item Obiektowe bazy danych
@@ -711,12 +710,17 @@ Istnieje wiele typów baz danych. Oto kilka z nich:
 \item Hurtownie danych
 \item Bazy danych NoSQL
 \item Grafowe bazy danych
+\item Bazy danych OLTP
+\item Bazy danych open source
+\item Chmurowe bazy danych
+\item Wielomodelowa baza danych
+\item Bazy danych dokumentowe/JSON
+\item Samoczynne bazy danych
 \end{itemize}
 
-Bazy danych obsługiwane są przez system zarządzania DBMS (Database Management System). Stanowi on swego rodzaju pomost między danymi a programami wykorzystującymi te dane lub użytkownikami końcowymi. Dzięki niemu można pobierać, aktualizować informacje oraz konfigurować sposób, w jaki są one zorganizowane. System pozwala również na wykonywanie zadań administracyjnych, takich jak tworzenie oraz przywracanie kopii zapasowych.
+Bazy danych obsługiwane są przez DBMS, czyli system zarządzania bazami danych. Stanowi on swego rodzaju pomost między danymi a programami wykorzystującymi dane lub użytkownikami końcowymi. Dzięki niemu można pobierać, aktualizować informacje oraz konfigurować sposób, w jaki są one zorganizowane. System pozwala również na wykonywanie zadań administracyjnych, takich jak tworzenie oraz przywracanie kopii zapasowych.
+W pracy krótko przedstawiono cztery systemy zarządzania bazami danych: 
 
-
-W mojej pracy krótko przedstawię cztery systemy zarządzania bazami danych: 
 \begin{itemize}
 \item MySQL 
 \item MS SQL Server 
@@ -725,11 +729,9 @@ W mojej pracy krótko przedstawię cztery systemy zarządzania bazami danych:
 \end{itemize}
 \section{MySQL}
 MySQL to darmowy i otwarty system zarządzania relacyjnymi bazami danych (RDBMS). Jego właścicielem jest Oracle, który oferuje płatne wersje premium MySQL z dodatkowymi usługami. Jest to lekka baza danych, która może być instalowana i używana przez programistów na serwerach aplikacji produkcyjnych z dużymi aplikacjami wielowarstwowymi, a także na komputerze stacjonarnym. Jest bezpieczny i nie jest podatny na żadne luki w zabezpieczeniach. 
-
 \indent MySQL oferuje obsługę następujących języków: C/C++, Delphi, Java, Lisp, Node.js, Perl, PHP, R.
-
-
 MySQL oferuje obsługę w chmurze, instalacje lokalne oraz jest kompatybilny z następującymi systemami operacyjnymi i formatami: Windows, MacOS, Linux (Ubuntu, Debian, Generic, SUSE Linux Enterprise Server, Red Hat Enterprises, Oracle), Oracle Solaris, Fedora, FreeBSD.
+
 
 \begin{table}[H]
 \caption{Wady i zalety MySQL}
@@ -754,8 +756,7 @@ Szybki, przenośny i bezpieczny & Konieczna jest znajomość tematu\\
 \end{adjustbox}
 \end{table}
 \section{MS SQL Server}
-MS SQL Server to relacyjny system zarządzania bazami danych (RDBM) opracowany i obsługiwany przez firmę Microsoft. Używa wariantu \emph{Structured Query Language} (SQL) o nazwie T-SQL. Zwykle zawiera silnik relacyjnej bazy danych, który przechowuje dane w tabelach, kolumnach i wierszach,  \emph{Integration Services} (SSIS), które są narzędziem do przenoszenia danych do importowania, eksportowania i przekształcania danych. W jego skład wchodzą również \emph{Reporting Services} (SSRS), które służą do tworzenia raportów i udostępniają je użytkownikom końcowym, a także  \emph{Analysis Services} (SSAS), czyli wielowymiarowa baza danych służąca do wykonywania zapytań o dane z głównego silnika. 
-
+MS SQL Server to relacyjny system zarządzania bazami danych (RDBM) opracowany i obsługiwany przez firmę Microsoft. Używa wariantu \emph{Structured Query Language} (SQL) o nazwie T-SQL (dla Transact-SQL). Zwykle zawiera silnik relacyjnej bazy danych, który przechowuje dane w tabelach, kolumnach i wierszach,  \emph{Integration Services} (SSIS), które są narzędziem do przenoszenia danych do importowania, eksportowania i przekształcania danych,  \emph{Reporting Services} (SSRS), które służą do tworzenia raporty i udostępniają raporty użytkownikom końcowym, a także  \emph{Analysis Services} (SSAS), czyli wielowymiarowa baza danych służąca do wykonywania zapytań o dane z głównego silnika bazy danych. 
 MS SQL Server oferuje obsługę języków programowania takich jak: C\#, C++, Delphi, Go, Java, JavaScript, PHP, Python, R, Ruby , Visual Basic.
 MS SQL Server jest dostępny na systemach \texttt{Microsoft Windows} oraz Linux.
 
@@ -779,11 +780,10 @@ Wsparcie odzyskiwania danych & \\
 \end{adjustbox}
 \end{table}
 \section{Oracle}
-Oracle to system zarządzania relacyjnymi bazami danych wydany w 1980 roku z podstawowymi funkcjami SQL, który sam się steruje, zabezpiecza, samo naprawia i eliminuje podatne na błędy ręczne zarządzanie bazą danych. Umożliwia bezpieczne przechowywanie i szybkie pobieranie danych. Oracle to pierwsze narzędzie bazodanowe opracowane w celach biznesowych, do zarządzania danymi za pomocą języka zapytań. 
-
+Oracle to system zarządzania relacyjnymi bazami danych wydany w 1980 roku z podstawowymi funkcjami SQL, który sam się steruje, zabezpiecza, samo naprawia i eliminuje podatne na błędy ręczne zarządzanie bazą danych. Umożliwia bezpieczne przechowywanie i szybkie pobieranie danych. Oracle to pierwsze narzędzie bazodanowe opracowane do celów biznesowych do zarządzania danymi za pomocą języka zapytań. 
 Oracle oferuje obsługę języków programowania takich jak: C, C\#, C++, Delphi, Haskell, Java, JavaScript, C, Perl, PHP, Python, R, Ruby, Visual Basic.
-
 Oracle jest dostępny dla następujących systemów operacyjnych: Windows, Mac OS X, Linux, UNIX, z/OS.
+
 \begin{table}[H]
 \caption{Wady i zalety MySQL}
 \label{tabela-Oracle}
@@ -805,11 +805,9 @@ Grupowanie transakcji & Intensywne obciążenie sprzętu\\
 \section{PostgreSQL}
 PostgreSQL to darmowy i otwarty system zarządzania obiektowo-relacyjnymi bazami danych (ORDBMS). Obecnie zarządzany jest przez społeczność programistów, która pomaga ułatwić i przyspieszyć  pracę wszystkich użytkowników.
 PostgreSQL zapewnia zarówno obiektową, jak i relacyjną funkcjonalność bazy danych. Był pierwszym systemem DBMS, który zaimplementował funkcje kontroli współbieżności wielu wersji (MVCC). Jest obecnie uważany za najbardziej zaawansowany silnik bazy danych. Obsługuje tekst, obrazy, dźwięki i wideo oraz zawiera interfejsy programistyczne dla wielu języków. PostgreSQL może być rozszerzany przez użytkownika na wiele sposobów.
-
-
 PostgreSQL oferuje obsługę nieco szerszej gamy języków: C/C++, Delphi, Erlang, Go, Java, JavaScript, Lisp, .Net, Python, R, Tcl.
-
 PostgreSQL jest dostępny dla następujących systemów operacyjnych: MacOS, Solaris, Windows, BSD (FreeBSD, OpenBSD), Linux, CentOS, Fedora, Scientific, Oracle, Debian, Ubuntu Linux i pochodne.
+
 
 \begin{table}[H]
 \caption{Wady i zalety PostgreSQL}
@@ -835,16 +833,15 @@ Zdolny do obsługi danych w TB &  \\
 \end{table}
   
 
-W naszym projekcie zastosowany został PostgreSQL. Jednym w głównych czynników wpływających na wybór był fakt, że PostgreSQL oferowany jest poprzez używaną przez nas platformę chmurową Heroku. 
+W projekcie składającym się na praktyczną część pracy, zastosowany został PostgreSQL. Jednym w głównych czynników wpływających na wybór był fakt, że PostgreSQL oferowany jest poprzez używaną podczs wdrożenia platformę chmurową Heroku. 
 \section{Łączenie z bazą danych PostgreSQL}
-Integracja Django z PostgreSQL rozpoczyna się od stworzenia nowej bazy lub połączenia z obecnie istniejącą.
-Domyślnie Django jest skonfigurowane do używania \texttt{SQLite} jako swojego zaplecza, dlatego wymagana jest lekka zmiana zawartość pliku settings.py tak, aby używanie Postgresa było możliwe. 
+Integracja Django z PostgreSQL rozpoczyna się od stworzenia nowej bazy lub połączenia z istniejącą już bazą danych.
+Domyślnie Django jest skonfigurowane do używania \texttt{SQLite} jako swojego zaplecza, dlatego wymagana jest lekka zmiana zawartości pliku settings.py tak, aby używanie Postgresa było możliwe. 
 
-Poniżej znajduję się kod~\ref{databases} potrzebny do połączenia się bazą danych oferowaną przez Heroku. 
+Poniżej znajduję się kod potrzebny do połączenia się bazą danych oferowaną przez Heroku. 
 \begin{lstlisting}[
 language={Python},
-caption={Fragment pliku \texttt{settings.py}},
-label={databases}
+caption={Fragment pliku \texttt{settings.py}}
 ]
 DATABASES = {,  
 	'default': { 
@@ -859,26 +856,27 @@ DATABASES = {,
 \end{lstlisting}
 \section{Modele}
 
-Na początku baza posiada podstawowe modele danych takie jak  \texttt{Users} oraz \texttt{Groups}. Aby zawierała inne dane, potrzebne jest zdefiniowanie ich w naszym frameworku w pliku models.py.
+Na początku baza posiada podstawowe modele danych takie jak  \texttt{Users} oraz \texttt{Groups}. Aby zawierała inne dane, potrzebne jest zdefiniowanie ich we frameworku, w pliku models.py.
 Najważniejszą częścią modelu są zdefiniowane pola bazy danych, będące instancja klasy \texttt{Field}. Są to na przykład:  \texttt{CharField ,TextField, ForeignKey, IntegerField, BooleanField, DateTimeField.}
 
 Pola modeli przeznaczone dla PostgreSQL (django.contrib.postgres.fields):
+
 \begin{itemize}
-	\item \texttt{ArrayField} - pole do przechowywania list danych.
-	\item \texttt{HStoreField} - pole do przechowywania par klucz:wartość. W Pythonie typ danych reprezentowany jako dict.
-	\item \texttt{JSONField} - pole do przechowywania danych zakodowanych w formacie \texttt{JSON}.
-	\item \texttt{IntegerRangeField} - pole przechowuje zakres liczb całkowitych.
-	\item \texttt{BigIntegerRangeField} - pole przechowuje zakres dużych liczb całkowitych.
-	\item \texttt{DecimalRangeField} - pole przechowuje zakres wartości zmiennoprzecinkowych.
-	\item \texttt{DateTimeRangeField} - pole przechowuje szereg sygnatur czasowych.
-	\item \texttt{DateRangeField} - pole przechowuje zakres dat.
+	\item \texttt{ArrayField} - pole do przechowywania list danych
+	\item \texttt{HStoreField} - pole do przechowywania par klucz:wartość. W Pythonie typ danych reprezentowany jako dict
+	\item \texttt{JSONField} - pole do przechowywania danych zakodowanych w formacie \texttt{JSON}
+	\item \texttt{IntegerRangeField} - pole przechowuje zakres liczb całkowitych
+	\item \texttt{BigIntegerRangeField} - pole przechowuje zakres dużych liczb całkowitych
+	\item \texttt{DecimalRangeField} - pole przechowuje zakres wartości zmiennoprzecinkowych
+	\item \texttt{DateTimeRangeField} - pole przechowuje szereg sygnatur czasowych
+	\item \texttt{DateRangeField} - pole przechowuje zakres dat
 \end{itemize}
 
-Każde pole określone jest poprzez argumenty. Przykładowo pole \texttt{CharField} wymaga podania argumentu \texttt{max\_length}, który określa maksymalną ilość znaków. Każde pole posiada również zestaw ogólnodostępnych argumentów np.: \texttt{null (True/False)}, \texttt{blank (True/False)}, \texttt{default}, \texttt{unique (True/False)}.
+Każde pole określone jest poprzez specyficzne argumenty. Przykładowo pole \texttt{CharField} wymaga podania argumentu \texttt{max\_length}, który określa maksymalną ilość znaków. Każde pole posiada również zestaw argumentów dostępnych dla każdego z nich np.: \texttt{null (True/False)}, \texttt{blank (True/False)}, \texttt{default}, \texttt{unique (True/False)}.
 
 \begin{lstlisting}[
 language={Python},
-caption={Fragment pliku models},
+caption={Fragment pliku models}
 label={models}
 ]
 class Section(models.Model):
@@ -925,8 +923,9 @@ class TestJSON(models.Model):
         return self.name
 \end{lstlisting}
 
-Powyższy przykład~\ref{models} obrazuje definicje modeli \texttt{Skill}, \texttt{Section}, \texttt{Task} oraz \texttt{TestJSON}. 
-Model \texttt{Task} zawiera m.in. pola wrong\_answers oraz correct\_answers. Pola te przeznaczone
+Powyższy przykład~\ref{models} obrazuje definicje modeli \texttt{Skill}, \texttt{Section}, \texttt{Task} oraz \texttt{TestJSON}, 
+które odpowiadają zadaniu, działom wraz z umiejętnościami oraz obiektu testu w Generatorze Sprawdzianów. 
+Model \texttt{Task} zawiera m.in. pola wrong\_answers oraz correct\_answers będące polami typu \texttt{ArrayField}. Pola te przeznaczone
 są do przechowywania poprawnych oraz niepoprawnych odpowiedzi na pytania zamknięte. Odpowiedzi może być wiele, dlatego z pomocą
 przychodzi \texttt{ArrayField}, czyli lista obiektów. W tym przypadku są to obiekty typu tekstowego.
 Model \texttt{TestJSON} zawiera m.in. pole tasks, zawierające wszystkie zadania w formacie JSON przypisane do danego testu.
@@ -935,7 +934,7 @@ w oryginał.
 Na końcu każdego modelu dodana została jego reprezentacja, przez co w zakładce admin widoczna będzie nazwa obiektu, co w znacznym stopniu ułatwi jego identyfikację.
 
 \section{Migracje}
-Po zdefiniowaniu modelu, wymagane jest wykonanie migracji. Migracje to sposób Django na propagowanie zmian schematu bazy danych takich jak dodawanie pola, edytowanie, usuwanie modelu itp. Są zaprojektowane w taki sposób, aby były w większości automatyczne, jednak wymagane jest ich tworzenie w taki sposób, aby uniknąć powstania błędów. \emph{Makemigrations} jest odpowiedzialne za pakowanie zmian w modelu do indywidualnych plików migracyjnych, z kolei \emph{migrate} jest odpowiedzialny za stosowanie ich w bazie danych.
+Po zdefiniowaniu modelu, wymagane jest wykonanie migracji. Migracje to sposób Django na propagowanie zmian wprowadzanych w modelach takich jak dodawanie pola, edytowanie, usuwanie modelu itp. do schematu bazy danych. Są zaprojektowane w taki sposób, aby były w większości automatyczne, jednak wymagane jest ich tworzenie w taki sposób, aby uniknąć powstania błędów. \emph{Makemigrations} jest odpowiedzialne za pakowanie zmian w modelu do indywidualnych plików migracyjnych, z kolei \emph{migrate} jest odpowiedzialny za stosowanie ich w bazie danych.
 Niektóre bazy danych są bardziej wydajne niż inne, biorąc pod uwagę migrację schematów. PostgreSQL cechuje się wysoką wydajnością pod względem obsługi schematów, natomiast MySQL nie obsługuje transakcji zmiany schematu. Jeżeli dana migracja się nie powiedzie, zmuszeni jesteśmy ręcznie cofnąć zmiany, a następnie spróbować ponownie. 
 
 Aby zbudować tabele w bazie danych, wykonujemy migrację i uruchamiany ją poniższymi poleceniami: 
@@ -952,13 +951,13 @@ label={sql}
 ]
 CREATE TABLE "section" (
 	"id" serial NOT NULL PRIMARY KEY, 
-	"section_name" varchar(500) NOT NULL UNIQUE);
-
+	"section_name" varchar(500) NOT NULL UNIQUE
+);
 CREATE TABLE "skill" (
 	"id" serial NOT NULL PRIMARY KEY, 
 	"skill_name" varchar(500) NOT NULL UNIQUE, 
-	"section_id" integer NOT NULL);
-
+	"section_id" integer NOT NULL
+);
 CREATE TABLE "task" (
 	"id" serial NOT NULL PRIMARY KEY, 
 	"text" varchar(600) NOT NULL UNIQUE, 
@@ -968,16 +967,17 @@ CREATE TABLE "task" (
 	"level" integer NOT NULL, 
 	"private" boolean NOT NULL, 
 	"points" integer NOT NULL, 
-	"author_id" integer NOT NULL);
-
+	"author_id" integer NOT NULL
+);
 CREATE TABLE "task_skill" (
 	"id" serial NOT NULL PRIMARY KEY, 
 	"task_id" integer NOT NULL, 
-	"skill_id" integer NOT NULL);
+	"skill_id" integer NOT NULL
+);
 	# ...
 \end{lstlisting}
 
-Porównując wycinek~\ref{models} z poleceniem~\ref{sql} zauważyć można, że w pliku models.py nie został zdefiniowany atrybut \texttt{id}, będący kluczem głównym tabeli. W takim przypadku framework Django własnoręcznie wykonał jego określenie.
+Porównując wycinek~\ref{models} z poleceniem~\ref{sql} zauważyć można, że w pliku models.py atrybut \texttt{id} będący kluczem głównym tabeli nie został zdefiniowany. W takim przypadku framework Django własnoręcznie wykonał jego określenie.
 
 \section{Relacje}
 
@@ -988,11 +988,12 @@ Porównując wycinek~\ref{models} z poleceniem~\ref{sql} zauważyć można, że 
   \label{relacje}
 \end{figure}
 
-\noindent Powyższy rysunek~\ref{relacje} obrazuje głowne tabele znajdujące się w bazie danych naszego projektu. Każda tabela połączona jest z jedną lub wieloma tabelami za pomocą relacji.
+\noindent Powyższy rysunek~\ref{relacje} obrazuje główne tabele znajdujące się w bazie danych naszego projektu. Każda tabela połączona jest z jedną, lub wieloma tabelami za pomocą relacji.
 
 Relacjami nazywamy skojarzenia między dwoma typami jednostek. W relacyjnej bazie danych działają one między dwiema tabelami, przy czym jedna tabela posiada klucz obcy klucza podstawowego drugiej tabeli. Dzięki relacjom możemy dzielić i przechowywać dane w różnych tabelach.
 
 W Django możliwe jest użycie trzech najpopularniejszych typów relacji w bazie danych:
+
 \begin{itemize}
 \item Jeden do jednego ang. \emph{One-to-one}
 \item Jeden do wielu ang. \emph{One-to-many}
@@ -1022,7 +1023,8 @@ class Student(models.Model):
     locker = models.OneToOneField(
         School_locker,
         on_delete=models.CASCADE,
-        primary_key=True)
+        primary_key=True,
+    )
 
     def __str__(self):
         return self.name
@@ -1033,18 +1035,20 @@ class Student(models.Model):
 \end{center}
 
 Relacja jeden do wielu jest najczęściej używanym typem połączenia i odpowiada sytuacji, gdy pojedynczemu rekordowi z tabeli A jest przyporządkowany jeden lub wiele rekordów z tabeli B, natomiast pojedynczemu rekordowi z tabeli B jest przyporządkowany dokładnie jeden rekord z tabeli A.
-Aby zdefiniować relację jeden do wielu w Django, należy użyć \textbf{ForeignKey}. Przykładem mogą być modele \texttt{Section} (dział) oraz \texttt{Skill} (umiejętność) zawarte w projekcie.
+Aby zdefiniować relację jeden do wielu w Django, należy użyć \textbf{ForeignKey}. Przykładem mogą być modele \texttt{Section} (dział) oraz \texttt{Skill} (umiejętność) zawarte w projekcie.  \newpage 
 \begin{lstlisting}[
 language={Python},
 caption={Jeden do wielu Section-Skill}
 ]
 class Section(models.Model):
     section_name = models.CharField(max_length=500,unique=True)
+
 	# ...
 
 class Skill(models.Model):
     skill_name = models.CharField(max_length=500,unique=True)
     section = models.ForeignKey(Section, on_delete=models.CASCADE)
+
 	# ...
 
 \end{lstlisting}
@@ -1073,6 +1077,7 @@ class Skill(models.Model):
 	# ...
 
 class Task(models.Model):
+	# ...
     skill = models.ManyToManyField(Skill)
 	# ...
 \end{lstlisting}
@@ -1081,7 +1086,7 @@ Sposób w jaki obiekty są ze sobą wiązane za pomocą relacji wiele do wielu z
 \begin{quote}
 "...nadal istnieje niejawna klasa modelu, której możesz użyć do bezpośredniego dostępu do tabeli utworzonej do przechowywania skojarzenia. Posiada trzy pola do łączenia modeli.
 
-Jeśli model źródłowy i docelowy różnią się to generowane są następujące pola:
+Jeśli model źródłowy i docelowy różnią się, generowane są następujące pola:
 
 \textbf{id}: klucz główny relacji
 
@@ -1093,18 +1098,19 @@ Niewidoczny model pośredni stworzony przez Django wymaga pary kluczy. Jest to k
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=8cm, height=8cm]{task_skill.png}
+  \includegraphics[scale=0.8]{task_skill.png}
   \caption{Wiele do wielu Task-Skill}
   \label{obraz-przyklad}
 \end{figure}
 
-W przypadku naszego projektu stworzona została tabela o nazwie \texttt{task\_skill} zawierającą trzy kolumny: \texttt{id}, \texttt{task\_id} oraz \texttt{skill\_id}.
+W przypadku projektu stworzona została tabela o nazwie \texttt{task\_skill} zawierająca trzy kolumny: \texttt{id}, \texttt{task\_id} oraz \texttt{skill\_id}.
 
 \begin{center}
 \subsection{Integralność danych}
 \end{center}
 Wszystkie relacje tworzą zależności między połączonymi modelami, więc ważne jest, aby określić co dzieje się z drugą stroną, gdy pierwsza zostanie usunięta.
-W tym celu została stworzona opcja \texttt{on\_delete}, której zadaniem jest określać co należy zrobić z rekordami, których druga strona została usunięta. Opcja ta jest dostępna dla wszystkich trzech relacji i może przyjmować następujące wartości:
+W tym celu została stworzona opcja \texttt{on\_delete}, której zadaniem jest określać, co należy zrobić z rekordami, których druga strona została usunięta. Opcja ta jest dostępna dla wszystkich trzech relacji i może przyjmować następujące wartości:
+
 \begin{itemize}
 \item \texttt{on\_delete=models.CASCADE} - Automatycznie usuwa powiązane rekordy, które były powiązane z daną instancją.
 \item \texttt{on\_delete=models.PROTECT} - Zapobiega usunięciu powiązanej instancji.
@@ -1169,6 +1175,7 @@ VALUES ('zadanie przyklad', ARRAY['20','12','32']::varchar(200)[],
 \subsection{Pobieranie obiektu}
 \end{center}
 Pobieranie danych z bazy może być wykonane na wiele sposobów. Oto kilka metod:
+
 \begin{itemize}
 \item \texttt{all()} - zwraca wszystkie rekordy danego modelu
 \item \texttt{get()} - zwraca tylko jeden rekord spełniający warunek w \texttt{get()}
@@ -1176,6 +1183,7 @@ Pobieranie danych z bazy może być wykonane na wiele sposobów. Oto kilka metod
 \item \texttt{reverse()} - obiekty zwracane będą w odwrotnej kolejności
 \item \texttt{distinct()} - zwraca tylko unikalne obiekty bez duplikatów
 \end{itemize}
+
 Pobieranie obiektów z bazy danych czasem może trwać długo, dlatego istotne jest to, aby wykonywane skrypty działały w sposób optymalny. 
 
 Ważnym jest, że zapytania wykonują się dopiero w momencie odniesienia do danych. Jeśli ponownie wykonamy to samo zapytanie, czas jego wykonania będzie krótszy niż poprzednio, ponieważ zostanie ono zapisane w cache.
@@ -1229,7 +1237,7 @@ Execution time: 0.002761s [Database: default]
 \end{lstlisting}
 
 Funkcja \texttt{select\_related} podczas wykonywania zapytania podąża za relacjami klucza obcego, pobierając odpowiednie dane obiektu powiązanego relacją.
-Funkcja ta w przeciwności do wykonywania wielu zapytań, pozwala na stworzenie jednego, złożonego, w którym użycie klucza obcego nie będzie skutkowało wykonaniem kolejnego zapytania. Przykładem będzie sytuacja, w której dla dziesięciu zadań posiadających umiejętność o \texttt{id} równym 6, chcemy wypisać ich autorów.
+Funkcja ta, w przeciwieństwie do wykonywania wielu zapytań, pozwala na stworzenie jednego, złożonego, w którym użycie klucza obcego nie będzie skutkowało wykonaniem kolejnego zapytania. Przykładem będzie sytuacja, w której dla dziesięciu zadań posiadających umiejętność o \texttt{id} równym 6, chcemy wypisać ich autorów.
 \begin{lstlisting}[
 style=DOS,
 caption={.},
@@ -1262,7 +1270,7 @@ Execution time: 0.001305s [Database: default]
 >>> print(id_of_authors)
 [2, 4, 4, 3, 4, 2, 1, 3, 4, 3]
 \end{lstlisting}
-Powyższy kod~\ref{execution} bez użycia \texttt{select\_related()} wykona aż 11 zapytań do bazy. Jedno zwracające zadania, a każde kolejne o autora w pętli. Łączny czas wykonywanie wynosi 0.012945s. Poniżej znajduje się kod~\ref{selectrelated} wykorzystujący \texttt{select\_related()}, który dokona tylko jednego zapytania, a czas wynosić będzie 0.002796s.
+Powyższy kod~\ref{execution} bez użycia \texttt{select\_related()} wykona aż $11$ zapytań do bazy. Jedno zwracające zadania, a każde kolejne o autora w pętli. Łączny czas wykonywanie wynosi $0.012945$s. Poniżej znajduje się kod~\ref{selectrelated} wykorzystujący \texttt{select\_related()}, który dokona tylko jednego zapytania, a czas wynosić będzie $0.002796$s.
 \begin{lstlisting}[
 style=DOS,
 caption={.},
@@ -1288,7 +1296,8 @@ Execution time: 0.002796s [Database: default]
 \subsection{Aktualizacja obiektu}
 \end{center}
 
-Metoda \texttt{update()} wykonuje zapytanie aktualizujące SQL dla określonych pól i zwraca liczbę dopasowanych wierszy. Na przykład, aby zmienić typ wszystkich zadań o punktacji równej 4 potrzebne jest polecenie:
+Metoda \texttt{update()} wykonuje zapytanie aktualizujące SQL dla określonych pól i zwraca liczbę dopasowanych wierszy. Na przykład, aby zmienić typ wszystkich zadań o punktacji równej $4$ potrzebne jest polecenie:\\
+
 \begin{lstlisting}[style=DOS]
 >>> Task.objects.filter(points = 4).update(type = 1)
 UPDATE "authentication_task"
@@ -1446,16 +1455,16 @@ Powyższy kod~\ref{pgtrigger} pozwala na zapisywanie informacji dotyczących two
 Istnieje wiele innych zastosowań \texttt{django-pghistory}. Aby poznać wszystkie z nich, warto zapoznać się z dokumentacją.
 
 \section{Podsumowanie}
-W tym rozdziale zawarte zostały informacje na temat współpracy frameworka Django z bazą danych PostgreSQL. Treści te pokazują w jaki sposób poprawnie łączyć się z bazą, tworzyć modele oraz wykorzystywać relację na przykładzie projektu Generatora Sprawdzianów. Opisane zostało również jak w optymalny sposób odpytywać bazę danych oraz wykorzystywać przydatne pakiety mające na celu pomoc we współpracy z PostgreSQL.
+W tym rozdziale zawarte zostały informacje na temat współpracy frameworka Django z bazą danych PostgreSQL. Treści te pokazują w jaki sposób poprawnie łączyć się z bazą, tworzyć modele oraz wykorzystywać relację na przykładzie projektu Generatora Sprawdzianów. Opisane zostało również, jak w optymalny sposób odpytywać bazę danych oraz wykorzystywać przydatne pakiety mające na celu pomoc we współpracy z PostgreSQL.
 
 \chapter {React jako narzędzie do tworzenia interfejsu użytkownika}
 
 \section{Czym jest React?}
 {
-React jest javascriptową biblioteką typu open source\footnote{open source - rodzaj oprogramowania oparty na licencji przyznającej użytkownikom prawo do badania, zmiany i rozpowszechniania oprogramowania ~\cite{opensourcewiki}} używaną do tworzenia interfesjów użytkownika aplikacji internetowych. Oryginalnym autorem jest programista firmy Facebook - Jordan Walke. Pierwszy, bardzo wczesny prototyp Reacta - FaxJS powstał już w 2011 roku i został wykorzystany do zaimplementowania funkcji "Szukaj" na platformie Facebook. Niewiele później, aby móc łatwiej obsługiwać Facebooka Ads Jordan rozwinął prototyp i stworzył React. Po nabyciu przez Facebooka Instagrama w 2012 roku, Instagram wyrażał chęć wdrożenia nowej technologii na swoją platformę, co powodowało nacisk na odłączenie Reacta od Facebooka i przejście na licencję open-source. W 2013 roku biblioteka przeszła na licencję open source ~\cite{reactstory}. 
+React jest javascriptową biblioteką typu open-source\footnote{open source - rodzaj oprogramowania oparty na licencji przyznającej użytkownikom prawo do badania, zmiany i rozpowszechniania oprogramowania ~\cite{opensourcewiki}} używaną do tworzenia interfejsów użytkownika aplikacji internetowych. Jego oryginalnym autorem jest programista firmy Facebook - Jordan Walke. Pierwszy, bardzo wczesny prototyp Reacta - FaxJS powstał już w 2011 roku i został wykorzystany do zaimplementowania funkcji "Szukaj" na platformie Facebook. Niewiele później, aby móc łatwiej obsługiwać Facebook Ads, Jordan rozwinął prototyp i stworzył React. Po nabyciu przez Facebooka Instagrama w 2012 roku, Instagram wyrażał chęć wdrożenia nowej technologii na swoją platformę, co powodowało nacisk na odłączenie Reacta od Facebooka i przejście na licencję open-source. W 2013 roku biblioteka przeszła na licencję open source ~\cite{reactstory}. 
 \newline
-
-Od tamtego momentu React cały czas prężnie się rozwija, pozostaje jednym \\z najpopularniejszych narzędzi do tworzenia interfejsów graficznych, używany jest nie tylko przez ogromne firmy takie jak Uber, Netflix, Airbnb, Amazon, Twitter oraz wiele innych, ale również przez zwykłych użytkowników. Popularność Reacta nie przestaje rosnąć, w styczniu 2021 roku biblioteka została pobrana ponad 10 milionów razy - zdecydowanie wyróżniając się na tle podobnych narzędzi przeznaczonych do tworzenia interfesjów użytkownika.
+Od tamtego momentu React cały czas prężnie się rozwija, pozostaje jednym z~ najpopularniejszych narzędzi do tworzenia interfejsów graficznych, używany jest nie tylko przez ogromne firmy takie jak Uber, Netflix, Airbnb, Amazon, Twitter oraz wiele innych, ale również przez zwykłych użytkowników. Popularność Reacta nie przestaje rosnąć, w styczniu 2021 roku biblioteka została pobrana ponad 10 milionów razy - zdecydowanie wyróżniając się na tle podobnych narzędzi przeznaczonych do tworzenia interfejsów użytkownika.
+%###############################################################
 
 \begin{figure}
 \centering
@@ -1467,8 +1476,9 @@ Od tamtego momentu React cały czas prężnie się rozwija, pozostaje jednym \\z
 }
 
 \section{Dlaczego warto korzystać z Reacta?}{
-React posiada wiele zalet, które sprawiły, że został użyty w tym projekcie. Relatywnie niska bariera wejścia, dzięki której nauka powinna być w miarę prosta dla osób mających wcześniejszą styczność z programowaniem. Łatwość testowania oraz debugowania - w tym celu bardzo przydatne jest narzędzie React Developer Tools, którego możemy używać z poziomu przeglądarki internetowej. React Developer Tools jest dostępne w postaci rozszerzenia, po którego zainstalowaniu ujrzymy dwie zakładki, zakładkę Components oraz zakładkę Profiler. W zakładce Components możemy obserwować hierarchię wszystkich komponentów naszej aplikacji, dowolnego komponentu oraz to jak zmienia się on w czasie. Druga zakładka Profiler pozwala nam sprawdzić wydajność naszej aplikacji. Domyślnie React pokazuje programiście wiele użytecznych, dobrze opisanych komentarzy oraz ostrzeżeń usprawniających pracę, są one dostępne, kiedy aplikacja znajduje się w fazie developerskiej. Wszystko to sprawia, że aplikacja w fazie developerskiej działa wolniej. Przejście do fazy produkcyjnej usuwa większość komentarzy, ostrzeżeń oraz możliwość sprawdzania każdego komponentu i dowolnej informacji o nim przy pomocy React Developer Tools, ale za to znacząco przyspiesza wydajność aplikacji.
+React posiada wiele zalet, które sprawiły, że został użyty w projekcie. Relatywnie niska bariera wejścia, dzięki której nauka powinna być w miarę prosta dla osób mających wcześniejszą styczność z programowaniem. Łatwość testowania oraz debugowania - w tym celu bardzo przydatne jest narzędzie React Developer Tools, którego możemy używać z poziomu przeglądarki internetowej. React Developer Tools jest dostępne w postaci rozszerzenia, po którego zainstalowaniu ujrzymy dwie zakładki, zakładkę Components oraz zakładkę Profiler. W zakładce Components możemy obserwować hierarchię wszystkich komponentów naszej aplikacji, dowolnego komponentu oraz to jak zmienia się on w czasie. Druga zakładka Profiler pozwala nam sprawdzić wydajność naszej aplikacji. Domyślnie React pokazuje programiście wiele użytecznych, dobrze opisanych komentarzy oraz ostrzeżeń usprawniających pracę, są one dostępne, kiedy aplikacja znajduje się w fazie developerskiej. Wszystko to sprawia, że aplikacja w fazie developerskiej działa wolniej. Przejście do fazy produkcyjnej usuwa większość komentarzy, ostrzeżeń oraz możliwość sprawdzania każdego komponentu i dowolnej informacji o nim przy pomocy React Developer Tools, ale za to znacząco przyspiesza wydajność aplikacji.
 Właśnie z tych powodów tryb developerski stosujemy w czasie budowania aplikacji, a trybu produkcyjnego używamy tam, gdzie mają korzystać z niego docelowi użytkownicy.
+
 
 
 
@@ -1486,8 +1496,8 @@ React posiada obszerną, bardzo dobrze napisaną dokumentację wraz z samouczkie
 ~\cite{reactjs} dostępną w wielu językach, między innymi w języku Polskim.
 Kolejnym z plusów jest budowa komponentów, interfejs zbudowany w Reaccie jest stworzony z mniejszych komponentów, które łączą w sobie wygląd wraz z logiką odpowiedzialną za ich zachowanie, co pomaga w zorganizowaniu pracy, dodatkową pomocą jest JSX - rozszerzenie składni pozwalające na używanie znaczników HTML razem z językiem Javascript.
 Ogromna popularność Reacta przekłada się również na mnogość dostępnych samouczków i innych materiałów pozwalających lepiej zrozumieć tę bibliotekę. Dodatkowo w poszukiwaniu odpowiedzi na nurtujące nas pytania możemy zajrzeć do społeczności programistów React takich jak dev.to, hashnode, lub najpopularniejszy z nich pod względem obserwujących użytkowników (aktualnie jest ich ponad ćwierć miliona) - Reddit.
-
 }
+
 
 
 
@@ -1517,12 +1527,12 @@ packages. Aby zainstalować wszystkie pakiety zarejestrowane przez plik packages
 \section{Pojęcia Reacta}
 
 
-
+% #$#$#$#$#$#$#$#$#$#$#$##$#$#$#$#$#$#$#$#$#$#$##$#$#$#$#$#$#$#$#$#$#$##$#$#$#$#$#$#$#$#$#$#$#
 
 \subsection{JSX}
 
 {
-JSX czyli Javascript XML jest rozszerzeniem składni języka Javascript, które pozwala na używanie znaczników HTML razem z językiem Javascript. Jest to niezwykle przydatne narzędzie, które ułatwia nam na operowanie danymi przetwarzanymi w kodzie Javascriptowym oraz ułatwia ich wyświetlanie przy pomocy znaczników HTML. JSX możemy wykorzystać w wielu celach.
+JSX, czyli Javascript XML jest rozszerzeniem składni języka Javascript, które pozwala na używanie znaczników HTML razem z językiem Javascript. Jest to niezwykle przydatne narzędzie, które ułatwia nam na operowanie danymi przetwarzanymi w kodzie Javascriptowym oraz ułatwia ich wyświetlanie przy pomocy znaczników HTML. JSX możemy wykorzystać w wielu celach.
 
 
 
@@ -1537,7 +1547,7 @@ caption={Fragment pliku MaterialUiUserExams.js, przykładowe użycie JSX}
 
 
 
-Jedną z zalet JSX jest łatwość otrzymania wartości zmiennej używanej \\w kodzie javascriptowym. W powyższym przykładzie wykorzystujemy to, aby otrzymać nazwę każdego działu, który następnie wyświetlamy użytkownikowi.
+Jedną z zalet JSX jest łatwość otrzymania wartości zmiennej używanej w kodzie javascriptowym. W powyższym przykładzie wykorzystujemy to, aby otrzymać nazwę każdego działu, który następnie wyświetlamy użytkownikowi.
 JSX jest w stanie obsłużyć dowolne, prawidłowe wyrażenie w języku Javascript, które zostało zamknięte wewnątrz nawiasów klamrowych. Dzięki czemu możemy nie tylko uzyskać wartości zmiennych, ale również je modyfikować oraz wywoływać funkcje javascriptowe, jeśli tego potrzebujemy.
 
 
@@ -1585,13 +1595,13 @@ caption={Wywołanie funkcji map wewnątrz elementu <List>}
 
 
 Po kompilacji wyrażenia JSX stają się wywołaniami funkcji w języku Javascript, oznacza to, że możliwe jest używanie wyrażeń w JSX wewnątrz instrukcji warunkowych, pętli, przypisywanie je do zmiennych, używanie jako argumentów oraz zwracanie z funkcji.
-Oczywiście jeśli ktoś nie chce korzystać z JSX, może tego nie robić. Możliwe jest stworzenie wszystkich komponentów \\w czystym Javascripcie, natomiast JSX jest narzędziem bardzo wygodnym, mocno usprawniającym pracę z Reactem, dlatego jest zdecydowanie zalecanym rozwiązaniem.
+Oczywiście, jeśli ktoś nie chce korzystać z JSX, może tego nie robić. Możliwe jest stworzenie wszystkich komponentów w czystym Javascripcie, natomiast JSX jest narzędziem bardzo wygodnym, mocno usprawniającym pracę z Reactem, dlatego jest zdecydowanie zalecanym rozwiązaniem.
 
 }
 
 \subsection{Komponenty}
 {
-Interfejs w Reaccie składa się z komponentów. Komponenty są jak funkcje javascriptowe, które przyjmują pewne wartości na wejściu, a następnie zwracają elementy reactowe, które opisują, co ma pojawić się na ekranie.
+Interfejs w React składa się z komponentów. Komponenty są jak funkcje javascriptowe, które przyjmują pewne wartości na wejściu, a następnie zwracają elementy reactowe, które opisują, co ma pojawić się na ekranie.
 Wyróżniamy dwa typy komponentów - komponenty klasowe oraz komponenty funkcyjne.
 
 
@@ -1616,23 +1626,21 @@ function FunctionComponent(props){
 
 \end{lstlisting}
 
-Jedną z zasad obowiązujących podczas budowy komponentów, zarówno funkcyjnych jak i klasowych pozostaje nienaruszalność właściwości (ang. props) przekazywanych podczas deklaracji funkcji, dane, które mają zmieniać się dynamiczne powinny być przechowywane w stanach.
+Jedną z zasad obowiązujących podczas budowy komponentów, zarówno funkcyjnych jak i klasowych pozostaje nienaruszalność właściwości    (ang. props) przekazywanych podczas deklaracji funkcji, dane, które mają zmieniać się dynamiczne powinny być przechowywane w stanach.
 Obecnie podstawową różnicą pozostaje składnia, w przeszłości komponenty funkcyjne nie posiadały stanów ani metod pozwalających na uruchamianie kodu w odpowiednich momentach, z tych powodów komponentów funkcyjnych używano tylko do budowy komponentów, które nie musiały być dynamiczne. Zmieniło się to wraz z wprowadzeniem Hooków.
-Warto również wiedzieć, że komponenty mogą odwoływać się do innych komponentów, co promuje pisanie ich z myślą \\o możliwości wielokrotnego wykorzystania. Możemy to wykorzystać na przykład tworząc komponent ekranu ładowania, następnie możemy go użyć w innych komponentach, renderując go wtedy, gdy użytkownik będzie oczekiwał na odpowiedź od serwera.
-
-
-
+Warto również wiedzieć, że komponenty mogą odwoływać się do innych komponentów, co promuje pisanie ich z myślą o~ możliwości wielokrotnego wykorzystania. Możemy to wykorzystać na przykład tworząc komponent ekranu ładowania, następnie możemy go użyć w innych komponentach, renderując go wtedy, gdy użytkownik będzie oczekiwał na odpowiedź od serwera.
 }
 
 \subsection{Stan i cykl życia}{
 
-Stan zawiera dane związane z danym komponentem, które mogą ulegać zmianie. Stan powinien być obiektem javascriptowym, aby go zmodyfikować należy wywołać metodę setState. Dodatkowo komponenty posiadają metody cyklu życia, które są odpowiedzialne za uruchamianie kodu w odpowiednich momentach.
+Stan zawiera dane związane z danym komponentem, które mogą ulegać zmianie. Stan powinien być obiektem javascriptowym, aby go zmodyfikować należy wywołać metodę setState. Dodatkowo, komponenty posiadają metody cyklu życia, które są odpowiedzialne za uruchamianie kodu w odpowiednich momentach.
 \newline
 Cykl życia komponentu możemy podzielić na 3 etapy:
+
 \begin{itemize}
-\item Montowanie(ang. Mounting), czyli pierwsze stworzenie instancji komponentu i włożenie go do drzewa DOM
+\item Montowanie (ang. Mounting), czyli pierwsze stworzenie instancji komponentu i włożenie go do drzewa DOM
 \item Aktualizacja, czyli zmiany we właściwościach lub stanie komponentu
-\item Odmontowanie(ang. Unmounting), czyli usunięcie komponentu z drzewa DOM
+\item Odmontowanie (ang. Unmounting), czyli usunięcie komponentu z drzewa DOM
 \end{itemize}
 \begin{figure}[H]
 \centering
@@ -1679,8 +1687,9 @@ caption={Przykład komponentu klasowego korzystającego ze stanów}
 
 \subsection{Renderowanie warunkowe}
 
-Renderowanie warunkowe umożliwia wyświetlanie elementów na podstawie stanu danej aplikacji. Oznacza to, że jesteśmy w stanie uzależnić interfejs(to, co widzi użytkownik) od wartości zwracanej przez zastosowaną przez nas instrukcje warunkową.
+Renderowanie warunkowe umożliwia wyświetlanie elementów na podstawie stanu danej aplikacji. Oznacza to, że jesteśmy w stanie uzależnić interfejs (to, co widzi użytkownik) od wartości zwracanej przez zastosowaną przez nas instrukcje warunkową.
 Do renderowania warunkowego możemy użyć klasycznej instrukcji if,
+
 \begin{lstlisting}[
 caption={Renderowanie warunkowe przy pomocy instrukcji if}
 ]
@@ -1693,7 +1702,7 @@ caption={Renderowanie warunkowe przy pomocy instrukcji if}
 
 \end{lstlisting}
 
-operatora warunkowego, często stosowanego jako krótsza wersja instrukcji if
+operatora warunkowego, często stosowanego jako krótsza wersja instrukcji if,
 
 \begin{lstlisting}[
 caption={Renderowanie przy pomocy operatora warunkowego}
@@ -1710,9 +1719,6 @@ caption={Renderowanie przy pomocy operatora warunkowego}
 
 
 \end{lstlisting}
-
-
-
 
 jak i operatora logicznego \&\&.
 
@@ -1734,11 +1740,13 @@ caption={Renderowanie warunkowe przy pomocy operatora logicznego \&\&}
 Hooki zostały wprowadzone w wersji 16.8. Pozwalają używać stanów oraz innych funkcjonalności Reacta w komponentach funkcyjnych.
 \newline
 Jak podają developerzy, głównymi powodami, dla których wprowadzili hooki było to, że:
+
 \begin{itemize}
 \item Współdzielenie logiki związanej ze stanem pomiędzy komponentami jest trudne
 \item Wraz ze wzrostem złożoności komponentów stają się one zbyt trudne do zrozumienia
 \item Klasy są mylące zarówno dla ludzi jak i maszyn
 \end{itemize}
+
 Jeśli chcemy skorzystać ze stanu w komponencie funkcyjnym, należy użyć hooka stanu.
 
 
@@ -1750,7 +1758,7 @@ const [editView, setEditView] = React.useState("email");
 
 \end{lstlisting}
 
-Powyższy przykład pokazuje jak użyć hooka stanu, gdzie editView jest nazwą stanu, a email jest jego wartością początkową. W przypadku potrzeby zaktualizowania wartości należy 
+Powyższy przykład pokazuje, jak użyć hooka stanu, gdzie editView jest nazwą stanu, a email jest jego wartością początkową. W przypadku potrzeby zaktualizowania wartości należy 
 wywołać funkcję setEditView.
 
 
@@ -1766,7 +1774,7 @@ onClick={(e)=>setEditView("name")}  >
 
 \end{lstlisting}
 
-Jeśli chcemy dokonać operacji w określonym cyklu życia komponentu należy użyć hooka useEffect. Możemy o nim myśleć jak o połączeniu metod componentDidMount, componentDidUpdate oraz componentWillUnmount \\w jedną.
+Jeśli chcemy dokonać operacji w określonym cyklu życia komponentu, należy użyć hooka useEffect. Możemy o nim myśleć jak o połączeniu metod componentDidMount, componentDidUpdate oraz componentWillUnmount w jedną.
 
 
 \begin{lstlisting}[
@@ -1798,8 +1806,9 @@ caption={Przykładowe użycie hooka useEffect}
 {
 Kolejnym pojęciem często używanym w budowaniu interfejsów są zdarzenia. Zdarzenia określają zajście pewnej czynności, którą nasz interfejs jest w stanie wyłapać i następnie obsłużyć.
 Przykładowymi zdarzeniami mogą być onClick - w przypadku kliknięcia myszką, onChange - w przypadku modyfikacji elementu lub onSubmit - w przypadku przesłania formularza.
-W odróżnieniu od np. HTMLa w Reaccie zdarzenia zapisujemy tzw. camelCasem. \footnote{camelCase jest konwencją, w której w nazwach kolejne wyrazy zapisujemy łącznie, a każdy kolejny(nie licząc pierwszego) rozpoczynamy wielką literą}
+W odróżnieniu od np. HTMLa w React zdarzenia zapisujemy tzw. camelCasem. \footnote{camelCase jest konwencją, w której w nazwach kolejne wyrazy zapisujemy łącznie, a każdy kolejny(nie licząc pierwszego) rozpoczynamy wielką literą}
 Instrukcje obsługi zdarzenia są przekazywane jako funkcje.
+
 
 \begin{lstlisting}[
 caption={Przykładowa obsługa zdarzenia onClick}
@@ -1815,8 +1824,9 @@ caption={Przykładowa obsługa zdarzenia onClick}
 \end{lstlisting}
 
 }
-Powyższy przykład pokazuje jeden ze sposobów obsługi zdarzeń wykorzystywanych w Gen-mat. Kliknięcie przycisku IconButton powoduje wywołanie funkcji createExamCopy, która jest odpowiedzialna za utworzenie kopii sprawdzianu.
-Innym sposobem na przekazanie instrukcji obsługi zdarzenia jest napisanie funkcji obsługi, następnie jej związanie(ang. bind) i wywołanie jej przy pomocy {\it this}.
+Powyższy przykład pokazuje jeden ze sposobów obsługi zdarzeń wykorzystywanych w aplikacji Gen-mat. Kliknięcie przycisku IconButton powoduje wywołanie funkcji createExamCopy, która jest odpowiedzialna za utworzenie kopii sprawdzianu.
+Innym sposobem na przekazanie instrukcji obsługi zdarzenia jest napisanie funkcji obsługi, następnie jej związanie (ang. bind) i wywołanie jej przy pomocy {\it this}.
+
 
 \begin{lstlisting}[
 caption={Związanie}
@@ -1838,9 +1848,10 @@ onClick={this.hideSection(section)}>
 
 
 
-\section{Tworzenie formularzy oraz wymiana danych z serwerem}
-\bigbreak
-Jedną z podstawowych rzeczy, które musi zrobić prawie każdy interfejs \\w dzisiejszych aplikacjach internetowych jest obsługa formularzy oraz wymiana danych między serwerem, aplikacją oraz użytkownikiem. Interfejs projektu Gen-mat w tym celu używa głównie trzech bibliotek:
+\section{Tworzenie formularzy oraz wymiana danych z serwerem} \mbox{}\\
+%\bigbreak
+Jedną z podstawowych rzeczy, które musi zrobić prawie każdy interfejs w dzisiejszych aplikacjach internetowych jest obsługa formularzy oraz wymiana danych między serwerem, aplikacją oraz użytkownikiem. Interfejs projektu Gen-mat w tym celu używa głównie trzech bibliotek:\newpage
+
 \begin{itemize}
 \item Axios
 \item Formik
@@ -1848,7 +1859,7 @@ Jedną z podstawowych rzeczy, które musi zrobić prawie każdy interfejs \\w dz
 \end{itemize}
 
 \subsection{Axios}
-Axios~\cite{axios} jest Klientem HTTP dla node.js oraz przeglądarki opartym na javascriptowym obiekcie Promise, który służy do obsługi operacji asynchronicznych.
+Axios~\cite{axios} jest Klientem HTTP dla node.js oraz przeglądarki, opartym na javascriptowym obiekcie Promise, który służy do obsługi operacji asynchronicznych.
 
 \begin{figure}[H]
 \centering
@@ -1860,16 +1871,19 @@ Axios~\cite{axios} jest Klientem HTTP dla node.js oraz przeglądarki opartym na 
 \label{react dev example.jpg}
 \end{figure}
 
-Dzięki Axios możemy tworzyć requesty - żądania HTTP, które są podstawową formą komunikacji z serwerem. HTTP opisuje formę żądania klienta \\oraz formę odpowiedzi na to żądanie ze strony serwera. Do najważniejszych metod httprequestów, na których się skupimy, należą:
+Dzięki Axios możemy tworzyć requesty - żądania HTTP, które są podstawową formą komunikacji z serwerem. HTTP opisuje formę żądania klienta oraz formę odpowiedzi na żądanie ze strony serwera. Do najważniejszych metod HTTP, na których się skupimy, należą:
+
 \begin{itemize}
 \item GET - metoda wysyłająca żądanie otrzymania danych, powinna być ograniczona jedynie do pobierania danych, nie powinna ich przesyłać
-\item PUT - metoda używana w celu przesłania danych między klientem  \\ oraz serwerem w celu aktualizacji wybranego zasobu
-\item POST - metoda używana w celu przesłania danych między klientem \\  oraz serwerem
+\item PUT - metoda używana w celu przesłania danych między klientem  oraz serwerem w celu aktualizacji wybranego zasobu
+\item POST - metoda używana w celu przesłania danych między klientem  oraz serwerem
 \item DELETE - żądanie usunięcia danych
 \end{itemize}
+
 Axios pozwala na tworzenie instancji z własną konfiguracją, która będzie stosowana domyślnie przy każdym wysłaniu żądania przy pomocy
 tej instancji.
 
+%############################################################################3
 
 Gen-mat używa dwóch instancji Axios.
 
@@ -1900,7 +1914,7 @@ export const axiosInstance = axios.create({
 
 \end{lstlisting}
 
-Gdzie baseURL oznacza adres URL, timeout służy do określania maksymalnego czasu(w milisekundach) jaki żądanie ma na wykonanie, zanim zostanie anulowane, dodatkowo na podstawie zawartości nagłówka serwer jest w stanie odróżnić czy zapytanie zostało wysłane przez użytkownika zalogowanego czy przez użytkownika niezalogowanego. Aby wysłać żądanie należy  odwołać się do instancji, określić rodzaj żądania, podać dokładną ścieżkę oraz, w zależności od tego, co mamy do przekazania serwerowi, przesłać dane.
+Gdzie baseURL oznacza adres URL, timeout służy do określania maksymalnego czasu (w milisekundach) jaki żądanie ma na wykonanie, zanim zostanie anulowane. Dodatkowo, na podstawie zawartości nagłówka serwer jest w stanie odróżnić czy zapytanie zostało wysłane przez użytkownika zalogowanego, czy przez użytkownika niezalogowanego. Aby wysłać żądanie należy  odwołać się do instancji, określić rodzaj żądania, podać dokładną ścieżkę oraz, w zależności od tego, co mamy do przekazania serwerowi, przesłać dane.
 
 \begin{lstlisting}[
 caption={Przykładowe wywołanie zapytania GET, aby otrzymać sprawdziany użytkownika}
@@ -1963,18 +1977,20 @@ validationSchema={Yup.object().shape({
 
 \end{lstlisting}
 
-
+%####################################################################
 \subsection{Formik}
-Formik jest biblioteką usprawniającą tworzenie formularzy w Reaccie. Pomaga w przekazywaniu wartości ze stanów oraz do stanów,walidacji i wyłapywaniu błędów oraz przesyłaniem formularzy.
-Jak podaje sam autor, powodem, \\dla którego stworzył Formik była chęć zestandaryzowania komponentów wejścia oraz sposobu przepływu danych wewnątrz formularzy~\cite{formik}.
-\newline
-Formik daje nam dostęp do przemyślanych pól oraz metod pomocniczych przydatnych przy tworzeniu formularzy. Na początku możemy przekazać
-początkowe wartości w initialValues, podstawowymi metodami pomocniczymi są:
+Formik jest biblioteką usprawniającą tworzenie formularzy w React. Pomaga w przekazywaniu wartości ze stanów oraz do stanów, walidacji i wyłapywaniu błędów oraz przesyłaniu formularzy.
+
+Jak podaje sam autor, powodem, dla którego stworzył on Formik, była chęć zestandaryzowania komponentów wejścia oraz sposobu przepływu danych wewnątrz formularzy~\cite{formik}.
+
+Formik daje nam dostęp do przemyślanych pól oraz metod pomocniczych przydatnych przy tworzeniu formularzy. Na początku możemy przekazać początkowe wartości w initialValues, podstawowymi metodami pomocniczymi są:
+
 \begin{itemize}
 \item handleSubmit - procedura obsługi wysyłania
 \item handleChange - procedura obsługi zmian
 \item values - w tej metodzie przechowywane są aktualne wartości obecne  \\ w formularzu.
 \end{itemize}
+
 Kolejnym sposobem użycia Formika razem z Yupem, wykorzystywanym \\w projekcie Gen-mat, jest walidacja pól na poziomie formularza przy pomocy validationSchema. 
 Najpierw stworzony zostaje obiekt Yupowy o określonych wartościach a następnie zostaje on przypisany jako validationSchema.
 
@@ -2067,7 +2083,7 @@ password: false,
 
 \end{lstlisting}
 
-Oprócz wcześniej wspomnianych właściwościach jako podstawowych Formik zapewnia:
+Oprócz wcześniej wspomnianych podstawowych właściwości, Formik zapewnia:
 \begin{itemize}
 \item dirty - zwracające true, gdy między wartościami values a początkowymi wartościami przekazanymi w initialValues nie zachodzi głęboka równość.
 \item handleBlur - procedura obsługi zdarzenia onBlur - używana, gdy chcemy monitorować, czy konkretna dana wejściowa została dotknięta.
@@ -2091,7 +2107,7 @@ Kolejnym przydatnym komponentem jest Switch, który sprawia, że wyrenderuje si�
 
 
 \begin{lstlisting}[
-caption={Ścieżki dostępne w projekcie gen-mat }
+caption={Ścieżki dostępne w projekcie Gen-mat }
 ]
 <Switch>
   <Route
@@ -2170,21 +2186,22 @@ caption={Ścieżki dostępne w projekcie gen-mat }
 
 React Router posiada kilka przydatnych hooków: useHistory, useLocation, useParams, useRouteMatch. Hook useHistory daje nam dostęp do pakietu history, który oferuje kolejne usprawnienia 
 nawigacyjne oferując właściwości i metody takie jak:
+
 \begin{itemize}
 \item location - obiekt reprezentujący obecny adres
 \item push - który przepycha nowy adres na ostatnie miejsce na stosie historii
 \item goBack - funkcja wracająca na poprzedni adres
 \end{itemize}
+
 Rozważmy następującą sytuację - użytkownik zapomniał hasła, korzysta \\z funkcji ,,reset hasła'', na adres e-mail otrzymuje link, którego ostatnią częścią
 jest losowo wygenerowany ciąg znaków - token. Aplikacja musi być w stanie wydobyć ten token oraz sprawdzić czy jest poprawny, jest to możliwe dzięki użyciu useParams.
+
 \begin{lstlisting}[
 caption={Przykładowe użycie useParams}
 ]
   const passwordToken = useParams().token;
 
 \end{lstlisting}
-
-
 
 
 \section{Podsumowanie}
