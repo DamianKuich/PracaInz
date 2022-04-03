@@ -91,7 +91,7 @@
 
 % \firstAuthor
 \firstAuthor{Damian Kuich}
-\secondAuthor{Mkołaj Kowalczyki}
+\secondAuthor{Mkołaj Kowalczyk}
 \thirdAuthor{Mateusz Michalski}
 
 \firstAlbum{434735}
@@ -195,7 +195,7 @@ Głównym założeniem projektu było stworzenie aplikacji webowej pozwalającej
 
 \section{Podział pracy inżynierskiej}
 Kolejne rozdziały pracy dyplomowej opisują zagadnienia, z którymi zespół zapoznał się podczas tworzenia projektu inżynierskiego.
-Pierwszy rozdział pt. \textbf{,,Implementacja REST API z wykorzystaniem frameworka Django REST''} autorstwa Damiana Kuicha opisuje metodykę REST, jak również technolgie z niej korzystające. Przedstawione są w niej podstawowe definicje potrzebne do zrozumienia całości pracy. Rozdział ten opisuje paradygmaty jakie musi spełniać aplikacja by móc być nazwana RESTful. W dalszej części przedstawiona jest technologia Django, jak i framework Django REST, oraz korelacja frameworka ideą REST. 
+Pierwszy rozdział pt. \textbf{,,Implementacja REST API z wykorzystaniem frameworka Django REST''} autorstwa Damiana Kuicha opisuje metodykę REST, jak również technolgie z niej korzystające. Przedstawione są w niej podstawowe definicje potrzebne do zrozumienia całości pracy. Rozdział ten opisuje paradygmaty jakie musi spełniać aplikacja by móc być nazwana RESTful. W dalszej części przedstawiona jest technologia Django, jak i framework Django REST, oraz korelacja frameworka z ideą REST. 
 
 Mikołaj Kowalczyk w rozdziale pt. \textbf{,,Integracja projektu opartego o Django z bazą danych PostgreSQL''} porusza temat baz danych oraz integracji frameworka Django z wybranym systemem bazodanowym. Rozdział odpowie między innymi na pytanie,  czym jest baza danych.  Zawarta w nim będzie również charakterystyka systemów bazodanowych MySQL, MS SQL Server, Oracle i PostgreSQL. W rozdziale tym opisany zostanie proces modelowania oraz tworzenia elementów bazy danych za pomocą Django, oraz sposób w jaki można się z nią komunikować. Wszelkie przykłady opierać się będą na podstawie bazy utworzonej na potrzeby projektu. Opisane zostaną wybrane modele oraz relacje między tabelami, dzięki którym projekt zachowuje spójną całość. Rozdział zawiera informacje na temat dostępu do danych oraz jak je pozyskiwać w sposób optymalny, nie narażający bazy na zbyt duże obciążenie.
  
@@ -203,9 +203,9 @@ Rozdział pt. \textbf{,,React jako narzędzie do tworzenia interfejsu użytkowni
 %------------------------------ SPRAWDZONE ------------------------------
 
 \section{Opis Technologii}
-Serwis ,,Gen-Mat'' korzysta z szerokiego zakresu technologii. Produkt oparty jest w szczególności na dwóch językach: Python wersji 3 oraz JavaScritpt. Głównym czynnikiem, który kierował autorami przy wyborze technologii było doświadczenie członków zespołu przy projektowaniu systemów wykorzystujących dane języki programowania. Równie ważnym aspektem była prostota implementacji założeń projektowych i funkcjonalności. Podstawą projektu jest serwer oparty na serwisie Heroku. Umożliwia on szybkie i łatwe wdrażanie serwisu na etap produkcyjny, zachowując przy tym wysoką jakość świadczonych usług hostingowych. Projekt, jako aplikacja webowa, podzielony został na dwie główne części. Część backendową oraz część frontendową.     
+Serwis ,,Gen-Mat'' korzysta z szerokiego zakresu technologii. Produkt oparty jest w szczególności na dwóch językach: Pythonie w wersji 3 oraz JavaScriptcie. Głównym czynnikiem, który kierował autorami przy wyborze technologii było doświadczenie członków zespołu przy projektowaniu systemów wykorzystujących dane języki programowania. Równie ważnym aspektem była prostota implementacji założeń projektowych i funkcjonalności. Podstawą projektu jest serwer oparty na serwisie Heroku. Umożliwia on szybkie i łatwe wdrażanie serwisu na etap produkcyjny, zachowując przy tym wysoką jakość świadczonych usług hostingowych. Projekt, jako aplikacja webowa, podzielony został na dwie główne części. Część backendową oraz część frontendową.     
 Backend odpowiedzialny jest za to, czego użytkownik korzystający z serwisu nie widzi. Są to czynności takie jak, na przykład, naprawa i utrzymywanie bazy danych, obsługa użytkowników, obsługa tokenów, spajanie zadań do utworzenia sprawdzianów itp. Wykorzystuje on Pythonowy framework Django, który umożliwia w łatwy i prosty sposób stworzenie wysokiej jakości produktu. W pierwszej iteracji produktu podstawową bazą danych była MariaDB, jednakże wraz z rozwojem została ona zmieniona. Aktualnie serwis korzysta z baz danych udostępnionych na Heroku, które operują na silniku PostgreSQL.   
-Frontend odpowiedzialny jest za część wizualną projektu. Obsługuję on na przykład wszystkie zapytania wysyłane przez użytkowników, przetwarzanie danych wysyłanych z bazy danych i wyświetlanie ich, komunikację z bazą danych za pomocą API, łączenie się z serwerem za pomocą HTTP, obsługę sesji uzytkownika i tym podobne. Ta część projektu wykorzystuje przede wszystkim Javascriptową bibliotekę React. Projekt korzysta również z frameworka Django REST do tworzenia RESTful API.
+Frontend odpowiedzialny jest za część wizualną projektu. Obsługuję on na przykład wszystkie zapytania wysyłane przez użytkowników, przetwarzanie danych wysyłanych z bazy danych i wyświetlanie ich, komunikację z bazą danych za pomocą API, łączenie się z serwerem za pomocą HTTP, obsługę sesji użytkownika i tym podobne. Ta część projektu wykorzystuje przede wszystkim Javascriptową bibliotekę React. Projekt korzysta również z frameworka Django REST do tworzenia RESTful API.
 
 %------------------------------ SPRAWDZONE ------------------------------
 
@@ -213,7 +213,7 @@ Frontend odpowiedzialny jest za część wizualną projektu. Obsługuję on na p
 
 \section{Wstęp}
 
-Głównym celem tego podrozdziału przedstawienie podstawowych definicji oraz  postawienie  fundamentów do dalszego zrozumienia pracy.
+Głównym celem tego podrozdziału jest przedstawienie podstawowych definicji oraz postawienie fundamentów do dalszego zrozumienia pracy.
 
 \begin{center}
 \subsection{HTTP}
@@ -244,12 +244,12 @@ POST news.com/articles
 Accept: application/json
 Body:
 {
-"article":{
-"title": "Some title",
-"author": "Damian Kuich",
-"text": "Something happened again",
-"date": "25/02/2019",
-}
+   "article":{    
+      "title": "Some title",
+      "author": "Damian Kuich",
+      "text": "Something happened again",
+      "date": "25/02/2019",
+   }
 }
 \end{lstlisting}
 
@@ -309,7 +309,7 @@ URI składa się z dwóch komponentów. Pierwszym z nich jest \textbf{URL} (ang.
 \begin{center}
 \subsection{Endpoints}
 \end{center}
-Upraszczając, \textbf{punkt końcowy} (ang. \emph{Endpoint}) to jeden koniec kanału komunikacyjnego. Gdy interfejs API współdziała z innym systemem, punkty tej komunikacji są traktowane jako punkty końcowe. W przypadku interfejsów API punkt końcowy może zawierać adres URL serwera lub usługi. Każdy punkt końcowy to lokalizacja, z~ której interfejsy API mogą uzyskać dostęp do zasobów potrzebnych do wykonywania swoich funkcji. Gdy interfejs API żąda informacji z~ aplikacji internetowej lub serwera, otrzymuje odpowiedź. Miejsce, do którego interfejsy API wysyłają żądania i gdzie znajdują się zasoby, nazywane są punktami końcowymi.
+Upraszczając, \textbf{punkt końcowy} (ang. \emph{Endpoint}) to jeden koniec kanału komunikacyjnego. Gdy interfejs API współdziała z innym systemem, punkty tej komunikacji są traktowane jako punkty końcowe. W przypadku interfejsów API punkt końcowy może zawierać adres URL serwera lub usługi. Każdy punkt końcowy to lokalizacja, z której interfejsy API mogą uzyskać dostęp do zasobów potrzebnych do wykonywania swoich funkcji. Gdy interfejs API żąda informacji z aplikacji internetowej lub serwera, otrzymuje odpowiedź. Miejsce, do którego interfejsy API wysyłają żądania i gdzie znajdują się zasoby, nazywane są punktami końcowymi.
 
 \begin{lstlisting}[
 language={Python},
@@ -327,7 +327,7 @@ https://somewebsite.org/name/{nameId} #możemy wstawić cały link URL
 \end{center}
 %#####################################################
 
-W latach dziewięćdziesiątych nie istniały jeszcze żadne ustandaryzowane metody tworzenia API oraz ich używania. Najczęściej używanym protokołem był \textbf{SOAP} (ang. \emph{Simple Object Access Protocol}), który mimo posiadania w swej definicji słowa ,,\emph{Simple}"'', był niezwykle skomplikowany do tworzenia, przetwarzania i debugowania. Wymagał on ręcznego utworzenia pliku XML z wywołaniem \textbf{RPC} (ang. \emph{Remote Procedure Call}) w body. Po napisaniu należało sprecyzować endpoint, przesłać metodą POST definicje w~ \textbf{kopercie} (ang. \emph{SOAP envelope}) z informacją, co znajduje się w wiadomości, dla kogo jest przeznaczona i czy jest ona obowiązkowa lub opcjonalna do danego endpointa.
+W latach dziewięćdziesiątych nie istniały jeszcze żadne ustandaryzowane metody tworzenia API oraz ich używania. Najczęściej używanym protokołem był \textbf{SOAP} (ang. \emph{Simple Object Access Protocol}), który mimo posiadania w swej definicji słowo ,,\emph{Simple}"'', był niezwykle skomplikowany do tworzenia, przetwarzania i debugowania. Wymagał on ręcznego utworzenia pliku XML z wywołaniem \textbf{RPC} (ang. \emph{Remote Procedure Call}) w body. Po napisaniu należało sprecyzować endpoint, przesłać metodą POST definicje w~ \textbf{kopercie} (ang. \emph{SOAP envelope}) z informacją, co znajduje się w wiadomości, dla kogo jest przeznaczona i czy jest ona obowiązkowa lub opcjonalna do danego endpointa.
 
 
 \begin{lstlisting}[
@@ -356,7 +356,7 @@ caption={Przykładowe żądanie SOAP API}
 
 %##############################################
 
-Wszystko zmieniło się w 2000 roku, kiedy to grupka deweloperów pod kierownictwem \textbf{Roy’a Felding’a} postawiła sobie za cel utworzenie standardu, pozwalającego na to, by każde dwa serwery mogły porozumiewać się pomiędzy sobą w prosty sposób. W tym samym roku, ów lider wydał rozprawę doktorską pt. ,,\emph{Architectural Styles and the Design of Network-based Software}'', która była zbiorem zasad nowej architektury nazwanej REST. Nowy standard opierał się na siedmiu głównych filarach:\newline 
+Wszystko zmieniło się w 2000 roku, kiedy to grupka deweloperów pod kierownictwem \textbf{Roya Feldinga} postawiła sobie za cel utworzenie standardu, pozwalającego na to, by każde dwa serwery mogły porozumiewać się pomiędzy sobą w prosty sposób. W tym samym roku, ów lider wydał rozprawę doktorską pt. ,,\emph{Architectural Styles and the Design of Network-based Software}'', która była zbiorem zasad nowej architektury nazwanej REST. Nowy standard opierał się na siedmiu głównych filarach:\newline 
 \begin{itemize}
 \item \textbf{Wydajność} - interakcje pomiędzy komponentami powinny być natychmiastowe.\newline
 \item \textbf{Skalowalność} - umożliwiająca obsługę dużej ilości komponentów.\newline
@@ -375,7 +375,7 @@ Wszystko zmieniło się w 2000 roku, kiedy to grupka deweloperów pod kierownict
 Systemy oparte na architekturze REST nazywamy RESTful, jeżeli spełniają pewne wymagania. Systemy RESTful charakteryzują się tym, że są bezstanowe (ang. stateless) i mają mocno podkreśloną granicę pomiędzy Klientem, a Serwerem. Roy Fielding podał sześć głównych cech, które powinny zawierać systemy oparte o architekturę REST: 
  
 \begin{itemize}
-\item \textbf{Uniform Interface} - Serwer powinien udostępniać jednolite API, które będzie klarowne dla wszystkich systemów komunikujących się z nim. Dane powinny być w takim samym formacie i zawierać identyczny zakres. Interfejs powinien spełniać wymogi dla wielu urządzeń i aplikacji. Zasoby w systemie powinny mieć jeden Uniform Resource Identifier, który~ pozwalałby na wymianę danych i powinny być łatwo dostępne przez np. HTTP request GET.
+\item \textbf{Uniform Interface} - Serwer powinien udostępniać jednolite API, które będzie klarowne dla wszystkich systemów komunikujących się z nim. Dane powinny być w takim samym formacie i zawierać identyczny zakres. Interfejs powinien spełniać wymogi dla wielu urządzeń i aplikacji. Zasoby w systemie powinny mieć jeden Uniform Resource Identifier, który pozwalałby na wymianę danych i powinny być łatwo dostępne przez np. HTTP request GET.
 \begin{figure}[H]
 \centering
 \includegraphics[width=14cm]{restarch.png}
@@ -387,7 +387,7 @@ Systemy oparte na architekturze REST nazywamy RESTful, jeżeli spełniają pewne
 Zasada ta zawiera jeszcze cztery reguły, który pomagają nam uprościć architekturę: 
 
 \begin{itemize}
-\item \textbf{Resource identification in requests} - Sposób reprezentacji zasobu może być różny i odłączny od samego zasobu np. serwer nie wysyła danych wprost odczytanych z~ bazy tylko w formacie JSON albo XML.\newline 
+\item \textbf{Resource identification in requests} - Sposób reprezentacji zasobu może być różny i odłączny od samego zasobu np. serwer nie wysyła danych wprost odczytanych z bazy tylko w formacie JSON albo XML.\newline 
 \item \textbf{Resource manipulation through representations} - Po otrzymaniu reprezentacji zasobów wraz z jego metadanymi od serwera, klient (jeśli ma do tego uprawnienia) może modyfikować oraz usuwać zasoby.\newline 
 \item \textbf{Self-descriptive messages} - Odpowiedź serwera powinna zawierać wystarczającą ilość informacji, aby serwer mógł ją obsłużyć np. poprzez wartość ,,media type''(inaczej ,,MIME type'').\newline 
 \item \textbf{Hypermedia as the engine of application state} (HATEOAS) - HATEOAS jest ograniczeniem architektury aplikacji REST, która sprawia, że architektura stylu RESTful jest inna od większości innych architektur. Termin ,,hypermedia'' odnosi się do wszelkich treści zawierających łącza do innych form mediów, takich jak obrazy, filmy i teksty. Styl architektoniczny REST pozwala nam używać linków hipermedialnych w treści odpowiedzi. Pozwala klientowi dynamicznie przechodzić do odpowiednich zasobów korzystając z łącz hipermedialnych. Najlepiej zobrazować to na przykładzie Graph API od Facebooka np. korzystając z przykładowej odpowiedzi znajdującej się w dokumentacji. Niektóre wartości zostały skrócone dla przejrzystości: 
@@ -397,43 +397,40 @@ Zasada ta zawiera jeszcze cztery reguły, który pomagają nam uprościć archit
 caption={Odpowiedź od Graph API}, basicstyle=\ttfamily\scriptsize
 ]
 {
-"feed": {
-"data": [
-    {
-        "created_time": "2017-12-12T01:24:21+0000",
-        "message": "This picture is nice",
-        "id": "820882001277849_1809387339093972"
-    },
-    {
-        "created_time": "2017-12-11T23:40:17+0000",
-        "message": ":)",
-        "id": "820882001277849_1809316002434439"
-    },
-    {
-        "created_time": "2017-12-11T23:31:38+0000",
-        "message": "Thought you might enjoy this",
-        "id": "820882001277849_1809310929101613"
-    }
-],
-"paging": {
-    "cursors": {
-        "before": "Q2c4U1pXNTBYM0YxWlhKNVgzTjBiM0",
-        "after": "Q2c4U1pXNTBYM0YxWlhKNVgzTjBiM0"
-    },
-"next": "https://graph.facebook.com/820882001277849/feed?access_token"
-}
-},
-"id": "820882001277849"
-}
+   "feed":{
+      "data":[
+         {
+            "created_time":"2017-12-12T01:24:21+0000",
+            "message":"This picture is nice",
+            "id":"820882001277849_1809387339093972"
+         },
+         {
+            "created_time":"2017-12-11T23:40:17+0000",
+            "message":":)",
+            "id":"820882001277849_1809316002434439"
+         },
+         {
+            "created_time":"2017-12-11T23:31:38+0000",
+            "message":"Thought you might enjoy this",
+            "id":"820882001277849_1809310929101613"
+         }
+      ],
+      "paging":{
+         "cursors":{
+            "before":"Q2c4U1pXNTBYM0YxWlhKNVgzTjBiM0",
+            "after":"Q2c4U1pXNTBYM0YxWlhKNVgzTjBiM0"
+         },
+         "next":"https://graph.facebook.com/820882001277849/feed?access_token"
+      }
+   },
+   "id":"820882001277849"
 }
 \end{lstlisting}
 
 W sekcji paging, pod kluczem next widnieje link, który poprowadzi nas do kolejnych wyników.\newline 
 \end{itemize}
 
-\item \textbf{Client-Serwer}
-
-Projektując, a następnie implementując aplikacje klienta i serwera należy wyznaczyć widoczną granicę pomiędzy oba programami. Oznacza to, że klient i serwer mogą rozwijać się bez ingerencji pomiędzy sobą. Zamysł ten pomaga w realizacji ww. Uniform Interface, a także zwiększa możliwości skalowania i rozszerzalności, a obsługa błędów jest znacznie łatwiejsza. Jeżeli na przykład dokonamy zmiany w aplikacji pisanej dla systemu iOS (to będzie nasz klient), to zmiana ta nie powinna w żaden sposób wpływać na aplikacje serwerową (strukturę bazy danych i tym podobne). Tak samo powinno to działać w drugą stronę. 
+\item \textbf{Client-Serwer} - Projektując, a następnie implementując aplikacje klienta i serwera należy wyznaczyć widoczną granicę pomiędzy oba programami. Oznacza to, że klient i serwer mogą rozwijać się bez ingerencji pomiędzy sobą. Zamysł ten pomaga w realizacji ww. Uniform Interface, a także zwiększa możliwości skalowania i rozszerzalności, a obsługa błędów jest znacznie łatwiejsza. Jeżeli na przykład dokonamy zmiany w aplikacji pisanej dla systemu iOS (to będzie nasz klient), to zmiana ta nie powinna w żaden sposób wpływać na aplikacje serwerową (strukturę bazy danych i tym podobne). Tak samo powinno to działać w drugą stronę. 
 
 
 \begin{figure}[H]
@@ -445,10 +442,10 @@ Projektując, a następnie implementując aplikacje klienta i serwera należy wy
 
 %###################################################
 
-\item \textbf{Stateless} - Według tego założenia wszystkie interakcje pomiędzy klientem, a serwerem powinny bezstanowe. Oznacza to, iż serwer nie zapisuje żadnych stanów aplikacji klienta, a jedynie przetwarza informacje wysyłane przez niego. Każde żądanie powinno być przetwarzane jako nowe i zawierać komplet informacji. Jeżeli klient musi być stanowy, jak np. przy logowaniu, to każde żądanie powinno zawierać informacje aby możliwe było je wykonać, wraz z danymi do autoryzacji i uwierzytelniania.\newline 
-\item \textbf{Cacheable} - odpowiedź, którą użytkownik otrzyma z REST API musi jasno definiować, czy ma ona być cacheable czy non-cacheable. Ma to znaczenie przy danych, które~ bardzo szybko stają się nieaktualne oraz przy danych, które aktualizują się relatywnie rzadko – nie ma sensu na przykład cache’ować współrzędnych geograficznych pędzącego samolotu, natomiast już jego kolor czy nazwę już tak.\newline
+\item \textbf{Stateless} - według tego założenia wszystkie interakcje pomiędzy klientem, a serwerem powinny być bezstanowe. Oznacza to, iż serwer nie zapisuje żadnych stanów aplikacji klienta, a jedynie przetwarza informacje wysyłane przez niego. Każde żądanie powinno być przetwarzane jako nowe i zawierać komplet informacji. Jeżeli klient musi być stanowy, jak np. przy logowaniu, to każde żądanie powinno zawierać tylko potrzebne informacje, wraz z danymi do autoryzacji i uwierzytelniania.\newline 
+\item \textbf{Cacheable} - odpowiedź, którą użytkownik otrzyma z REST API musi jasno definiować, czy ma ona być cacheable czy non-cacheable. Ma to znaczenie przy danych, które bardzo szybko stają się nieaktualne oraz przy danych, które aktualizują się relatywnie rzadko – nie ma sensu na przykład cacheować współrzędnych geograficznych pędzącego samolotu, natomiast jego kolor czy nazwę już tak.\newline
 \item \textbf{Layered System} - REST pozwala na odseparowanie warstw. Możemy wdrożyć nasze API na serwer A, przechowywać dane na serwerze B i przetwarzać żądania na serwerze C. Klient nie wie o zewnętrznych usługach i serwisach, z których korzysta serwer. Pozwala to na rozbicie serwisu na wiele mikroserwisów, które można łatwo aktualizować. Dzięki temu zachowujemy transparentność i separację logiki od warstwy WWW. Niestety takie rozwiązanie ma pewne wady, ponieważ może wprowadzać opóźnienia przez potrzebę komunikacji pomiędzy różnymi częściami naszej aplikacji.\newline
-\item \textbf{Code-On-Demand} - Jest to zasada, która jest opcjonalna, ponieważ prawie zawsze będziemy wysyłać dane w statycznej formie, jak np. XML albo JSON. Nasz serwis może wysyłać gotowe fragmenty kodu np. skrypty JavaScript do ich przetworzenia. 
+\item \textbf{Code-On-Demand} - jest to zasada, która jest opcjonalna, ponieważ prawie zawsze będziemy wysyłać dane w statycznej formie, jak np. XML albo JSON. Nasz serwis może wysyłać gotowe fragmenty kodu np. skrypty JavaScript do ich przetworzenia. 
 \end{itemize}
 %####################################################################
 
@@ -499,7 +496,7 @@ POST /addUsers # Adds new user
 DELETE /users/delete # Deletes all users
 \end{lstlisting}
 
-Pierwszy z powyższych przykładów posiada jeden zasób users, na którym wykonujemy różne akcje z wykorzystanie metod HTTP, czyli mamy jeden zasób na którym wykonujemy wiele akcji. Natomiast przykład drugi posiada trzy różne adresy, które są połączone z akcją wykonywaną w naszej aplikacji. Jednoznacznie widać, że założenia z przykładu drugiego mocno odbiegają od naszych założeń REST, ponieważ powiązanie API z naszą aplikacją uniemożliwia rozwijanie się aplikacji, jak i API niezależnie od siebie.\newline
+Pierwszy z powyższych przykładów posiada jeden zasób users, na którym wykonujemy różne akcje z wykorzystaniem metod HTTP, czyli mamy jeden zasób na którym wykonujemy wiele akcji. Natomiast przykład drugi posiada trzy różne adresy, które są połączone z akcją wykonywaną w naszej aplikacji. Jednoznacznie widać, że założenia z przykładu drugiego mocno odbiegają od naszych założeń REST, ponieważ powiązanie API z naszą aplikacją uniemożliwia rozwijanie się aplikacji, jak i API niezależnie od siebie.\newline
 \item \textbf{Rzeczowniki vs. Czasowniki} - jednym ze sposobów weryfikacji, czy zasób jest odłączony od akcji, jest użycie samego rzeczownika w nazwie. Jeśli w adresie URI zasobu znajduje się czasownik, np. /getUsers lub /addUsers, to możemy podejrzewać że ten zasób jest bardzo mocno powiązany z konkretną akcją.\newline
 \item \textbf{Liczba pojedyncza vs. Liczba mnoga} - starajmy się używać liczby mnogiej przy nazewnictwie zasobów, np. /users zamiast /user. Zwiększa to czytelność naszego API, jednakże ta zasada jest bardzo dyskusyjna. Obiektywnie nasze API powinno być zbudowane konsekwentnie i spójnie. 
 \end{itemize}
@@ -509,10 +506,10 @@ Pierwszy z powyższych przykładów posiada jeden zasób users, na którym wykon
 \section{Model dojrzałości Richardsona}
 \end{center}
 
-Jako, że REST jest tylko zbiorem wytycznych i dobrych rad dla tworzenia API, to deweloperzy mają bardzo dużą elastyczność do definiowania jak bardzo ``REST-owe`` będzie ich API. Zakładając sytuację, że napiszemy prostą aplikację RESTful API, to skąd możemy mieć pewność, że jest ona w stylu REST? Można powiedzieć, że skoro wykorzystujmy protokół HTTP i~ używamy formatu danych JSON, to serwis jest RESTful. \textbf{Model dojrzałości Richardsona}(ang. \emph{Richardson Maturity Model}) pozwala ocenić w jakim stopniu aplikacja jest RESTful. Model definiuje 4 poziomy (0-3) i zakłada, że \textbf{każde API należy do jednego z czterech poziomów dojrzałości}.
+Jako, że REST jest tylko zbiorem wytycznych i dobrych rad dla tworzenia API, to deweloperzy mają bardzo dużą elastyczność do definiowania jak bardzo ``REST-owe`` będzie ich API. Zakładając sytuację, że napiszemy prostą aplikację RESTful API, to skąd możemy mieć pewność, że jest ona w stylu REST? Można powiedzieć, że skoro wykorzystujmy protokół HTTP i używamy formatu danych JSON, to serwis jest RESTful. \textbf{Model dojrzałości Richardsona}(ang. \emph{Richardson Maturity Model}) pozwala ocenić w jakim stopniu aplikacja jest RESTful. Model definiuje 4 poziomy (0-3) i zakłada, że \textbf{każde API należy do jednego z czterech poziomów dojrzałości}.
 
 \begin{itemize}
-\item \textbf{Poziom 0} - Na poziomie zerowym modelu dojrzałości znajdują się aplikacje, które nie spełniają założeń architektury REST. Protokół HTTP wykorzystywany jest tylko jako~ warstwa transportowa. Używane są tylko metody GET i POST oraz status zwracany zawsze jest 200 OK. Nie ma unikalnych adresów dla zasobów. Do tego poziomu zaliczamy np. protokoły SOAP i RPC.
+\item \textbf{Poziom 0} - Na poziomie zerowym modelu dojrzałości znajdują się aplikacje, które nie spełniają założeń architektury REST. Protokół HTTP wykorzystywany jest tylko jako warstwa transportowa. Używane są tylko metody GET i POST oraz status zwracany zawsze jest 200 OK. Nie ma unikalnych adresów dla zasobów. Do tego poziomu zaliczamy np. protokoły SOAP i RPC.
 
 \begin{lstlisting}[
 language={Python},
@@ -722,8 +719,7 @@ W pracy krótko przedstawiono cztery systemy zarządzania bazami danych:
 \item PostgreSQL 
 \end{itemize}
 \section{MySQL}
-MySQL to darmowy i otwarty system zarządzania relacyjnymi bazami danych (RDBMS). Jego właścicielem jest Oracle, który oferuje płatne wersje premium MySQL z dodatkowymi usługami. Jest to lekka baza danych, która może być instalowana i używana przez programistów na serwerach aplikacji produkcyjnych z dużymi aplikacjami wielowarstwowymi, a także na komputerze stacjonarnym. Jest bezpieczny i nie jest podatny na żadne luki w zabezpieczeniach. 
-\indent MySQL oferuje obsługę następujących języków: C/C++, Delphi, Java, Lisp, Node.js, Perl, PHP, R.
+MySQL to darmowy i otwarty system zarządzania relacyjnymi bazami danych (RDBMS). Jego właścicielem jest Oracle, który oferuje płatne wersje premium MySQL z dodatkowymi usługami. Jest to lekka baza danych, która może być instalowana i używana przez programistów na serwerach aplikacji produkcyjnych z dużymi aplikacjami wielowarstwowymi, a także na komputerze stacjonarnym. Jest bezpieczny i nie jest podatny na żadne luki w zabezpieczeniach. MySQL oferuje obsługę następujących języków: C/C++, Delphi, Java, Lisp, Node.js, Perl, PHP, R.
 MySQL oferuje obsługę w chmurze, instalacje lokalne oraz jest kompatybilny z następującymi systemami operacyjnymi i formatami: Windows, MacOS, Linux (Ubuntu, Debian, Generic, SUSE Linux Enterprise Server, Red Hat Enterprises, Oracle), Oracle Solaris, Fedora, FreeBSD.
 
 
