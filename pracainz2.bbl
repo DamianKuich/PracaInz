@@ -1,0 +1,609 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.1 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{nty/global//global/global}
+    \entry{endpoints}{online}{}
+      \list{organization}{1}{%
+        {SmartBear}%
+      }
+      \field{sortinit}{A}
+      \field{sortinithash}{a3dcedd53b04d1adfd5ac303ecd5e6fa}
+      \field{labeltitlesource}{title}
+      \field{title}{API Endpoints - What Are They? Why Do They Matter?}
+      \field{urlday}{16}
+      \field{urlmonth}{3}
+      \field{urlyear}{2016}
+      \field{urldateera}{ce}
+      \true{nocite}
+      \verb{urlraw}
+      \verb https://smartbear.com/learn/performance-monitoring/api-endpoints/
+      \endverb
+      \verb{url}
+      \verb https://smartbear.com/learn/performance-monitoring/api-endpoints/
+      \endverb
+    \endentry
+    \entry{axios}{book}{}
+      \field{sortinit}{a}
+      \field{sortinithash}{a3dcedd53b04d1adfd5ac303ecd5e6fa}
+      \field{labeltitlesource}{title}
+      \field{title}{axios - Dokumentacja}
+      \verb{urlraw}
+      \verb https://axios-http.com/docs/intro
+      \endverb
+      \verb{url}
+      \verb https://axios-http.com/docs/intro
+      \endverb
+    \endentry
+    \entry{restapi}{online}{}
+      \list{organization}{1}{%
+        {Geordy James}%
+      }
+      \field{sortinit}{C}
+      \field{sortinithash}{4c244ceae61406cdc0cc2ce1cb1ff703}
+      \field{labeltitlesource}{title}
+      \field{day}{21}
+      \field{month}{4}
+      \field{title}{Creating a simple REST API in PHP}
+      \field{urlday}{15}
+      \field{urlmonth}{3}
+      \field{urlyear}{2016}
+      \field{year}{2017}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \true{nocite}
+      \verb{urlraw}
+      \verb https://shareurcodes.com/blog/creating%20a%20simple%20rest%20api%20in%20php
+      \endverb
+      \verb{url}
+      \verb https://shareurcodes.com/blog/creating%20a%20simple%20rest%20api%20in%20php
+      \endverb
+    \endentry
+    \entry{django-postresql}{online}{}
+      \list{organization}{1}{%
+        {Sammy Lee}%
+      }
+      \field{sortinit}{D}
+      \field{sortinithash}{c438b3d5d027251ba63f5ed538d98af5}
+      \field{labeltitlesource}{title}
+      \field{title}{Data Engineering with Python, Django, and PostgreSQL}
+      \field{urlday}{23}
+      \field{urlmonth}{5}
+      \field{urlyear}{2021}
+      \field{urldateera}{ce}
+      \true{nocite}
+      \verb{urlraw}
+      \verb https://towardsdatascience.com/data-engineering-with-python-django-and-postgresql-99409492769
+      \endverb
+      \verb{url}
+      \verb https://towardsdatascience.com/data-engineering-with-python-django-and-postgresql-99409492769
+      \endverb
+    \endentry
+    \entry{django-book}{online}{}
+      \list{organization}{1}{%
+        {Adrian Holovaty, Jacob K. Moss}%
+      }
+      \field{sortinit}{D}
+      \field{sortinithash}{c438b3d5d027251ba63f5ed538d98af5}
+      \field{labeltitlesource}{title}
+      \field{title}{Django Book, The Definitive Guide to Django: Web Development Done Right}
+      \field{urlday}{24}
+      \field{urlmonth}{6}
+      \field{urlyear}{2021}
+      \field{urldateera}{ce}
+      \true{nocite}
+      \verb{urlraw}
+      \verb http://gsl-archive.mit.edu/media/programs/mexico-summer-2014/materials/djangobook.pdf
+      \endverb
+      \verb{url}
+      \verb http://gsl-archive.mit.edu/media/programs/mexico-summer-2014/materials/djangobook.pdf
+      \endverb
+    \endentry
+    \entry{formik}{book}{}
+      \field{sortinit}{F}
+      \field{sortinithash}{fb0c0faa89eb6abae8213bf60e6799ea}
+      \field{labeltitlesource}{title}
+      \field{title}{Formik - Dokumentacja}
+      \verb{urlraw}
+      \verb https://formik.org/docs/overview
+      \endverb
+      \verb{url}
+      \verb https://formik.org/docs/overview
+      \endverb
+    \endentry
+    \entry{reactstory}{book}{}
+      \name{author}{1}{}{%
+        {{hash=166e19602ba3f85cbe9590f79d3ce461}{%
+           family={Hamor},
+           familyi={H\bibinitperiod},
+           given={Ferenc},
+           giveni={F\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {RisingStack}%
+      }
+      \strng{namehash}{166e19602ba3f85cbe9590f79d3ce461}
+      \strng{fullhash}{166e19602ba3f85cbe9590f79d3ce461}
+      \strng{bibnamehash}{166e19602ba3f85cbe9590f79d3ce461}
+      \strng{authorbibnamehash}{166e19602ba3f85cbe9590f79d3ce461}
+      \strng{authornamehash}{166e19602ba3f85cbe9590f79d3ce461}
+      \strng{authorfullhash}{166e19602ba3f85cbe9590f79d3ce461}
+      \field{sortinit}{H}
+      \field{sortinithash}{6db6145dae8dc9e1271a8d556090b50a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{The History of React.js on a Timeline}
+      \verb{urlraw}
+      \verb https://blog.risingstack.com/the-history-of-react-js-on-a-timeline/
+      \endverb
+      \verb{url}
+      \verb https://blog.risingstack.com/the-history-of-react-js-on-a-timeline/
+      \endverb
+    \endentry
+    \entry{HTTP}{online}{}
+      \list{organization}{1}{%
+        {Wikipedia}%
+      }
+      \field{sortinit}{H}
+      \field{sortinithash}{6db6145dae8dc9e1271a8d556090b50a}
+      \field{labeltitlesource}{title}
+      \field{title}{Hypertext Transfer Protocol}
+      \field{urlday}{20}
+      \field{urlmonth}{4}
+      \field{urlyear}{2021}
+      \field{urldateera}{ce}
+      \true{nocite}
+      \verb{urlraw}
+      \verb https://pl.wikipedia.org/wiki/Hypertext_Transfer_Protocol
+      \endverb
+      \verb{url}
+      \verb https://pl.wikipedia.org/wiki/Hypertext_Transfer_Protocol
+      \endverb
+    \endentry
+    \entry{reactjs}{book}{}
+      \name{author}{1}{}{%
+        {{hash=6a2c4d8b39538e1ab369a0cf62a49e46}{%
+           family={Inc.},
+           familyi={I\bibinitperiod},
+           given={Facebook},
+           giveni={F\bibinitperiod}}}%
+      }
+      \strng{namehash}{6a2c4d8b39538e1ab369a0cf62a49e46}
+      \strng{fullhash}{6a2c4d8b39538e1ab369a0cf62a49e46}
+      \strng{bibnamehash}{6a2c4d8b39538e1ab369a0cf62a49e46}
+      \strng{authorbibnamehash}{6a2c4d8b39538e1ab369a0cf62a49e46}
+      \strng{authornamehash}{6a2c4d8b39538e1ab369a0cf62a49e46}
+      \strng{authorfullhash}{6a2c4d8b39538e1ab369a0cf62a49e46}
+      \field{sortinit}{I}
+      \field{sortinithash}{9417e9a1288a9371e2691d999083ed39}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{React - Dokumentacja}
+      \verb{urlraw}
+      \verb https://reactjs.org/
+      \endverb
+      \verb{url}
+      \verb https://reactjs.org/
+      \endverb
+    \endentry
+    \entry{restapibook}{book}{}
+      \name{author}{1}{}{%
+        {{hash=5aa9995c7bf3e799e0d5a6a9dc05d7d2}{%
+           family={Massé},
+           familyi={M\bibinitperiod},
+           given={Mark\bibnamedelima H.},
+           giveni={M\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {O'Reilly Media}%
+      }
+      \strng{namehash}{5aa9995c7bf3e799e0d5a6a9dc05d7d2}
+      \strng{fullhash}{5aa9995c7bf3e799e0d5a6a9dc05d7d2}
+      \strng{bibnamehash}{5aa9995c7bf3e799e0d5a6a9dc05d7d2}
+      \strng{authorbibnamehash}{5aa9995c7bf3e799e0d5a6a9dc05d7d2}
+      \strng{authornamehash}{5aa9995c7bf3e799e0d5a6a9dc05d7d2}
+      \strng{authorfullhash}{5aa9995c7bf3e799e0d5a6a9dc05d7d2}
+      \field{sortinit}{M}
+      \field{sortinithash}{2e5c2f51f7fa2d957f3206819bf86dc3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{REST API Design Rulebook}
+      \field{year}{2011}
+      \field{dateera}{ce}
+      \true{nocite}
+    \endentry
+    \entry{mozilla}{book}{}
+      \list{publisher}{1}{%
+        {Mozilla}%
+      }
+      \field{sortinit}{M}
+      \field{sortinithash}{2e5c2f51f7fa2d957f3206819bf86dc3}
+      \field{labeltitlesource}{title}
+      \field{title}{MDN Web Docs}
+      \true{nocite}
+      \verb{urlraw}
+      \verb https://developer.mozilla.org/en-US/docs/Web/JavaScript
+      \endverb
+      \verb{url}
+      \verb https://developer.mozilla.org/en-US/docs/Web/JavaScript
+      \endverb
+    \endentry
+    \entry{npmdocs}{book}{}
+      \list{publisher}{1}{%
+        {npm Inc.}%
+      }
+      \field{sortinit}{n}
+      \field{sortinithash}{98cf339a479c0454fe09153a08675a15}
+      \field{labeltitlesource}{title}
+      \field{title}{npm - Dokumentacja}
+      \true{nocite}
+      \verb{urlraw}
+      \verb https://docs.npmjs.com/about-npm
+      \endverb
+      \verb{url}
+      \verb https://docs.npmjs.com/about-npm
+      \endverb
+    \endentry
+    \entry{npmwiki}{book}{}
+      \list{publisher}{1}{%
+        {Wikipedia}%
+      }
+      \field{sortinit}{N}
+      \field{sortinithash}{98cf339a479c0454fe09153a08675a15}
+      \field{labeltitlesource}{title}
+      \field{title}{Npm(software)}
+      \verb{urlraw}
+      \verb https://en.wikipedia.org/wiki/Npm_(software)
+      \endverb
+      \verb{url}
+      \verb https://en.wikipedia.org/wiki/Npm_(software)
+      \endverb
+    \endentry
+    \entry{django-pgconnection}{online}{}
+      \list{organization}{1}{%
+        {Wes Kendall}%
+      }
+      \field{sortinit}{O}
+      \field{sortinithash}{ff8d4eeb5101e3cf3809959b3592d942}
+      \field{labeltitlesource}{title}
+      \field{title}{Oficjalna dokumentacja django-pgconnection}
+      \field{urlday}{4}
+      \field{urlmonth}{6}
+      \field{urlyear}{2021}
+      \field{urldateera}{ce}
+      \true{nocite}
+      \verb{urlraw}
+      \verb https://django-pgconnection.readthedocs.io/en/latest/
+      \endverb
+      \verb{url}
+      \verb https://django-pgconnection.readthedocs.io/en/latest/
+      \endverb
+    \endentry
+    \entry{django-pghistory}{online}{}
+      \list{organization}{1}{%
+        {Wes Kendall}%
+      }
+      \field{sortinit}{O}
+      \field{sortinithash}{ff8d4eeb5101e3cf3809959b3592d942}
+      \field{labeltitlesource}{title}
+      \field{title}{Oficjalna dokumentacja django-pghistory}
+      \field{urlday}{3}
+      \field{urlmonth}{6}
+      \field{urlyear}{2021}
+      \field{urldateera}{ce}
+      \true{nocite}
+      \verb{urlraw}
+      \verb https://django-pghistory.readthedocs.io/en/latest/index.html
+      \endverb
+      \verb{url}
+      \verb https://django-pghistory.readthedocs.io/en/latest/index.html
+      \endverb
+    \endentry
+    \entry{django-pgtrigger}{online}{}
+      \list{organization}{1}{%
+        {Wes Kendall}%
+      }
+      \field{sortinit}{O}
+      \field{sortinithash}{ff8d4eeb5101e3cf3809959b3592d942}
+      \field{labeltitlesource}{title}
+      \field{title}{Oficjalna dokumentacja django-pgtrigger}
+      \field{urlday}{3}
+      \field{urlmonth}{6}
+      \field{urlyear}{2021}
+      \field{urldateera}{ce}
+      \true{nocite}
+      \verb{urlraw}
+      \verb https://django-pgtrigger.readthedocs.io/en/latest/toc.html
+      \endverb
+      \verb{url}
+      \verb https://django-pgtrigger.readthedocs.io/en/latest/toc.html
+      \endverb
+    \endentry
+    \entry{sqlserver}{online}{}
+      \list{organization}{1}{%
+        {Microsoft}%
+      }
+      \field{sortinit}{O}
+      \field{sortinithash}{ff8d4eeb5101e3cf3809959b3592d942}
+      \field{labeltitlesource}{title}
+      \field{title}{Oficjalna dokumentacja Microsoft SQL Server}
+      \field{urlday}{13}
+      \field{urlmonth}{5}
+      \field{urlyear}{2021}
+      \field{urldateera}{ce}
+      \true{nocite}
+      \verb{urlraw}
+      \verb https://docs.microsoft.com/en-us/sql/sql-server/
+      \endverb
+      \verb{url}
+      \verb https://docs.microsoft.com/en-us/sql/sql-server/
+      \endverb
+    \endentry
+    \entry{mysql}{online}{}
+      \list{organization}{1}{%
+        {Oracle Corporation and/or its affiliates}%
+      }
+      \field{sortinit}{O}
+      \field{sortinithash}{ff8d4eeb5101e3cf3809959b3592d942}
+      \field{labeltitlesource}{title}
+      \field{title}{Oficjalna dokumentacja MySQL}
+      \field{urlday}{3}
+      \field{urlmonth}{5}
+      \field{urlyear}{2021}
+      \field{urldateera}{ce}
+      \true{nocite}
+      \verb{urlraw}
+      \verb https://dev.mysql.com/doc/
+      \endverb
+      \verb{url}
+      \verb https://dev.mysql.com/doc/
+      \endverb
+    \endentry
+    \entry{oracledb}{online}{}
+      \list{organization}{1}{%
+        {Oracle Corporation}%
+      }
+      \field{sortinit}{O}
+      \field{sortinithash}{ff8d4eeb5101e3cf3809959b3592d942}
+      \field{labeltitlesource}{title}
+      \field{title}{Oficjalna dokumentacja Oracle Database}
+      \field{urlday}{13}
+      \field{urlmonth}{5}
+      \field{urlyear}{2021}
+      \field{urldateera}{ce}
+      \true{nocite}
+      \verb{urlraw}
+      \verb https://docs.oracle.com/en/database/
+      \endverb
+      \verb{url}
+      \verb https://docs.oracle.com/en/database/
+      \endverb
+    \endentry
+    \entry{postgresql}{online}{}
+      \list{organization}{1}{%
+        {The PostgreSQL Global Development Group}%
+      }
+      \field{sortinit}{O}
+      \field{sortinithash}{ff8d4eeb5101e3cf3809959b3592d942}
+      \field{labeltitlesource}{title}
+      \field{title}{Oficjalna dokumentacja PostgreSQL}
+      \field{urlday}{13}
+      \field{urlmonth}{5}
+      \field{urlyear}{2021}
+      \field{urldateera}{ce}
+      \true{nocite}
+      \verb{urlraw}
+      \verb https://www.postgresql.org/docs/
+      \endverb
+      \verb{url}
+      \verb https://www.postgresql.org/docs/
+      \endverb
+    \endentry
+    \entry{django}{online}{}
+      \list{organization}{1}{%
+        {Django Software Foundation}%
+      }
+      \field{sortinit}{O}
+      \field{sortinithash}{ff8d4eeb5101e3cf3809959b3592d942}
+      \field{labeltitlesource}{title}
+      \field{title}{Oficjalna strona framework’a Django}
+      \field{urlday}{20}
+      \field{urlmonth}{5}
+      \field{urlyear}{2021}
+      \field{urldateera}{ce}
+      \true{nocite}
+      \verb{urlraw}
+      \verb https://docs.djangoproject.com/en/3.1/
+      \endverb
+      \verb{url}
+      \verb https://docs.djangoproject.com/en/3.1/
+      \endverb
+    \endentry
+    \entry{opensourcewiki}{book}{}
+      \list{publisher}{1}{%
+        {Wikipedia}%
+      }
+      \field{sortinit}{O}
+      \field{sortinithash}{ff8d4eeb5101e3cf3809959b3592d942}
+      \field{labeltitlesource}{title}
+      \field{title}{Otwarte oprogramowanie}
+      \verb{urlraw}
+      \verb https://pl.wikipedia.org/wiki/Otwarte_oprogramowanie
+      \endverb
+      \verb{url}
+      \verb https://pl.wikipedia.org/wiki/Otwarte_oprogramowanie
+      \endverb
+    \endentry
+    \entry{reactrouter}{book}{}
+      \field{sortinit}{R}
+      \field{sortinithash}{b9c68a358aea118dfa887b6e902414a7}
+      \field{labeltitlesource}{title}
+      \field{title}{React Router - Dokumentacja}
+      \verb{urlraw}
+      \verb https://reactrouter.com/web/example/basic
+      \endverb
+      \verb{url}
+      \verb https://reactrouter.com/web/example/basic
+      \endverb
+    \endentry
+    \entry{maturity}{online}{}
+      \list{organization}{1}{%
+        {Patryk Sładek}%
+      }
+      \field{sortinit}{R}
+      \field{sortinithash}{b9c68a358aea118dfa887b6e902414a7}
+      \field{labeltitlesource}{title}
+      \field{day}{25}
+      \field{month}{11}
+      \field{title}{REST API – model dojrzałości Richardsona}
+      \field{year}{2020}
+      \field{dateera}{ce}
+      \true{nocite}
+      \verb{urlraw}
+      \verb https://jakzostacprogramista.net/2020/11/25/rest-api-model-dojrzalosci-richardsona/
+      \endverb
+      \verb{url}
+      \verb https://jakzostacprogramista.net/2020/11/25/rest-api-model-dojrzalosci-richardsona/
+      \endverb
+      \warn{\item Entry 'maturity' (automatyzacja-bibliografia.bib): Invalid format '2016-03-013' of date field 'urldate' - ignoring}
+    \endentry
+    \entry{REST-API}{online}{}
+      \list{organization}{1}{%
+        {Grzegorz Kwaśniewski}%
+      }
+      \field{sortinit}{R}
+      \field{sortinithash}{b9c68a358aea118dfa887b6e902414a7}
+      \field{labeltitlesource}{title}
+      \field{title}{REST API od podstaw}
+      \field{urlday}{8}
+      \field{urlmonth}{5}
+      \field{urlyear}{2021}
+      \field{urldateera}{ce}
+      \true{nocite}
+      \verb{urlraw}
+      \verb https://www.devmobile.pl/rest-api-od-podstaw/
+      \endverb
+      \verb{url}
+      \verb https://www.devmobile.pl/rest-api-od-podstaw/
+      \endverb
+    \endentry
+    \entry{history}{online}{}
+      \list{organization}{1}{%
+        {ReadMe}%
+      }
+      \field{sortinit}{T}
+      \field{sortinithash}{51f9faf24c60c62ca764a77f78cf5666}
+      \field{labeltitlesource}{title}
+      \field{day}{15}
+      \field{month}{11}
+      \field{title}{The History of REST APIs}
+      \field{urlday}{16}
+      \field{urlmonth}{3}
+      \field{urlyear}{2016}
+      \field{year}{2016}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \true{nocite}
+      \verb{urlraw}
+      \verb https://blog.readme.com/the-history-of-rest-apis/
+      \endverb
+      \verb{url}
+      \verb https://blog.readme.com/the-history-of-rest-apis/
+      \endverb
+    \endentry
+    \entry{restt}{online}{}
+      \list{organization}{1}{%
+        {SoapUI}%
+      }
+      \field{sortinit}{W}
+      \field{sortinithash}{1af34bd8c148ffb32de1494636b49713}
+      \field{labeltitlesource}{title}
+      \field{title}{What Is A REST API?}
+      \field{urlday}{16}
+      \field{urlmonth}{3}
+      \field{urlyear}{2016}
+      \field{urldateera}{ce}
+      \true{nocite}
+      \verb{urlraw}
+      \verb https://www.soapui.org/learn/api/what-is-a-rest-api/
+      \endverb
+      \verb{url}
+      \verb https://www.soapui.org/learn/api/what-is-a-rest-api/
+      \endverb
+    \endentry
+    \entry{API}{online}{}
+      \list{organization}{1}{%
+        {Hooman Staff}%
+      }
+      \field{sortinit}{W}
+      \field{sortinithash}{1af34bd8c148ffb32de1494636b49713}
+      \field{labeltitlesource}{title}
+      \field{title}{What is API – And it’s Types}
+      \field{urlday}{1}
+      \field{urlmonth}{5}
+      \field{urlyear}{2021}
+      \field{urldateera}{ce}
+      \true{nocite}
+      \verb{urlraw}
+      \verb https://techrevv.com/what-is-api-and-its-types/
+      \endverb
+      \verb{url}
+      \verb https://techrevv.com/what-is-api-and-its-types/
+      \endverb
+    \endentry
+    \entry{mtv}{online}{}
+      \list{organization}{1}{%
+        {Rinu Gour}%
+      }
+      \field{sortinit}{W}
+      \field{sortinithash}{1af34bd8c148ffb32de1494636b49713}
+      \field{labeltitlesource}{title}
+      \field{day}{19}
+      \field{month}{4}
+      \field{title}{Working Structure of Django MTV Architecture}
+      \field{urlday}{15}
+      \field{urlmonth}{3}
+      \field{urlyear}{2016}
+      \field{year}{2019}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \true{nocite}
+      \verb{urlraw}
+      \verb https://towardsdatascience.com/working-structure-of-django-mtv-architecture-a741c8c64082
+      \endverb
+      \verb{url}
+      \verb https://towardsdatascience.com/working-structure-of-django-mtv-architecture-a741c8c64082
+      \endverb
+    \endentry
+    \entry{yup}{book}{}
+      \field{sortinit}{Y}
+      \field{sortinithash}{6ae2ff5458ff901249c2745238c951b7}
+      \field{labeltitlesource}{title}
+      \field{title}{Yup - Dokumentacja}
+      \verb{urlraw}
+      \verb https://github.com/jquense/yup
+      \endverb
+      \verb{url}
+      \verb https://github.com/jquense/yup
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+
