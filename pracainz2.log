@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.11) (preloaded format=pdflatex 2020.11.20)  4 APR 2022 16:53
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.11) (preloaded format=pdflatex 2020.11.20)  23 APR 2022 11:37
 entering extended mode
 **./pracainz2.tex
 (pracainz2.tex
@@ -1695,7 +1695,7 @@ Overfull \hbox (10.16791pt too wide) in paragraph at lines 1066--1067
  []
 
 [39 <./skillsec.png>]
-<task_skill.png, id=811, 187.902pt x 245.11575pt>
+<task_skill.png, id=812, 187.902pt x 245.11575pt>
 File: task_skill.png Graphic file (type png)
 <use task_skill.png>
 Package pdftex.def Info: task_skill.png  used on input line 1092.
@@ -1711,20 +1711,22 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 3.5pt
 (hyperref)                removed on input line 1113.
 
+[41]
 LaTeX Font Info:    Font shape `T1/SourceCodePro-TLF/sb/n' will be
 (Font)              scaled to size 8.36993pt on input line 1120.
-[41]
+
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 2.73749pt
 (hyperref)                removed on input line 1125.
 
+[42]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 2.73749pt
 (hyperref)                removed on input line 1166.
 
-[42] [43] [44]
+[43] [44]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 2.73749pt
@@ -1798,7 +1800,7 @@ LaTeX Font Info:    Font shape `U/msb/m/n' will be
 (Font)              scaled to size 7.29405pt on input line 1457.
 LaTeX Font Info:    Font shape `U/msb/m/n' will be
 (Font)              scaled to size 5.21004pt on input line 1457.
-<statystyki react vue angular.png, id=1051, 973.38657pt x 534.49687pt>
+<statystyki react vue angular.png, id=1052, 973.38657pt x 534.49687pt>
 File: statystyki react vue angular.png Graphic file (type png)
 <use statystyki react vue angular.png>
 Package pdftex.def Info: statystyki react vue angular.png  used on input line 1
@@ -1817,7 +1819,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 [51
 
 ]
-<react dev example.jpg, id=1059, 481.8pt x 301.125pt>
+<react dev example.jpg, id=1060, 481.8pt x 301.125pt>
 File: react dev example.jpg Graphic file (type jpg)
 <use react dev example.jpg>
 Package pdftex.def Info: react dev example.jpg  used on input line 1480.
@@ -1890,7 +1892,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removed on input line 1627.
 
 [56]
-<diagram metod cyklu życia.png, id=1142, 887.56593pt x 330.48468pt>
+<diagram metod cyklu życia.png, id=1143, 887.56593pt x 330.48468pt>
 File: diagram metod cyklu życia.png Graphic file (type png)
 <use diagram metod cyklu życia.png>
 Package pdftex.def Info: diagram metod cyklu życia.png  used on input line 164
@@ -1941,7 +1943,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                \kern 2.73749pt
 (hyperref)                removed on input line 1854.
 
-<promises.png, id=1251, 603.0028pt x 223.58531pt>
+<promises.png, id=1252, 603.0028pt x 223.58531pt>
 File: promises.png Graphic file (type png)
 <use promises.png>
 Package pdftex.def Info: promises.png  used on input line 1859.
@@ -2067,18 +2069,26 @@ Package rerunfilecheck Info: File `pracainz2.out' has not changed.
 (rerunfilecheck)             Checksum: 87465652B739D5C34B0BD554C3D5459E;13569.
 
 
+LaTeX Warning: There were undefined references.
+
+
 LaTeX Warning: There were multiply-defined labels.
+
+
+Package biblatex Warning: Please (re)run Biber on the file:
+(biblatex)                pracainz2
+(biblatex)                and rerun LaTeX afterwards.
 
 Package logreq Info: Writing requests to 'pracainz2.run.xml'.
 \openout1 = `pracainz2.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 27737 strings out of 479799
- 439750 string characters out of 2887658
- 1476047 words of memory out of 3000000
+ 27733 strings out of 479799
+ 439601 string characters out of 2887658
+ 1476881 words of memory out of 3000000
  43064 multiletter control sequences out of 15000+200000
- 610867 words of font info for 343 fonts, out of 3000000 for 9000
+ 610657 words of font info for 340 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  81i,12n,128p,1340b,1997s stack positions out of 5000i,500n,10000p,200000b,50000s
 {E:/tex/fonts/enc/dvips/sourcecodepro/a_lutrty.enc}{E:/tex/fonts/enc/dvips/ba
@@ -2087,9 +2097,9 @@ fonts/type1/adobe/sourcecodepro/SourceCodePro-Regular.pfb><E:/tex/fonts/type1/a
 dobe/sourcecodepro/SourceCodePro-Semibold.pfb><E:/tex/fonts/type1/public/fpl/fp
 lrc8a.pfb><E:/tex/fonts/type1/urw/palatino/uplb8a.pfb><E:/tex/fonts/type1/urw/p
 alatino/uplr8a.pfb><E:/tex/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on pracainz2.pdf (72 pages, 944352 bytes).
+Output written on pracainz2.pdf (72 pages, 944658 bytes).
 PDF statistics:
- 1822 PDF objects out of 2073 (max. 8388607)
+ 1823 PDF objects out of 2073 (max. 8388607)
  958 named destinations out of 1000 (max. 500000)
  51858 words of extra memory for PDF output out of 61914 (max. 10000000)
 
