@@ -831,6 +831,7 @@ Domyślnie Django jest skonfigurowane do używania \texttt{SQLite} jako swojego 
 Poniżej znajduję się kod~\ref{databases} potrzebny do połączenia się bazą danych oferowaną przez Heroku.  
 \begin{lstlisting}[
 language={Python},
+xleftmargin=14pt,
 caption={Fragment pliku \texttt{settings.py}},
 label={databases}
 ]
@@ -867,6 +868,7 @@ Każde pole określone jest poprzez argumenty. Przykładowo pole \texttt{CharFie
 
 \begin{lstlisting}[
 language={Python},
+xleftmargin=14pt,
 caption={Fragment pliku models},
 label={models}
 ]
@@ -1000,6 +1002,7 @@ W relacji jeden do jednego tylko jeden rekord tabeli A (najczęściej klucz pods
 W Django należy użyć typu \texttt{OneToOneField}, aby zdefiniować relację jeden do jednego.
 \begin{lstlisting}[
 language={Python},
+xleftmargin=14pt,
 caption={Jeden do jednego Student-School locker}
 ]
 class School_locker(models.Model):
@@ -1029,6 +1032,7 @@ Relacja jeden do wielu jest najczęściej używanym typem połączenia i odpowia
 Aby zdefiniować relację jeden do wielu w Django, należy użyć \textbf{ForeignKey}. Przykładem mogą być modele \texttt{Section} (dział) oraz \texttt{Skill} (umiejętność) zawarte w projekcie.  \newpage 
 \begin{lstlisting}[
 language={Python},
+xleftmargin=14pt,
 caption={Jeden do wielu Section-Skill}
 ]
 class Section(models.Model):
@@ -1059,6 +1063,7 @@ Relacja wiele do wielu występuje w sytuacji, gdy rekordowi tabeli A przyporząd
 Aby zdefiniować relację wiele do wielu w Django, należy użyć \texttt{ManyToManyField}. Za przykład można obrać model \texttt{Task} (zadanie) oraz \texttt{Skill} (umiejętność).
 \begin{lstlisting}[
 language={Python},
+xleftmargin=14pt,
 caption={Wiele do wielu Task-Skill}
 ]
 class Skill(models.Model):
@@ -1111,7 +1116,7 @@ W~tym celu została stworzona opcja \texttt{on\_delete}, której zadaniem jest o
 \item \texttt{on\_delete=models.DO\_NOTHING} - Żadne działanie nie jest podejmowane po usunięciu powiązanych rekordów. Zwykle jest to zła praktyka dotycząca relacyjnych baz danych, ponieważ powstają osierocone rekordy bez wartości.
 \end{itemize}
 \section{ORM w Django}
-Po utworzeniu modeli danych, Django automatycznie udostępnia interfejs \texttt{QuerySet}, który umożliwia tworzenie, pobieranie, aktualizowanie i usuwanie obiektów. Są to polecenia, dzięki którym możliwe jest pobieranie informacji z~bazy danych oraz otrzymywanie ich w postaci obiektów. Polecenia te możemy wykonywać z pomocą konsoli po wpisaniu następującej komendy:
+Mapowanie obiektowo-relacyjne (ang. \emph{Object-Relational Mapping} -- ORM) -- sposób odwzorowania obiektowej architektury systemu informatycznego na bazę danych (lub inny element systemu) o relacyjnym charakterze. Dzięki ORM możliwe jest pisanie kodu np. w języku Python zamiast SQL. Framework Django wyposażony jest we własny, wbudowany moduł zwany ,,Django ORM'' oraz udostępnia interfejs \texttt{QuerySet}, który umożliwia tworzenie, pobieranie, aktualizowanie i usuwanie obiektów. Są to polecenia, dzięki którym możliwe jest pobieranie informacji z~bazy danych oraz otrzymywanie ich w postaci obiektów. Polecenia te możemy wykonywać z pomocą konsoli po wpisaniu następującej komendy:
 \begin{lstlisting}[style=DOS]
 >python manage.py shell
 \end{lstlisting}
