@@ -227,10 +227,10 @@ Głównym celem tego podrozdziału jest przedstawienie podstawowych definicji or
 \textbf{Żądanie} (ang. \emph{Request}) w formie HTTP powinno posiadać cztery elementy:
 
 \begin{itemize}
-\item \textbf{Metode HTTP} (ang. \emph{Request method}) - określenie metody, którą chcemy wykorzystać dla danego zasobu.
-\item \textbf{Nagłówek} (ang. \emph{Header}) - może składać się z kilku części i ma za zadanie przechowywać dodatkowe informacje o żądaniu.
-\item \textbf{Ścieżkę do zasobu} (ang. \emph{Resource path}) - URI, czyli ścieżka dostępu do zasobu.
-\item \textbf{Ciało} (ang. \emph{Body}) - Składuje się tu dodatkowe informacje, które później wykorzystywane są do edycji, lub tworzenia zasobów po stronie serwera. Może być puste.
+\item \textbf{Metode HTTP} (ang. \emph{Request method}) -- określenie metody, którą chcemy wykorzystać dla danego zasobu.
+\item \textbf{Nagłówek} (ang. \emph{Header}) -- może składać się z kilku części i ma za zadanie przechowywać dodatkowe informacje o żądaniu.
+\item \textbf{Ścieżkę do zasobu} (ang. \emph{Resource path}) -- URI, czyli ścieżka dostępu do zasobu.
+\item \textbf{Ciało} (ang. \emph{Body}) -- Składuje się tu dodatkowe informacje, które później wykorzystywane są do edycji lub tworzenia zasobów po stronie serwera. Może być puste.
 \end{itemize}
 
 %------------------------------ SPRAWDZONE ------------------------------
@@ -256,28 +256,30 @@ Body:
 \begin{center}
 \subsection{Metody HTTP}
 \end{center}
-Metoda HTTP jest częścią zapytania HTTP odpowiedzialną za określenie akcji, która ma zostać podjęta w wyniku zapytania HTTP. Istnieje siedem aktualnie najczęściej wykorzystywanych metod:
+Metoda HTTP jest częścią zapytania HTTP odpowiedzialną za określenie akcji, która ma zostać podjęta w wyniku zapytania HTTP. Istnieje dziewięć najczęściej wykorzystywanych metod:
 
 \begin{itemize}
-\item \textbf{GET} - Odczytuje reprezentację zasobu i powinno wyłącznie zwracać dane.
-\item \textbf{POST} - Wykorzystywane w celu przesyłania danych do wskazanego zasobu.
-\item \textbf{PUT} - Aktualizuje całą reprezentację zasobu z wykorzystaniem przesłanych danych.
-\item \textbf{PATCH} - Aktualizuje część reprezentacji zasobu z wykorzystaniem przesłanych danych.
-\item \textbf{DELETE} - Usuwa wskazany zasób lub kolekcje zasobów.
-\item \textbf{HEAD} - Pełni identyczną rolę jak GET, jednak w tym przypadku odpowiedź nie zawiera ciała, lecz nagłówki.
-\item \textbf{OPTIONS} - Zwraca informację o możliwych opcjach dostępnych na danym zasobie.
+\item \textbf{GET} -- Odczytuje reprezentację zasobu i powinno wyłącznie zwracać dane.
+\item \textbf{POST} -- Wykorzystywane w celu przesyłania danych do wskazanego zasobu.
+\item \textbf{PUT} -- Aktualizuje całą reprezentację zasobu z wykorzystaniem przesłanych danych.
+\item \textbf{PATCH} -- Aktualizuje część reprezentacji zasobu z wykorzystaniem przesłanych danych.
+\item \textbf{DELETE} -- Usuwa wskazany zasób lub kolekcje zasobów.
+\item \textbf{HEAD} -- Pełni identyczną rolę jak GET, jednak w tym przypadku odpowiedź nie zawiera ciała, lecz nagłówki.
+\item \textbf{OPTIONS} -- Zwraca informację o możliwych opcjach dostępnych na danym zasobie.
+\item \textbf{TRACE} -- Używane przy testowaniu połączeń.
+\item \textbf{CONNECT} -- Stworzenie tunelu poprzez serwery proxy.
 \end{itemize}
 
 
 \begin{center}
 \subsection{Czym w zasadzie jest API ?}
 \end{center}
-\textbf{API} (ang. \emph{Application Programming Interface}) możemy najprościej przyrównać do rozmowy dwóch osób. Kiedy chcemy uzyskać informację od drugiej osoby,  wysyłamy do niej \textbf{prośbę} (ang. \emph{Request}) o nią, a ona zwraca nam \textbf{odpowiedź} (ang. \emph{Response}) zawierającą pewne dane.  API systematyzuje sposób rozmowy pomiędzy dwoma stronami. Istnieje wiele rodzajów API, jednakże w tej pracy skupimy się na Web API, czyli API dla serwisów internetowych. 
+\textbf{API} (ang. \emph{Application Programming Interface}) możemy najprościej przyrównać do rozmowy dwóch osób. Kiedy chcemy uzyskać informację od drugiej osoby,  wysyłamy do niej \textbf{prośbę} (ang. \emph{Request}) o niąd, a ona zwraca nam \textbf{odpowiedź} (ang. \emph{Response}) zawierającą pewne dane.  API systematyzuje sposób rozmowy pomiędzy dwoma stronami. W tej pracy skupimy się na Web API, czyli API dla serwisów internetowych. 
 
 \begin{figure}[H]
 \centering
 \includegraphics[width=14cm]{api.png}
-\caption{Zasada działania API}
+\caption{Zasada działania API, źródło: wykonanie własne }
 \label{Cache}
 \end{figure}
 
