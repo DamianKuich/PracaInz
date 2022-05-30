@@ -1,17 +1,17 @@
 [0] Config.pm:312> INFO - This is Biber 2.15 (beta)
 [0] Config.pm:315> INFO - Logfile is 'pracainz2.blg'
-[255] biber-MSWIN64:330> INFO - === 
-[312] Biber.pm:415> INFO - Reading 'pracainz2.bcf'
-[488] Biber.pm:949> INFO - Using all citekeys in bib section 0
-[515] Biber.pm:4334> INFO - Processing section 0
-[570] Biber.pm:4523> INFO - Looking for bibtex format file 'automatyzacja-bibliografia.bib' for section 0
-[582] bibtex.pm:1682> INFO - LaTeX decoding ...
-[616] bibtex.pm:1494> INFO - Found BibTeX data source 'automatyzacja-bibliografia.bib'
-[675] Utils.pm:395> WARN - Entry 'maturity' (automatyzacja-bibliografia.bib): Invalid format '2016-03-013' of date field 'urldate' - ignoring
-[732] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[732] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
-[732] Biber.pm:4162> INFO - Sorting list 'nty/global//global/global' of type 'entry' with template 'nty' and locale 'en-US'
-[732] Biber.pm:4168> INFO - No sort tailoring available for locale 'en-US'
-[787] bbl.pm:651> INFO - Writing 'pracainz2.bbl' with encoding 'UTF-8'
-[796] bbl.pm:754> INFO - Output to pracainz2.bbl
-[797] Biber.pm:128> INFO - WARNINGS: 1
+[202] biber-MSWIN64:330> INFO - === 
+[263] Biber.pm:415> INFO - Reading 'pracainz2.bcf'
+[457] Biber.pm:949> INFO - Using all citekeys in bib section 0
+[481] Biber.pm:4334> INFO - Processing section 0
+[510] Biber.pm:4523> INFO - Looking for bibtex format file 'automatyzacja-bibliografia.bib' for section 0
+[519] bibtex.pm:1682> INFO - LaTeX decoding ...
+[550] bibtex.pm:1494> INFO - Found BibTeX data source 'automatyzacja-bibliografia.bib'
+[614] Utils.pm:395> WARN - Entry 'maturity' (automatyzacja-bibliografia.bib): Invalid format '2016-03-013' of date field 'urldate' - ignoring
+[663] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[664] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[664] Biber.pm:4162> INFO - Sorting list 'nty/global//global/global' of type 'entry' with template 'nty' and locale 'en-US'
+[664] Biber.pm:4168> INFO - No sort tailoring available for locale 'en-US'
+[733] bbl.pm:651> INFO - Writing 'pracainz2.bbl' with encoding 'UTF-8'
+[747] bbl.pm:754> INFO - Output to pracainz2.bbl
+[747] Biber.pm:128> INFO - WARNINGS: 1
