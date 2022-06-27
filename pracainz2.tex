@@ -227,10 +227,10 @@ Głównym celem tego podrozdziału jest przedstawienie podstawowych definicji or
 \textbf{Żądanie} (ang. \emph{Request}) w formie HTTP powinno posiadać cztery elementy:
 
 \begin{itemize}
-\item \textbf{Metode HTTP} (ang. \emph{Request method}) -- określenie metody, którą chcemy wykorzystać dla danego zasobu.
+\item \textbf{Metodę HTTP} (ang. \emph{Request method}) -- określenie metody, którą chcemy wykorzystać dla danego zasobu.
 \item \textbf{Nagłówek} (ang. \emph{Header}) -- może składać się z kilku części i ma za zadanie przechowywać dodatkowe informacje o żądaniu.
 \item \textbf{Ścieżkę do zasobu} (ang. \emph{Resource path}) -- URI, czyli ścieżka dostępu do zasobu.
-\item \textbf{Ciało} (ang. \emph{Body}) -- Składuje się tu dodatkowe informacje, które później wykorzystywane są do edycji lub tworzenia zasobów po stronie serwera. Może być puste.
+\item \textbf{Ciało} (ang. \emph{Body}) -- Składuje się tu dodatkowe informacje, które później wykorzystywane są do edycji lub tworzenia zasobów po stronie serwera.
 \end{itemize}
 
 %------------------------------ SPRAWDZONE ------------------------------
@@ -256,7 +256,7 @@ Body:
 \begin{center}
 \subsection{Metody HTTP}
 \end{center}
-Metoda HTTP jest częścią zapytania HTTP odpowiedzialną za określenie akcji, która ma zostać podjęta w wyniku zapytania HTTP. Istnieje dziewięć najczęściej wykorzystywanych metod:
+Metoda HTTP jest częścią zapytania HTTP odpowiedzialną za określenie akcji, która ma zostać podjęta w wyniku zapytania HTTP. Istnieje dziewięć metod:
 
 \begin{itemize}
 \item \textbf{GET} -- Odczytuje reprezentację zasobu i powinno wyłącznie zwracać dane.
@@ -274,29 +274,30 @@ Metoda HTTP jest częścią zapytania HTTP odpowiedzialną za określenie akcji,
 \begin{center}
 \subsection{Czym w zasadzie jest API ?}
 \end{center}
-\textbf{API} (ang. \emph{Application Programming Interface}) możemy najprościej przyrównać do rozmowy dwóch osób. Kiedy chcemy uzyskać informację od drugiej osoby,  wysyłamy do niej \textbf{prośbę} (ang. \emph{Request}) o niąd, a ona zwraca nam \textbf{odpowiedź} (ang. \emph{Response}) zawierającą pewne dane.  API systematyzuje sposób rozmowy pomiędzy dwoma stronami. W tej pracy skupimy się na Web API, czyli API dla serwisów internetowych. 
-
+\textbf{API} (ang. \emph{Application Programming Interface}) możemy najprościej przyrównać do rozmowy dwóch osób. Kiedy chcemy uzyskać informację od drugiej osoby,  wysyłamy do niej \textbf{prośbę} (ang. \emph{Request}) o nią, a ona zwraca nam \textbf{odpowiedź} (ang. \emph{Response}) zawierającą pewne dane.  API systematyzuje sposób rozmowy pomiędzy dwoma stronami. W tej pracy skupimy się na Web API, czyli API dla serwisów internetowych. 
+\begin{center}
 \begin{figure}[H]
 \centering
 \includegraphics[width=14cm]{api.png}
-\caption{Zasada działania API, źródło: wykonanie własne }
+\caption{ Zasada działania API. Źródło: wykonanie własne.}
 \label{Cache}
 \end{figure}
+\end{center}
 
 % -------------------------------- 
 \begin{center}
 \subsection{Co to jest URI ?}
 \end{center}
-\textbf{URI} (ang. \emph{Uniform Resource Identifier}) to ciąg znaków identyfikujący zasób, który, na chwilą obecną, dla uproszczenia będziemy utożsamiać z~ pewną informacją. Istnieje pięć głównym charakterystyk URI:
+\textbf{URI} (ang. \emph{Uniform Resource Identifier}) to ciąg znaków identyfikujący zasób, który będziemy utożsamiać z pewną informacją. Istnieje pięć głównym charakterystyk URI:
 
 \begin{itemize}
-\item Ciąg znaków powinien być \textbf{zwięzły}, czyli nie może składać się ze spacji, tabulatorów i innych zbędnych znaków.\newline
+\item Ciąg znaków powinien być \textbf{zwięzły}, czyli nie powinien składać się z tabulatorów i innych zbędnych znaków.\newline
 \item Nasza informacja może być \textbf{materialna}, czyli odwoływać się do elementu świata rzeczywistego np. budynku, osoby, ale także \textbf{abstrakcyjna}, czyli odwoływać się do, przykładowo, usługi czy dokumentu sieci Web.\newline
 \item Identyfikator URI jest na stałe przypisany do danego zasobu. Powinien być \textbf{stabilny}, czyli nie zmieniać się i nie znikać.\newline
 \item Użytkownik może \textbf{odwołać się} do identyfikatora URI i otrzymać treściwą informację zwrotną.\newline
-\item Identyfikatory dokumentów sieci Web muszą być \textbf{jednoznaczne}, czyli~ nie powinny być mylone z identyfikatorami innych zasobów.\newline
+\item Identyfikatory dokumentów sieci Web muszą być \textbf{jednoznaczne}, czyli~nie powinny być mylone z identyfikatorami innych zasobów.\newline
 \end{itemize}
-URI składa się z dwóch komponentów. Pierwszym z nich jest \textbf{URL} (ang. \emph{Uniform Resource Locator}), który odnosi się do podzbioru URI. Oprócz identyfikacji zasobów, zapewnia on środki do ulokowania zasobu i opisuje podstawowy mechanizm dostępu (np. jego "położenie" w sieci). \textbf{URN} (ang. \emph{Uniform Resource Name}) to podzbiór identyfikatorów URI, które zawierają nazwę w danej przestrzeni,\break ale nie zawierają lokalizacji. Dokumentacja mówi nam też, że każdy lokator może być też identyfikatorem, czyli \textbf{każdy URL może być URI, ale istnieją URI, które nie są URL}.
+URI składa się z dwóch komponentów. Pierwszym z nich jest \textbf{URL} (ang. \emph{Uniform Resource Locator}), który odnosi się do podzbioru URI. Oprócz identyfikacji zasobów, zapewnia on środki do ulokowania zasobu i opisuje podstawowy mechanizm dostępu. \textbf{URN} (ang. \emph{Uniform Resource Name}) to podzbiór identyfikatorów URI, które zawierają nazwę w danej przestrzeni,\break ale nie zawierają lokalizacji. Każdy lokator może być też identyfikatorem, czyli każdy URL może być URI, ale istnieją URI, które nie są URL.
 
 \begin{figure}[H]
 \centering
@@ -311,7 +312,7 @@ URI składa się z dwóch komponentów. Pierwszym z nich jest \textbf{URL} (ang.
 \begin{center}
 \subsection{Endpoints}
 \end{center}
-Upraszczając, \textbf{punkt końcowy} (ang. \emph{Endpoint}) to jeden koniec kanału komunikacyjnego. Gdy interfejs API współdziała z innym systemem, punkty tej komunikacji są traktowane jako punkty końcowe. W przypadku interfejsów API punkt końcowy może zawierać adres URL serwera lub usługi. Każdy punkt końcowy to lokalizacja, z której interfejsy API mogą uzyskać dostęp do zasobów potrzebnych do wykonywania swoich funkcji. Gdy interfejs API żąda informacji z aplikacji internetowej lub serwera, otrzymuje odpowiedź. Miejsce, do którego interfejsy API wysyłają żądania i gdzie znajdują się zasoby, nazywane są punktami końcowymi.
+\textbf{Punkt końcowy} (ang. \emph{Endpoint}) to jeden koniec kanału komunikacyjnego. Gdy interfejs API współdziała z innym systemem, punkty tej komunikacji są traktowane jako punkty końcowe. W przypadku interfejsów API punkt końcowy może zawierać adres URL serwera lub usługi. Każdy punkt końcowy to lokalizacja, z której interfejsy API mogą uzyskać dostęp do zasobów potrzebnych do wykonywania swoich funkcji. Gdy interfejs API żąda informacji z aplikacji internetowej lub serwera, otrzymuje odpowiedź. Miejsce, do którego interfejsy API wysyłają żądania i gdzie znajdują się zasoby, nazywane są punktami końcowymi.
 
 \begin{lstlisting}[
 language={Python},
@@ -329,7 +330,7 @@ https://somewebsite.org/name/{nameId} #możemy wstawić cały link URL
 \end{center}
 %#####################################################
 
-W latach dziewięćdziesiątych nie istniały jeszcze żadne ustandaryzowane metody tworzenia API oraz ich używania. Najczęściej używanym protokołem był \textbf{SOAP} (ang. \emph{Simple Object Access Protocol}), który mimo posiadania w swej definicji słowo ,,\emph{Simple}"'', był niezwykle skomplikowany do tworzenia, przetwarzania i debugowania. Wymagał on ręcznego utworzenia pliku XML z wywołaniem \textbf{RPC} (ang. \emph{Remote Procedure Call}) w body. Po napisaniu należało sprecyzować endpoint, przesłać metodą POST definicje w~ \textbf{kopercie} (ang. \emph{SOAP envelope}) z~informacją, co znajduje się w wiadomości, dla kogo jest przeznaczona i czy jest ona obowiązkowa lub opcjonalna do danego endpointa.
+W latach dziewięćdziesiątych nie istniały jeszcze żadne ustandaryzowane metody tworzenia API oraz ich używania. Najczęściej używanym protokołem był \textbf{SOAP} (ang. \emph{Simple Object Access Protocol}), który mimo posiadania w swej definicji słowo ,,\emph{Simple}', był niezwykle skomplikowany do tworzenia, przetwarzania i~debugowania. Wymagał on ręcznego utworzenia pliku XML z wywołaniem \textbf{RPC} (ang. \emph{Remote Procedure Call}) w body. Po napisaniu należało sprecyzować endpoint, przesłać metodą POST definicje w \textbf{kopercie} (ang. \emph{SOAP envelope}) z~informacją, co znajduje się w wiadomości, dla kogo jest przeznaczona i czy jest ona obowiązkowa lub opcjonalna do danego endpointa.
 
 
 \begin{lstlisting}[
@@ -358,7 +359,7 @@ caption={Przykładowe żądanie SOAP API}
 
 %##############################################
 
-Wszystko zmieniło się w 2000 roku, kiedy to grupka deweloperów pod kierownictwem \textbf{Roya Feldinga} postawiła sobie za cel utworzenie standardu, pozwalającego na to, by każde dwa serwery mogły porozumiewać się pomiędzy sobą w prosty sposób. W tym samym roku, ów lider wydał rozprawę doktorską pt. ,,\emph{Architectural Styles and the Design of Network-based Software}'', która była zbiorem zasad nowej architektury nazwanej REST. Nowy standard opierał się na siedmiu głównych filarach:\newline 
+Wszystko zmieniło się w 2000 roku, kiedy to grupa deweloperów pod kierownictwem \textbf{Roya Feldinga} postawiła sobie za cel utworzenie standardu, pozwalającego na to, by każde dwa serwery mogły porozumiewać się pomiędzy sobą w prosty sposób. W tym samym roku, ów Fielding wydał rozprawę doktorską pt. ,,\emph{Architectural Styles and the Design of Network-based Software}'', która była zbiorem zasad nowej architektury nazwanej REST. Nowy standard opierał się na siedmiu głównych filarach:\newline 
 \begin{itemize}
 \item \textbf{Wydajność} - interakcje pomiędzy komponentami powinny być natychmiastowe.\newline
 \item \textbf{Skalowalność} - umożliwiająca obsługę dużej ilości komponentów.\newline
@@ -374,14 +375,14 @@ Wszystko zmieniło się w 2000 roku, kiedy to grupka deweloperów pod kierownict
 
 \section{Zasady REST}
 
-Systemy oparte na architekturze REST nazywamy RESTful, jeżeli spełniają pewne wymagania. Systemy RESTful charakteryzują się tym, że są bezstanowe (ang. stateless) i mają mocno podkreśloną granicę pomiędzy Klientem, a Serwerem. Roy Fielding podał sześć głównych cech, które powinny zawierać systemy oparte o architekturę REST: 
+Systemy oparte na architekturze REST nazywamy RESTful, jeżeli spełniają pewne wymagania. Systemy RESTful charakteryzują się tym, że są bezstanowe (ang. stateless) i mają mocno podkreśloną granicę pomiędzy Klientem, a~Serwerem. Roy Fielding podał sześć głównych cech, które systemy oparte o architekturę REST muszą posiadać: 
  
 \begin{itemize}
 \item \textbf{Uniform Interface} - Serwer powinien udostępniać jednolite API, które będzie klarowne dla wszystkich systemów komunikujących się z nim. Dane powinny być w takim samym formacie i zawierać identyczny zakres. Interfejs powinien spełniać wymogi dla wielu urządzeń i aplikacji. Zasoby w~systemie powinny mieć jeden Uniform Resource Identifier, który pozwalałby na wymianę danych i powinny być łatwo dostępne przez np. HTTP request GET.
 \begin{figure}[H]
 \centering
 \includegraphics[width=14cm]{restarch.png}
-\caption{Zasada działania REST API opartej na architekturze REST}
+\caption{Zasada działania REST API opartej na architekturze REST. Źródło: wykonanie własne.}
 \label{REST API}
 \end{figure}
 
@@ -429,7 +430,7 @@ caption={Odpowiedź od Graph API}, basicstyle=\ttfamily\scriptsize
 }
 \end{lstlisting}
 
-W sekcji paging, pod kluczem next widnieje link, który poprowadzi nas do kolejnych wyników.\newline 
+W sekcji \texttt{paging}, pod kluczem \texttt{next} widnieje link, który poprowadzi nas do kolejnych wyników.\newline 
 \end{itemize}
 
 \item \textbf{Client-Serwer} - Projektując, a następnie implementując aplikacje klienta i~serwera należy wyznaczyć widoczną granicę pomiędzy oba programami. Oznacza to, że klient i serwer mogą rozwijać się bez ingerencji pomiędzy sobą. Zamysł ten pomaga w realizacji ww. Uniform Interface, a także zwiększa możliwości skalowania i rozszerzalności, a obsługa błędów jest znacznie łatwiejsza. Jeżeli na przykład dokonamy zmiany w aplikacji pisanej dla systemu iOS (to będzie nasz klient), to zmiana ta nie powinna w żaden sposób wpływać na aplikacje serwerową (strukturę bazy danych i tym podobne). Tak samo powinno to działać w drugą stronę. 
@@ -438,7 +439,7 @@ W sekcji paging, pod kluczem next widnieje link, który poprowadzi nas do kolejn
 \begin{figure}[H]
 \centering
 \includegraphics[width=14cm]{rest.jpg}
-\caption{REST w prosty sposób pomaga deweloperom w planowaniu interakcji pomiędzy niezależnymi systemami}
+\caption{REST w prosty sposób pomaga deweloperom w planowaniu interakcji pomiędzy niezależnymi systemami. Źródło: wykonanie własne.}
 \label{REST}
 \end{figure}
 
@@ -461,14 +462,14 @@ The key abstraction of information in REST is a resource. Any information that c
 \subsection{Czym jest zasób?}
 \end{center}
 
-\textbf{Zasób} (ang. \emph{Resource}) jest elementarną częścią REST API. Wykorzystujemy go właśnie podczas interakcji z API. Czym więc jest zasób? Nie jest łatwo odpowiedzieć na to pytanie, ponieważ zasób to pojęcie abstrakcyjne. Dowolna informacja, która może posiadać nazwę, może być zasobem. Dlatego też przyjęto kilka podstawowych kryteriów, by można było nazwać daną informację zasobem:\newline
+\textbf{Zasób} (ang. \emph{Resource}) jest elementarną częścią REST API. Wykorzystujemy go właśnie podczas interakcji z API. Dowolna informacja, która może posiadać nazwę, może~być zasobem. Dlatego też przyjęto kilka podstawowych kryteriów, by można było nazwać daną informację zasobem:\newline
 
 
 \begin{itemize}
 \item Musi być rzeczownikiem.
 \item Musi być unikatowa, czyli definiować konkretną rzecz i być jak najbardziej sprecyzowana. Przykładowo, budynek nie jest zasobem, ponieważ jest zbyt ogólny, lecz biblioteka już nim jest. 
 \item Musi być możliwa do przedstawienia w formie danych.
-\item Music posiadać przynajmniej jeden adres URI, pod którym jest dostępny. URI jednocześnie jest nazwą, jak i adresem zasobu.\newline
+\item Musi posiadać przynajmniej jeden adres URI, pod którym jest dostępny. URI jednocześnie jest nazwą, jak i adresem zasobu.\newline
 \end{itemize}
 
 
@@ -499,8 +500,8 @@ DELETE /users/delete # Deletes all users
 \end{lstlisting}
 
 Pierwszy z powyższych przykładów posiada jeden zasób users, na którym wykonujemy różne akcje z wykorzystaniem metod HTTP, czyli mamy jeden zasób na którym wykonujemy wiele akcji. Natomiast przykład drugi posiada trzy różne adresy, które są połączone z akcją wykonywaną w naszej aplikacji. Jednoznacznie widać, że założenia z przykładu drugiego mocno odbiegają od naszych założeń REST, ponieważ powiązanie API z naszą aplikacją uniemożliwia rozwijanie się aplikacji, jak i API niezależnie od siebie.\newline
-\item \textbf{Rzeczowniki vs. Czasowniki} - jednym ze sposobów weryfikacji, czy zasób jest odłączony od akcji, jest użycie samego rzeczownika w nazwie. Jeśli w adresie URI zasobu znajduje się czasownik, np. /getUsers lub /addUsers, to możemy podejrzewać że ten zasób jest bardzo mocno powiązany z konkretną akcją.\newline
-\item \textbf{Liczba pojedyncza vs. Liczba mnoga} - starajmy się używać liczby mnogiej przy nazewnictwie zasobów, np. /users zamiast /user. Zwiększa to czytelność naszego API, jednakże ta zasada jest bardzo dyskusyjna. Obiektywnie nasze API powinno być zbudowane konsekwentnie i spójnie. 
+\item \textbf{Rzeczowniki vs. Czasowniki} - jednym ze sposobów weryfikacji, czy zasób jest odłączony od akcji, jest użycie samego rzeczownika w nazwie. Jeśli w~adresie URI zasobu znajduje się czasownik, np. \texttt{/getUsers} lub \texttt{/addUsers}, to możemy podejrzewać że ten zasób jest bardzo mocno powiązany z konkretną akcją.\newline
+\item \textbf{Liczba pojedyncza vs. Liczba mnoga} - starajmy się używać liczby mnogiej przy nazewnictwie zasobów, np. \texttt{/users} zamiast \texttt{/user}. Zwiększa to czytelność naszego API, jednakże ta zasada jest bardzo dyskusyjna. Obiektywnie nasze API powinno być zbudowane konsekwentnie i spójnie. 
 \end{itemize}
 % ######################################################################
 
@@ -508,7 +509,7 @@ Pierwszy z powyższych przykładów posiada jeden zasób users, na którym wykon
 \section{Model dojrzałości Richardsona}
 \end{center}
 
-Jako, że REST jest tylko zbiorem wytycznych i dobrych rad dla tworzenia API, to deweloperzy mają bardzo dużą elastyczność do definiowania jak bardzo ``REST-owe`` będzie ich API. Zakładając sytuację, że napiszemy prostą aplikację RESTful API, to skąd możemy mieć pewność, że jest ona w stylu REST? Można powiedzieć, że skoro wykorzystujmy protokół HTTP i używamy formatu danych JSON, to serwis jest RESTful. \textbf{Model dojrzałości Richardsona}(ang. \emph{Richardson Maturity Model}) pozwala ocenić w jakim stopniu aplikacja jest RESTful. Model definiuje 4 poziomy (0-3) i zakłada, że \textbf{każde API należy do jednego z czterech poziomów dojrzałości}.
+Jako, że REST jest tylko zbiorem wytycznych i dobrych rad dla tworzenia API, to deweloperzy mają bardzo dużą elastyczność do definiowania jak bardzo ``REST-owe`` będzie ich API. Zakładając sytuację, że napiszemy prostą aplikację RESTful API, to skąd możemy mieć pewność, że jest ona w stylu REST? Można powiedzieć, że skoro wykorzystujmy protokół HTTP i używamy formatu danych JSON, to serwis jest RESTful. \textbf{Model dojrzałości Richardsona} (ang. \emph{Richardson Maturity Model}) pozwala ocenić w jakim stopniu aplikacja jest RESTful. Model definiuje 4 poziomy (0-3) i zakłada, że \textbf{każde API należy do jednego z czterech poziomów dojrzałości}.
 
 \begin{itemize}
 \item \textbf{Poziom 0} - Na poziomie zerowym modelu dojrzałości znajdują się aplikacje, które nie spełniają założeń architektury REST. Protokół HTTP wykorzystywany jest tylko jako warstwa transportowa. Używane są tylko metody GET i POST oraz status zwracany zawsze jest 200 OK. Nie ma unikalnych adresów dla zasobów. Do tego poziomu zaliczamy np. protokoły SOAP i RPC.
@@ -620,8 +621,7 @@ HTTP/1.1 200 OK
 \begin{figure}[H]
 \centering
 \includegraphics[width=14cm]{mtv.png}
-\caption{Architektura MTV\newline
-Źródło: https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Introduction}
+\caption{Architektura MTV. Źródło: https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Introduction}
 \label{MTV}
 \end{figure}
 
