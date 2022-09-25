@@ -699,7 +699,7 @@ W pracy przedstawiono podstawowe zagadnienia związane z API. Omówiono także g
 \chapter{Integracja projektu opartego o Django z bazą danych PostgreSQL}
 Baza danych to zbiór informacji, danych, zazwyczaj przechowywanych w~formie elektronicznej w systemie komputerowym.  
 Dane umieszczone są w wierszach i kolumnach wielu tabel, dzięki czemu przetwarzanie ich oraz tworzenie zapytań ich dotyczących odbywa się w zorganizowany i sprawny sposób. W~dzisiejszych czasach większość baz danych wykorzystuje język SQL (Structured Query Language), czyli strukturalny język zapytań. 
-SQL to język programowania używany do tworzenia zapytań dotyczących danych. Jest wykorzystywany przez niemal wszystkie relacyjne bazy danych. Został on opracowany w latach 70-tych przez firmę IBM. Przy tworzeniu języka brała udział firma Oracle, czego efektem było wprowadzenie standardu SQL ANSI i powstanie wielu rozszerzeń języka SQL.  
+SQL to język programowania używany do tworzenia zapytań dotyczących danych. Został on opracowany w latach 70-tych przez firmę IBM. Przy tworzeniu języka brała udział firma Oracle, czego efektem było wprowadzenie standardu SQL ANSI i powstanie wielu rozszerzeń języka SQL.  
 Istnieje wiele typów baz danych. Oto kilka z nich:  
 
 \begin{itemize}
@@ -851,7 +851,7 @@ DATABASES = {,
 \section{Modele}
 
 Wyjściowo baza implementuje podstawowe schematy danych takie jak  \texttt{Users} oraz \texttt{Groups}. Aby zawierała inne dane, potrzebne jest zdefiniowanie ich we frameworku, w pliku \texttt{models.py}.
-Najważniejszą częścią modelu są zdefiniowane pola bazy danych, będące instancja klasy \texttt{Field}. Są to na przykład: \texttt{CharField}, \texttt{TextField}, \texttt{ForeignKey}, \texttt{IntegerField}, \texttt{BooleanField}, \texttt{DateTimeField}.
+Najważniejszą częścią modelu są zdefiniowane pola bazy danych, będące instancją klasy \texttt{Field}. Są to na przykład: \texttt{CharField}, \texttt{TextField}, \texttt{ForeignKey}, \texttt{IntegerField}, \texttt{BooleanField}, \texttt{DateTimeField}.
 
 Pola modeli przeznaczone dla PostgreSQL (django.contrib.postgres.fields):
 
@@ -1417,12 +1417,12 @@ class Test(models.Model):
     is_active = models.BooleanField(default=True)
     ... 
 \end{lstlisting}
-Gdy użytkownik usunie sprawdzian, pole \texttt{is\_active} zmieni swoją wartość na \texttt{False} i nie będzie juz wyświetlane na jego liście. Jeśli jednak będzie on chciał owy sprawdzian odzyskać, musi zrobić to z listy usuniętych sprawdzianów lub przez inne przeznaczone do tego rozwiązanie.
+Gdy użytkownik usunie sprawdzian, pole \texttt{is\_active} zmieni swoją wartość na \texttt{False} i nie będzie już wyświetlane na jego liście. Jeśli jednak będzie on chciał owy sprawdzian odzyskać, musi zrobić to z listy usuniętych sprawdzianów lub przez inne przeznaczone do tego rozwiązanie.
 \begin{center}
 \subsection{Śledzenie zmian}
 \end{center}
 
-Jeżeli potrzebna jest możliwość śledzenia zmian w modelach użyteczne może okazac się \texttt{django-pghistory}, które zapewnia automatyczne i konfigurowalne śledzenie historii dla modeli Django przy użyciu wyzwalaczy. Aby używać \texttt{django-pghistory} potrzebne również będzie zainstalowanie aplikacji \texttt{django-pgconnection} oraz odpowiednie skonfigurowanie pliku settings.py. Po instalacji należy wykonać migrację.
+Jeżeli potrzebna jest możliwość śledzenia zmian w modelach użyteczne może okazać się \texttt{django-pghistory}, które zapewnia automatyczne i konfigurowalne śledzenie historii dla modeli Django przy użyciu wyzwalaczy. Aby używać \texttt{django-pghistory} potrzebne również będzie zainstalowanie aplikacji \texttt{django-pgconnection} oraz odpowiednie skonfigurowanie pliku settings.py. Po instalacji należy wykonać migrację.
 \begin{lstlisting}[
 language={Python},
 xleftmargin=5pt,
