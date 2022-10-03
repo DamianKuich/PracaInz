@@ -1458,100 +1458,66 @@ Istnieje wiele innych zastosowań \texttt{django-pghistory}. Aby poznać wszystk
 W tym rozdziale zawarte zostały informacje na temat współpracy frameworka Django z bazą danych PostgreSQL. Treści te pokazują w jaki sposób poprawnie łączyć się z bazą, tworzyć modele oraz wykorzystywać relację na przykładzie projektu Generatora Sprawdzianów. Opisane zostało również, jak w optymalny sposób odpytywać bazę danych oraz wykorzystywać przydatne pakiety mające na celu pomoc we współpracy z PostgreSQL.
 
 \chapter {React jako narzędzie do tworzenia interfejsu użytkownika}
-
 \section{Czym jest React?}
 {
-React jest javascriptową biblioteką typu open-source\footnote{open source - rodzaj oprogramowania oparty na licencji przyznającej użytkownikom prawo do badania, zmiany i rozpowszechniania oprogramowania ~\cite{opensourcewiki}} używaną do tworzenia interfejsów użytkownika aplikacji internetowych. Jego oryginalnym autorem jest programista firmy Facebook - Jordan Walke. Pierwszy, bardzo wczesny prototyp Reacta - FaxJS powstał już w 2011 roku i został wykorzystany do zaimplementowania funkcji "Szukaj" na platformie Facebook. Niewiele później, aby móc łatwiej obsługiwać Facebook Ads, Jordan rozwinął prototyp i stworzył React. Po nabyciu przez Facebooka Instagrama w 2012 roku, Instagram wyrażał chęć wdrożenia nowej technologii na swoją platformę, co powodowało nacisk na odłączenie Reacta od Facebooka i przejście na licencję open-source. W 2013 roku biblioteka przeszła na licencję open source ~\cite{reactstory}. 
-\newline
+React jest javascritpową biblioteką typu open-source\footnote{open source - rodzaj oprogramowania oparty na licencji przyznającej użytkownikom prawo do badania, zmiany i rozpowszechniania oprogramowania ~\cite{opensourcewiki}} używaną do tworzenia interfejsów użytkownika aplikacji internetowych. Jego oryginalnym autorem jest programista firmy Facebook -- Jordan Walke. Pierwszy, bardzo wczesny prototyp Reacta - FaxJS powstał już w 2011 roku i został wykorzystany do zaimplementowania funkcji ,,Szukaj'' na platformie Facebook. Niewiele później, aby móc łatwiej obsługiwać Facebook Ads, Jordan rozwinął prototyp i stworzył React. Po nabyciu przez Facebooka Instagrama w 2012 roku, Instagram wyrażał chęć wdrożenia nowej technologii na swoją platformę, co powodowało nacisk na odłączenie Reacta od Facebooka i przejście na licencję open-source. W 2013 roku biblioteka przeszła na licencję open source ~\cite{reactstory}. 
 Od tamtego momentu React cały czas prężnie się rozwija, pozostaje jednym z~ najpopularniejszych narzędzi do tworzenia interfejsów graficznych, używany jest nie tylko przez ogromne firmy takie jak Uber, Netflix, Airbnb, Amazon, Twitter oraz wiele innych, ale również przez zwykłych użytkowników. Popularność Reacta nie przestaje rosnąć, w styczniu 2021 roku biblioteka została pobrana ponad 10 milionów razy - zdecydowanie wyróżniając się na tle podobnych narzędzi przeznaczonych do tworzenia interfejsów użytkownika.
 %###############################################################
-
 \begin{figure}
 \centering
 \includegraphics[width=14cm]{statystyki react vue angular.png}
 \caption{npm trends, statystyki dotyczące ilości pobrań popularnych narzędzi do tworzenia interfejsów}
 \label{statystyki react vue angular.png}
 \end{figure}
-
 }
-
 \section{Dlaczego warto korzystać z Reacta?}{
-React posiada wiele zalet, które sprawiły, że został użyty w projekcie. Relatywnie niska bariera wejścia, dzięki której nauka powinna być w miarę prosta dla osób mających wcześniejszą styczność z programowaniem. Łatwość testowania oraz debugowania - w tym celu bardzo przydatne jest narzędzie React Developer Tools, którego możemy używać z poziomu przeglądarki internetowej. React Developer Tools jest dostępne w postaci rozszerzenia, po którego zainstalowaniu ujrzymy dwie zakładki, zakładkę Components oraz zakładkę Profiler. W zakładce Components możemy obserwować hierarchię wszystkich komponentów naszej aplikacji, dowolnego komponentu oraz to jak zmienia się on w czasie. Druga zakładka Profiler pozwala nam sprawdzić wydajność naszej aplikacji. Domyślnie React pokazuje programiście wiele użytecznych, dobrze opisanych komentarzy oraz ostrzeżeń usprawniających pracę, są one dostępne, kiedy aplikacja znajduje się w fazie developerskiej. Wszystko to sprawia, że aplikacja w fazie developerskiej działa wolniej. Przejście do fazy produkcyjnej usuwa większość komentarzy, ostrzeżeń oraz możliwość sprawdzania każdego komponentu i dowolnej informacji o nim przy pomocy React Developer Tools, ale za to znacząco przyspiesza wydajność aplikacji.
-Właśnie z tych powodów tryb developerski stosujemy w czasie budowania aplikacji, a trybu produkcyjnego w ostatecznej wersji produktu, która ma trafić do użytkownika.
-
-
-
-
+React posiada wiele zalet, które sprawiły, że został użyty w projekcie. Relatywnie niska bariera wejścia, dzięki której nauka powinna być w miarę prosta dla osób mających wcześniejszą styczność z programowaniem. Łatwość testowania oraz debugowania - w tym celu bardzo przydatne jest narzędzie React Developer Tools, którego możemy używać z poziomu przeglądarki internetowej. React Developer Tools jest dostępne w postaci rozszerzenia, po którego zainstalowaniu ujrzymy dwie zakładki, zakładkę Components oraz zakładkę Profiler. W zakładce Components możemy obserwować hierarchię wszystkich komponentów naszej aplikacji, dowolnego komponentu oraz to jak zmienia się on w czasie. Druga zakładka Profiler pozwala nam sprawdzić wydajność naszej aplikacji. Domyślnie React pokazuje programiście wiele użytecznych, dobrze opisanych komentarzy oraz ostrzeżeń usprawniających pracę, są one dostępne, kiedy aplikacja znajduje się w fazie developerskiej. Wszystko to sprawia, że aplikacja w fazie developerskiej działa wolniej. Przejście do fazy produkcyjnej usuwa większość komentarzy, ostrzeżeń oraz możliwość sprawdzania każdego komponentu i dowolnej informacji o nim przy pomocy React Developer Tools, ale za to znacząco zwiększa wydajność aplikacji.
+Właśnie z tych powodów tryb developerski stosujemy w czasie budowania aplikacji, a trybu produkcyjnego w~ostatecznej wersji produktu, która ma trafić do użytkownika.
 \begin{figure}[H]
 \centering
 \includegraphics[width=13cm]{react dev example.jpg}
 \caption{React Developer Tools - obraz poglądowy
 \newline
-Źródło: \url{https://lh3.googleusercontent.com/XWuZGqIrIsaoKHUqqQ2rs_GhS5JaH1p5pPBIUpj22mjNRNdR3Ana8FKz4B7JwsA6HIFVXGuU7pa4ELiW6iUNhs0Iyg=w640-h400-e365-rj-sc0x00ffffff}
+Źródło: Obraz poglądowy - Chrome web store
+ \url{https://lh3.googleusercontent.com/XWuZGqIrIsaoKHUqqQ2rs_GhS5JaH1p5pPBIUpj22mjNRNdR3Ana8FKz4B7JwsA6HIFVXGuU7pa4ELiW6iUNhs0Iyg=w640-h400-e365-rj-sc0x00ffffff}
 }
 \label{react dev example.jpg}
 \end{figure}
-
 React posiada obszerną, bardzo dobrze napisaną dokumentację wraz z samouczkiem 
-~\cite{reactjs} dostępną w wielu językach, między innymi w języku Polskim.
-Kolejnym z plusów jest budowa komponentów, interfejs zbudowany w Reaccie jest stworzony z mniejszych komponentów, które łączą w sobie wygląd wraz z logiką odpowiedzialną za ich zachowanie, co pomaga w zorganizowaniu pracy, dodatkową pomocą jest JSX - rozszerzenie składni pozwalające na używanie znaczników HTML razem z językiem Javascript.
+~\cite{reactjs} dostępną w wielu językach, między innymi w języku polskim.
+Kolejnym z plusów jest budowa komponentów, interfejs zbudowany w Reaccie jest stworzony z mniejszych komponentów, które łączą w sobie wygląd wraz z~logiką odpowiedzialną za ich zachowanie, co pomaga w zorganizowaniu pracy, dodatkową pomocą jest JSX - rozszerzenie składni pozwalające na używanie znaczników HTML razem z językiem JavaScript.
 Ogromna popularność Reacta przekłada się również na mnogość dostępnych samouczków i innych materiałów pozwalających lepiej zrozumieć tę bibliotekę. Dodatkowo w poszukiwaniu odpowiedzi na nurtujące nas pytania możemy zajrzeć do społeczności programistów React takich jak dev.to, hashnode, lub najpopularniejszy z nich pod względem obserwujących użytkowników (aktualnie jest ich ponad ćwierć miliona) - Reddit.
 }
-
-
-
-
 \section{Npm}{
-
-Npm (pierwotnie skrót od Node Package Manager) jest to manager pakietów języka Javascript. Pierwsze wydanie npm miało miejsce już w 2010 roku~\cite{npmwiki}.
+Npm (pierwotnie skrót od Node Package Manager) jest to manager pakietów języka JavaScript. Pierwsze wydanie npm miało miejsce już w 2010 roku~\cite{npmwiki}.
 Npm jest domyślnym managerem pakietów środowiska Node.js, npm jest instalowane razem z Node.js. Najważniejszym aspektem npm jest ogromna baza pakietów, bibliotek o 
 niezwykle szerokim wachlarzu zastosowań. Interesujące nas rozszerzenie możemy zainstalować przy pomocy komendy
-\newline
-\textit{npm install nazwapakietu}
-\newline
+\begin{lstlisting}
+npm install nazwapakietu
+\end{lstlisting}
 Kiedy nad projektem pracuje wiele osób, ilość używanych bibliotek może rozrastać się dużo szybciej wraz z szukaniem nowych rozwiązań do pojawiających się problemów.
 Potrzeba wpisywania nazwy każdego pakietu oraz instalowania go osobno mogłaby być męcząca, dlatego npm śledzi wszystkie używane w danym projekcie pakiety w jsonowym pliku
 packages. Aby zainstalować wszystkie pakiety zarejestrowane przez plik packages należy użyć komendy
-\newline
-\textit{npm update}
-\newline
-
-
-
-
-
+\begin{lstlisting}
+npm update
+\end{lstlisting}
 }
-
-
-
 \section{Pojęcia Reacta}
-
-
 % #$#$#$#$#$#$#$#$#$#$#$##$#$#$#$#$#$#$#$#$#$#$##$#$#$#$#$#$#$#$#$#$#$##$#$#$#$#$#$#$#$#$#$#$#
-
 \subsection{JSX}
-
 {
-JSX, czyli Javascript XML jest rozszerzeniem składni języka Javascript, które pozwala na używanie znaczników HTML razem z językiem Javascript. Jest to niezwykle przydatne narzędzie, które ułatwia nam na operowanie danymi przetwarzanymi w kodzie Javascriptowym oraz ułatwia ich wyświetlanie przy pomocy znaczników HTML. JSX możemy wykorzystać w wielu celach.
-
-
-
+JSX, czyli JavaScript XML jest rozszerzeniem składni języka JavaScript, które pozwala na używanie znaczników HTML razem z językiem JavaScript. Jest to niezwykle przydatne narzędzie, które ułatwia nam na operowanie danymi przetwarzanymi w kodzie javascriptowym oraz ułatwia ich wyświetlanie przy pomocy znaczników HTML. JSX możemy wykorzystać w wielu celach.
 \begin{lstlisting}[
 caption={Fragment pliku MaterialUiUserExams.js, przykładowe użycie JSX}
 ]
 <ListItemText>
 	primary={<h3>{section.Section}</h3>}
-	secondary={"Dostępnych zadań: " + section.sectionTaskCount}
+	secondary={"Dostępnych zadań: " 
+	+ section.sectionTaskCount}
 </ListItemText>
 \end{lstlisting}
-
-
-
-Jedną z zalet JSX jest łatwość otrzymania wartości zmiennej używanej w kodzie javascriptowym. W powyższym przykładzie wykorzystujemy to, aby otrzymać nazwę każdego działu, który następnie wyświetlamy użytkownikowi.
-JSX jest w stanie obsłużyć dowolne, prawidłowe wyrażenie w języku Javascript, które zostało zamknięte wewnątrz nawiasów klamrowych. Dzięki czemu możemy nie tylko uzyskać wartości zmiennych, ale również je modyfikować oraz wywoływać funkcje javascriptowe, jeśli tego potrzebujemy.
-
-
-
+Jedną z zalet JSX jest łatwość otrzymania wartości zmiennej używanej w~kodzie javascriptowym. W powyższym przykładzie wykorzystujemy to, aby otrzymać nazwę każdego działu, który następnie wyświetlamy użytkownikowi.
+JSX jest w stanie obsłużyć dowolne, prawidłowe wyrażenie w języku JavaScript, które zostało zamknięte wewnątrz nawiasów klamrowych. Dzięki czemu możemy nie tylko uzyskać wartości zmiennych, ale również je modyfikować oraz wywoływać funkcje JavaScriptowe, jeśli tego potrzebujemy.
 \begin{lstlisting}[
 caption={Wywołanie funkcji map wewnątrz elementu <List>}
 ]
@@ -1562,15 +1528,14 @@ caption={Wywołanie funkcji map wewnątrz elementu <List>}
 	 <>
 	 <ListItem
 	 button onClick={this.hideSection(section)}>
-
 		 <ListItemText>
 		 primary={<h3>{section.Section}</h3>}
-		 secondary={"Dostępnych zadań: " + section.sectionTaskCount}
+		 secondary={"Dostępnych zadań: " 
+		+ section.sectionTaskCount}
 		 </ListItemText>
 		 {(this.state.hiddenSections.indexOf(section.id) !== -1)
 		 ? <ExpandLess /> : <ExpandMore />}
 	 </ListItem>
-
 		 <Collapse in={(this.state.hiddenSections
 			.includes(section.id))} 
 		timeout="auto" unmountOnExit>
@@ -1591,20 +1556,13 @@ caption={Wywołanie funkcji map wewnątrz elementu <List>}
 ...
 </List>
 \end{lstlisting}
-
-
-
-Po kompilacji wyrażenia JSX stają się wywołaniami funkcji w języku Javascript, oznacza to, że możliwe jest używanie wyrażeń w JSX wewnątrz instrukcji warunkowych, pętli, przypisywanie je do zmiennych, używanie jako argumentów oraz zwracanie z funkcji.
-Oczywiście, jeśli ktoś nie chce korzystać z JSX, może tego nie robić. Możliwe jest stworzenie wszystkich komponentów w czystym Javascripcie, natomiast JSX jest narzędziem bardzo wygodnym, mocno usprawniającym pracę z Reactem, dlatego jest zdecydowanie zalecanym rozwiązaniem.
-
+Po kompilacji wyrażenia JSX stają się wywołaniami funkcji w języku JavaScript, oznacza to, że możliwe jest używanie wyrażeń w JSX wewnątrz instrukcji warunkowych, pętli, przypisywanie je do zmiennych, używanie jako argumentów oraz zwracanie z funkcji.
+Oczywiście, jeśli ktoś nie chce korzystać z JSX, może tego nie robić. Możliwe jest stworzenie wszystkich komponentów w~czystym JavaScripcie, natomiast JSX jest narzędziem bardzo wygodnym, mocno usprawniającym pracę z Reactem, dlatego jest zdecydowanie zalecanym rozwiązaniem.
 }
-
 \subsection{Komponenty}
 {
-Interfejs w React składa się z komponentów. Komponenty są jak funkcje javascriptowe, które przyjmują pewne wartości na wejściu, a następnie zwracają elementy reactowe, które opisują, co ma pojawić się na ekranie.
+Interfejs w React składa się z komponentów. Komponenty są jak funkcje JavaScriptowe, które przyjmują pewne wartości na wejściu, a następnie zwracają elementy reactowe, które opisują, co ma pojawić się na ekranie.
 Wyróżniamy dwa typy komponentów - komponenty klasowe oraz komponenty funkcyjne.
-
-
 \begin{lstlisting}[
 caption={Przykład komponentu klasowego}
 ]
@@ -1613,34 +1571,26 @@ class ClassComponent extends Component{
     return <h2>Przykład komponentu klasowego</h2>
   }
 }
-
 \end{lstlisting}
-
-
 \begin{lstlisting}[
 caption={Przykład komponentu funkcyjnego}
 ]
 function FunctionComponent(props){
   return <h2>Przykład komponentu funkcyjnego</h2>
 }
-
 \end{lstlisting}
-
-Jedną z zasad obowiązujących podczas budowy komponentów, zarówno funkcyjnych jak i klasowych pozostaje nienaruszalność właściwości    (ang. props) przekazywanych podczas deklaracji funkcji, dane, które mają zmieniać się dynamiczne powinny być przechowywane w stanach.
-Obecnie podstawową różnicą pozostaje składnia, w przeszłości komponenty funkcyjne nie posiadały stanów ani metod pozwalających na uruchamianie kodu w odpowiednich momentach, z tych powodów komponentów funkcyjnych używano tylko do budowy komponentów, które nie musiały być dynamiczne. Zmieniło się to wraz z wprowadzeniem Hooków.
+Jedną z zasad obowiązujących podczas budowy komponentów, zarówno funkcyjnych jak i klasowych, pozostaje nienaruszalność właściwości    (ang. props) przekazywanych podczas deklaracji funkcji. Dane, które mają zmieniać się dynamiczne powinny być przechowywane w stanach.
+Obecnie podstawową różnicą pozostaje składnia, w przeszłości komponenty funkcyjne nie posiadały stanów ani metod pozwalających na uruchamianie kodu w odpowiednich momentach. Z tych powodów komponentów funkcyjnych używano tylko do budowy komponentów, które nie musiały być dynamiczne. Zmieniło się to wraz z wprowadzeniem Hooków.
 Warto również wiedzieć, że komponenty mogą odwoływać się do innych komponentów, co promuje pisanie ich z myślą o~ możliwości wielokrotnego wykorzystania. Możemy to wykorzystać na przykład tworząc komponent ekranu ładowania, następnie możemy go użyć w innych komponentach, renderując go wtedy, gdy użytkownik będzie oczekiwał na odpowiedź od serwera.
 }
-
 \subsection{Stan i cykl życia}{
-
-Stan zawiera dane związane z danym komponentem, które mogą ulegać zmianie. Stan powinien być obiektem javascriptowym, aby go zmodyfikować należy wywołać metodę setState. Dodatkowo, komponenty posiadają metody cyklu życia, które są odpowiedzialne za uruchamianie kodu w odpowiednich momentach.
+Stan zawiera dane związane z danym komponentem, które mogą ulegać zmianie. Stan powinien być obiektem JacaScriptowym, aby go zmodyfikować należy wywołać metodę setState. Dodatkowo, komponenty posiadają metody cyklu życia, które są odpowiedzialne za uruchamianie kodu w odpowiednich momentach.
 \newline
 Cykl życia komponentu możemy podzielić na 3 etapy:
-
 \begin{itemize}
-\item Montowanie (ang. Mounting), czyli pierwsze stworzenie instancji komponentu i włożenie go do drzewa DOM
-\item Aktualizacja, czyli zmiany we właściwościach lub stanie komponentu
-\item Odmontowanie (ang. Unmounting), czyli usunięcie komponentu z drzewa DOM
+\item Montowanie (ang. \textit{mounting}), czyli pierwsze stworzenie instancji komponentu i włożenie go do drzewa DOM.
+\item Aktualizacja, czyli zmiany we właściwościach lub stanie komponentu.
+\item Odmontowanie (ang. \textit{unmounting}), czyli usunięcie komponentu z drzewa DOM.
 \end{itemize}
 \begin{figure}[H]
 \centering
@@ -1651,12 +1601,11 @@ Cykl życia komponentu możemy podzielić na 3 etapy:
 }
 \label{metody cyklu zycia}
 \end{figure}
-Każdy cykl wywołuje inny zestaw metod, najważniejszymi metodami wywoływanymi w czasie montowania są constructor - odpowiedzialny za inicjalizację stanu lokalnego oraz związanie(ang. bind) metody obsługi zdarzeń, render oraz componentDidMount - ta metoda jest odpowiednim miejscem do wysłania zapytania, jeśli potrzebujemy pobrać dane z zewnątrz.
-W czasie aktualizacji wywołana zostaje analogiczna metoda - componentDidUpdate, a w czasie Odmontowania wywołana zostaje metoda componentWillUnmount - powinniśmy z niej korzystać głównie w celach posprzątania np. wyzerowanie liczników.
+Każdy cykl wywołuje inny zestaw metod, najważniejszymi metodami wywoływanymi w czasie montowania są constructor - odpowiedzialny za inicjalizację stanu lokalnego oraz związanie(ang. bind) metody obsługi zdarzeń, render oraz \texttt{componentDidMount} - ta metoda jest odpowiednim miejscem do wysłania zapytania, jeśli potrzebujemy pobrać dane z zewnątrz.
+W czasie aktualizacji wywołana zostaje analogiczna metoda - \texttt{componentDidUpdate}, a w czasie odmontowania wywołana zostaje metoda \texttt{componentWillUnmount} - powinniśmy z niej korzystać głównie w celach posprzątania np. wyzerowanie liczników.
 \newline
 \newline
-Stan może przyjąć dowolną wartość, true, false, null, może być liczbą, ciągiem znaków (string) lub tablicą.
-
+Stan może przyjąć dowolną wartość, \texttt{true}, \texttt{false}, \texttt{null}, może być liczbą, ciągiem znaków (string) lub tablicą.
 \begin{lstlisting}[
 caption={Przykład komponentu klasowego korzystającego ze stanów}
 ]
@@ -1679,17 +1628,11 @@ caption={Przykład komponentu klasowego korzystającego ze stanów}
       }
     }
   }
-
 \end{lstlisting}
-
 }
-
-
 \subsection{Renderowanie warunkowe}
-
 Renderowanie warunkowe umożliwia wyświetlanie elementów na podstawie stanu danej aplikacji. Oznacza to, że jesteśmy w stanie uzależnić interfejs (to, co widzi użytkownik) od wartości zwracanej przez zastosowaną przez nas instrukcje warunkową.
 Do renderowania warunkowego możemy użyć klasycznej instrukcji if,
-
 \begin{lstlisting}[
 caption={Renderowanie warunkowe przy pomocy instrukcji if}
 ]
@@ -1699,11 +1642,8 @@ caption={Renderowanie warunkowe przy pomocy instrukcji if}
 	</Loading>
         );
       }
-
 \end{lstlisting}
-
 operatora warunkowego, często stosowanego jako krótsza wersja instrukcji if,
-
 \begin{lstlisting}[
 caption={Renderowanie przy pomocy operatora warunkowego}
 ]
@@ -1716,52 +1656,32 @@ caption={Renderowanie przy pomocy operatora warunkowego}
 		<h1>Widok, który zobaczy użytkownik
 		 jeśli warunek nie zostanie spełniony</h1>
 	)
-
-
 \end{lstlisting}
-
 jak i operatora logicznego \&\&.
-
 \begin{lstlisting}[
 caption={Renderowanie warunkowe przy pomocy operatora logicznego \&\&}
 ]
 {
 	isSubmitting &&  <LoadingScreenB></LoadingScreenB>
 }  
-
-
-
 \end{lstlisting}
-
-
-
-
 \subsection{Hooki}
 Hooki zostały wprowadzone w wersji 16.8. Pozwalają używać stanów oraz innych funkcjonalności Reacta w komponentach funkcyjnych.
 \newline
-Jak podają developerzy, głównymi powodami, dla których wprowadzili hooki było to, że:
-
+Zgodnie z informacjami udzielonymi przez developerów, głównymi powodami, dla których wprowadzili hooki było to, że:
 \begin{itemize}
-\item Współdzielenie logiki związanej ze stanem pomiędzy komponentami jest trudne
-\item Wraz ze wzrostem złożoności komponentów stają się one zbyt trudne do zrozumienia
-\item Klasy są mylące zarówno dla ludzi jak i maszyn
+\item Współdzielenie logiki związanej ze stanem pomiędzy komponentami jest skomplikowane.
+\item Wraz ze wzrostem złożoności komponentów stają się one zbyt trudne do zrozumienia.
+\item Klasy są mylące zarówno dla ludzi jak i maszyn.
 \end{itemize}
-
 Jeśli chcemy skorzystać ze stanu w komponencie funkcyjnym, należy użyć hooka stanu.
-
-
 \begin{lstlisting}[
 caption={Wywołanie hooka stanu}
 ]
 const [editView, setEditView] = React.useState("email");
-
-
 \end{lstlisting}
-
 Powyższy przykład pokazuje, jak użyć hooka stanu, gdzie editView jest nazwą stanu, a email jest jego wartością początkową. W przypadku potrzeby zaktualizowania wartości należy 
 wywołać funkcję setEditView.
-
-
 \begin{lstlisting}[
 caption={Zmiana stanu przy pomocy funkcji setEditView}
 ]
@@ -1770,13 +1690,8 @@ color="primary"
 onClick={(e)=>setEditView("name")}  >
 	Zmień nazwę użytkownika
 </Button>
-
-
 \end{lstlisting}
-
-Jeśli chcemy dokonać operacji w określonym cyklu życia komponentu, należy użyć hooka useEffect. Możemy o nim myśleć jak o połączeniu metod componentDidMount, componentDidUpdate oraz componentWillUnmount w jedną.
-
-
+Jeśli chcemy dokonać operacji w określonym cyklu życia komponentu, należy użyć hooka \texttt{useEffect}. Możemy o nim myśleć jak o połączeniu metod \texttt{componentDidMount}, \texttt{componentDidUpdate} oraz \texttt{componentWillUnmount} w jedną.
 \begin{lstlisting}[
 caption={Przykładowe użycie hooka useEffect}
 ]
@@ -1798,18 +1713,13 @@ caption={Przykładowe użycie hooka useEffect}
     };
     fetchSections();
   }
-
-
 \end{lstlisting}
-
 \subsection{Obsługa zdarzeń}
 {
-Kolejnym pojęciem często używanym w budowaniu interfejsów są zdarzenia. Zdarzenia określają zajście pewnej czynności, którą nasz interfejs jest w stanie wyłapać i następnie obsłużyć.
-Przykładowymi zdarzeniami mogą być onClick - w przypadku kliknięcia myszką, onChange - w przypadku modyfikacji elementu lub onSubmit - w przypadku przesłania formularza.
-W odróżnieniu od np. HTMLa w React zdarzenia zapisujemy tzw. camelCasem. \footnote{camelCase jest konwencją, w której w nazwach kolejne wyrazy zapisujemy łącznie, a każdy kolejny(nie licząc pierwszego) rozpoczynamy wielką literą}
+Kolejnym pojęciem często używanym w budowaniu interfejsów są zdarzenia. Zdarzenia określają zajście pewnej czynności, którą nasz interfejs jest w~stanie wyłapać i następnie obsłużyć.
+Przykładowymi zdarzeniami mogą być onClick~-~w przypadku kliknięcia myszką, onChange - w przypadku modyfikacji elementu lub onSubmit - w przypadku przesłania formularza.
+W odróżnieniu od np. HTMLa w React zdarzenia zapisujemy tzw. camelCasem.\footnote{camelCase jest konwencją, w której w nazwach kolejne wyrazy zapisujemy łącznie, a każdy kolejny(nie licząc pierwszego) rozpoczynamy wielką literą}
 Instrukcje obsługi zdarzenia są przekazywane jako funkcje.
-
-
 \begin{lstlisting}[
 caption={Przykładowa obsługa zdarzenia onClick}
 ]
@@ -1819,48 +1729,32 @@ caption={Przykładowa obsługa zdarzenia onClick}
 		<FileCopyIcon />
 	</IconButton>
 </BootstrapTooltip>
-
-
 \end{lstlisting}
-
 }
-Powyższy przykład pokazuje jeden ze sposobów obsługi zdarzeń wykorzystywanych w aplikacji Gen-mat. Kliknięcie przycisku IconButton powoduje wywołanie funkcji createExamCopy, która jest odpowiedzialna za utworzenie kopii sprawdzianu.
-Innym sposobem na przekazanie instrukcji obsługi zdarzenia jest napisanie funkcji obsługi, następnie jej związanie (ang. bind) i wywołanie jej przy pomocy {\it this}.
-
-
+Powyższy przykład pokazuje jeden ze sposobów obsługi zdarzeń wykorzystywanych w aplikacji Gen-mat. Kliknięcie przycisku IconButton powoduje wywołanie funkcji \texttt{createExamCopy}, która jest odpowiedzialna za utworzenie kopii sprawdzianu.
+Innym sposobem na przekazanie instrukcji obsługi zdarzenia jest napisanie funkcji obsługi, następnie jej związanie (ang. bind) i wywołanie jej przy pomocy \texttt{this}.
 \begin{lstlisting}[
 caption={Związanie}
 ]
 this.hideSection = this.hideSection.bind(this);
-
-
 \end{lstlisting}
-
 \begin{lstlisting}[
 caption={Wywołanie obsługi zdarzenia po związaniu}
 ]
 <ListItem
 button 
 onClick={this.hideSection(section)}>
-
-
 \end{lstlisting}
-
-
-
-\section{Tworzenie formularzy oraz wymiana danych z serwerem} \mbox{}\\
+\section{Tworzenie formularzy oraz wymiana danych z~serwerem} \mbox{}\\
 %\bigbreak
-Jedną z podstawowych rzeczy, które musi zrobić prawie każdy interfejs w dzisiejszych aplikacjach internetowych jest obsługa formularzy oraz wymiana danych między serwerem, aplikacją oraz użytkownikiem. Interfejs projektu Gen-mat w tym celu używa głównie trzech bibliotek:\newpage
-
+Jedną z podstawowych rzeczy, które musi zrobić prawie każdy interfejs w~dzisiejszych aplikacjach internetowych jest obsługa formularzy oraz wymiana danych między serwerem, aplikacją oraz użytkownikiem. Interfejs projektu Gen-mat w tym celu używa głównie trzech bibliotek:
 \begin{itemize}
 \item Axios
 \item Formik
 \item Yup
 \end{itemize}
-
 \subsection{Axios}
-Axios~\cite{axios} jest Klientem HTTP dla node.js oraz przeglądarki, opartym na javascriptowym obiekcie Promise, który służy do obsługi operacji asynchronicznych.
-
+Axios~\cite{axios} jest klientem HTTP dla node.js oraz przeglądarki, opartym na javascriptowym obiekcie \texttt{Promise}, który służy do obsługi operacji asynchronicznych.
 \begin{figure}[H]
 \centering
 \includegraphics[width=13cm]{promises.png}
@@ -1870,28 +1764,15 @@ Axios~\cite{axios} jest Klientem HTTP dla node.js oraz przeglądarki, opartym na
 }
 \label{react dev example.jpg}
 \end{figure}
-
-Dzięki Axios możemy tworzyć requesty - żądania HTTP, które są podstawową formą komunikacji z serwerem. HTTP opisuje formę żądania klienta oraz formę odpowiedzi na żądanie ze strony serwera. Do najważniejszych metod HTTP, na których się skupimy, należą:
-
-\begin{itemize}
-\item GET - metoda wysyłająca żądanie otrzymania danych, powinna być ograniczona jedynie do pobierania danych, nie powinna ich przesyłać
-\item PUT - metoda używana w celu przesłania danych między klientem  oraz serwerem w celu aktualizacji wybranego zasobu
-\item POST - metoda używana w celu przesłania danych między klientem  oraz serwerem
-\item DELETE - żądanie usunięcia danych
-\end{itemize}
-
+Dzięki Axios możemy tworzyć requesty - żądania HTTP, które są podstawową formą komunikacji z serwerem. HTTP opisuje formę żądania klienta oraz~formę odpowiedzi na żądanie ze strony serwera. Żądaniami HTTP użytymi w~projekcie Gen-mat są \texttt{GET}, \texttt{POST}, \texttt{PUT}, \texttt{DELETE} opisane w pierwszym rozdziale pracy.
 Axios pozwala na tworzenie instancji z własną konfiguracją, która będzie stosowana domyślnie przy każdym wysłaniu żądania przy pomocy
 tej instancji.
-
 %############################################################################3
-
 Gen-mat używa dwóch instancji Axios.
-
 \begin{lstlisting}[
 caption={Instancje axios projektu gen-mat}
 ]
 import axios from "axios";
-
 export const axiosInstanceNoAuth = axios.create({
   baseURL: window.location.origin + "/api/",
   timeout: 30000,
@@ -1900,7 +1781,6 @@ export const axiosInstanceNoAuth = axios.create({
     accept: "application/json",
   },
 });
-
 export const axiosInstance = axios.create({
   baseURL: window.location.origin + "/api/",
   timeout: 30000,
@@ -1910,12 +1790,8 @@ export const axiosInstance = axios.create({
     accept: "application/json",
   },
 });
-
-
 \end{lstlisting}
-
 Gdzie baseURL oznacza adres URL, timeout służy do określania maksymalnego czasu (w milisekundach) jaki żądanie ma na wykonanie, zanim zostanie anulowane. Dodatkowo, na podstawie zawartości nagłówka serwer jest w stanie odróżnić czy zapytanie zostało wysłane przez użytkownika zalogowanego, czy przez użytkownika niezalogowanego. Aby wysłać żądanie należy  odwołać się do instancji, określić rodzaj żądania, podać dokładną ścieżkę oraz, w zależności od tego, co mamy do przekazania serwerowi, przesłać dane.
-
 \begin{lstlisting}[
 caption={Przykładowe wywołanie zapytania GET, aby otrzymać sprawdziany użytkownika}
 ]
@@ -1924,17 +1800,15 @@ caption={Przykładowe wywołanie zapytania GET, aby otrzymać sprawdziany użytk
     axiosInstance
       .get("/user/tests/")
       .then((response) => {
-        console.log("UE update response", response, "exams", response.data);
+        console.log("UE update response",
+        response, "exams", response.data);
         this.setState({ exams: response.data });
       })
       .catch((error) => {
         console.log("UE update error response", error);
       });
   }
-
-
 \end{lstlisting}
-
 \begin{lstlisting}[
 caption={Wywołanie zapytania POST w celu utworzenia rejestracji nowego użytkownika }
 ]
@@ -1944,15 +1818,10 @@ axiosInstanceNoAuth
 		password: values.password,
 		email: values.email,
 	})
-
-
 \end{lstlisting}
-
-
 \subsection{Yup}
 Yup jest narzędziem przydatnym przy parsowaniu oraz walidacji~\cite{yup}. Yup pozwala na tworzenie schematów, do których następnie
 można przyrównać interesujący nas element. Yup pozwala nam porównywać zarówno wartości zmiennych, jak i ich typy.
-
 \begin{lstlisting}[
 caption={Yup - przykład użycia }
 ]
@@ -1960,11 +1829,14 @@ validationSchema={Yup.object().shape({
 	name: Yup.string()
 		.min(2, "Nazwa użytkownika musi 
 		się składać z minimum 2 znaków!")
-		.max(50, "Hasło może zawierać maksymalnie 50 znaków!")
+		.max(50, "Nazwa może zawierać 
+		maksymalnie 50 znaków!")
 		.required(FRS),
 	password: Yup.string()
-		.min(8, "Hasło musi zawierać co najmniej 8 znaków!")
-		.max(50, "Hasło może zawierać maksymalnie 50 znaków!")
+		.min(8, "Hasło musi zawierać co
+		 najmniej 8 znaków!")
+		.max(50, "Hasło może zawierać 
+		maksymalnie 50 znaków!")
 		.required(FRS),
 	passwordConfirm: Yup.string()
 		.oneOf([Yup.ref("password")], "Hasła są różne")
@@ -1973,28 +1845,19 @@ validationSchema={Yup.object().shape({
 		.email("Nieprawidłowy adres e-mail")
 		.required(FRS),
 })}
-
-
 \end{lstlisting}
-
 %####################################################################
 \subsection{Formik}
 Formik jest biblioteką usprawniającą tworzenie formularzy w React. Pomaga w przekazywaniu wartości ze stanów oraz do stanów, walidacji i wyłapywaniu błędów oraz przesyłaniu formularzy.
-
-Jak podaje sam autor, powodem, dla którego stworzył on Formik, była chęć zestandaryzowania komponentów wejścia oraz sposobu przepływu danych wewnątrz formularzy~\cite{formik}.
-
-Formik daje nam dostęp do przemyślanych pól oraz metod pomocniczych przydatnych przy tworzeniu formularzy. Na początku możemy przekazać początkowe wartości w initialValues, podstawowymi metodami pomocniczymi są:
-
+Jak podaje sam autor, powodem, dla którego stworzył on Formik była chęć zestandaryzowania komponentów wejścia oraz sposobu przepływu danych wewnątrz formularzy~\cite{formik}.
+Formik daje nam dostęp do przemyślanych pól oraz metod pomocniczych przydatnych przy tworzeniu formularzy. Na początku możemy przekazać początkowe wartości w \texttt{initialValues}, podstawowymi metodami pomocniczymi są:
 \begin{itemize}
-\item handleSubmit - procedura obsługi wysyłania
-\item handleChange - procedura obsługi zmian
-\item values - w tej metodzie przechowywane są aktualne wartości obecne  \\ w formularzu.
+\item \texttt{handleSubmit} -- procedura obsługi wysyłania
+\item \texttt{handleChange} -- procedura obsługi zmian
+\item \texttt{values} -- w tej metodzie przechowywane są aktualne wartości obecne w~formularzu.
 \end{itemize}
-
-Kolejnym sposobem użycia Formika razem z Yupem, wykorzystywanym \\w projekcie Gen-mat, jest walidacja pól na poziomie formularza przy pomocy validationSchema. 
-Najpierw stworzony zostaje obiekt Yupowy o określonych wartościach a następnie zostaje on przypisany jako validationSchema.
-
-
+Kolejnym sposobem użycia Formika razem z Yupem, wykorzystywanym w~projekcie Gen-mat, jest walidacja pól na poziomie formularza przy pomocy \texttt{validationSchema}. 
+Najpierw stworzony zostaje obiekt Yupowy o określonych wartościach a następnie zostaje on przypisany jako \texttt{validationSchema}.
 \begin{lstlisting}[
 caption={Formik - deklaracja }
 ]
@@ -2043,7 +1906,8 @@ caption={Formik - deklaracja }
             errResponse.status === 401 &&
             errResponse.statusText === "Unauthorized"
           ) {
-            enqueueSnackbar("Nieprawidłowy adres e-mail lub hasło", { 
+            enqueueSnackbar("Nieprawidłowy adres
+	 e-mail lub hasło", { 
               variant: 'error',
           })
             helpers.setValues(
@@ -2079,24 +1943,15 @@ password: false,
     handleSubmit,
     isSubmitting,
   }) => {
-
-
 \end{lstlisting}
-
-Oprócz wcześniej wspomnianych podstawowych właściwości, Formik zapewnia:
+Innymi właściowaściami biblioteki Formik używanymi w pojekcie Gen-mat w celu weryfikacji pól formularzy są:
 \begin{itemize}
-\item dirty - zwracające true, gdy między wartościami values a początkowymi wartościami przekazanymi w initialValues nie zachodzi głęboka równość.
-\item handleBlur - procedura obsługi zdarzenia onBlur - używana, gdy chcemy monitorować, czy konkretna dana wejściowa została dotknięta.
-\item isSubmitting - który sprawdza stan przesyłania formularza, zwraca wartość {\it true}, gdy formularz jest aktualnie przesyłany, w innym wypadku zwraca {\it false}
-\item setFieldError - pozwalający na ustawienie dodatkowej wiadomośc, gdy \\w wybranym polu wystąpi błąd
+\item \texttt{handleBlur} -- procedura obsługi zdarzenia onBlur - używana, gdy chcemy monitorować, czy konkretne pole zostało skonfigurowane w dowolnym stopniu.
+\item \texttt{isSubmitting} -- który sprawdza stan przesyłania formularza, zwraca wartość {\it true}, gdy formularz jest aktualnie przesyłany, w innym wypadku zwraca {\texttt{false}}
+\item \texttt{setFieldError} -- pozwalający na ustawienie dodatkowej wiadomośc, gdy w~wybranym polu wystąpi błąd
 \end{itemize}
-
-
-
-
-
 \section{React Router}
-Modułem odpowiedzialnym za routing - nawigację pomiędzy ścieżkami jest React Router~\cite{reactrouter}. Moduł ten odpowiada za
+Modułem odpowiedzialnym za routing - nawigację pomiędzy ścieżkami - jest React Router~\cite{reactrouter}. Moduł ten odpowiada za
 możliwość przechodzenia pomiędzy rożnymi widokami obecnymi w projekcie, jak i wyświetlanie prawidłowego widoku pod danym adresem URL.
 Kolejnym zastosowaniem jest zabezpieczenie ścieżki przed niepożądanym użytkownikiem oraz możliwość przekierowania użytkownika pod wybrany adres.
 Dodatkowo React Router pozwala na wyłuskanie opcjonalnego parametru w adresie URL.
@@ -2104,8 +1959,6 @@ Dodatkowo React Router pozwala na wyłuskanie opcjonalnego parametru w adresie U
 \newline
 Jednym z najważniejszych komponentów w React Router jest Route, którego podstawową funkcją jest wyświetlanie właściwej części interfejsu pod podanym adresem URL.
 Kolejnym przydatnym komponentem jest Switch, który sprawia, że wyrenderuje się wyłącznie podana ścieżka pod podanym adresem. Zapobiega to niechcianym renderom widoków, które przypadkiem mogą również pasować do podanej ścieżki. Komponent Redirect nadpisuje obecny adres i nawiguje pod nowy adres.
-
-
 \begin{lstlisting}[
 caption={Ścieżki dostępne w projekcie Gen-mat }
 ]
@@ -2113,7 +1966,8 @@ caption={Ścieżki dostępne w projekcie Gen-mat }
   <Route
     exact
     path={"/login/"}
-    render={(props) => <Login {...global} {...props} />}
+    render={(props) => 
+   <Login {...global} {...props} />}
   />
   
   <Route
@@ -2180,39 +2034,25 @@ caption={Ścieżki dostępne w projekcie Gen-mat }
     render={(props) => <HomePage {...props} {...global} />}
   />
 </Switch>
-
-
 \end{lstlisting}
-
 React Router posiada kilka przydatnych hooków: useHistory, useLocation, useParams, useRouteMatch. Hook useHistory daje nam dostęp do pakietu history, który oferuje kolejne usprawnienia 
 nawigacyjne oferując właściwości i metody takie jak:
-
 \begin{itemize}
-\item location - obiekt reprezentujący obecny adres
-\item push - który przepycha nowy adres na ostatnie miejsce na stosie historii
-\item goBack - funkcja wracająca na poprzedni adres
+\item \texttt{location} -- obiekt reprezentujący obecny adres
+\item \texttt{push} -- który przepycha nowy adres na ostatnie miejsce na stosie historii
+\item \texttt{goBack} -- funkcja wracająca na poprzedni adres
 \end{itemize}
-
-Rozważmy następującą sytuację - użytkownik zapomniał hasła, korzysta \\z funkcji ,,reset hasła'', na adres e-mail otrzymuje link, którego ostatnią częścią
+Rozważmy następującą sytuację -- użytkownik zapomniał hasła, korzysta z~funkcji ,,reset hasła'', na adres e-mail otrzymuje link, którego ostatnią częścią
 jest losowo wygenerowany ciąg znaków - token. Aplikacja musi być w stanie wydobyć ten token oraz sprawdzić czy jest poprawny, jest to możliwe dzięki użyciu useParams.
-
 \begin{lstlisting}[
 caption={Przykładowe użycie useParams}
 ]
   const passwordToken = useParams().token;
-
 \end{lstlisting}
-
-
 \section{Podsumowanie}
 React jest potężnym narzędziem do tworzenia interfejsów. Jego ogromna popularność przekłada się na gigantyczną ilość materiałów wspomagających jego przyswojenie, co w połączeniu z relatywnie niską barierą wejścia składa się na atrakcyjny wybór dla osób bez większego doświadczenia w tworzeniu interfejsów.
 Dodatkowym atutem jest kompatybilność z szeroką ilością narzędzi ułatwiających pracę oraz dających więcej możliwości. Fakt, że React jest stale rozwijany oraz używany przez ogromne firmy
 sugeruje, że nie zostanie porzucony w najbliższej przyszłości, co również może skłaniać do wybrania właśnie tej biblioteki.
-
-
 \nocite{*}
-
-
 \printbibliography
-
 \end{document}
