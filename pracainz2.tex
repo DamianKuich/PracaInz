@@ -1460,18 +1460,18 @@ W tym rozdziale zawarte zostały informacje na temat współpracy frameworka Dja
 \chapter {React jako narzędzie do tworzenia interfejsu użytkownika}
 \section{Czym jest React?}
 {
-React jest javascritpową biblioteką typu open-source\footnote{open source - rodzaj oprogramowania oparty na licencji przyznającej użytkownikom prawo do badania, zmiany i rozpowszechniania oprogramowania ~\cite{opensourcewiki}} używaną do tworzenia interfejsów użytkownika aplikacji internetowych. Jego oryginalnym autorem jest programista firmy Facebook -- Jordan Walke. Pierwszy, bardzo wczesny prototyp Reacta - FaxJS powstał już w 2011 roku i został wykorzystany do zaimplementowania funkcji ,,Szukaj'' na platformie Facebook. Niewiele później, aby móc łatwiej obsługiwać Facebook Ads, Jordan rozwinął prototyp i stworzył React. Po nabyciu przez Facebooka Instagrama w 2012 roku, Instagram wyrażał chęć wdrożenia nowej technologii na swoją platformę, co powodowało nacisk na odłączenie Reacta od Facebooka i przejście na licencję open-source. W 2013 roku biblioteka przeszła na licencję open source ~\cite{reactstory}. 
+React jest javascritpową biblioteką typu open-source\footnote{open source - rodzaj oprogramowania oparty na licencji przyznającej użytkownikom prawo do badania, zmiany i rozpowszechniania oprogramowania ~\cite{opensourcewiki}} używaną do tworzenia interfejsów użytkownika aplikacji internetowych. Jego oryginalnym autorem jest programista firmy Facebook -- Jordan Walke. Pierwszy, bardzo wczesny prototyp Reacta - FaxJS powstał już w 2011 roku i został wykorzystany do~zaimplementowania funkcji ,,Szukaj'' na platformie Facebook. Niewiele później, aby móc łatwiej obsługiwać Facebook Ads, Jordan rozwinął prototyp i stworzył React. Po nabyciu przez Facebooka Instagrama w 2012 roku, Instagram wyrażał chęć wdrożenia nowej technologii na swoją platformę, co powodowało nacisk na odłączenie Reacta od Facebooka i przejście na licencję open-source. W 2013 roku biblioteka przeszła na licencję open source ~\cite{reactstory}. 
 Od tamtego momentu React cały czas prężnie się rozwija, pozostaje jednym z~ najpopularniejszych narzędzi do tworzenia interfejsów graficznych, używany jest nie tylko przez ogromne firmy takie jak Uber, Netflix, Airbnb, Amazon, Twitter oraz wiele innych, ale również przez zwykłych użytkowników. Popularność Reacta nie przestaje rosnąć, w styczniu 2021 roku biblioteka została pobrana ponad 10 milionów razy - zdecydowanie wyróżniając się na tle podobnych narzędzi przeznaczonych do tworzenia interfejsów użytkownika.
 %###############################################################
 \begin{figure}
 \centering
-\includegraphics[width=14cm]{statystyki react vue angular.png}
+\includegraphics[width=13cm]{statystyki react vue angular.png}
 \caption{npm trends, statystyki dotyczące ilości pobrań popularnych narzędzi do tworzenia interfejsów}
 \label{statystyki react vue angular.png}
 \end{figure}
 }
 \section{Dlaczego warto korzystać z Reacta?}{
-React posiada wiele zalet, które sprawiły, że został użyty w projekcie. Relatywnie niska bariera wejścia, dzięki której nauka powinna być w miarę prosta dla osób mających wcześniejszą styczność z programowaniem. Łatwość testowania oraz debugowania - w tym celu bardzo przydatne jest narzędzie React Developer Tools, którego możemy używać z poziomu przeglądarki internetowej. React Developer Tools jest dostępne w postaci rozszerzenia, po którego zainstalowaniu ujrzymy dwie zakładki, zakładkę Components oraz zakładkę Profiler. W zakładce Components możemy obserwować hierarchię wszystkich komponentów naszej aplikacji, dowolnego komponentu oraz to jak zmienia się on w czasie. Druga zakładka Profiler pozwala nam sprawdzić wydajność naszej aplikacji. Domyślnie React pokazuje programiście wiele użytecznych, dobrze opisanych komentarzy oraz ostrzeżeń usprawniających pracę, są one dostępne, kiedy aplikacja znajduje się w fazie developerskiej. Wszystko to sprawia, że aplikacja w fazie developerskiej działa wolniej. Przejście do fazy produkcyjnej usuwa większość komentarzy, ostrzeżeń oraz możliwość sprawdzania każdego komponentu i dowolnej informacji o nim przy pomocy React Developer Tools, ale za to znacząco zwiększa wydajność aplikacji.
+React posiada wiele zalet, które sprawiły, że został użyty w projekcie. Relatywnie niska bariera wejścia, dzięki której nauka powinna być w miarę prosta dla osób mających wcześniejszą styczność z programowaniem. Łatwość testowania oraz debugowania - w tym celu bardzo przydatne jest narzędzie \texttt{React Developer Tools}, którego możemy używać z poziomu przeglądarki internetowej. \texttt{React Developer Tools} jest dostępne w postaci rozszerzenia, po którego zainstalowaniu ujrzymy dwie zakładki, zakładkę \texttt{Components} oraz zakładkę \texttt{Profiler}. W zakładce \texttt{Components} możemy obserwować hierarchię wszystkich komponentów naszej aplikacji, dowolnego komponentu oraz~to~jak~zmienia się on w czasie. Druga zakładka \texttt{Profiler} pozwala nam sprawdzić wydajność naszej aplikacji. Domyślnie React pokazuje programiście wiele użytecznych, dobrze opisanych komentarzy oraz ostrzeżeń usprawniających pracę, są one dostępne, kiedy aplikacja znajduje się w fazie developerskiej. Wszystko to sprawia, że aplikacja w fazie developerskiej działa wolniej. Przejście do fazy produkcyjnej usuwa większość komentarzy, ostrzeżeń oraz możliwość sprawdzania każdego komponentu i dowolnej informacji o nim przy pomocy \texttt{React Developer Tools}, ale za to znacząco zwiększa wydajność aplikacji.
 Właśnie z tych powodów tryb developerski stosujemy w czasie budowania aplikacji, a trybu produkcyjnego w~ostatecznej wersji produktu, która ma trafić do użytkownika.
 \begin{figure}[H]
 \centering
@@ -1507,6 +1507,7 @@ npm update
 \subsection{JSX}
 {
 JSX, czyli JavaScript XML jest rozszerzeniem składni języka JavaScript, które pozwala na używanie znaczników HTML razem z językiem JavaScript. Jest to niezwykle przydatne narzędzie, które ułatwia nam na operowanie danymi przetwarzanymi w kodzie javascriptowym oraz ułatwia ich wyświetlanie przy pomocy znaczników HTML. JSX możemy wykorzystać w wielu celach.
+
 \begin{lstlisting}[
 caption={Fragment pliku MaterialUiUserExams.js, przykładowe użycie JSX}
 ]
@@ -1518,6 +1519,12 @@ caption={Fragment pliku MaterialUiUserExams.js, przykładowe użycie JSX}
 \end{lstlisting}
 Jedną z zalet JSX jest łatwość otrzymania wartości zmiennej używanej w~kodzie javascriptowym. W powyższym przykładzie wykorzystujemy to, aby otrzymać nazwę każdego działu, który następnie wyświetlamy użytkownikowi.
 JSX jest w stanie obsłużyć dowolne, prawidłowe wyrażenie w języku JavaScript, które zostało zamknięte wewnątrz nawiasów klamrowych. Dzięki czemu możemy nie tylko uzyskać wartości zmiennych, ale również je modyfikować oraz wywoływać funkcje JavaScriptowe, jeśli tego potrzebujemy.
+
+\lstset{
+    breaklines=true,                    % sets automatic line breaking
+%   breakatwhitespace=false,            % sets if automatic breaks should only happen at whitespace
+    prebreak = \raisebox{0ex}[0ex][0ex]{\ensuremath{\hookleftarrow}} % just as an example
+}
 \begin{lstlisting}[
 caption={Wywołanie funkcji map wewnątrz elementu <List>}
 ]
@@ -1551,7 +1558,7 @@ caption={Wywołanie funkcji map wewnątrz elementu <List>}
 				 tabIndex={-1}/>
 			 </ListItemIcon>
 			 <ListItemText 
-			 primary={<b>Zaznacz wszystkie</b>}  />
+			 primary={<b>Zaznacz wszystkie</b>}/>
 	 </ListItem>
 ...
 </List>
@@ -1581,7 +1588,7 @@ function FunctionComponent(props){
 \end{lstlisting}
 Jedną z zasad obowiązujących podczas budowy komponentów, zarówno funkcyjnych jak i klasowych, pozostaje nienaruszalność właściwości    (ang. props) przekazywanych podczas deklaracji funkcji. Dane, które mają zmieniać się dynamiczne powinny być przechowywane w stanach.
 Obecnie podstawową różnicą pozostaje składnia, w przeszłości komponenty funkcyjne nie posiadały stanów ani metod pozwalających na uruchamianie kodu w odpowiednich momentach. Z tych powodów komponentów funkcyjnych używano tylko do budowy komponentów, które nie musiały być dynamiczne. Zmieniło się to wraz z wprowadzeniem Hooków.
-Warto również wiedzieć, że komponenty mogą odwoływać się do innych komponentów, co promuje pisanie ich z myślą o~ możliwości wielokrotnego wykorzystania. Możemy to wykorzystać na przykład tworząc komponent ekranu ładowania, następnie możemy go użyć w innych komponentach, renderując go wtedy, gdy użytkownik będzie oczekiwał na odpowiedź od serwera.
+Warto również wiedzieć, że komponenty mogą odwoływać się do innych komponentów, co promuje pisanie ich z myślą o~ możliwości wielokrotnego wykorzystania. Możemy to wykorzystać na przykład tworząc komponent ekranu ładowania, następnie możemy go użyć w~innych komponentach, renderując go wtedy, gdy użytkownik będzie oczekiwał na~odpowiedź od serwera.
 }
 \subsection{Stan i cykl życia}{
 Stan zawiera dane związane z danym komponentem, które mogą ulegać zmianie. Stan powinien być obiektem JacaScriptowym, aby go zmodyfikować należy wywołać metodę setState. Dodatkowo, komponenty posiadają metody cyklu życia, które są odpowiedzialne za uruchamianie kodu w odpowiednich momentach.
@@ -1691,7 +1698,7 @@ onClick={(e)=>setEditView("name")}  >
 	Zmień nazwę użytkownika
 </Button>
 \end{lstlisting}
-Jeśli chcemy dokonać operacji w określonym cyklu życia komponentu, należy użyć hooka \texttt{useEffect}. Możemy o nim myśleć jak o połączeniu metod \texttt{componentDidMount}, \texttt{componentDidUpdate} oraz \texttt{componentWillUnmount} w jedną.
+Jeśli chcemy dokonać operacji w określonym cyklu życia komponentu, należy użyć hooka \texttt{useEffect}. Możemy o nim myśleć jak o połączeniu metod \texttt{componentDidMount}, \texttt{componentDidUpdate} oraz \texttt{componentWillUnmount} w~jedną.
 \begin{lstlisting}[
 caption={Przykładowe użycie hooka useEffect}
 ]
@@ -1747,7 +1754,7 @@ onClick={this.hideSection(section)}>
 \end{lstlisting}
 \section{Tworzenie formularzy oraz wymiana danych z~serwerem} \mbox{}\\
 %\bigbreak
-Jedną z podstawowych rzeczy, które musi zrobić prawie każdy interfejs w~dzisiejszych aplikacjach internetowych jest obsługa formularzy oraz wymiana danych między serwerem, aplikacją oraz użytkownikiem. Interfejs projektu Gen-mat w tym celu używa głównie trzech bibliotek:
+Jedną z podstawowych rzeczy, które musi zrobić prawie każdy interfejs w~dzisiejszych aplikacjach internetowych jest obsługa formularzy oraz wymiana danych między serwerem, aplikacją oraz użytkownikiem. Interfejs projektu Gen-mat w~tym celu używa głównie trzech bibliotek:
 \begin{itemize}
 \item Axios
 \item Formik
@@ -1839,7 +1846,8 @@ validationSchema={Yup.object().shape({
 		maksymalnie 50 znaków!")
 		.required(FRS),
 	passwordConfirm: Yup.string()
-		.oneOf([Yup.ref("password")], "Hasła są różne")
+		.oneOf([Yup.ref("password")], 
+		"Hasła są różne")
 		.required(FRS),
 	email: Yup.string()
 		.email("Nieprawidłowy adres e-mail")
@@ -1959,6 +1967,11 @@ Dodatkowo React Router pozwala na wyłuskanie opcjonalnego parametru w adresie U
 \newline
 Jednym z najważniejszych komponentów w React Router jest Route, którego podstawową funkcją jest wyświetlanie właściwej części interfejsu pod podanym adresem URL.
 Kolejnym przydatnym komponentem jest Switch, który sprawia, że wyrenderuje się wyłącznie podana ścieżka pod podanym adresem. Zapobiega to niechcianym renderom widoków, które przypadkiem mogą również pasować do podanej ścieżki. Komponent Redirect nadpisuje obecny adres i nawiguje pod nowy adres.
+\lstset{
+    breaklines=true,                    % sets automatic line breaking
+%   breakatwhitespace=false,            % sets if automatic breaks should only happen at whitespace
+    prebreak = \raisebox{0ex}[0ex][0ex]{\ensuremath{\hookleftarrow}} % just as an example
+}
 \begin{lstlisting}[
 caption={Ścieżki dostępne w projekcie Gen-mat }
 ]
@@ -2035,8 +2048,8 @@ caption={Ścieżki dostępne w projekcie Gen-mat }
   />
 </Switch>
 \end{lstlisting}
-React Router posiada kilka przydatnych hooków: useHistory, useLocation, useParams, useRouteMatch. Hook useHistory daje nam dostęp do pakietu history, który oferuje kolejne usprawnienia 
-nawigacyjne oferując właściwości i metody takie jak:
+React Router posiada kilka przydatnych hooków: \texttt{useHistory}, \texttt{useLocation}, \texttt{useParams}, \texttt{useRouteMatch}. Hook useHistory daje nam dostęp do pakietu history, który oferuje kolejne usprawnienia 
+nawigacyjne oferując właściwości i~metody takie jak:
 \begin{itemize}
 \item \texttt{location} -- obiekt reprezentujący obecny adres
 \item \texttt{push} -- który przepycha nowy adres na ostatnie miejsce na stosie historii
