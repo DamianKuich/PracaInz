@@ -1968,8 +1968,8 @@ Kolejnym zastosowaniem jest zabezpieczenie ścieżki przed niepożądanym użytk
 Dodatkowo React Router pozwala na wyłuskanie opcjonalnego parametru w adresie URL.
 \newline
 \newline
-Jednym z najważniejszych komponentów w React Router jest Route, którego podstawową funkcją jest wyświetlanie właściwej części interfejsu pod podanym adresem URL.
-Kolejnym przydatnym komponentem jest Switch, który sprawia, że wyrenderuje się wyłącznie podana ścieżka pod podanym adresem. Zapobiega to niechcianym renderom widoków, które przypadkiem mogą również pasować do podanej ścieżki. Komponent Redirect nadpisuje obecny adres i nawiguje pod nowy adres.
+Jednym z najważniejszych komponentów w React Router jest \texttt{Route}, którego podstawową funkcją jest wyświetlanie właściwej części interfejsu pod podanym adresem URL.
+Kolejnym przydatnym komponentem jest \texttt{Switch}, który sprawia, że wyrenderuje się wyłącznie podana ścieżka pod podanym adresem. Zapobiega to niechcianym renderom widoków, które przypadkiem mogą również pasować do podanej ścieżki. Komponent Redirect nadpisuje obecny adres i nawiguje pod nowy adres.
 \lstset{
     breaklines=true,                    % sets automatic line breaking
 %   breakatwhitespace=false,            % sets if automatic breaks should only happen at whitespace
@@ -2059,7 +2059,7 @@ nawigacyjne oferując właściwości i~metody takie jak:
 \item \texttt{goBack} -- funkcja wracająca na poprzedni adres
 \end{itemize}
 Rozważmy następującą sytuację -- użytkownik zapomniał hasła, korzysta z~funkcji ,,reset hasła'', na adres e-mail otrzymuje link, którego ostatnią częścią
-jest losowo wygenerowany ciąg znaków - token. Aplikacja musi być w stanie wydobyć ten token oraz sprawdzić czy jest poprawny, jest to możliwe dzięki użyciu useParams.
+jest losowo wygenerowany ciąg znaków - token. Aplikacja musi być w stanie wydobyć ten token oraz sprawdzić, czy jest poprawny, jest to możliwe dzięki użyciu useParams.
 \begin{lstlisting}[
 caption={Przykładowe użycie useParams}
 ]
@@ -2067,7 +2067,7 @@ caption={Przykładowe użycie useParams}
 \end{lstlisting}
 \section{Podsumowanie}
 React jest potężnym narzędziem do tworzenia interfejsów. Jego ogromna popularność przekłada się na gigantyczną ilość materiałów wspomagających jego przyswojenie, co w połączeniu z relatywnie niską barierą wejścia składa się na atrakcyjny wybór dla osób bez większego doświadczenia w tworzeniu interfejsów.
-Dodatkowym atutem jest kompatybilność z szeroką ilością narzędzi ułatwiających pracę oraz dających więcej możliwości. Fakt, że React jest stale rozwijany oraz używany przez ogromne firmy
+Dodatkowym atutem jest kompatybilność z szeroką liczbą narzędzi ułatwiających pracę oraz dających więcej możliwości. Fakt, że React jest stale rozwijany oraz używany przez ogromne firmy
 sugeruje, że nie zostanie porzucony w najbliższej przyszłości, co również może skłaniać do wybrania właśnie tej biblioteki.
 \nocite{*}
 \printbibliography
