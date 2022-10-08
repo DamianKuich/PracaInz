@@ -190,7 +190,7 @@ Atutem naszego generatora jest możliwość podzielenia sprawdzianu na grupy, dz
 Kolejną wygodną opcją jest pominięcie wyboru zadań i~postawienie na automatyczny wybór generatora. Jeżeli nauczycielowi nie spodobają się zadania wybrane przez serwis, może je w każdej chwili zamienić na inne.
 Aktualnie baza danych składa się wyłącznie z zadań zaczerpniętych z~arkuszy Centralnej Komisji Egzaminacyjnej, ponieważ wymyślanie zadań przez założycieli serwisu wiązałoby się z bardzo dużym nakładem pracy oraz ryzykiem niskiej jakości zadań pod względem merytorycznym jak i edukacyjnym.
 Aby wyeliminować ryzyko niewystarczającej ilości zadań, wprowadzona została możliwość dodawania zadań bezpośrednio przez nauczycieli, dlatego każdy z~nich będzie mógł stworzyć swój idealny sprawdzian. W trosce o prywatność naszych użytkowników, każdy z~nich będzie miał możliwość decydowania czy chce podzielić się z innymi nauczycielami stworzonym przez siebie zadaniem. Zadania dodane do bazy danych będą również weryfikowane przez osobę do tego przeznaczoną, aby nie zawierały treści, które mogą być nieodpowiednie w jakikolwiek sposób.
-Zespół podzielony jest na dwie grupy. Jedna z nich odpowiedzialna jest za Frontend, a druga za Backend. Zespół obrał metodykę pracy Scrum. Zadania są przypisywane przez Scrum Mastera na podstawie umiejętności danego członka zespołu. Następnie, co jakiś czas sprawdzany jest postęp danego zadania na podstawie tzw. ,,Task Review’’. Ostatnim punktem jest testowanie, czy zadanie zostało wykonane w sposób poprawny, oraz czy nie pojawiły się jakiekolwiek błędy.
+Zespół podzielony jest na dwie grupy. Jedna z nich odpowiedzialna jest za Frontend, a druga za Backend. Zespół obrał metodykę pracy Scrum. Zadania są przypisywane przez Scrum Mastera na podstawie umiejętności danego członka zespołu. Następnie, co jakiś czas sprawdzany jest postęp danego zadania na podstawie tzw. ,,Task Review’’. Ostatnim punktem jest testowanie czy zadanie zostało wykonane w sposób poprawny, oraz czy nie pojawiły się jakiekolwiek błędy.
 Głównym założeniem projektu było stworzenie aplikacji webowej pozwalającej na generowanie sprawdzianów w łatwy i szybki sposób.
 
 \section{Podział pracy inżynierskiej}
@@ -205,7 +205,7 @@ Rozdział pt. \textbf{,,React jako narzędzie do tworzenia interfejsu użytkowni
 \section{Opis technologii}
 Serwis ,,Gen-Mat'' korzysta z szerokiego zakresu technologii. Produkt oparty jest w szczególności na dwóch językach: Pythonie w wersji 3 oraz JavaScriptcie. Głównym czynnikiem, który kierował autorami przy wyborze technologii było doświadczenie członków zespołu przy projektowaniu systemów wykorzystujących dane języki programowania. Równie ważnym aspektem była prostota implementacji założeń projektowych i funkcjonalności. Podstawą projektu jest serwer oparty na serwisie Heroku. Umożliwia on szybkie i łatwe wdrażanie serwisu na etap produkcyjny, zachowując przy tym wysoką jakość świadczonych usług hostingowych. Projekt, jako aplikacja webowa, podzielony został na dwie główne części. Część backendową oraz część frontendową.     
 Backend odpowiedzialny jest za to, czego użytkownik korzystający z serwisu nie widzi. Są to czynności takie jak, na przykład, naprawa i utrzymywanie bazy danych, obsługa użytkowników, obsługa tokenów, spajanie zadań do utworzenia sprawdzianów itp. Wykorzystuje on Pythonowy framework Django, który umożliwia w łatwy i prosty sposób stworzenie wysokiej jakości produktu. W pierwszej iteracji produktu podstawową bazą danych była MariaDB, jednakże wraz z rozwojem została ona zmieniona. Aktualnie serwis korzysta z baz danych udostępnionych na Heroku, które operują na silniku PostgreSQL.   
-Frontend odpowiedzialny jest za część wizualną projektu. Obsługuję on na przykład wszystkie zapytania wysyłane przez użytkowników, przetwarzanie danych wysyłanych z bazy danych i wyświetlanie ich, komunikację z bazą danych za pomocą API, łączenie się z~serwerem za pomocą HTTP, obsługę sesji użytkownika i tym podobne. Ta część projektu wykorzystuje przede wszystkim Javascriptową bibliotekę React. Projekt korzysta również z frameworka Django REST do tworzenia RESTful API.
+Frontend odpowiedzialny jest za część wizualną projektu. Obsługuję on na przykład wszystkie zapytania wysyłane przez użytkowników, przetwarzanie danych wysyłanych z bazy danych i wyświetlanie ich, komunikację z bazą danych za pomocą API, łączenie się z~serwerem za pomocą HTTP, obsługę sesji użytkownika i tym podobne. Ta część projektu wykorzystuje przede wszystkim javascriptową bibliotekę React. Projekt korzysta również z frameworka Django REST do tworzenia RESTful API.
 
 %------------------------------ SPRAWDZONE ------------------------------
 
@@ -651,7 +651,7 @@ Szablony to pliki tekstowe definiujące strukturę lub układ pliku (na przykła
 \begin{center}
 \subsection{Unifrom Interface}
 \end{center}
-Unifrom Interface zakłada ujednolicenie API i danych, by były one klarowne dla innych serwisów. Powinno to oznaczać, że system powinien posiadać jeden główny URI dzięki, któremu~ byśmy mogli korzystać z metod HTTP. Django REST Framework pomaga w budowaniu interfejsu API REST poprzez tworzenie punktów końcowych za pomocą widoków ogólnych. Te ogólne widoki pomagają stworzyć pełny punkt końcowy CRUD (create, read, $\dots$) w modelu Django przy niewielkim wysiłku. Utworzony punkt końcowy jest zgodny z interfejsem API Rest struktury adresu URL dla zasobu. 
+Unifrom Interface zakłada ujednolicenie API i danych, by były one klarowne dla innych serwisów. Powinno to oznaczać, że system powinien posiadać jeden główny URI, dzięki któremu~ byśmy mogli korzystać z metod HTTP. Django REST Framework pomaga w budowaniu interfejsu API REST poprzez tworzenie punktów końcowych za pomocą widoków ogólnych. Te ogólne widoki pomagają stworzyć pełny punkt końcowy CRUD (create, read, $\dots$) w modelu Django przy niewielkim wysiłku. Utworzony punkt końcowy jest zgodny z interfejsem API Rest struktury adresu URL dla zasobu. 
 
 \newpage 
 \begin{center}
@@ -1460,30 +1460,35 @@ W tym rozdziale zawarte zostały informacje na temat współpracy frameworka Dja
 \chapter {React jako narzędzie do tworzenia interfejsu użytkownika}
 \section{Czym jest React?}
 {
-React jest javascritpową biblioteką typu open-source\footnote{open source - rodzaj oprogramowania oparty na licencji przyznającej użytkownikom prawo do badania, zmiany i rozpowszechniania oprogramowania ~\cite{opensourcewiki}} używaną do tworzenia interfejsów użytkownika aplikacji internetowych. Jego oryginalnym autorem jest programista firmy Facebook -- Jordan Walke. Pierwszy, bardzo wczesny prototyp Reacta - FaxJS powstał już w 2011 roku i został wykorzystany do~zaimplementowania funkcji ,,Szukaj'' na platformie Facebook. Niewiele później, aby móc łatwiej obsługiwać Facebook Ads, Jordan rozwinął prototyp i stworzył React. Po nabyciu przez Facebooka Instagrama w 2012 roku, Instagram wyrażał chęć wdrożenia nowej technologii na swoją platformę, co powodowało nacisk na odłączenie Reacta od Facebooka i przejście na licencję open-source. W 2013 roku biblioteka przeszła na licencję open source ~\cite{reactstory}. 
-Od tamtego momentu React cały czas prężnie się rozwija, pozostaje jednym z~ najpopularniejszych narzędzi do tworzenia interfejsów graficznych, używany jest nie tylko przez ogromne firmy takie jak Uber, Netflix, Airbnb, Amazon, Twitter oraz wiele innych, ale również przez zwykłych użytkowników. Popularność Reacta nie przestaje rosnąć, w styczniu 2021 roku biblioteka została pobrana ponad 10 milionów razy - zdecydowanie wyróżniając się na tle podobnych narzędzi przeznaczonych do tworzenia interfejsów użytkownika.
+React jest javascritpową biblioteką typu open-source\footnote{open source - rodzaj oprogramowania oparty na licencji przyznającej użytkownikom prawo do badania, zmiany i rozpowszechniania oprogramowania ~\cite{opensourcewiki}} używaną do tworzenia interfejsów użytkownika aplikacji internetowych. Jego oryginalnym autorem jest programista firmy Facebook -- Jordan Walke. Pierwszy, bardzo wczesny prototyp Reacta -- FaxJS powstał już w 2011 roku i został wykorzystany do~zaimplementowania funkcji ,,Szukaj'' na platformie Facebook. Niewiele później, aby móc łatwiej obsługiwać Facebook Ads, Jordan rozwinął prototyp i stworzył React. Po nabyciu przez Facebooka Instagrama w 2012 roku, Instagram wyrażał chęć wdrożenia nowej technologii na swoją platformę, co powodowało nacisk na odłączenie Reacta od Facebooka i przejście na licencję open-source. W 2013 roku biblioteka przeszła na licencję open source ~\cite{reactstory}. 
+Od tamtego momentu React cały czas prężnie się rozwija, pozostaje jednym z~ najpopularniejszych narzędzi do tworzenia interfejsów graficznych, używany jest nie tylko przez ogromne firmy, takie jak Uber, Netflix, Airbnb, Amazon, Twitter, ale również przez zwykłych użytkowników. Popularność Reacta nie przestaje rosnąć, w styczniu 2021 roku biblioteka została pobrana ponad 10 milionów razy - zdecydowanie wyróżniając się na tle podobnych narzędzi przeznaczonych do tworzenia interfejsów użytkownika.
 %###############################################################
 \begin{figure}
 \centering
 \includegraphics[width=13cm]{statystyki react vue angular.png}
-\caption{npm trends, statystyki dotyczące ilości pobrań popularnych narzędzi do tworzenia interfejsów}
+\caption{npm trends, statystyki dotyczące ilości pobrań popularnych narzędzi do tworzenia interfejsów
+\newline
+Źródło: \url{https://npmtrends.com/angular-vs-react-vs-vue/}
+}
+
+
 \label{statystyki react vue angular.png}
 \end{figure}
 }
 \section{Dlaczego warto korzystać z Reacta?}{
 React posiada wiele zalet, które sprawiły, że został użyty w projekcie. Relatywnie niska bariera wejścia, dzięki której nauka powinna być w miarę prosta dla osób mających wcześniejszą styczność z programowaniem. Łatwość testowania oraz debugowania - w tym celu bardzo przydatne jest narzędzie \texttt{React Developer Tools}, którego możemy używać z poziomu przeglądarki internetowej. \texttt{React Developer Tools} jest dostępne w postaci rozszerzenia, po którego zainstalowaniu ujrzymy dwie zakładki, zakładkę \texttt{Components} oraz zakładkę \texttt{Profiler}. W zakładce \texttt{Components} możemy obserwować hierarchię wszystkich komponentów naszej aplikacji, dowolnego komponentu oraz~to~jak~zmienia się on w czasie. Druga zakładka \texttt{Profiler} pozwala nam sprawdzić wydajność naszej aplikacji. Domyślnie React pokazuje programiście wiele użytecznych, dobrze opisanych komentarzy oraz ostrzeżeń usprawniających pracę, są one dostępne, kiedy aplikacja znajduje się w fazie developerskiej. Wszystko to sprawia, że aplikacja w fazie developerskiej działa wolniej. Przejście do fazy produkcyjnej usuwa większość komentarzy, ostrzeżeń oraz możliwość sprawdzania każdego komponentu i dowolnej informacji o nim przy pomocy \texttt{React Developer Tools}, ale za to znacząco zwiększa wydajność aplikacji.
-Właśnie z tych powodów tryb developerski stosujemy w czasie budowania aplikacji, a trybu produkcyjnego w~ostatecznej wersji produktu, która ma trafić do użytkownika.
+Właśnie z tych powodów trybu developerskiego używamy w czasie budowania aplikacji, a trybu produkcyjnego w~ostatecznej wersji produktu, która ma trafić do użytkownika.
 \begin{figure}[H]
 \centering
 \includegraphics[width=13cm]{react dev example.jpg}
 \caption{React Developer Tools - obraz poglądowy
-\newline
-Źródło: Obraz poglądowy - Chrome web store
- \url{https://lh3.googleusercontent.com/XWuZGqIrIsaoKHUqqQ2rs_GhS5JaH1p5pPBIUpj22mjNRNdR3Ana8FKz4B7JwsA6HIFVXGuU7pa4ELiW6iUNhs0Iyg=w640-h400-e365-rj-sc0x00ffffff}
+\\
+Źródło: Obraz poglądowy - Chrome web store\\
+ \url{https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en}
 }
 \label{react dev example.jpg}
 \end{figure}
-React posiada obszerną, bardzo dobrze napisaną dokumentację wraz z samouczkiem 
+React posiada obszerną, bardzo dobrze napisaną dokumentację wraz z samouczkiem
 ~\cite{reactjs} dostępną w wielu językach, między innymi w języku polskim.
 Kolejnym z plusów jest budowa komponentów, interfejs zbudowany w Reaccie jest stworzony z mniejszych komponentów, które łączą w sobie wygląd wraz z~logiką odpowiedzialną za ich zachowanie, co pomaga w zorganizowaniu pracy, dodatkową pomocą jest JSX - rozszerzenie składni pozwalające na używanie znaczników HTML razem z językiem JavaScript.
 Ogromna popularność Reacta przekłada się również na mnogość dostępnych samouczków i innych materiałów pozwalających lepiej zrozumieć tę bibliotekę. Dodatkowo w poszukiwaniu odpowiedzi na nurtujące nas pytania możemy zajrzeć do społeczności programistów React takich jak dev.to, hashnode, lub najpopularniejszy z nich pod względem obserwujących użytkowników (aktualnie jest ich ponad ćwierć miliona) - Reddit.
@@ -1495,7 +1500,7 @@ niezwykle szerokim wachlarzu zastosowań. Interesujące nas rozszerzenie możemy
 \begin{lstlisting}
 npm install nazwapakietu
 \end{lstlisting}
-Kiedy nad projektem pracuje wiele osób, ilość używanych bibliotek może rozrastać się dużo szybciej wraz z szukaniem nowych rozwiązań do pojawiających się problemów.
+W przypadku, gdy nad projektem pracuje wiele osób, ilość używanych bibliotek może rozrastać się dużo szybciej wraz z szukaniem nowych rozwiązań do pojawiających się problemów.
 Potrzeba wpisywania nazwy każdego pakietu oraz instalowania go osobno mogłaby być męcząca, dlatego npm śledzi wszystkie używane w danym projekcie pakiety w jsonowym pliku
 packages. Aby zainstalować wszystkie pakiety zarejestrowane przez plik packages należy użyć komendy
 \begin{lstlisting}
@@ -1518,7 +1523,7 @@ caption={Fragment pliku MaterialUiUserExams.js, przykładowe użycie JSX}
 </ListItemText>
 \end{lstlisting}
 Jedną z zalet JSX jest łatwość otrzymania wartości zmiennej używanej w~kodzie javascriptowym. W powyższym przykładzie wykorzystujemy to, aby otrzymać nazwę każdego działu, który następnie wyświetlamy użytkownikowi.
-JSX jest w stanie obsłużyć dowolne, prawidłowe wyrażenie w języku JavaScript, które zostało zamknięte wewnątrz nawiasów klamrowych. Dzięki czemu możemy nie tylko uzyskać wartości zmiennych, ale również je modyfikować oraz wywoływać funkcje JavaScriptowe, jeśli tego potrzebujemy.
+JSX jest w stanie obsłużyć dowolne, prawidłowe wyrażenie w języku JavaScript, które zostało zamknięte wewnątrz nawiasów klamrowych. Dzięki czemu możemy nie tylko uzyskać wartości zmiennych, ale również je modyfikować oraz wywoływać funkcje javascriptowe, jeśli tego potrzebujemy.
 
 \lstset{
     breaklines=true,                    % sets automatic line breaking
@@ -1568,7 +1573,7 @@ Oczywiście, jeśli ktoś nie chce korzystać z JSX, może tego nie robić. Moż
 }
 \subsection{Komponenty}
 {
-Interfejs w React składa się z komponentów. Komponenty są jak funkcje JavaScriptowe, które przyjmują pewne wartości na wejściu, a następnie zwracają elementy reactowe, które opisują, co ma pojawić się na ekranie.
+Interfejs w React składa się z komponentów. Komponenty są jak funkcje javascriptowe, które przyjmują pewne wartości na wejściu, a następnie zwracają elementy reactowe, które opisują, co ma pojawić się na ekranie.
 Wyróżniamy dwa typy komponentów - komponenty klasowe oraz komponenty funkcyjne.
 \begin{lstlisting}[
 caption={Przykład komponentu klasowego}
@@ -1586,7 +1591,7 @@ function FunctionComponent(props){
   return <h2>Przykład komponentu funkcyjnego</h2>
 }
 \end{lstlisting}
-Jedną z zasad obowiązujących podczas budowy komponentów, zarówno funkcyjnych jak i klasowych, pozostaje nienaruszalność właściwości    (ang. props) przekazywanych podczas deklaracji funkcji. Dane, które mają zmieniać się dynamiczne powinny być przechowywane w stanach.
+Jedną z zasad obowiązujących podczas budowy komponentów, zarówno funkcyjnych jak i klasowych, pozostaje nienaruszalność właściwości (ang. \textit{props}) przekazywanych podczas deklaracji funkcji. Dane, które mają zmieniać się dynamiczne powinny być przechowywane w stanach.
 Obecnie podstawową różnicą pozostaje składnia, w przeszłości komponenty funkcyjne nie posiadały stanów ani metod pozwalających na uruchamianie kodu w odpowiednich momentach. Z tych powodów komponentów funkcyjnych używano tylko do budowy komponentów, które nie musiały być dynamiczne. Zmieniło się to wraz z wprowadzeniem Hooków.
 Warto również wiedzieć, że komponenty mogą odwoływać się do innych komponentów, co promuje pisanie ich z myślą o~ możliwości wielokrotnego wykorzystania. Możemy to wykorzystać na przykład tworząc komponent ekranu ładowania, następnie możemy go użyć w~innych komponentach, renderując go wtedy, gdy użytkownik będzie oczekiwał na~odpowiedź od serwera.
 }
@@ -1608,11 +1613,11 @@ Cykl życia komponentu możemy podzielić na 3 etapy:
 }
 \label{metody cyklu zycia}
 \end{figure}
-Każdy cykl wywołuje inny zestaw metod, najważniejszymi metodami wywoływanymi w czasie montowania są constructor - odpowiedzialny za inicjalizację stanu lokalnego oraz związanie(ang. bind) metody obsługi zdarzeń, render oraz \texttt{componentDidMount} - ta metoda jest odpowiednim miejscem do wysłania zapytania, jeśli potrzebujemy pobrać dane z zewnątrz.
+Każdy cykl wywołuje inny zestaw metod, najważniejszymi metodami wywoływanymi w czasie montowania są \texttt{constructor} - odpowiedzialny za inicjalizację stanu lokalnego oraz związanie(ang.\textit{bind}) metody obsługi zdarzeń, render oraz \texttt{componentDidMount} - ta metoda jest odpowiednim miejscem do wysłania zapytania, jeśli potrzebujemy pobrać dane z zewnątrz.
 W czasie aktualizacji wywołana zostaje analogiczna metoda - \texttt{componentDidUpdate}, a w czasie odmontowania wywołana zostaje metoda \texttt{componentWillUnmount} - powinniśmy z niej korzystać głównie w celach posprzątania np. wyzerowanie liczników.
 \newline
 \newline
-Stan może przyjąć dowolną wartość, \texttt{true}, \texttt{false}, \texttt{null}, może być liczbą, ciągiem znaków (string) lub tablicą.
+Stan może przyjąć dowolną wartość, \texttt{true}, \texttt{false}, \texttt{null}, może być liczbą, ciągiem znaków (\texttt{string}) lub tablicą.
 \begin{lstlisting}[
 caption={Przykład komponentu klasowego korzystającego ze stanów}
 ]
@@ -1724,7 +1729,7 @@ caption={Przykładowe użycie hooka useEffect}
 \subsection{Obsługa zdarzeń}
 {
 Kolejnym pojęciem często używanym w budowaniu interfejsów są zdarzenia. Zdarzenia określają zajście pewnej czynności, którą nasz interfejs jest w~stanie wyłapać i następnie obsłużyć.
-Przykładowymi zdarzeniami mogą być onClick~-~w przypadku kliknięcia myszką, onChange - w przypadku modyfikacji elementu lub onSubmit - w przypadku przesłania formularza.
+Przykładowymi zdarzeniami mogą być onClick -- w~przypadku kliknięcia myszką, onChange -- w przypadku modyfikacji elementu lub onSubmit -- w przypadku przesłania formularza.
 W odróżnieniu od np. HTMLa w React zdarzenia zapisujemy tzw. camelCasem.\footnote{camelCase jest konwencją, w której w nazwach kolejne wyrazy zapisujemy łącznie, a każdy kolejny(nie licząc pierwszego) rozpoczynamy wielką literą}
 Instrukcje obsługi zdarzenia są przekazywane jako funkcje.
 \begin{lstlisting}[
@@ -1739,7 +1744,7 @@ caption={Przykładowa obsługa zdarzenia onClick}
 \end{lstlisting}
 }
 Powyższy przykład pokazuje jeden ze sposobów obsługi zdarzeń wykorzystywanych w aplikacji Gen-mat. Kliknięcie przycisku IconButton powoduje wywołanie funkcji \texttt{createExamCopy}, która jest odpowiedzialna za utworzenie kopii sprawdzianu.
-Innym sposobem na przekazanie instrukcji obsługi zdarzenia jest napisanie funkcji obsługi, następnie jej związanie (ang. bind) i wywołanie jej przy pomocy \texttt{this}.
+Innym sposobem na przekazanie instrukcji obsługi zdarzenia jest napisanie funkcji obsługi, następnie jej związanie (ang.\textit{ bind}) i wywołanie jej przy pomocy \texttt{this}.
 \begin{lstlisting}[
 caption={Związanie}
 ]
@@ -1807,8 +1812,6 @@ caption={Przykładowe wywołanie zapytania GET, aby otrzymać sprawdziany użytk
     axiosInstance
       .get("/user/tests/")
       .then((response) => {
-        console.log("UE update response",
-        response, "exams", response.data);
         this.setState({ exams: response.data });
       })
       .catch((error) => {
@@ -1858,7 +1861,7 @@ validationSchema={Yup.object().shape({
 \subsection{Formik}
 Formik jest biblioteką usprawniającą tworzenie formularzy w React. Pomaga w przekazywaniu wartości ze stanów oraz do stanów, walidacji i wyłapywaniu błędów oraz przesyłaniu formularzy.
 Jak podaje sam autor, powodem, dla którego stworzył on Formik była chęć zestandaryzowania komponentów wejścia oraz sposobu przepływu danych wewnątrz formularzy~\cite{formik}.
-Formik daje nam dostęp do przemyślanych pól oraz metod pomocniczych przydatnych przy tworzeniu formularzy. Na początku możemy przekazać początkowe wartości w \texttt{initialValues}, podstawowymi metodami pomocniczymi są:
+Formik daje nam dostęp do przemyślanych pól oraz metod pomocniczych przydatnych przy tworzeniu formularzy. Na początku możemy przekazać początkowe wartości w~\texttt{initialValues}, podstawowymi metodami pomocniczymi są:
 \begin{itemize}
 \item \texttt{handleSubmit} -- procedura obsługi wysyłania
 \item \texttt{handleChange} -- procedura obsługi zmian
