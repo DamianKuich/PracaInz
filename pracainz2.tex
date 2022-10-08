@@ -1803,7 +1803,7 @@ export const axiosInstance = axios.create({
   },
 });
 \end{lstlisting}
-Gdzie baseURL oznacza adres URL, timeout służy do określania maksymalnego czasu (w milisekundach) jaki żądanie ma na wykonanie, zanim zostanie anulowane. Dodatkowo, na podstawie zawartości nagłówka serwer jest w stanie odróżnić czy zapytanie zostało wysłane przez użytkownika zalogowanego, czy przez użytkownika niezalogowanego. Aby wysłać żądanie należy  odwołać się do instancji, określić rodzaj żądania, podać dokładną ścieżkę oraz, w zależności od tego, co mamy do przekazania serwerowi, przesłać dane.
+Gdzie baseURL oznacza adres URL, timeout służy do określania maksymalnego czasu (w milisekundach) jaki żądanie ma na wykonanie, zanim zostanie anulowane. Dodatkowo, na podstawie zawartości nagłówka serwer jest w stanie odróżnić, czy zapytanie zostało wysłane przez użytkownika zalogowanego, czy przez użytkownika niezalogowanego. Aby wysłać żądanie należy odwołać się do instancji, określić rodzaj żądania, podać dokładną ścieżkę oraz, w zależności od tego, co mamy do przekazania serwerowi, przesłać dane.
 \begin{lstlisting}[
 caption={Przykładowe wywołanie zapytania GET, aby otrzymać sprawdziany użytkownika}
 ]
@@ -1859,16 +1859,16 @@ validationSchema={Yup.object().shape({
 \end{lstlisting}
 %####################################################################
 \subsection{Formik}
-Formik jest biblioteką usprawniającą tworzenie formularzy w React. Pomaga w przekazywaniu wartości ze stanów oraz do stanów, walidacji i wyłapywaniu błędów oraz przesyłaniu formularzy.
+Formik jest biblioteką usprawniającą tworzenie formularzy w Reaccie. Pomaga w~przekazywaniu wartości ze stanów oraz do stanów, walidacji i wyłapywaniu błędów oraz przesyłaniu formularzy.
 Jak podaje sam autor, powodem, dla którego stworzył on Formik była chęć zestandaryzowania komponentów wejścia oraz sposobu przepływu danych wewnątrz formularzy~\cite{formik}.
-Formik daje nam dostęp do przemyślanych pól oraz metod pomocniczych przydatnych przy tworzeniu formularzy. Na początku możemy przekazać początkowe wartości w~\texttt{initialValues}, podstawowymi metodami pomocniczymi są:
+Formik daje nam dostęp do różnych pól oraz metod pomocniczych przydatnych przy tworzeniu formularzy. Początkowe wartości, które ukazują się przy pierwszym załadowaniu formularza możemy przekazaći w~\texttt{initialValues}, podstawowymi metodami pomocniczymi są:
 \begin{itemize}
 \item \texttt{handleSubmit} -- procedura obsługi wysyłania
 \item \texttt{handleChange} -- procedura obsługi zmian
 \item \texttt{values} -- w tej metodzie przechowywane są aktualne wartości obecne w~formularzu.
 \end{itemize}
 Kolejnym sposobem użycia Formika razem z Yupem, wykorzystywanym w~projekcie Gen-mat, jest walidacja pól na poziomie formularza przy pomocy \texttt{validationSchema}. 
-Najpierw stworzony zostaje obiekt Yupowy o określonych wartościach a następnie zostaje on przypisany jako \texttt{validationSchema}.
+Najpierw stworzony zostaje yupowy obiekt o określonych wartościach, a następnie zostaje on przypisany jako \texttt{validationSchema}.
 \begin{lstlisting}[
 caption={Formik - deklaracja }
 ]
