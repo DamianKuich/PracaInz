@@ -1703,7 +1703,7 @@ onClick={(e)=>setEditView("name")}  >
 	Zmień nazwę użytkownika
 </Button>
 \end{lstlisting}
-Jeśli chcemy dokonać operacji w określonym cyklu życia komponentu, należy użyć hooka \texttt{useEffect}. Możemy o nim myśleć jak o połączeniu metod \texttt{componentDidMount}, \texttt{componentDidUpdate} oraz \texttt{componentWillUnmount} w~jedną.
+Jeśli chcemy wykonać dodatkowe czynności po wyrenderowaniu komponentu funkcyjnego, musimy użyć hooka \texttt{useEffect}, który pozwoli nam zaprogramować pożądane ,,Efekty Uboczne''. Możemy o nim myśleć jak o połączeniu metod \texttt{componentDidMount}, \texttt{componentDidUpdate} oraz \texttt{componentWillUnmount} w~jedną. Projekt Gen-mat wykorzystuje ten hook przy pobieraniu danych na temat sprawdzianów, przesyłaniu danych na serwer, oraz ich modyfikacji w~celu stworzenia interfejsu bardziej przystępnego dla użytkownika końcowego.
 \begin{lstlisting}[
 caption={Przykładowe użycie hooka useEffect}
 ]
